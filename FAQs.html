@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discussion Board Instructions</title>
+  <link rel="stylesheet" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/no_variables/bundles/fonts-6ee09b0b2f.css" media="screen" />
+  <link rel="stylesheet" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/default/variables-high_contrast-7dd4b80918af0e0218ec0229e4bd5873.css" media="all" />
+  <link rel="stylesheet" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/new_styles_high_contrast/bundles/common-a1686a70b5.css" media="all" />
+  <link rel="stylesheet" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/new_styles_high_contrast/bundles/wiki_page-bb0c0c1f96.css" media="screen" />
+
+<style>
+.accordion {
+    background-color: #fff;
+    color: #000000;
+    cursor: pointer;
+    padding: 8px 10px 8px 42px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    border-bottom: 4px solid #0078ad;
+    outline: none;
+    transition: 0.4s;
+    position: relative;
+}
+
+/* Hover and active background */
+.active,
+.accordion:hover {
+    background-color: #eee;
+}
+
+/* Blue triangle */
+.accordion::before {
+    content: '\25BC';
+    color: #0078ad;
+    font-size: 24px;
+    font-weight: bold;
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.4s;
+    line-height: 1;
+}
+
+/* Rotate triangle when open */
+.accordion.active::before {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+/* Accordion content */
+.panel {
+    padding: 0 5px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+}
+
+/* Heading styling */
+.accordion h2 {
+    margin: 0;
+}
+
+/* Align icon and text */
+.accordion span {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Tables */
+table {
+    font-size: smaller;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #F4F3F3;
+    text-align: left;
+    padding: 4px;
+}
+
+tr:nth-child(even) {
+    background-color: #F4F3F3;
+}
+
+/* Responsive images */
+.responsive-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+@media only screen and (min-width: 700px) {
+    .responsive-image {
+        width: 95%;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .responsive-image {
+        width: 90%;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .responsive-image {
+        width: 80%;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .responsive-image {
+        width: 70%;
+    }
+}
+</style>
+
+<button class="accordion">
+    <h2>
+        <span>
+            <img id="5417639"
+                 role="presentation"
+                 src="https://uhcl.instructure.com/courses/22917/files/5417639/preview"
+                 alt="Instructions icon"
+                 width="34"
+                 height="auto" />
+            Course Modules
+        </span>
+    </h2>
+</button>
+
+<div class="panel">
+ <p><strong>Q. There is a lot of content in every module. Do I have to go over all of it?</strong></p>
+
+<p style="padding-left: 20px;"><strong>A.</strong> The only graded assignments in the course are the weekly knowledge checks, class discussions, and the consulting project deliverables. Of course, it is implied that you should read the textbook chapters; however, you are not required to go over any other materials in the modules. Those are resources that may help you understand the material better. You are encouraged to use them, but you are not required to do so.</p>
+
+<p style="padding-left: 20px;">It is also important to note that all required tasks within each module are clearly identified. As shown in the image below, radio buttons are shown for all required tasks, and green check marks show that a task has been completed.</p>
+<a href="https://lh3.googleusercontent.com/pw/AP1GczO0V1xezieq0GDUwjp45AkzMW2LzOup24cBgZSCLCKwDKXBRpevDgUVwojYsEqkKHHvw-nffTX0INqtiJ2wPUX5ZviJXY8B-TKEtM-kmL7BMbOwzEI=w2400" target="_blank"><img src="https://lh3.googleusercontent.com/pw/AP1GczO0V1xezieq0GDUwjp45AkzMW2LzOup24cBgZSCLCKwDKXBRpevDgUVwojYsEqkKHHvw-nffTX0INqtiJ2wPUX5ZviJXY8B-TKEtM-kmL7BMbOwzEI=w2400"></a>
+</div>
+
+
+<button class="accordion">
+    <h2>
+        <span>
+            <img id="5417622"
+                 role="presentation"
+                 src="https://uhcl.instructure.com/courses/22917/files/5417622/preview"
+                 alt=""
+                 width="34"
+                 height="34" />
+            Knowledge Checks (Quizzes)
+        </span>
+    </h2>
+</button>
+
+<div class="panel">
+<p><strong>Q. Why do I have to use Respondus Lockdown Browser and Monitor?</strong></p>
+
+<p style="padding-left: 20px;"><strong>A.</strong> The use of Respondus LockDown Browser and Monitor is not an individual instructor decision. The College of Business requires authentication and proctoring technologies for high-stakes assessments and submissions that represent a significant portion of a student's course grade.</p>
+
+<p style="padding-left: 20px;">According to College of Business policy, online quizzes and exams that meet the college's definition of a high-stakes assessment must be administered using a UHCL-approved proctoring application. For this reason, the knowledge checks and exams in this course are conducted using Respondus LockDown Browser and Monitor.</p>
+
+<p style="padding-left: 20px;">I understand that proctoring software is not everyone's favorite technology. However, as a College of Business instructor, I am required to follow the college's assessment authentication and proctoring requirements. If you have concerns about your testing environment or access to appropriate technology, please contact me as early as possible so that we can discuss available options.</p>
+
+<p><strong>Q. What happens if I miss a quiz?</strong></p>
+
+<p style="padding-left: 20px;"><strong>A.</strong> You get a 0. However, I would like you to note that all knowledge checks have been made available on the first day of the course. You may complete them early. You get three attempts, as long as each attempt is completed by the deadline. If you have a valid reason for missing a deadline, please communicate with me.</p>
+
+ <p><strong>Q. I noticed that some of the questions are not in the module readings. Why is that?</strong></p>
+
+<p style="padding-left: 20px;"><strong>A.</strong> I understand it can be challenging when the answers to quiz questions aren't directly found in the textbook. The purpose of the knowledge checks in this course is not just to test your recall of information but to encourage deeper thinking and application of the concepts you are learning.</p>
+
+<p style="padding-left: 20px;">In organizational behavior, it’s crucial to move beyond memorizing definitions and theories to understanding how to apply these concepts in real-world scenarios. The questions in knowledge checks are designed to challenge you to think critically, integrate different ideas, and apply them to situations you might encounter as a manager.</p>
+
+<p style="padding-left: 20px;">While the module readings provide the foundational knowledge, the knowledge checks aim to bridge the gap between theory and practice. This approach is common in graduate-level courses where the focus shifts from basic knowledge acquisition to developing higher-order thinking skills, which are essential for leadership and problem-solving in complex organizational settings.</p>
+
+ <p><strong>Q. Can you provide any suggestions or tips that could help me do well in knowledge checks</strong></p>
+<p style="padding-left: 20px;"><strong>A.</strong> To do well on these quizzes/knowledge checks, I encourage you to:</p>
+
+<ul style="padding-left: 20px;"><li>Understand the concepts thoroughly, not just the definitions.</li>
+<li>Think about how these concepts connect with each other and how they apply to real-life organizational situations.</li>
+<li>Engage actively with the material beyond the readings, such as the video lectures, class discussions, recommended readings and additional materials, and consider how you would apply what you learn to your own experiences.</li></ul>
+<p style="padding-left: 20px;">This way, you’ll not only be prepared for the knowledge checks but also develop skills that will be invaluable in your career.</p>
+
+<p style="padding-left: 20px;">If you need any further clarification or help with specific concepts, feel free to reach out, or join me during office hours and I'll be happy to assist!</p>
+</div>
+
+
+
+<button class="accordion">
+    <h2>
+        <span>
+            <img id="5417571"
+                 role="presentation"
+                 src="https://uhcl.instructure.com/courses/22917/files/5417571/preview"
+                 alt=""
+                 width="34"
+                 height="auto" />
+            Class Discussions
+        </span>
+    </h2>
+</button>
+
+<div class="panel">
+<p><strong>Q. I noticed that there are 8 class discussions in the course; do we have to participate in all of them?</strong></p>
+
+        <p style="padding-left: 20px;"><strong>A.</strong> There are 8 class discussions scheduled throughout the course, but you only need to participate in 4 of them. The student introductions class discussion and three (3) other class discussions (OB-topics). </p>
+        <p><strong>Q. If only 4 discussions are required, why are there 8 class discussions in the course?</strong></p>
+             <p style="padding-left: 20px;"><strong>A.</strong> This provides some flexibility as the program is designed for working professionals with busy schedules. While you are welcome to participate in more class discussions, you are not required to. </p> 
+        <p style="padding-left: 20px;">Class discussions are an essential part of the course because they foster engagement, collaboration, and practical application of the material, which are crucial in an MBA program, <strong>especially one designed for working professionals.</strong>.</p>
+    <p style="padding-left: 20px;">The class discussions in this course will help ensure that you are not just passively learning the material but actively engaging with it, applying it to your own context and experience. More importantly, they enable you to learn from one another. Given that this is an MBA program for working adults, each one of you brings unique experiences and perspectives. Your real-world experiences and insights can enrich our learning beyond textbooks and published materials.</p>
+ <p style="padding-left: 20px;">Another reason for allowing weekly engagement is that in an online course, building a community is essential. Weekly discussions provide a space for you to connect with your peers and, develop relationships. This interaction, I hope, enhances your learning experience and helps you build networks that may be valuable in your career.</p>
+<p style="padding-left: 20px;">Last but not least, our class discussions simulate real-world business scenarios, where managers must think critically, articulate their ideas, and provide feedback. This helps you further develop your communication, leadership, and critical thinking skills, all of which are key competencies for managers and executives.</p>
+
+  
+<p><strong>Q. Just to be clear, what should a first and second posts look like? </strong></p>
+
+          <p style="padding-left: 20px;"><strong>A.</strong> Let's assume that a post is addressing a question related to motivation. This is what a <strong>first post</strong> would look like:</p>
+
+  <p style="padding-left: 40px;">"In today's rapidly evolving work environment, <strong>Herzberg’s Two-Factor Theory</strong> appears to be the most applicable needs-based motivation theory. According to chapter 5, <strong>Herzberg's theory</strong> differentiates between hygiene factors (which prevent dissatisfaction) and motivators (which encourage job satisfaction). The shift towards remote work and the rise of the gig economy highlights the significance of both hygiene factors, such as job security and working conditions, and motivators, like opportunities for personal growth and recognition.</p>
+  <p style="padding-left: 40px;">For example, remote work has altered how employees perceive job security (a hygiene factor). Many workers have begun "career cushioning" by developing side gigs or learning new skills, indicating that job security is no longer solely tied to a single employer but is instead a personal responsibility. 
+On the other hand, motivators like personal growth have gained prominence as employees seek roles that allow them to align work with personal values, a trend that was intensified by the COVID-19 pandemic. This is what makes me believe that Herzberg’s theory is the most relevant of all of the needs-based theories. Herzberg thought that pay was not a motivator but a hygiene factor. I think that he was right because during the pandemic, employees had the chance to reevaluate their careers, leading to "The Great Resignation," where many sought jobs offering better work-life balance and personal fulfillment despite their pay. Many people were willing to give up high paying jobs to do something more fulfilling, which aligns with Herzberg’s theory. This shift suggests that organizations need to focus on motivators to retain talent in a post-pandemic world."
+</p>
+
+          <p style="padding-left: 20px;">This is what <strong>second and third posts</strong> would look like. See how they follow the 3C+Q method:</p>
+      <p style="padding-left: 40px;">"Hi [Maria],<br>
+<strong>I really appreciate</strong> how you applied Maslow's Hierarchy of Needs to the current work environment. <strong>I agree that</strong> the emphasis on self-actualization during the pandemic has driven many employees to seek roles that align with their values. This is evident in how many people are pursuing side gigs or remote work opportunities that provide more flexibility and fulfillment.
+
+Your point about how organizations need to focus on the higher levels of Maslow's hierarchy, particularly self-actualization, is spot on. <strong>This relates to what we read in Chapter 1 about employee engagement</strong> being closely tied to the opportunities for personal growth and meaning in work. However, <strong>I wonder how</strong> well Maslow's theory accounts for the increasing need for job security and stability that we see with "career cushioning." Do you think that Herzberg's Two-Factor Theory, which separates hygiene factors from motivators, might offer a more nuanced understanding of these shifts? I'm curious to hear your thoughts on how we might integrate both theories to address the diverse needs of today's workforce."
+</p>     
+</div>
+
+
+<button class="accordion">
+    <h2>
+        <span>
+            <img id="5562749"
+                 role="presentation"
+                 src="https://uhcl.instructure.com/courses/22917/files/5562749/preview"
+                 alt=""
+                 width="34"
+                 height="auto" />
+            Consulting Project
+        </span>
+    </h2>
+</button>
+
+<div class="panel">
+<p><strong>Q. I am having a hard time finding the assignment instructions and example. Could you help me with that?</strong></p>
+        <p style="padding-left: 20px;"><strong>A.</strong> Certainly! For your convenience, I am sharing copies of the assignment instructions, the written report example, and a couple of documents that may be useful for the assignment:</p>
+        <ul style="padding-left: 20px;">
+    <li><a class="instructure_file_link instructure_scribd_file inline_disabled" title="Consulting Project - Assignment Instructions.pdf" href="https://uhcl.instructure.com/courses/22917/files/5562606?wrap=1" target="_blank" rel="noopener" data-api-endpoint="https://uhcl.instructure.com/api/v1/courses/22917/files/5562606" data-api-returntype="File">Consulting Project - Assignment Instructions</a></li>
+    <li><a class="instructure_file_link instructure_scribd_file inline_disabled" title="Consulting Project - Written Report Example.pdf" href="https://uhcl.instructure.com/courses/22917/files/5417613?wrap=1" target="_blank" rel="noopener" data-api-endpoint="https://uhcl.instructure.com/api/v1/courses/22917/files/5417613" data-api-returntype="File">Consulting Project - Written Report Example</a></li>
+    <li>Helpful Documents:</li>
+    <ul>
+    <li><a class="instructure_file_link instructure_scribd_file inline_disabled" title="Conducting a Stakeholder Analysis-OB.pdf" href="https://uhcl.instructure.com/courses/22917/files/5417650?wrap=1" target="_blank" rel="noopener" data-api-endpoint="https://uhcl.instructure.com/api/v1/courses/22917/files/5417650" data-api-returntype="File">Stakeholder Analysis</a></li>
+    <li><a class="instructure_file_link instructure_scribd_file inline_disabled" title="Ethical Frameworks.pdf" href="https://uhcl.instructure.com/courses/22917/files/5417654?wrap=1" target="_blank" rel="noopener" data-api-endpoint="https://uhcl.instructure.com/api/v1/courses/22917/files/5417654" data-api-returntype="File">Ethical Frameworks</a></li></ul></ul>
+    
+<p><strong>Q. I read the instructions for the consulting project, but I am still not sure about what news event would be appropriate for the project</strong></p>
+        <p style="padding-left: 20px;"><strong>A.</strong> To determine if a news event is suitable for your consulting project, I encourage you to consider the following:</p>
+<ul style="padding-left: 20px;">
+<li><strong>Current and Business-Related.</strong> The event should be happening in the present (or very recently) and must involve a business organization. Avoid historical scandals like Enron or Theranos, as these are not current.</li>
+
+<li><strong>Ethics-Related Issue.</strong> The news event must involve an ethical or social responsibility dilemma within the organization. This could be related to discrimination, corporate social responsibility failures, regulatory violations, environmental harm, or other issues that raise ethical/moral questions for the business.</li>
+
+<li><strong>Actionable for a Decision-Maker.</strong> The problem must be something that a manager or decision-maker in the company can address and take control over. For example, if the issue is related to how the company treats its employees or customers, the decision-maker could be the CEO or Director of Human Resources. If it’s a strategic shift, you would advise the CEO.</li></ul>
+
+        <p style="padding-left: 20px;">If you come across a news event and are unsure whether it fits, you may want to ask yourself:</p>
+<ul style="padding-left: 20px;">
+<li>Does this issue involve ethical decision-making or a moral dilemma?</li>
+<li>Is there a clear business entity and decision-maker involved?</li>
+<li>Can the problem be addressed using the ethical frameworks we've studied?</li></ul>
+
+<p style="padding-left: 20px;">If you answered “yes” to these questions, the event is likely appropriate for your consulting project. If you're uncertain, feel free to run the example by me for feedback.</p>
+<p><strong>Q. I have been thinking of what alternatives I should include. I often find that there are multiple ways to approach a problem. Is there a "right" answer, and how should I approach this situation?</strong></p>
+        <p style="padding-left: 20px;"><strong>A.</strong> Great observation! There are often multiple ways to solve a problem, especially in the context of organizational behavior. In real-world business scenarios, there is rarely one "correct" answer or solution. In fact, more often than not there are many viable approaches, each with its own set of advantages and trade-offs. For our consulting project, the goal is to provide well-reasoned and feasible solutions based on the ethical frameworks and stakeholder impacts we’ve studied. This is how you can approach this situation:
+</p>
+<ul style="padding-left: 20px;"><li>Present multiple (at least three), viable alternatives, each with its own advantages, disadvantages, and ethical implications. Make sure the alternatives are practical and consider the stakeholders and ethical frameworks.</li>
+<li>Evaluate each alternative weighing the pros and cons of each option. Consider:</li>
+<ul><li><strong>Stakeholder Impact.</strong> How will each alternative affect different stakeholders?</li>
+<li><strong>Ethical Implications.</strong> Use ethical frameworks (e.g., utilitarianism, deontology, light of day, cultural relativism, legalism) to analyze each option’s moral soundness.</li>
+<li><strong>Feasibility.</strong> Is the alternative realistic for the decision-maker to implement?</li></ul></ul>
+
+<p style="padding-left: 20px;">Your final recommendation doesn’t need to be “perfect,” but it should reflect thoughtful consideration of the alternatives. The goal is to propose a solution that aligns with the company’s values, and aligns with the ethical framework you selected for your analysis.</p>
+
+<p style="padding-left: 20px;">Ultimately, what’s most important is not finding the “right” answer, but demonstrating that you have critically analyzed the problem from different perspectives and are providing a well-supported recommendation. There’s often more than one acceptable solution as long as it is backed by strong reasoning.</p>
+
+<p><strong>Q. What should I consider when writing the pros and cons of each alternative course of action?</strong></p>
+        <p style="padding-left: 20px;"><strong>A.</strong> When thinking about the advantages of each alternative in your consulting project, it’s crucial to remember that an advantage should directly benefit one or more stakeholders. To ensure that you are providing thoughtful and relevant alternatives, ask yourself the following questions:</p>
+
+<ul style="padding-left: 20px;"><li>What stakeholders benefit from this alternative?<br>Identify which individuals or groups (e.g., employees, customers, shareholders, the community, etc.) will be positively impacted if the organization implements this option.</li>
+
+<li>In what way do they benefit?<br>Consider the specific type of benefit. For example:</li>
+<ul><li>
+Does the alternative improve working conditions for employees?</li>
+<li>Will it enhance customer satisfaction or loyalty?</li>
+<li>Could it lead to long-term financial gains for shareholders?</li>
+<li>Does it have a positive impact on the environment or society at large?</li></ul></ul>
+        <p style="padding-left: 20px;">By focusing on how different stakeholders benefit from each alternative, you’ll ensure that your analysis is comprehensive and aligned with the ethical frameworks we’ve studied. Always make sure that each advantage/disadvantage ties back to a specific benefit/harm for one or more key stakeholders.</p>
+
+<p><strong>Q. Is the video presentation really necessary?</strong></p>
+
+        <p style="padding-left: 20px;"><strong>A.</strong>The video presentation is an important part of your graduate business training because it helps you develop key skills that are essential in the business world, particularly for professionals who need to communicate effectively with stakeholders.</p>
+
+<ul style="padding-left: 20px;"><li>Presenting your ideas clearly and confidently is a critical skill for managers and leaders. In the business world, you’ll often need to present recommendations, pitch ideas, or lead meetings, so this is an opportunity to refine those abilities.</li>
+
+<li>A video presentation allows you see how you communicate verbally and non-verbally. Use the video to do a self-critique or ask people you trust for their honest feedback on your clarity of speech, tone, and body language. They are are just as important as the content of your message. This is even more important today, given the rise of virtual meetings. See how you come across on the screen</li>
+
+<li>It is not easy to condense a report into a 5-minute presentation. This exercise will help you practice something you will likely have to do (or may already be doing): condense your analysis and recommendations into a concise and engaging presentation.</li></ul>
+
+        <p style="padding-left: 20px;">I do not doubt that you will gain a lot from this assignment; it has been thoughtfully designed to help you develop critical skills for your professional success.</p>
+ <p><strong>Q. I read in the syllabus that we are allowed to use AI to help with assignments. Does that mean I can use ChatGPT or Copilot?</strong></p>
+
+        <p style="padding-left: 20px;"><strong>A.</strong> Yes, you are allowed to use ChatGPT, Copilot or any AI of your choice. Not being familiar with those tools will put you at a disadvantage in school and at work. I expect that most students are already very familiar with AI tools and use them.</p>
+    <p style="padding-left: 20px;">To ensure that those tools are used appropriately, you must follow the guidelines described in the syllabus, which I am copying below:</p>
+
+<p style="padding-left: 20px;"><strong>Permitted Uses of AI</strong>
+            <ul style="padding-left: 20px;">
+                <li><strong>Idea Generation:</strong> Students may use AI to help brainstorm ideas for assignments and projects.</li>
+                <li><strong>Getting Started:</strong> AI may be used to draft initial outlines or concepts to help you get started on your assignments.</li>
+                <li><strong>Learning Structure:</strong> Students may use AI to get ideas for the formatting or structure of a document, and to organize their thoughts more effectively.</li>
+               <li><strong>Document Editing:</strong> Students can use AI to assist with editing their documents by correcting spelling and grammar, suggesting improved paragraph and paper structures, and even rewriting paragraphs to make them more concise. This can be a useful exercise to help improve writing skills. However, be aware that AI tools often produce verbose text. Additionally, if you use AI for rewriting paragraphs, your paper might be flagged for review by TurnItIn. I expect that your assignment will show 0% "AI writing detected". Additionally, you must include a link or copy of the chat/interaction with the AI in your submission.</li>
+            </ul>
+
+      <p style="padding-left: 20px;"><strong>Prohibited Uses of AI</strong></p>
+            <ul style="padding-left: 20px;">
+                <li><strong>Copying AI-Generated Content:</strong> Students must not copy and paste AI-generated content and present it as their own work. All AI-generated content must be significantly modified and integrated into your own writing.</li>
+
+                <li><strong>Plagiarism:</strong> Failure to credit the use of AI tools will be considered plagiarism, equivalent to using non-credited content from any other source. Plagiarism will be handled according to UHCL's academic honesty policy.</li>
+            </ul>
+
+ 
+
+        <p style="padding-left: 20px;"><strong>Student Responsibilities When Using AI</strong></p>
+       
+                    <ul style="padding-left: 20px;">
+    <li><strong>Crediting AI Use. </strong>Any use of AI in your assignments must be properly credited. This includes citing in within the text or your paper and in your references list.</li>
+
+                        <li><strong>Citing AI:</strong> Clearly cite the AI tool used in in-text citations (e.g., (OpenAI, 2024)), and in the list of references.
+                            <ul>
+                                <li>e.g., OpenAI. (2024). <em>ChatGPT</em> (June 29 version) [Large language model]. Prompt: "Share what you know about company's XYZ safety failures." Response received on June 25, 2024.<a href="https://chat.openai.com/chat" target="_blank" rel="noopener">https://chat.openai.com/chat</a></li>
+                            </ul>
+                        </li>
+                        <li><strong>Including Prompts and Responses:</strong> You will share the prompt you used with the AI tool and the corresponding generated response in the link you include in your reference.</li>
+           <li><strong>Students should be aware of the limitations of even the best AI tools.</strong> Ultimately, it is you, the student, who is responsible for all the content submitted in their assignments.</li>
+
+                <li><strong>Fact-Checking:</strong>Students are responsible for verifying the accuracy of any information generated by AI tools. AI sometimes generates incorrect information that is very believable and plausible sounding. When interacting with AI, if you are trying to obtain important information, it is your responsibility to fact-check with a high-quality source to ensure that all facts and data used in your assignments are accurate and reliable.</li>
+            </ul>
+
+        <p style="padding-left: 20px;"><strong>Policy Enforcement:</strong></p>
+
+  <p style="padding-left: 20px;">Any assignment found to contain AI-generated content that is not properly credited or is passed off as the student's own work will be subject to the same penalties as other forms of plagiarism, including receiving a zero for the assignment and potential referral to the dean of students for further disciplinary action.</p>
+
+  <p style="padding-left: 20px;">By adhering to these guidelines, all students can benefit from the use of AI tools while maintaining academic integrity and producing high-quality, original work. If you have any questions about the appropriate use of AI in your assignments, please do not hesitate to ask for clarification.</p>
+
+</div>
+
+<button class="accordion">
+    <h2>
+        <span>
+            <img id="5417623"
+                 role="presentation"
+                 src="https://uhcl.instructure.com/courses/22917/files/5417623/preview"
+                 alt=""
+                 width="34"
+                 height="auto" />
+            Other Questions
+        </span>
+    </h2>
+</button>
+<div class="panel">
+<p><strong>Q. Are there extra credit opportunities</strong></p>
+
+        <p style="padding-left: 20px;"><strong>A.</strong> Yes. To encourage engagement and provide additional opportunities to strengthen your understanding of course concepts, you may earn up to 5 points of extra credit (equivalent to 5% of your total course grade) by completing optional activities. Extra credit is capped at 5 points total regardless of the number of extra credit activities completed. 
+Available extra credit opportunities include:</p>
+<ul style="padding-left: 20px;">
+<li><strong>Optional Participation in Additional Class Discussions:</strong> Students are only required to complete three academic discussions; however, participation in additional academic discussions from Modules 1–7 may be completed for extra credit. Each additional discussion completed will earn 1 extra credit point (up to 4 points total).</li>
+
+<li><strong>Successful Completion of Simulations:</strong> Participation in the optional simulations in Modules 2 and 6 may earn 1 extra credit point per simulation (up to 2 points total).</li>
+</ul>
+
+<p><strong>Q. I do better in face-to-face classes. Will there be any live sessions?</strong></p>
+
+        <p style="padding-left: 20px;"><strong>A.</strong> This is an online asynchronous course; therefore, we cannot hold any mandatory live sessions. However, I strongly encourage you to join me via Teams during office hours. Please, know that I am here to support you. Additionally, if you have any questions about the course content that require immediate answers, I suggest that you email me at Chambers@UHCL.edu.</p>
+
+</div>
+
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+
+for (var i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+
+        var panel = this.nextElementSibling;
+
+        if (panel.style.display === "block") {
+            panel.style.display = "none";
+        } else {
+            panel.style.display = "block";
+        }
+    });
+}
+</script>
