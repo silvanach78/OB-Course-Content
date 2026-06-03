@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Organizational Behavior - Module 6</title>
+<style>
+:root {
+  --bg: #f7f8fa;
+  --panel: #ffffff;
+  --ink: #222831;
+  --muted: #5c6773;
+  --line: #d7dde5;
+  --accent: #0f6c7b;
+  --accent-soft: #e8f4f6;
+  --note-bg: #fff7e8;
+  --note-line: #e6cf95;
+    --note:#eef79a;
+  --note2:#f5f8ad;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.65;
+}
+
+a { color: #0b5ea8; }
+.layout {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 4px;
+}
+.sidebar {
+  position: sticky;
+  top: 4px;
+  align-self: start;
+  max-height: calc(100vh - 32px);
+  overflow: auto;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 18px 18px 14px;
+  box-shadow: 0 6px 20px rgba(34,40,49,.06);
+}
+.sidebar h2 {
+  margin: 0 0 8px;
+  font-size: 1.45rem;
+}
+.sidebar p {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: .95rem;
+}
+.toc-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+.toc-list .toc-list {
+  padding-left: 10px;
+  margin-top: 4px;
+}
+.toc-list li {
+  margin: 3px 0;
+}
+.toc-list a {
+  display: block;
+  text-decoration: none;
+  color: #334155;
+  padding: 4px 6px;
+  border-radius: 8px;
+  font-size: .96rem;
+}
+.toc-list a:hover, .toc-list a.active {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.content {
+  min-width: 0;
+}
+.frontmatter, .module, .subsection {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 20px 10px;
+  box-shadow: 0 6px 18px rgba(34,40,49,.05);
+  margin-bottom: 15px;
+}
+.frontmatter h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  line-height: 1.15;
+}
+.subtitle {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+h2, h3, h4 {
+  scroll-margin-top: 24px;
+}
+.module > h2 {
+  margin: 0 0 6px;
+  font-size: 1.5rem;
+  color: var(--accent);
+}
+.level-2 > h3 {
+  margin: 4px 0 12px;
+  font-size: 1.35rem;
+}
+.level-3 > h4 {
+  margin: 4px 0 10px;
+  font-size: 1.12rem;
+}
+.insight, .insights {
+  background: var(--accent-soft);
+  border-right: 4px solid var(--accent);
+  padding: 12px 14px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+.box-2 > h3 {
+  margin: 4px 0 12px;
+  font-size: 1.35rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0 20px;
+  font-size: .95rem;
+}
+.table-wrap {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 16px 0 20px;
+}
+.table-wrap table {
+  margin: 0;
+}
+caption {
+  caption-side: top;
+  text-align: left;
+  margin: 0 0 8px;
+  font-size: .96rem;
+  color: #44515f;
+  font-style: italic;
+}
+th {
+  background: var(--accent);
+  color: #fff;
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #0b5965;
+}
+td {
+  border: 1px solid var(--line);
+  padding: 10px;
+  vertical-align: top;
+  background: #fff;
+}
+tr:nth-child(even) td { background:#fbfcfd; }
+
+@media (max-width: 600px) {
+  .frontmatter, .module, .subsection {
+    padding: 16px 8px;
+  }
+  table {
+    font-size: .86rem;
+    min-width: 640px;
+  }
+  th, td {
+    padding: 8px;
+  }
+  caption {
+    font-size: .9rem;
+  }
+}
+
+sup { font-size:0.72em; color:#0f6c7b; vertical-align:super; line-height:0; }
+.chart-wrap {
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:14px;
+  margin-top:10px;
+}
+.wrapper { max-width: 1180px; margin: 0 auto; }
+.card { background:#fff; border:1px solid #d7dde5; border-radius:16px; padding:16px; margin-bottom:22px; box-shadow:0 4px 14px rgba(0,0,0,.05); }
+.grid2 { display:grid; grid-template-columns:1fr; gap:18px; }
+.grid2 figure {
+  min-width: 0;
+}
+.grid2 figure svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.chart {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.chart-wide {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.chart-small {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+@media (min-width: 1300px) { .grid2 { grid-template-columns:1fr 1fr; } }
+
+.grid3 { display:grid; grid-template-columns:1fr; gap:18px; }
+.grid3 figure {
+  min-width: 0;
+}
+.grid3 figure svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+@media (min-width: 1100px) { .grid3 { grid-template-columns:1fr 1fr; } }
+@media (min-width: 1500px) { .grid3 { grid-template-columns:1fr 1fr 1fr; } }
+
+
+p {
+  margin: 0 0 14px;
+}
+ul {
+  margin: 0 0 14px 1rem;
+}
+li { margin-bottom: 7px; }
+figure {
+  margin: 20px 0 18px;
+  text-align: center;
+}
+figure img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+}
+figcaption {
+  margin-top: 10px;
+  font-size: .96rem;
+  color: #44515f;
+  font-style: italic;
+}
+.note {
+  background: var(--note-bg);
+  border-left: 4px solid var(--note-line);
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: .95rem;
+  margin-bottom: 12px;
+}
+.source-entry {
+  margin-bottom: 6px;
+  padding-bottom: 2px;
+    font-size: .8rem;
+  border-bottom: 1px dashed var(--line);
+}
+.source-entry:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+  font-size: .8rem;
+}
+@media (max-width: 1000px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    position: static;
+    max-height: none;
+  }
+}
+
+.grid-notes {
+  display:grid;
+  grid-template-columns:1fr;
+  gap:22px;
+  margin-top:14px;
+}
+
+@media (min-width:800px) {
+  .grid-notes { grid-template-columns:1fr 1fr; }
+}
+@media (min-width:1000px) {
+  .grid-notes { grid-template-columns:1fr 1fr 1fr; }
+}
+.term { font-weight:700; color:#12343b; }
+
+.note {
+  background:#fff7e8;
+  border-left:4px solid #e6cf95;
+  padding:12px 14px;
+  border-radius:8px;
+  font-size:.97rem;
+  margin-top:10px;
+}
+.small {
+  font-size:.93rem;
+  color:#44515f;
+}
+
+sup {
+  font-size: 0.72em;
+  color: #0f6c7b;
+  vertical-align: super;
+  line-height: 0;
+}
+
+.cite-ref {
+  position: relative;
+  display: inline-block;
+  cursor: help;
+}
+.cite-tooltip {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  left: 50%;
+  bottom: 125%;
+  transform: translateX(-50%);
+  width: min(320px, 70vw);
+  background: #1f2937;
+  color: #fff;
+  text-align: left;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 0.82rem;
+  line-height: 1.35;
+  box-shadow: 0 10px 24px rgba(0,0,0,.18);
+  z-index: 999;
+  transition: opacity .18s ease, visibility .18s ease;
+}
+.cite-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -6px;
+  border-width: 6px;
+  border-style: solid;
+  border-color: #1f2937 transparent transparent transparent;
+}
+.cite-ref:hover .cite-tooltip,
+.cite-ref:focus .cite-tooltip,
+.cite-ref:focus-within .cite-tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+.content, .frontmatter, .module, .subsection {
+  max-width: 100%;
+}
+img, svg {
+  max-width: 100%;
+  height: auto;
+}
+p, li, td, th {  
+overflow-wrap: break-word;
+}
+
+
+.sr-only {
+  position:absolute;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  border:0;
+}
+</style>
+</head>
+<body>
+<div class="layout">
+<aside aria-label="Table of contents" class="sidebar"><h2>Contents</h2><ul class="toc-list"><li><strong><a href="#about-this-document">About This Document</a></strong></li><li><strong><a href="#power-leadership">Module 6: Power and Leadership</a></strong><ul class="toc-list"><li><a href="#introduction">Introduction</a></li><li><a href="#leadership-effective">Leadership and Effective Leaders</a></li><li><a href="#trait-approaches">Trait Approaches to Leadership</a></li><li><a href="#behavioral-approaches">Behavioral Approaches to Leadership</a></li><li><a href="#contingency-approaches">Contingency Approaches to Leadership</a></li><li><a href="#contemporary-leadership">Contemporary Approaches to Leadership</a></li><li><a href="#power-organizations">Power in Organizations</a></li><li><a href="#bases-power">Bases of Power</a></li><li><a href="#obedience-conformity">Obedience, Conformity, and Ethical Risk</a></li><li><a href="#dependency-power">Dependency and Power</a></li><li><a href="#influence-tactics">Influence Tactics</a></li><li><a href="#politics-networks">Organizational Politics and Social Networks</a></li><li><a href="#ethics-culture">Ethics, Culture, and Responsible Power</a></li><li><a href="#ob-framework-integration">Integrating Leadership and Power Through the OB Framework</a></li><li><a href="#key-takeaways">Key Takeaways</a></li><li><a href="#managerial-insight">Managerial Insight</a></li><li><a href="#sources">Key Sources</a></li></ul></li></ul></aside>
+<main class="content">
+<section class="frontmatter" id="about-this-document"><h1>Organizational Behavior</h1><h2>About This Document</h2><p>This document has been developed for students of Organizational Behavior. The topics contained herein have been carefully curated to help us accomplish the course goals; therefore, they are discussed at a managerial and applied level rather than with extensive technical depth. To learn about these topics in more depth, I recommend that you review the sources listed at the end of each module.</p><p>This work is original and unique to this course, and as such, it is protected by copyright and the Digital Millennium Copyright Act (DMCA).</p><p><strong>Copyright © 2026 Silvana Chambers.</strong></p><p>This document reflects current research, real-world examples, and instructor-developed insights. <strong>Please do not share, reproduce, or distribute this document, or any part of it, outside of this class.</strong></p><p>June 2026</p></section>
+<section class="module level-1" id="power-leadership"><h2>Power and Leadership</h2>
+<section class="subsection level-2" id="introduction"><h3>Introduction</h3><p>Power and leadership are deeply connected, but they are not the same concept. <strong>Leadership</strong> is the process of influencing others to work toward a shared goal. <strong>Power</strong> is the capacity to influence behavior and get things done. <strong>Influence</strong> is the actual use of power to shape decisions, attitudes, or behavior. Managers need to understand all three because organizations do not operate only through formal authority. They also operate through relationships, expertise, trust, politics, networks, and informal influence.</p><p>This module brings together two major topics: leadership and power. The leadership section explains how leaders emerge, what effective leaders do, how leadership depends on context, and why contemporary theories emphasize relationships, ethics, and shared responsibility. The power section explains the bases of power, the psychology of obedience and conformity, dependency, influence tactics, organizational politics, and social networks. Together, these topics help explain how managers shape behavior, how employees respond to authority, and why ethical judgment is essential when people have influence over others.</p><div class="note"><strong>Instructor's note.</strong> Be able to distinguish leadership, power, and influence. Power is the capacity to influence. Influence is the use of that capacity. Leadership is influence directed toward a shared goal.</div>
+<div class="chart-wide">
+<figure>
+<svg aria-labelledby="m6FrameworkTitle m6FrameworkDesc" height="540" role="img" style="width:100%; height:auto; display:block;" viewbox="0 0 1200 540" xmlns="http://www.w3.org/2000/svg">
+<title id="m6FrameworkTitle">Organizational Behavior Framework for Power and Leadership</title>
+<desc id="m6FrameworkDesc">
+    Three-column Organizational Behavior framework for Module 6. The first column shows drivers and causes divided into person and situation factors. The second column shows leadership and power processes at the individual, group, and organizational levels. The third column shows consequences at the individual, group, and organizational levels.
+  </desc>
+<defs>
+<marker id="m6-arrowhead" markerheight="12" markerunits="userSpaceOnUse" markerwidth="12" orient="auto" refx="11" refy="6" viewbox="0 0 12 12">
+<path d="M0,0 L12,6 L0,12 Z" fill="#000000"></path>
+</marker>
+<style>
+      .m6-header { fill:#0f6c7b; }
+      .m6-box { fill:#fbfcfd; stroke:#333; stroke-width:1; }
+      .m6-title { fill:white; font-size:28px; font-family:Arial, sans-serif; font-weight:bold; text-anchor:middle; }
+      .m6-text { fill:black; font-size:18px; font-family:Arial, sans-serif; }
+      .m6-bold { font-weight:bold; }
+    </style>
+</defs>
+<!-- DRIVERS / CAUSES -->
+<rect class="m6-header" height="60" width="360" x="20" y="20"></rect>
+<text class="m6-title" x="200" y="58">Drivers / Causes</text>
+<rect class="m6-box" height="430" width="360" x="20" y="80"></rect>
+<text class="m6-text" x="40" y="110"><tspan class="m6-bold">• Person</tspan></text>
+<text class="m6-text" x="60" y="140">○ Traits</text>
+<text class="m6-text" x="60" y="165">○ Skills</text>
+<text class="m6-text" x="60" y="190">○ Ethical beliefs</text>
+<text class="m6-text" x="60" y="215">○ Experience</text>
+<text class="m6-text" x="60" y="240">○ Decision-making style</text>
+<text class="m6-text" x="40" y="280"><tspan class="m6-bold">• Situation</tspan></text>
+<text class="m6-text" x="60" y="310">○ Followers</text>
+<text class="m6-text" x="60" y="335">○ Organizational culture</text>
+<text class="m6-text" x="60" y="360">○ Task structure</text>
+<text class="m6-text" x="60" y="385">○ Work group dynamics</text>
+<text class="m6-text" x="60" y="410">○ Leader’s personality and</text>
+<text class="m6-text" x="78" y="435">style</text>
+<text class="m6-text" x="60" y="465">○ Trust</text>
+<!-- PROCESSES -->
+<rect class="m6-header" height="60" width="360" x="420" y="20"></rect>
+<text class="m6-title" x="600" y="58">Processes</text>
+<rect class="m6-box" height="430" width="360" x="420" y="80"></rect>
+<text class="m6-text" x="440" y="110"><tspan class="m6-bold">• Individual</tspan></text>
+<text class="m6-text" x="460" y="140">○ Leadership</text>
+<text class="m6-text" x="460" y="165">○ LMX</text>
+<text class="m6-text" x="460" y="190">○ Self-awareness</text>
+<text class="m6-text" x="460" y="215">○ Career development</text>
+<text class="m6-text" x="440" y="255"><tspan class="m6-bold">• Group</tspan></text>
+<text class="m6-text" x="460" y="285">○ Leadership</text>
+<text class="m6-text" x="460" y="310">○ LMX</text>
+<text class="m6-text" x="460" y="335">○ Conflict resolution</text>
+<text class="m6-text" x="460" y="360">○ Group norms</text>
+<text class="m6-text" x="440" y="400"><tspan class="m6-bold">• Organization</tspan></text>
+<text class="m6-text" x="460" y="430">○ Strategic planning</text>
+<text class="m6-text" x="460" y="455">○ Communication</text>
+<text class="m6-text" x="460" y="480">○ Talent development</text>
+<!-- CONSEQUENCES -->
+<rect class="m6-header" height="60" width="360" x="820" y="20"></rect>
+<text class="m6-title" x="1000" y="58">Consequences</text>
+<rect class="m6-box" height="430" width="360" x="820" y="80"></rect>
+<text class="m6-text" x="840" y="110"><tspan class="m6-bold">• Individual</tspan></text>
+<text class="m6-text" x="860" y="140">○ Task performance</text>
+<text class="m6-text" x="860" y="165">○ Workplace attitudes</text>
+<text class="m6-text" x="860" y="190">○ Turnover</text>
+<text class="m6-text" x="860" y="215">○ Career outcomes</text>
+<text class="m6-text" x="860" y="240">○ Creativity</text>
+<text class="m6-text" x="840" y="280"><tspan class="m6-bold">• Group</tspan></text>
+<text class="m6-text" x="860" y="310">○ Group performance</text>
+<text class="m6-text" x="860" y="335">○ Group satisfaction</text>
+<text class="m6-text" x="860" y="360">○ Group cohesion/conflict</text>
+<text class="m6-text" x="840" y="400"><tspan class="m6-bold">• Organization</tspan></text>
+<text class="m6-text" x="860" y="430">○ Agility</text>
+<text class="m6-text" x="860" y="455">○ Financial performance</text>
+<text class="m6-text" x="860" y="480">○ Customer satisfaction</text>
+<text class="m6-text" x="860" y="505">○ Innovation and reputation</text>
+<!-- ARROWS -->
+<line marker-end="url(#m6-arrowhead)" stroke="#000000" stroke-width="4.5" x1="380" x2="420" y1="250" y2="250"></line>
+<line marker-end="url(#m6-arrowhead)" stroke="#000000" stroke-width="4.5" x1="780" x2="820" y1="250" y2="250"></line>
+<path d="M1000,518 C850,545 350,545 200,518" fill="none" marker-end="url(#m6-arrowhead)" stroke="#000000" stroke-width="4.5"></path>
+</svg>
+<figcaption>Figure 6-1. Diagnostic Framework for Power and Leadership</figcaption>
+</figure>
+</div>
+<p>This framework shows how leadership and power can be diagnosed at multiple levels. At the individual level, leaders bring <strong>traits</strong>, <strong>skills</strong>, <strong>ethical beliefs</strong>, <strong>experience</strong>, and <strong>decision-making style</strong> to their roles. At the situational level, leadership effectiveness also depends on <strong>followers</strong>, <strong>organizational culture</strong>, <strong>task structure</strong>, <strong>work group dynamics</strong>, the <strong>leader’s personality and style</strong>, and <strong>trust</strong>. These drivers shape leadership processes and ultimately influence individual, group, and organizational outcomes.</p>
+</section>
+<section class="subsection level-2" id="leadership-effective"><h3>Leadership and Effective Leaders</h3><p>Leadership can be <strong>formal</strong>, when a person holds an official role of authority, or <strong>informal</strong>, when a person influences others without a formal leadership title. A supervisor, department chair, project manager, or CEO may be a formal leader. A respected employee whom others seek out for advice may be an informal leader. In both cases, leadership depends on influence rather than force. When people comply only because they fear punishment, the person using force may have power, but that is not the same as leadership.<span aria-label="Source 1" class="cite-ref" tabindex="0"><sup>1</sup><span class="cite-tooltip" role="tooltip">Hogan, R., Curphy, G. J., &amp; Hogan, J. (1994). What we know about leadership: Effectiveness and personality. American Psychologist, 49, 493–504.</span></span></p><p>Leadership matters because leaders shape direction, motivation, ethics, coordination, and the quality of relationships at work. At the same time, it is important to avoid the <strong>romance of leadership</strong>, which is the tendency to overattribute organizational success or failure to leaders alone. Leaders matter, but they operate within industries, strategies, structures, cultures, resources, and external constraints. A useful way to study leadership is to ask three related questions: who is likely to emerge as a leader, what behaviors effective leaders use, and under what conditions different leadership styles work best.</p><p>Leadership research has moved through several major approaches. Trait approaches ask whether leaders have relatively stable characteristics that distinguish them from others. Behavioral approaches ask what leaders actually do. Contingency approaches argue that no style works equally well in every situation. Contemporary approaches, such as transformational leadership, leader-member exchange, servant leadership, authentic leadership, and distributed leadership, focus more directly on relationships, values, ethics, and shared responsibility.</p></section>
+<section class="subsection level-2" id="trait-approaches"><h3>Trait Approaches to Leadership</h3><p>Trait approaches examine relatively stable characteristics associated with leadership emergence and leadership effectiveness. Early trait research tried to identify a universal set of leader traits, but this proved too simplistic. More recent research, especially with stronger personality frameworks such as the Big Five, shows that some traits are related to leadership, although their usefulness depends on context. Trait research is most helpful when it is used to understand tendencies and fit, <strong>not to assume that leaders are simply “born” and cannot develop.</strong><span aria-label="Source 2" class="cite-ref" tabindex="0"><sup>2</sup><span class="cite-tooltip" role="tooltip">Judge, T. A., Bono, J. E., Ilies, R., &amp; Gerhardt, M. W. (2002). Personality and leadership: A qualitative and quantitative review. Journal of Applied Psychology, 87, 765–780.</span></span></p><p><strong>General mental ability, or cognitive ability</strong>, is related to leadership emergence because leaders must process information, solve problems, and make decisions. However, intelligence is only a modest predictor, and perceived intelligence can matter more than measured IQ in whether someone is seen as leader-like.<span aria-label="Source 3" class="cite-ref" tabindex="0"><sup>3</sup><span class="cite-tooltip" role="tooltip">Judge, T. A., Colbert, A. E., &amp; Ilies, R. (2004). Intelligence and leadership: A quantitative review and test of theoretical propositions. <em>Journal of Applied Psychology, 89</em>, 542–552.</span></span> <strong>Emotional intelligence</strong> is also relevant because leaders must understand their own emotions, read others’ emotions, manage conflict, and build relationships. IQ may help people enter leadership roles, but emotional intelligence often matters more once they are leading people.<span aria-label="Source 4" class="cite-ref" tabindex="0"><sup>4</sup><span class="cite-tooltip" role="tooltip">Melita Prati, L., Douglas, C., Ferris, G. R., Ammeter, A. P., &amp; Buckley, M. R. (2003). Emotional intelligence, leadership effectiveness, and team outcomes. <em>The International Journal of Organizational Analysis, 11</em>(1), 21-40.</span></span></p><p>Several <strong>Big Five traits</strong> are associated with leadership.<span aria-label="Source 5" class="cite-ref" tabindex="0"><sup>5</sup><span class="cite-tooltip" role="tooltip">Bartone, P. T., Eid, J., Helge Johnsen, B., Christian Laberg, J., &amp; Snook, S. A. (2009). Big five personality factors, hardiness, and social judgment as predictors of leader performance. <em>Leadership &amp; Organization Development Journal, 30</em>(6), 498-521.</span></span> <strong>Extraversion</strong> is strongly related to leadership emergence because extraverted people tend to be sociable, assertive, and comfortable speaking up. However, extraversion should not be confused with effectiveness. Introverted leaders can be highly effective, especially when they listen carefully, think deeply, and lead teams with proactive employees. Examples often discussed in leadership writing include leaders such as Bill Gates or Jeff Bezos, who do not fit the stereotype of the highly outgoing leader. Research on CEOs also suggests that charisma and polished presentation may help candidates look attractive to boards, but they do not guarantee performance.</p><p><strong>Conscientiousness</strong> is also related to leadership because conscientious leaders tend to be organized, dependable, persistent, and goal-oriented. <strong>Openness to experience</strong> is relevant because leaders often need to learn, innovate, and respond to change. <strong>Agreeableness</strong> presents a more complicated pattern. Agreeable leaders may build trust and cooperation, but highly agreeable people may avoid conflict or difficult decisions. The key lesson is that traits are not simply good or bad. Their value depends on the role, the organization, and the leadership challenge.</p><p><strong>Self-esteem</strong> also influences leader emergence because people who appear confident are more likely to be seen as leaders. However, confidence without competence or humility can be dangerous. Integrity is especially important because leadership depends heavily on trust. Leaders who violate trust damage both their own credibility and the organization’s reputation. For example, Whole Foods Market CEO John Mackey was criticized for using a pseudonym online to make negative comments about a rival. The issue was not only poor judgment; it raised questions about honesty and trustworthiness.</p><p>Trait approaches are useful for selection, development, and role fit, but they have limits. Traits may matter more in small entrepreneurial firms, where leaders have wide discretion, than in large bureaucratic organizations, where rules and structures constrain behavior. Some traits are also situation-specific. Bravery may be essential for military leadership, while creativity may be more important for leading product innovation. Managers should therefore avoid asking, “What traits make someone a leader?” and instead ask, “Which traits matter for this role, in this context, at this time?”</p>
+<p>From a diagnostic perspective, leader effectiveness is not shaped by traits alone. Leaders also develop <strong>skills</strong> through practice, feedback, coaching, and challenging assignments. Prior <strong>experience</strong> can help leaders recognize patterns and respond to complex problems, but experience can also create blind spots if leaders assume that old solutions will always fit new situations. For that reason, managers should consider both stable tendencies and developmental opportunities when evaluating leadership potential.</p>
+<section class="subsection level-3" id="dark-triad"><h4>The Dark Triad and Toxic Leadership</h4><p>The <strong>dark triad</strong> refers to narcissism, Machiavellianism, and psychopathy. These traits help explain why some people rise into leadership roles even though they later harm employees or organizations. Dark traits may support leadership emergence because they can be associated with confidence, boldness, impression management, and political skill. However, they are generally harmful for leadership effectiveness.<span aria-label="Source 6" class="cite-ref" tabindex="0"><sup>6</sup><span class="cite-tooltip" role="tooltip">Pfeffer, J. (2021). The dark triad may be not so dark: exploring why ‘toxic’leaders are so common—with some implications for scholarship and education. <em>Psychoanalytic Inquiry, 41</em>(7), 540-551.</span></span></p><p><strong>Narcissistic</strong> individuals often appear confident, charismatic, and visionary, especially in interviews or high-visibility situations. Their self-promotion can make them seem leader-like. Once in power, however, narcissistic leaders may seek admiration, ignore feedback, lack empathy, and prioritize personal glory over organizational well-being. A useful distinction is whether a leader is driven by a genuine mission, such as building an ethical and useful technology, or by personal glorification and control.</p><p><strong>Machiavellianism</strong> involves manipulation, strategic self-interest, and a willingness to put results ahead of principles. High-Mach individuals may use ingratiation, selective disclosure, and political tactics to gain support. Their leadership can become ethically risky because they may treat people as tools for achieving personal goals. <strong>Psychopathy</strong> involves low remorse, low empathy, and lack of concern for others. Psychopathic traits are especially concerning in leadership because leaders with little guilt or empathy can make decisions that harm employees, customers, or society while remaining personally unaffected.</p></section></section>
+<section class="subsection level-2" id="behavioral-approaches"><h3>Behavioral Approaches to Leadership</h3><p>Behavioral approaches focus on what leaders do rather than who leaders are. The central assumption is that leadership behaviors can be observed, learned, and improved. To answer these questions, researchers at Ohio State University and the University of Michigan used many different techniques, such as observing leaders in laboratory settings as well as surveying them. This research stream led to the discovery of two broad categories of behaviors: task-oriented behaviors or initiating structure and people-oriented behaviors or consideration.<span aria-label="Source 7" class="cite-ref" tabindex="0"><sup>7</sup><span class="cite-tooltip" role="tooltip">Fleishman, E. A., &amp; Harris, E. F. (1962). Patterns of leadership behavior related to employee grievances and turnover. Personnel Psychology, 15(1), 43–56.</span></span> Another question behavioral researchers focused on involved how leaders actually make decisions and the influence of decision-making styles on leader effectiveness and employee reactions; the Lewin, Lippitt, and White Leadership Studies aimed to address that question.</p>
+<section class="subsection level-3" id="Ohio-State"><h4>Ohio State Leadership Studies</h4>
+<p>In the Ohio State studies, task-oriented behavior was called <strong>initiating structure</strong>. Leaders high in initiating structure clarify roles, define responsibilities, establish deadlines, coordinate communication, and focus attention on goal accomplishment. People-oriented behavior was called <strong>consideration</strong>.<span aria-label="Source 8" class="cite-ref" tabindex="0"><sup>8</sup><span class="cite-tooltip" role="tooltip">Stogdill, R. M. (1948). Personal factors associated with leadership: A survey of the literature. <em>Journal of Psychology, 25</em>, 35–71. https://doi.org/10.1080/00223980.1948.9917362</span></span> Leaders high in consideration show concern, respect employees, support well-being, and express appreciation. A manager who sets clear project deadlines while also checking workload and stress levels is using both initiating structure and consideration.</p>
+</section>
+<section class="subsection level-3" id="University-Michigan"><h4>University of Michigan Leadership Studies</h4>
+<p>The University of Michigan studies used similar categories. Task-oriented leadership emphasizes productivity, efficiency, technical work, rules, and goal achievement. Relationship-oriented leadership emphasizes employee needs, interpersonal relationships, respect, and motivation.<span aria-label="Source 9" class="cite-ref" tabindex="0"><sup>9</sup><span class="cite-tooltip" role="tooltip">Likert, R. (1961). <em>New Patterns of Management.</em> New York: McGraw-Hill</span></span> A manufacturing supervisor who tracks production targets is showing task orientation. If that same supervisor also addresses unsafe working conditions and recognizes employee contributions, the leader is adding relationship-oriented behavior.</p><p>Research suggests that both task-oriented and people-oriented behaviors can be beneficial, but they tend to influence different outcomes. People-oriented behavior is strongly related to employee satisfaction and positive reactions to the leader. Task-oriented behavior can improve productivity, especially when roles are unclear or coordination is needed. However, very high levels of task pressure can contribute to stress and burnout. The managerial lesson is not that one behavior is always better, but that leaders must balance structure with support.</p></section>
+<section class="subsection level-3" id="decision-styles"><h4>Lewin, Lippitt and White's Leadership Decision Styles</h4><p>Lewin, Lippitt, and White studied how different decision-making styles affect groups.<span aria-label="Source 10" class="cite-ref" tabindex="0"><sup>10</sup><span class="cite-tooltip" role="tooltip">Lewin, K., Lippitt, R., &amp; White, R. K. (1939). Patterns of aggressive behavior in experimentally created “social climates”. <em>The Journal of Social Psychology, 10</em>(2), 269-299.</span></span> <strong>Autocratic leadership</strong> involves unilateral decision-making. It can be useful in emergencies, when decisions must be made quickly and consultation is impractical. For example, a leader responding to a safety crisis may need to issue direct instructions immediately. However, autocratic leadership can reduce satisfaction and creativity when employees expect voice and participation.</p><p><strong>Democratic leadership</strong> involves employees in discussion and decision-making. This style can increase satisfaction, creativity, and commitment because employees feel heard. It is especially useful in project teams where members have expertise and decisions affect their work. <strong>Laissez-faire leadership</strong> involves a hands-off approach. Although autonomy can be valuable for highly skilled and self-directed employees, laissez-faire leadership often creates ambiguity, conflict, and lower satisfaction when employees need guidance. The important distinction is that empowering employees is not the same as abandoning them.</p><div class="note"><strong>Managerial implication.</strong> Behavioral approaches show that leader behavior matters, but they do not fully explain why the same behavior works in one situation and fails in another. That limitation led to contingency approaches.</div></section></section>
+<section class="subsection level-2" id="contingency-approaches"><h3>Contingency Approaches to Leadership</h3><p>Contingency approaches begin with the assumption that leadership effectiveness depends on the fit between leader behavior and the situation. The better question is not “What is the best leadership style?” but “Under what conditions is this style most effective?”</p>
+<p>Contingency theories are especially useful because they make the situation visible. Leadership effectiveness depends on the relationship between the leader, the <strong>followers</strong>, the <strong>task structure</strong>, and the surrounding <strong>work group dynamics</strong>. A style that works well with experienced, cohesive employees may fail when employees are new, the task is ambiguous, or the group is experiencing conflict.</p>
+<section class="subsection level-3" id="fiedler"><h4>Fiedler’s Contingency Theory</h4><p>Fiedler’s contingency theory argues that leaders differ in relatively stable orientation. The theory uses the <strong>Least Preferred Coworker</strong>, or LPC, scale. Leaders with a low LPC score are more task-oriented because they evaluate difficult coworkers negatively. Leaders with a high LPC score are more relationship-oriented because they can still describe a difficult coworker in relatively positive terms.</p><p>Fiedler argued that low LPC leaders are most effective in very favorable or very unfavorable situations, while high LPC leaders are more effective in moderately favorable situations. Situational favorableness depends on three factors: leader-member relations, position power, and task structure. A situation is favorable when the leader has good relationships with subordinates, strong formal authority, and a structured task. A situation is unfavorable when relationships are poor, position power is weak, and the task is ambiguous. Although research support is mixed, Fiedler’s model is important because it made context central to leadership theory.<span aria-label="Source 11" class="cite-ref" tabindex="0"><sup>11</sup><span class="cite-tooltip" role="tooltip">Fiedler, F. E. (1967). A theory of leadership effectiveness. McGraw-Hill.</span></span></p></section><section class="subsection level-3" id="situational-leadership"><h4>Situational Leadership</h4><p>Situational Leadership Theory argues that leaders should adjust directive and supportive behavior based on follower development level. Development level reflects competence and commitment.<span aria-label="Source 12" class="cite-ref" tabindex="0"><sup>12</sup><span class="cite-tooltip" role="tooltip">House, R. J. (1971). A path-goal theory of leader effectiveness. <em>Administrative Science Quarterly, 16</em>(3), 321–338.</span></span> <strong>Directing</strong>, or S1, is high directive and low supportive. It fits employees who are enthusiastic but inexperienced. <strong>Coaching</strong>, or S2, is high directive and high supportive. It fits employees who have some ability but lack confidence or motivation. <strong>Supporting</strong>, or S3, is low directive and high supportive. It fits employees who are capable but inconsistent in commitment. <strong>Delegating</strong>, or S4, is low directive and low supportive. It fits employees who are highly competent and committed.</p><p>The model is popular because it is intuitive and easy to apply, but research support is mixed. Used carefully, it helps managers diagnose whether an employee needs direction, encouragement, autonomy, or some combination of these. Used mechanically, it can oversimplify complex employee needs.</p></section><section class="subsection level-3" id="path-goal"><h4>Path-Goal Theory</h4><p>Path-goal theory connects leadership to expectancy theory. The leader’s job is to help employees see that effort can lead to performance, performance can lead to rewards, and rewards can be valuable. Leaders do this by clarifying expectations, removing obstacles, providing support, and adapting their style to employee and task characteristics.<span aria-label="Source 13" class="cite-ref" tabindex="0"><sup>13</sup><span class="cite-tooltip" role="tooltip">House, R. J. (1971). A path goal theory of leader effectiveness. Administrative Science Quarterly, 16(3), 321–338.</span></span></p><p>The theory identifies four leader behaviors. <strong>Directive leaders</strong> clarify roles, procedures, and expectations. This style is useful when role ambiguity is high, employees are inexperienced, or tasks are unclear. <strong>Supportive leaders</strong> show concern and provide emotional support. This style is useful when tasks are stressful, boring, or unpleasant. <strong>Participative leaders</strong> involve employees in decisions. This style works well when employees have high ability, an internal locus of control, or decisions that directly affect them. <strong>Achievement-oriented leaders</strong> set challenging goals and express confidence in employees’ ability to meet them. This style fits capable employees with high achievement motivation.</p></section><section class="subsection level-3" id="vroom-yetton"><h4>Vroom and Yetton’s Normative Decision Model</h4><p>Vroom and Yetton’s model helps leaders decide how much employee involvement is appropriate in a decision. The model asks leaders to consider factors such as decision significance, need for commitment, leader expertise, likelihood of commitment if the leader decides alone, goal alignment, group expertise, and team competence. The recommended style may be deciding alone, consulting individuals, consulting the group, facilitating a group decision, or delegating the decision.<span aria-label="Source 14" class="cite-ref" tabindex="0"><sup>14</sup><span class="cite-tooltip" role="tooltip">Vroom, V. H., &amp; Yetton, P. W. (1973). <em>Leadership and decision-making.</em> University of Pittsburgh Press.</span></span></p><p>For example, a manager trying to reduce employee stress might need employee commitment for any solution to work. If the manager lacks information about employee needs and employees are unlikely to accept a unilateral decision, consultation is more appropriate than deciding alone. The value of the model is that it connects decision style to decision quality and implementation commitment.</p></section></section>
+<section class="subsection level-2" id="contemporary-leadership"><h3>Contemporary Approaches to Leadership</h3><p>Contemporary approaches focus more explicitly on relationships, meaning, values, ethical behavior, and the distribution of leadership across people and systems. These approaches do not replace trait, behavioral, or contingency theories. Instead, they add important insight into why employees trust leaders, commit to goals, and go beyond minimum expectations.</p><section class="subsection level-3" id="transformational-transactional"><h4>Transformational and Transactional Leadership</h4><p><strong>Transactional leadership</strong> focuses on exchange between leaders and followers.<span aria-label="Source 15" class="cite-ref" tabindex="0"><sup>15</sup><span class="cite-tooltip" role="tooltip">Bass, B. M. (1985). <em>Leadership and performance beyond expectations.</em> Free Press; Bycio, P., Hackett, R. D., &amp; Allen, J. S. (1995). Further assessment of Bass’s (1985) conceptualization of transactional and transformational leadership. <em>Journal of Applied Psychology, 80,</em> 468–478; Judge, T. A., &amp; Piccolo, R. F. (2004). Transformational and transactional leadership: A meta-analytic test of their relative validity. <em>Journal of Applied Psychology, 89,</em> 755–768.</span></span> The leader clarifies expectations, monitors performance, and provides consequences based on whether employees meet those expectations. <strong>Contingent reward</strong> occurs when employees receive valued outcomes, such as recognition, pay, or opportunities, when they meet performance expectations. <strong>Active management by exception</strong> occurs when the leader monitors performance and intervenes to prevent or correct problems. <strong>Passive management by exception</strong> occurs when the leader waits until problems become serious before acting. Transactional leadership can be effective when tasks are clear, standards are measurable, and employees need structure. However, passive management by exception is generally weaker because it resembles neglect rather than leadership.</p><p><strong>Transformational leadership</strong> goes beyond exchange by connecting employees’ work to a larger vision and aligning employee goals with organizational goals. Transformational leaders use four major behaviors. <strong>Idealized influence</strong> creates admiration, confidence, and commitment because followers see the leader as credible and worthy of trust. <strong>Inspirational motivation</strong> communicates an appealing vision. <strong>Intellectual stimulation</strong> challenges employees to question assumptions and think creatively. <strong>Individualized consideration</strong> shows concern for followers’ development and well-being.<span aria-label="Source 16" class="cite-ref" tabindex="0"><sup>16</sup><span class="cite-tooltip" role="tooltip">Bass, B. M. (1985). Leadership and performance beyond expectations. Free Press.; Burns, J. M. (1978). Leadership. Harper &amp; Row.</span></span></p><p>Transformational leadership is associated with leader effectiveness, employee satisfaction, intrinsic motivation, creativity, team performance, and commitment to change. Examples often used to illustrate transformational leadership include Steve Jobs at Apple, Lee Iacocca at Chrysler, and Jack Welch at General Electric. These examples are useful, but they should not lead students to assume that charisma alone is leadership.</p><div class="note"><strong>Charisma and ethical caution.</strong> Charisma can help leaders communicate a compelling vision, but it is not the same as effectiveness or ethics. Some charismatic leaders inspire positive change, while others create harm. Jeff Skilling at Enron is an example of how perceived brilliance and charisma can coexist with unethical leadership. A leader’s charisma may also be inferred from organizational success rather than causing that success. Students should distinguish between charisma, competence, ethics, and actual performance.</div></section><section class="subsection level-3" id="lmx"><h4>Leader-Member Exchange</h4><p><strong>Leader-member exchange</strong>, or LMX, focuses on the quality of the relationship between a leader and each follower. In high-quality LMX relationships, leaders and followers develop trust, respect, mutual obligation, and willingness to go beyond formal job requirements. In low-quality LMX relationships, the exchange is more transactional: the employee does the job, and the leader provides formal rewards or corrections.<span aria-label="Source 17" class="cite-ref" tabindex="0"><sup>17</sup><span class="cite-tooltip" role="tooltip">Graen, G. B., &amp; Uhl-Bien, M. (1995). Relationship-based approach to leadership: Development of leader-member exchange theory over 25 years. Leadership Quarterly, 6(2), 219–247.</span></span></p><p>High-quality LMX is associated with higher job satisfaction, organizational commitment, role clarity, performance, citizenship behavior, access to resources, and lower turnover. However, LMX also raises fairness concerns because leaders may develop closer relationships with some employees than others. If high LMX becomes favoritism, out-group members may receive fewer opportunities, less information, and less support. Managers should therefore build strong relationships broadly, use transparent criteria for opportunities, and avoid confusing personal liking with performance potential.</p></section><section class="subsection level-3" id="servant-authentic"><h4>Servant and Authentic Leadership</h4><p><strong>Servant leadership</strong> emphasizes serving followers first. Servant leaders focus on employee growth, empowerment, ethical behavior, humility, and concern for stakeholders beyond the leader’s own self-interest. The logic is not that leaders become passive or weak. Instead, servant leaders use authority to help followers develop and contribute. This approach is especially relevant in organizations that value trust, long-term development, customer service, and social responsibility. A servant leader might remove barriers for employees, mentor them, share credit, and consider how decisions affect customers, communities, and other stakeholders. The risk is that servant leadership can be misunderstood as simply being nice; in practice, it still requires accountability, competence, and difficult conversations.<span aria-label="Source 18" class="cite-ref" tabindex="0"><sup>18</sup><span class="cite-tooltip" role="tooltip">Greenleaf, R. K. (1977). <em>Servant Leadership: A journey into the nature of legitimate power and greatness.</em> Paulist Press; Liden, R. C., Wayne, S., J., Zhao, H., &amp; Henderson, D. (2008). Servant leadership: Development of a multidimensional measure and multi-level assessment. <em>Leadership Quarterly, 19,</em> 161–177.</span></span></p><p><strong>Authentic leadership</strong> emphasizes self-awareness, personal integrity, and consistency between values and behavior. Authentic leaders understand their experiences, values, strengths, and limitations. They do not simply imitate a leadership stereotype or become a “social chameleon” to gain approval. Instead, they act in ways that are consistent with their values while remaining open to feedback and learning. Howard Schultz of Starbucks is often discussed as an example because his concern for employee benefits was shaped partly by his childhood experience watching his father struggle after work-related health problems.<span aria-label="Source 19" class="cite-ref" tabindex="0"><sup>19</sup><span class="cite-tooltip" role="tooltip">Avolio, B. J., &amp; Gardner, W. L. (2005). Authentic leadership development: Getting to the root of positive forms of leadership. <em>Leadership Quarterly, 16,</em> 315–338; Gardner, W. L., Avolio, B. J., Luthans, F., May, D. R., &amp; Walumbwa, F. (2005). “Can you see the real me?” A self-based model of authentic leader and follower development. <em>Leadership Quarterly, 16,</em> 343–372</span></span></p>
+<p>Servant and authentic leadership also connect leadership to <strong>talent development</strong> and <strong>career development</strong>. Leaders who mentor employees, provide honest feedback, model <strong>self-awareness</strong>, and create opportunities for growth help build future leadership capacity. This matters because organizations do not rely only on the current leader; they also need systems that develop people who can exercise responsible influence over time.</p>
+</section><section class="subsection level-3" id="distributed-leadership"><h4>Distributed Leadership</h4><p><strong>Distributed leadership</strong> treats leadership as a collective process rather than the responsibility of one formal leader. Leadership responsibilities are shared across people who have the expertise, information, relationships, or proximity needed to address a problem. This approach is increasingly relevant in rapidly evolving workplaces where work is cross-functional, knowledge-intensive, technology-enabled, and too complex for one formal leader to understand or control alone.<span aria-label="Source 20" class="cite-ref" tabindex="0"><sup>20</sup><span class="cite-tooltip" role="tooltip">Harris A (2013) <em>Distributed Leadership Matters; Potential, Practicalities and Possibilities.</em> Corwin Press; Somers, M. (2022). Why distributed leadership is the future of management. <em>MIT Management Sloan School.</em> https://mitsloan.mit.edu/ideas-made-to-matter/why-distributed-leadership-future-management; Ancona, D., &amp; Bresman, H. (2023). Turn Your Teams Inside Out. <em>MIT Sloan Management Review, 64</em>(2), 24-29.</span></span></p><p>Distributed leadership can involve flatter structures, empowered teams, lateral and vertical collaboration, flexible role assignment, and space for innovation. Google and Spotify are often discussed as organizations that have used distributed or decentralized leadership practices to support innovation and adaptation.<span aria-label="Source 21" class="cite-ref" tabindex="0"><sup>21</sup><span class="cite-tooltip" role="tooltip">Manimala, M. J., &amp; Wasdani, K. P. (2013). Distributed leadership at Google: Lessons from the billion-dollar brand; Šmite, D., Moe, N. B., Floryan, M., Gonzalez-Huerta, J., Dorner, M., &amp; Sablis, A. (2023). Decentralized decision-making and scaled autonomy at Spotify. <em>Journal of Systems and Software, 200,</em> 111649.</span></span> In these settings, leadership may shift depending on who has the most relevant expertise for the problem at hand. For example, a software engineer may lead a technical troubleshooting discussion, a product manager may lead customer-priority decisions, and a team lead may coordinate resources and timelines.</p><p>However, distributed leadership is not a free-for-all. It requires clear accountability, coordination, trust, and systems that clarify who has authority over which decisions. Without structure, distributed leadership can become confusion. The managerial challenge is to share leadership while still maintaining alignment, decision clarity, and responsibility for outcomes.</p>
+<div class="chart">
+<svg aria-labelledby="m6SvgTitle2 m6SvgDesc2" role="img" viewbox="0 0 1875 760" xmlns="http://www.w3.org/2000/svg">
+<title id="m6SvgTitle2">Environmental variables, distributed leadership, and outcomes</title>
+<desc id="m6SvgDesc2">A three-part diagram showing environmental variables leading to distributed leadership, which then leads to outcomes of distributed leadership. Environmental variables include environmental complexity, cultural shifts, and technological advancements. Distributed leadership includes decentralized leadership, collective action, and collaborative decision-making. Outcomes include increased agility, enhanced innovation, and improved employee engagement.</desc>
+<defs>
+<marker id="arrowhead" markerheight="10" markerwidth="14" orient="auto" refx="13" refy="5">
+<path d="M0,0 L14,5 L0,10 Z" fill="#000000"></path>
+</marker>
+<style>
+      .outer { fill:#efefef; stroke:#000000; stroke-width:3; }
+      .inner { fill:#ffffff; stroke:#000000; stroke-width:3; }
+      .arrow { stroke:#000000; stroke-width:5; marker-end:url(#arrowhead); }
+      .title { font-family: Arial, Helvetica, sans-serif; font-size:48px; font-weight:700; fill:#000000; text-anchor:middle; }
+      .main { font-family: Arial, Helvetica, sans-serif; font-size:48px; font-weight:700; fill:#000000; text-anchor:middle; }
+      .text { font-family: Arial, Helvetica, sans-serif; font-size:32px; fill:#000000; text-anchor:middle; }
+    </style>
+</defs>
+<!-- Left panel -->
+<rect class="outer" height="686" rx="55" width="594" x="24" y="73"></rect>
+<text class="title" x="321" y="144">Environmental</text>
+<text class="title" x="321" y="206">Variables</text>
+<rect class="inner" height="130" width="537" x="49" y="271"></rect>
+<text class="main" x="318" y="323">Environmental</text>
+<text class="main" x="318" y="382">Complexity</text>
+<rect class="inner" height="130" width="537" x="49" y="424"></rect>
+<text class="main" x="318" y="510">Cultural Shifts</text>
+<rect class="inner" height="130" width="537" x="49" y="576"></rect>
+<text class="main" x="318" y="628">Technological</text>
+<text class="main" x="318" y="687">Advancements</text>
+<!-- Middle panel -->
+<rect class="outer" height="393" rx="45" stroke="#0b2d3a" width="493" x="692" y="241"></rect>
+<text class="title" x="939" y="330">Distributed</text>
+<text class="title" x="939" y="404">Leadership</text>
+<text class="text" x="939" y="473">Decentralized leadership</text>
+<text class="text" x="939" y="532">Collective action</text>
+<text class="text" x="939" y="591">Collaborative decision-making</text>
+<!-- Right panel -->
+<rect class="outer" height="686" rx="55" width="589" x="1263" y="74"></rect>
+<text class="title" x="1558" y="144">Outcomes of</text>
+<text class="title" x="1558" y="206">Distributed Leadership</text>
+<rect class="inner" height="130" width="536" x="1289" y="272"></rect>
+<text class="main" x="1557" y="354">Increased Agility</text>
+<rect class="inner" height="130" width="536" x="1289" y="425"></rect>
+<text class="main" x="1557" y="507">Enhanced Innovation</text>
+<rect class="inner" height="130" width="536" x="1289" y="577"></rect>
+<text class="main" x="1557" y="629">Improved Employee</text>
+<text class="main" x="1557" y="688">Engagement</text>
+<!-- Arrows -->
+<line class="arrow" x1="622" x2="690" y1="425" y2="425"></line>
+<line class="arrow" x1="1187" x2="1260" y1="425" y2="425"></line>
+</svg>
+<figcaption>5-6. Drivers and consequences of distributed leadership
+</figcaption>
+</div>
+<p>Distributed leadership also affects organizational processes such as <strong>strategic planning</strong> and <strong>communication</strong>. When leadership is shared across roles and expertise, organizations can respond with greater <strong>agility</strong>, but only if decision rights, accountability, and <strong>group norms</strong> are clear. Without those conditions, distributed leadership can increase confusion or conflict rather than improving coordination.</p>
+</section></section>
+<section class="subsection level-2" id="power-organizations"><h3>Power in Organizations</h3><p><strong>Leadership</strong> explains <strong>how</strong> influence is directed, but <strong>power</strong> explains <strong>where influence comes from</strong>. Understanding power clarifies why some leaders are effective, why others fail, and why ethical risks emerge when influence is unchecked.</p><p>Power is the ability to influence the behavior of others to achieve desired outcomes. In organizations, power is usually visible. Employees often know who has influence over budgets, hiring, promotions, information, and access to decision makers. Salancik and Pfeffer described power as the ability to get things done the way one wants them to be done.<span aria-label="Source 22" class="cite-ref" tabindex="0"><sup>22</sup><span class="cite-tooltip" role="tooltip">Salancik, G., &amp; Pfeffer, J. (1989). Who gets power. In M. Tushman, C. O’Reilly, &amp; D. Nadler (Eds.), Management of Organizations. Harper &amp; Row.</span></span></p><p>Power has both positive and negative consequences. Constructive power helps leaders align people, secure resources, remove obstacles, and accomplish meaningful goals. Philanthropic leaders such as Paul Farmer and Greg Mortenson used influence to mobilize support for health care and education initiatives.<span aria-label="Source 23" class="cite-ref" tabindex="0"><sup>23</sup><span class="cite-tooltip" role="tooltip">Bauman, E. (2019). The naive republic of aid: Grassroots exceptionalism in humanitarian memoir. <em>Global Humanitarianism and Media Culture</em>, 83-102.</span></span> Destructive power, however, can produce fear, silence, conformity, favoritism, corruption, and unethical decision-making. Power becomes especially risky when it is combined with weak accountability and a culture that discourages dissent.</p><div class="note"><strong>Important distinction.</strong> Power is not automatically unethical. The ethical question is how power is obtained, how it is used, who benefits, and whether people affected by that power have voice, dignity, and protection from abuse.</div></section>
+<section class="subsection level-2" id="bases-power"><h3>Bases of Power</h3><p>Having power and using power are different. A manager may have the power to reward or punish employees even if the manager does not explicitly reward or punish them in a given situation. The existence of that power can be enough to affect behavior. French and Raven’s classic framework identifies several bases of power: legitimate, reward, coercive, expert, and referent power.<span aria-label="Source 24" class="cite-ref" tabindex="0"><sup>24</sup><span class="cite-tooltip" role="tooltip">French, J. P. R., Jr., &amp; Raven, B. (1960). The bases of social power. In D. Cartwright &amp; A. Zander (Eds.), Group dynamics (pp. 607–623). Harper and Row.</span></span></p><div class="table-wrap"><table><thead><tr><th>Base of Power</th><th>Definition</th><th>Example</th><th>Managerial Risk</th></tr></thead><tbody><tr><td><strong>Legitimate Power</strong></td><td>Power that comes from a formal role or position.</td><td>A boss assigns projects; a teacher assigns grades; a CEO sets deadlines.</td><td>Can become authoritarian if position power is treated as unquestionable.</td></tr><tr><td><strong>Reward Power</strong></td><td>The ability to provide valued outcomes.</td><td>A manager gives raises, promotions, praise, flexibility, or desirable assignments.</td><td>Can create favoritism or manipulation if rewards are not transparent.</td></tr><tr><td><strong>Coercive Power</strong></td><td>The ability to punish or remove valued outcomes.</td><td>A manager threatens discipline or termination; Steve Jobs was known for yelling at employees and threatening dismissal.</td><td>Often produces fear and compliance rather than trust or commitment.</td></tr><tr><td><strong>Expert Power</strong></td><td>Power based on valued knowledge or skill.</td><td>A technical employee becomes influential because others depend on their specialized knowledge.</td><td>Can become gatekeeping if expertise is hoarded rather than shared.</td></tr><tr><td><strong>Referent Power</strong></td><td>Power based on respect, admiration, identification, or charisma.</td><td>Employees follow a leader because they admire and trust that person.</td><td>Can become dangerous if admiration replaces critical judgment.</td></tr></tbody></table></div><p>Steve Jobs provides an example of multiple power bases operating at once. He had legitimate power as Apple’s CEO, expert power because of his product vision, referent power because many employees admired his charisma, and coercive power because he was known to use intimidation and threats. The example is useful because it shows that leaders often draw from multiple bases of power simultaneously.</p></section>
+<section class="subsection level-2" id="obedience-conformity"><h3>Obedience, Conformity, and Ethical Risk</h3><p>Power often works through psychological mechanisms. <strong>Conformity</strong> refers to behaving consistently with social norms or group expectations. Conformity may involve small everyday behaviors, such as facing forward in an elevator, but it can also contribute to serious ethical failures when people follow group norms instead of personal judgment. <strong>Obedience</strong> refers to following authority, even when the authority’s request conflicts with personal values.</p><p>Milgram’s obedience studies illustrate how authority can shape behavior. Participants believed they were administering increasingly severe electric shocks to a learner when instructed by an authority figure. Many continued despite discomfort because the experimenter told them to proceed. The study illustrates legitimate power and the pressure people feel to obey perceived authority, even when ethical boundaries are crossed.<span aria-label="Source 25" class="cite-ref" tabindex="0"><sup>25</sup><span class="cite-tooltip" role="tooltip">Milgram, S. (1963). Behavioral study of obedience. Journal of Abnormal and Social Psychology, 67(4), 371–378.</span></span></p><p>Asch’s conformity experiments show how group pressure affects judgment. Participants were asked to identify which comparison line matched a standard line. When confederates unanimously gave an obviously wrong answer, many participants conformed at least once. The key lesson is that dissent matters. When even one other person broke from the majority, conformity dropped substantially.<span aria-label="Source 26" class="cite-ref" tabindex="0"><sup>26</sup><span class="cite-tooltip" role="tooltip">Asch, S. E. (1956). Studies of independence and conformity. Psychological Monographs, 70(9), Whole No. 416.</span></span></p><p>Zimbardo’s Stanford Prison Experiment is often used to illustrate how roles and situational context can shape behavior, but it should be discussed carefully because the study has received significant criticism regarding its methods and interpretation.<span aria-label="Source 27" class="cite-ref" tabindex="0"><sup>27</sup><span class="cite-tooltip" role="tooltip">Haney, C., Banks, W. C., &amp; Zimbardo, P. G. (1973). Interpersonal dynamics in a simulated prison. <em>International Journal of Criminology and Penology, 1,</em> 69–97.</span></span> As a teaching example, its value is in raising questions about legitimate power, coercive power, role expectations, accountability, and the dangers of hierarchical systems without ethical oversight.</p><div class="note"><strong>Organizational implication.</strong> Employees may comply with unethical orders, remain silent, or follow harmful norms when authority, group pressure, or role expectations are strong. Leaders reduce this risk by creating psychological safety, encouraging dissent, and protecting employees who raise concerns.</div>
+<p>These studies also show why <strong>ethical beliefs</strong> and <strong>group norms</strong> matter. Employees may personally believe that a decision is wrong but still comply when authority pressure, conformity pressure, or fear of exclusion is strong. Ethical leadership therefore requires more than telling employees to “do the right thing”; it requires systems that protect dissent, encourage questioning, and make responsible behavior socially acceptable.</p>
+</section>
+<section class="subsection level-2" id="obedience-and-followership"><h3 class="sr-only">Obedience and Followership: What are the Milgram Studies?</h3>
+<svg aria-labelledby="m6SvgTitle3 m6SvgDesc3" role="img" viewbox="0 0 1054 1500" xmlns="http://www.w3.org/2000/svg">
+<title id="m6SvgTitle3">Obedience and Followership: What are the Milgram Studies?</title>
+<desc id="m6SvgDesc3">
+    Infographic explaining the Milgram studies. It describes the experimenter, teacher, and learner roles; explains how participants believed they were administering shocks; summarizes the key findings; and connects the studies to obedience, authority, followership, and organizational behavior.
+  </desc>
+<defs>
+<style>
+      .outer { fill:#f2ffff; stroke:#008b86; stroke-width:8; }
+      .header { fill:#008b86; }
+      .header-text { font-family: Arial, Helvetica, sans-serif; font-size:30px; font-weight:700; fill:white; text-anchor:middle; }
+      .body-text { font-family: Arial, Helvetica, sans-serif; font-size:24px; fill:#111; }
+      .section-title { font-family: Arial, Helvetica, sans-serif; font-size:26px; font-weight:700; fill:#111; }
+      .small-label { font-family: Arial, Helvetica, sans-serif; font-size:22px; fill:#111; text-anchor:middle; }
+      .tiny { font-family: Arial, Helvetica, sans-serif; font-size:12px; fill:#111; text-anchor:middle; }
+      .panel { fill:#cfd3d4; stroke:#0a2a35; stroke-width:4; }
+      .desk { fill:#d9d9d9; stroke:#555; stroke-width:2; }
+      .skin { fill:#e6c9a8; stroke:#555; stroke-width:1.5; }
+      .hair { fill:#6b5a4a; stroke:#333; stroke-width:1.2; }
+      .shirt { fill:#d3b78a; stroke:#555; stroke-width:1.5; }
+      .coat { fill:#f7f7f7; stroke:#555; stroke-width:1.5; }
+      .machine { fill:#bfbfbf; stroke:#444; stroke-width:2; }
+      .line { stroke:#111; stroke-width:2; fill:none; }
+      .bullet { fill:#111; }
+    </style>
+</defs>
+<!-- Main frame -->
+<rect class="outer" height="1490" rx="24" width="1042" x="6" y="6"></rect>
+<rect class="header" height="76" rx="8" width="1054" x="0" y="0"></rect>
+<text class="header-text" x="527" y="42">Obedience and Followership: What are the Milgram Studies?</text>
+<!-- Intro paragraph -->
+<text class="body-text" x="32" y="103">
+<tspan dy="0" x="32">Conducted by psychologist Stanley Milgram in the early 1960s at Yale University, the Milgram</tspan>
+<tspan dy="32" x="32">Studies were a series of controversial experiments designed to investigate obedience to</tspan>
+<tspan dy="32" x="32">authority. Participants were told they were part of a study on learning and memory. Each</tspan>
+<tspan dy="32" x="32">participant took on the role of a “teacher,” while an actor (confederate) posed as the “learner.”</tspan>
+<tspan dy="32" x="32">The teacher was instructed to deliver increasingly severe electric shocks to the learner each</tspan>
+<tspan dy="32" x="32">time they made a mistake, under the supervision of an experimenter (authority) in a lab coat.</tspan>
+</text>
+<g transform="translate(215,290)">
+<image height="330" href="https://uhcl.instructure.com/courses/22917/files/5558531/preview" preserveaspectratio="xMidYMid meet" width="625" x="0" y="0"/>
+</g>
+<!-- How it works -->
+<text class="section-title" x="32" y="669">How It Works:</text>
+<circle class="bullet" cx="36" cy="702" r="4"></circle>
+<text class="body-text" x="60" y="710">
+<tspan dy="0" x="60">Participants believed they were administering real shocks, but no shocks were actually</tspan>
+<tspan dy="32" x="60">delivered. Learners’ reactions (cries of pain and pleas to stop) were scripted.</tspan>
+</text>
+<circle class="bullet" cx="36" cy="777" r="4"></circle>
+<text class="body-text" x="60" y="785">
+<tspan dy="0" x="60">The experimenter would ask participants to continue using prompts such as: “The</tspan>
+<tspan dy="32" x="60">experiment requires that you continue” or “You have no other choice, you must go on.”</tspan>
+</text>
+<circle class="bullet" cx="36" cy="852" r="4"></circle>
+<text class="body-text" x="60" y="860">
+<tspan dy="0" x="60">Shocks ranged from 15 to 450 volts; many participants expressed concern at 135 (safe</tspan>
+<tspan dy="32" x="60">limit), but they continued well past limit, simply because they were told to do so.</tspan>
+</text>
+<circle class="bullet" cx="36" cy="927" r="4"></circle>
+<text class="body-text" x="60" y="935">
+<tspan dy="0" x="60">A shocking 65% of participants were willing to administer the maximum 450-volt shocks.</tspan>
+</text>
+<!-- Key takeaways -->
+<text class="section-title" x="32" y="987">Key Takeaways from the Milgram Studies:</text>
+<circle class="bullet" cx="36" cy="1020" r="4"></circle>
+<text class="body-text" x="60" y="1028">
+<tspan dy="0" x="60">Ordinary people are surprisingly willing to follow orders from authority figures—even when</tspan>
+<tspan dy="32" x="60">those orders conflict with their personal morals.</tspan>
+</text>
+<circle class="bullet" cx="36" cy="1095" r="4"></circle>
+<text class="body-text" x="60" y="1103">
+<tspan dy="0" x="60">Obedience tends to increase when the authority figure is perceived as legitimate, close in</tspan>
+<tspan dy="32" x="60">proximity, and associated with a respected institution.</tspan>
+</text>
+<circle class="bullet" cx="36" cy="1170" r="4"></circle>
+<text class="body-text" x="60" y="1178">
+<tspan dy="0" x="60">People may shift responsibility to authority figures, reducing their own sense of personal</tspan>
+<tspan dy="32" x="60">accountability (a process known as the “agentic state”).</tspan>
+</text>
+<!-- Why it matters -->
+<text class="section-title" x="32" y="1265">Why It Matters for Organizational Behavior</text>
+<text class="body-text" x="32" y="1310">
+<tspan dy="0" x="32">The Milgram Studies highlight the power of authority and social influence in shaping employee</tspan>
+<tspan dy="32" x="32">behavior. In workplace settings, employees may comply with unethical orders or policies out of</tspan>
+<tspan dy="32" x="32">deference to hierarchy or fear of consequences. Understanding these dynamics helps leaders</tspan>
+<tspan dy="32" x="32">design ethical systems and foster psychological safety, where employees feel empowered to</tspan>
+<tspan dy="32" x="32">question decisions and voice concerns. The findings are also crucial for shaping healthy</tspan>
+<tspan dy="32" x="32">followership and encouraging moral courage in organizations.</tspan>
+</text>
+</svg>
+</section>
+<section class="subsection level-2" id="dependency-power"><h3>Dependency and Power</h3><p>Dependency is directly related to power. The more a person or unit depends on you, the more power you have. The strategic contingencies model explains that people or units gain power when they can handle important problems facing the organization. Dependency is shaped by three conditions: scarcity, importance, and substitutability.<span aria-label="Source 28" class="cite-ref" tabindex="0"><sup>28</sup><span class="cite-tooltip" role="tooltip">Saunders, C. (1990). The strategic contingencies theory of power: Multiple perspectives. <em>Journal of Management Studies, 21</em>(1), 1–18.</span></span></p><p><strong>Scarcity</strong> refers to the uniqueness of a resource. The harder something is to obtain, the more valuable it becomes. A person who controls a rare skill, exclusive information, or access to a key decision maker gains power because others cannot easily obtain those resources elsewhere.</p><p><strong>Importance</strong> refers to how valuable the resource is to the organization. A skill that is rare but irrelevant will not create much power. A skill that solves an urgent organizational problem will. For example, if only one employee knows how to complete a reimbursement process correctly, that employee gains power because getting reimbursed matters to coworkers.</p><p><strong>Substitutability</strong> refers to how easily others can find an alternative. If a person is the only one who knows how to operate a critical system, that person has power. If others are trained or new technology replaces the system, that power declines. The same principle applies at larger levels. Countries with large oil supplies historically gained power because other countries depended on oil, but alternative energy sources can reduce that dependency over time.</p></section>
+<section class="subsection level-2" id="influence-tactics"><h3>Influence Tactics</h3><p>Influence is the process of shaping another person’s attitudes, decisions, or behavior. Influence attempts can produce <strong>resistance</strong>, <strong>compliance</strong>, or <strong>commitment</strong>. Resistance occurs when the target rejects the attempt. Compliance occurs when the person goes along without truly supporting the request. Commitment occurs when the person agrees and actively supports the request. For managers, commitment is usually the strongest outcome because it sustains behavior beyond immediate supervision.</p><p>Effective influencers use a range of tactics and adapt them to the target, goal, and context. Relying on one familiar tactic limits effectiveness. For example, rational persuasion may work well when the target values evidence, but inspirational appeals may be more effective when the goal requires emotional commitment or shared purpose.</p><div class="table-wrap"><table><thead><tr><th>Influence Tactic</th><th>How It Works</th><th>Example</th></tr></thead><tbody><tr><td><strong>Rational Persuasion</strong></td><td>Uses facts, data, and logical arguments.</td><td>A manager uses customer satisfaction data to justify investing in service training.</td></tr><tr><td><strong>Inspirational Appeal</strong></td><td>Connects the request to values, purpose, or emotion.</td><td>A leader frames a difficult change as necessary to protect customers and strengthen the mission.</td></tr><tr><td><strong>Consultation</strong></td><td>Invites others to help plan or shape the decision.</td><td>A supervisor asks employees to help redesign a scheduling process.</td></tr><tr><td><strong>Ingratiation</strong></td><td>Builds goodwill through praise or friendliness.</td><td>An employee compliments a colleague before asking for support. This is most effective when sincere and infrequent.</td></tr><tr><td><strong>Personal Appeal</strong></td><td>Uses friendship, liking, or personal loyalty.</td><td>A coworker asks for help because the two have a strong relationship.</td></tr><tr><td><strong>Exchange</strong></td><td>Offers reciprocity or trade.</td><td>“If you help me prepare this report, I’ll cover your shift next week.”</td></tr><tr><td><strong>Coalition Tactics</strong></td><td>Uses group support to influence a target.</td><td>Several departments jointly advocate for a new system.</td></tr><tr><td><strong>Pressure</strong></td><td>Uses demands, repeated requests, or threats.</td><td>A manager repeatedly pressures an employee to accept overtime. This may produce resistance or resentment.</td></tr><tr><td><strong>Legitimating Tactics</strong></td><td>Uses rules, policies, or formal authority.</td><td>A supervisor cites a safety regulation to require compliance.</td></tr></tbody></table></div><p>Influence also varies by direction. <strong>Upward influence</strong> refers to influencing a boss or senior leader. It often depends on rational persuasion, coalitions, and alignment with organizational goals. <strong>Downward influence</strong> refers to influencing subordinates. It is strongest when leaders use vision, credibility, and fairness rather than authority alone. <strong>Peer influence</strong> depends heavily on collaboration, reciprocity, and rational persuasion because peers usually cannot rely on formal authority.<span aria-label="Source 29" class="cite-ref" tabindex="0"><sup>29</sup><span class="cite-tooltip" role="tooltip">Higgins, C. A., Judge, T. A., &amp; Ferris, G. R. (2003). Influence tactics and work outcomes: A meta-analysis. Journal of Organizational Behavior, 24, 89–106.</span></span></p>
+<p>Influence tactics also shape <strong>conflict resolution</strong>. Leaders who rely only on pressure may gain short-term compliance but damage trust, commitment, and collaboration. Leaders who use rational persuasion, consultation, and inspirational appeals are more likely to build commitment and support constructive problem solving, which can improve service quality, <strong>customer satisfaction</strong>, and organizational <strong>reputation</strong>.</p>
+<section class="subsection level-3" id="impression-management"><h4>Impression Management</h4><p><strong>Impression management</strong> is the conscious or unconscious process of influencing how others perceive you. It affects informal power because coworkers, supervisors, and clients form judgments about competence, reliability, professionalism, and leadership potential. Impression management operates through nonverbal cues such as appearance and posture, verbal cues such as tone and clarity, and behavioral cues such as reliability, self-promotion, or visible alignment with influential people.<span aria-label="Source 30" class="cite-ref" tabindex="0"><sup>30</sup><span class="cite-tooltip" role="tooltip">Wayne, S. J., &amp; Liden, R. C. (1995). Effects of impression management on performance ratings: A longitudinal study. <em>Academy of Management Journal, 38</em>(1), 232-260.</span></span></p><p>The most effective impression management balances credibility and authenticity. Without credibility, influence attempts lack weight. Without authenticity, impression management can look manipulative. This matters in job interviews, performance evaluations, client meetings, and leadership situations where perceptions influence access to opportunities.</p></section></section>
+<section class="subsection level-2" id="politics-networks"><h3>Organizational Politics and Social Networks</h3><p>Organizational politics are informal, unofficial, and sometimes behind-the-scenes efforts to influence decisions, resources, priorities, or outcomes. Politics exist because organizations contain competing interests and limited resources. Politics are not inherently bad. They can help people build support, align interests, and move ideas forward. However, politics become harmful when they are self-serving, secretive, unfair, or disconnected from organizational goals.<span aria-label="Source 31" class="cite-ref" tabindex="0"><sup>31</sup><span class="cite-tooltip" role="tooltip">Brandon, R., &amp; Seldman, M. (2004). Survival of the savvy: High-integrity political tactics for career and company success. Free Press.; Kotter, J. (1985). Power and influence. Free Press.</span></span></p><p>Examples of dysfunctional politics include bypassing procedures for personal advantage, lobbying high-level managers immediately before a promotion decision, or using relationships to secure opportunities unavailable to others. These behaviors undermine fairness and trust. When employees perceive the organization as overly political, they tend to report lower job satisfaction, lower commitment, poorer performance, higher anxiety, and more negative moods.</p><p>Political behavior has both individual and organizational antecedents. Individual antecedents include political skill, internal locus of control, investment in the organization, and expectations of success. Employees high in political skill can read social situations, build networks, and influence others while appearing sincere. Organizational antecedents include scarce resources, role ambiguity, subjective performance evaluations, unclear promotion systems, and participative decision processes without clear rules. These conditions create uncertainty and competition, which make political behavior more likely.</p><section class="subsection level-3" id="levels-politics"><h4>Levels and Types of Political Action</h4><p>Political action can be understood in two related ways: the <strong>level of action</strong> and the <strong>source of power</strong>. The level of action asks whether influence is being exercised mainly by <strong>individuals</strong> or by <strong>groups</strong>, such as coalitions and networks. Individual political action involves a person pursuing an interest, reputation, resource, or decision outcome. A <strong>coalition</strong> is an informal, issue-based alliance that forms around a specific goal and often dissolves once the issue is resolved. A <strong>network</strong> is a broader and longer-term relationship system that provides information, support, visibility, and access.</p><p>The source of power asks whether influence comes mainly from <strong>formal authority</strong> or from <strong>informal influence</strong>. Formal power comes from roles, rules, structures, budgets, reporting lines, and official decision rights. Informal power comes from expertise, reputation, relationships, norms, social networks, and the ability to shape how others interpret issues. The same political behavior can look very different depending on whether it is driven by a person’s formal authority, informal relationships, or a combination of both.</p><p>Jarrett’s framework combines these two dimensions, level of action and source of power, into four political terrains. <strong>The rocks</strong> describe individual-level politics based on formal authority, such as one manager using position power to push a decision. <strong>The weeds</strong> describe individual-level politics based on informal influence, such as personal relationships, reputation, or behind-the-scenes persuasion. <strong>The high ground</strong> describes group-level politics based on formal systems, such as committees, governance processes, budgets, and institutional rules. <strong>The woods</strong> describe group-level politics based on informal norms, hidden assumptions, shared routines, and cultural expectations. Effective leaders understand which terrain they are navigating rather than assuming that the formal organizational chart explains how decisions are really made.</p><div class="note"><strong>Managerial implication.</strong> Political skill is not only about “playing politics.” It is about understanding whether influence is formal or informal, individual or collective, and then acting transparently and ethically within that terrain.</div></section><section class="subsection level-3" id="social-networks"><h4>Social Networks as Informal Power</h4><p>Social networks shape who receives information first, who is consulted on decisions, and who can mobilize support. <strong>Strong ties</strong> provide trust and emotional support. <strong>Weak ties</strong> provide access to new information, different perspectives, and career opportunities. Weak ties are especially valuable for innovation because they connect people to information outside their immediate circle.<span aria-label="Source 32" class="cite-ref" tabindex="0"><sup>32</sup><span class="cite-tooltip" role="tooltip">Granovetter, M. (1973). The strength of weak ties. American Journal of Sociology, 78(6), 1360–1380.; Cross, R., &amp; Parker, A. (2004). The hidden power of social networks. Harvard Business Review Press.</span></span></p><p>Organizations increasingly use social network analysis to understand informal influence, collaboration patterns, silos, central connectors, and boundary spanners. In hybrid and remote work, intentional network-building becomes especially important because employees may not naturally form informal ties across teams. Managers can support healthy networks by encouraging cross-functional projects, mentoring, knowledge sharing, and fair access to visibility and information.</p></section></section>
+<section class="subsection level-2" id="ethics-culture"><h3>Ethics, Culture, and Responsible Power</h3><p>Power creates special ethical responsibilities because powerful people influence rewards, opportunities, information, and consequences. Power also affects whether others feel safe challenging decisions. Leaders shape ethical climates by modeling integrity, rewarding ethical behavior, addressing unethical conduct, and creating clear expectations.</p><p>Conflicts of interest are especially important when powerful people influence the systems meant to hold them accountable. The original power document discusses CEO compensation as an example. If a CEO appoints or influences board members who determine the CEO’s pay, formal approval may exist, but independence and fairness may be compromised. Ethical use of power requires transparency, accountability, checks and balances, and meaningful voice mechanisms.</p><p>Power also has a cultural dimension. In <strong>high power distance</strong> cultures, hierarchy is expected, authority is centralized, and employees may be less likely to challenge leaders. In <strong>low power distance</strong> cultures, employees expect more participation, flatter structures, and greater equality. These differences affect decision-making speed, communication, and expectations about who should speak, decide, and challenge authority.<span aria-label="Source 33" class="cite-ref" tabindex="0"><sup>33</sup><span class="cite-tooltip" role="tooltip">Javidan, M., Dorfman, P., Sully de Luque, M., &amp; House, R. (2006). In the eye of the beholder: Cross-cultural lessons in leadership from project GLOBE. Academy of Management Perspectives, 20, 67–90.</span></span></p><p>For example, in a joint venture between American and Mexican companies, American managers may interpret slower responses from Mexican managers as inefficiency. However, in a higher power distance context, lower-level employees may wait for approval before responding. The managerial lesson is that global leaders should not assume their own expectations about authority, speed, voice, and autonomy are universal.</p></section>
+<section class="subsection level-2" id="integration"><h3>Leadership as the Ethical Use of Power</h3><p>Leadership can be understood as the ethical and effective use of power. Leaders draw on multiple bases of power (legitimate, expert, referent, and sometimes reward or coercive) and translate that power into influence through communication, relationships, and decision-making. When power is used responsibly, it builds trust, commitment, and performance. When it is misused, it produces fear, silence, and unethical outcomes.</p><p>This perspective helps integrate the module: traits explain who may gain influence, behaviors explain how leaders act, contingency theories explain when those actions work, and power explains why others respond. Ethical leadership requires understanding all of these elements simultaneously.</p></section>
+<section class="subsection level-2" id="ob-framework-integration">
+<h3>Integrating Leadership and Power Through the OB Framework</h3>
+<p>Leadership and power do not operate in isolation. Individual characteristics such as <strong>traits</strong>, <strong>skills</strong>, <strong>ethical beliefs</strong>, <strong>experience</strong>, and <strong>decision-making style</strong> interact with situational factors such as <strong>followers</strong>, <strong>organizational culture</strong>, <strong>task structure</strong>, <strong>work group dynamics</strong>, and <strong>trust</strong> to shape leadership effectiveness. These drivers influence individual processes such as <strong>leadership</strong>, <strong>LMX</strong>, <strong>self-awareness</strong>, and <strong>career development</strong>, as well as group processes such as <strong>conflict resolution</strong> and <strong>group norms</strong>. At the organizational level, leadership and power shape <strong>strategic planning</strong>, <strong>communication</strong>, and <strong>talent development</strong>.</p>
+<p>The consequences of leadership and power also occur across levels. At the individual level, leadership affects <strong>task performance</strong>, <strong>workplace attitudes</strong>, <strong>turnover</strong>, <strong>career outcomes</strong>, and <strong>creativity</strong>. At the group level, it influences <strong>group performance</strong>, <strong>group satisfaction</strong>, and <strong>group cohesion/conflict</strong>. At the organizational level, responsible leadership and ethical power use can strengthen <strong>agility</strong>, <strong>financial performance</strong>, <strong>customer satisfaction</strong>, <strong>innovation</strong>, and <strong>reputation</strong>. This is why managers must examine not only whether a leader has influence, but how that influence is used and what consequences it creates.</p>
+</section>
+<section class="subsection level-2" id="key-takeaways"><h3>Key Takeaways</h3><ul><li>Leadership is influence toward a shared goal, not coercion. Formal leaders hold official authority, while informal leaders influence through credibility, expertise, relationships, or personal power.</li><li>Power is the capacity to influence; influence is the actual use of power to shape attitudes, decisions, or behavior.</li><li>Trait approaches show that intelligence, emotional intelligence, extraversion, conscientiousness, openness, self-esteem, and integrity can matter, but no single trait guarantees leadership effectiveness.</li><li>Dark triad traits may help some people rise into leadership positions, but they are associated with toxic and unethical outcomes.</li><li>Behavioral approaches show that leaders use both task-oriented and people-oriented behaviors. Effective leadership often requires both structure and support.</li><li>Contingency approaches show that leadership effectiveness depends on context. Fiedler emphasizes situational fit, situational leadership emphasizes follower development, path-goal theory emphasizes clearing the path between effort and rewards, and Vroom and Yetton emphasize decision involvement.</li><li>Contemporary leadership approaches emphasize meaning, trust, relationships, ethics, and shared responsibility.</li><li>The main bases of power are legitimate, reward, coercive, expert, and referent power. Expert and referent power are often more sustainable than coercive power.</li><li>Dependency increases power when resources are scarce, important, and difficult to substitute.</li><li>Conformity and obedience help explain why power can lead to unethical outcomes when authority is unchecked.</li><li>Influence tactics can produce resistance, compliance, or commitment. Commitment is usually the strongest outcome.</li><li>Organizational politics are inevitable, but they become harmful when they undermine fairness, trust, and organizational goals.</li><li>Social networks are a major source of informal power, especially in complex, hybrid, and knowledge-based organizations.</li><li>Responsible leadership requires ethical awareness, accountability, transparency, and cultural sensitivity.</li></ul></section>
+<section class="insights box-2" id="managerial-insight"><h3>Managerial Insight</h3><p>The most practical lesson from leadership and power research is that effective managers should avoid one-size-fits-all influence. Traits can help explain who is likely to emerge as a leader, but traits alone are not enough. Behaviors matter, relationships matter, ethics matter, power matters, and context matters.</p><p>Managers should diagnose the situation before choosing a leadership or influence response. If employees lack clarity, directive behavior may help. If work is stressful or unpleasant, supportive leadership may be more useful. If employees have expertise and decisions affect their work, participation can improve acceptance and quality. If employees are skilled and committed, delegation may increase autonomy and performance.</p><p>Managers must also distinguish leader emergence from leader effectiveness. Charisma, confidence, political skill, and extraversion may help someone look like a leader, but they do not guarantee sound judgment, ethical behavior, or long-term performance. Organizations should select and develop leaders based on evidence of competence, integrity, relationship quality, and the ability to adapt to context.</p><p>Power and leadership also carry social responsibility. Leaders influence not only performance, but also employee well-being, ethical conduct, fairness, psychological safety, and the broader organizational climate. The best leaders use influence to create conditions where people can perform well, grow, speak up, act ethically, and contribute to shared goals.</p></section>
+<section class="subsection level-2" id="sources"><h3>Key Sources</h3>
+<div class="source-entry"><sup>1</sup> Hogan, R., Curphy, G. J., &amp; Hogan, J. (1994). What we know about leadership: Effectiveness and personality. <em>American Psychologist, 49</em>, 493–504.</div>
+<div class="source-entry"><sup>2</sup> Judge, T. A., Bono, J. E., Ilies, R., &amp; Gerhardt, M. W. (2002). Personality and leadership: A qualitative and quantitative review. <em>Journal of Applied Psychology, 87</em>, 765–780.</div>
+<div class="source-entry"><sup>3</sup> Judge, T. A., Colbert, A. E., &amp; Ilies, R. (2004). Intelligence and leadership: A quantitative review and test of theoretical propositions. <em>Journal of Applied Psychology, 89,</em> 542–552.</div>
+<div class="source-entry"><sup>4</sup> Melita Prati, L., Douglas, C., Ferris, G. R., Ammeter, A. P., &amp; Buckley, M. R. (2003). Emotional intelligence, leadership effectiveness, and team outcomes. <em>The International Journal of Organizational Analysis, 11</em>(1), 21-40.</div>
+<div class="source-entry"><sup>5</sup> Bartone, P. T., Eid, J., Helge Johnsen, B., Christian Laberg, J., &amp; Snook, S. A. (2009). Big five personality factors, hardiness, and social judgment as predictors of leader performance. <em>Leadership &amp; Organization Development Journal, 30</em>(6), 498-521.</div>
+<div class="source-entry"><sup>6</sup> Pfeffer, J. (2021). The dark triad may be not so dark: exploring why ‘toxic’ leaders are so common—with some implications for scholarship and education. <em>Psychoanalytic Inquiry, 41</em>(7), 540-551.</div>
+<div class="source-entry"><sup>7</sup> Fleishman, E. A., &amp; Harris, E. F. (1962). Patterns of leadership behavior related to employee grievances and turnover. <em>Personnel Psychology, 15</em>(1), 43–56.</div>
+<div class="source-entry"><sup>8</sup> Stogdill, R. M. (1948). Personal factors associated with leadership: A survey of the literature. <em>Journal of Psychology, 25</em>, 35–71. https://doi.org/10.1080/00223980.1948.9917362</div>
+<div class="source-entry"><sup>9</sup> Likert, R. (1961). <em>New Patterns of Management.</em> New York: McGraw-Hill</div>
+<div class="source-entry"><sup>10</sup> Lewin, K., Lippitt, R., &amp; White, R. K. (1939). Patterns of aggressive behavior in experimentally created “social climates”. <em>The Journal of Social Psychology, 10</em>(2), 269-299.</div>
+<div class="source-entry"><sup>11</sup> Fiedler, F. E. (1967). <em>A theory of leadership effectiveness</em>. McGraw-Hill.</div>
+<div class="source-entry"><sup>12</sup> Hersey, P.H., Blanchard, K.H., &amp; Johnson, D.E. (2007). <em>Management of Organizational Behavior: Leadership human resources.</em> Upper Saddle River, NJ: Prentice Hall.</div>
+<div class="source-entry"><sup>13</sup> House, R. J. (1971). A path-goal theory of leader effectiveness. <em>Administrative Science Quarterly, 16</em>(3), 321–338.</div>
+<div class="source-entry"><sup>14</sup> Vroom, V. H., &amp; Yetton, P. W. (1973). <em>Leadership and decision-making.</em> University of Pittsburgh Press. https://doi.org/10.2307/j.ctt6wrc8r</div>
+<div class="source-entry"><sup>15</sup> Bass, B. M. (1985). <em>Leadership and performance beyond expectations.</em> Free Press; Bycio, P., Hackett, R. D., &amp; Allen, J. S. (1995). Further assessment of Bass’s (1985) conceptualization of transactional and transformational leadership. <em>Journal of Applied Psychology, 80,</em> 468–478; Judge, T. A., &amp; Piccolo, R. F. (2004). Transformational and transactional leadership: A meta-analytic test of their relative validity. <em>Journal of Applied Psychology, 89,</em> 755–768.</div>
+<div class="source-entry"><sup>16</sup> Bass, B. M. (1985). <em>Leadership and performance beyond expectations.</em> Free Press</div>
+<div class="source-entry"><sup>17</sup> Graen, G. B., &amp; Uhl-Bien, M. (1995). Relationship-based approach to leadership: Development of leader-member exchange theory over 25 years. <em>Leadership Quarterly, 6</em>(2), 219–247.</div>
+<div class="source-entry"><sup>18</sup> Greenleaf, R. K. (1977). <em>Servant Leadership: A journey into the nature of legitimate power and greatness.</em> Paulist Press; Liden, R. C., Wayne, S., J., Zhao, H., &amp; Henderson, D. (2008). Servant leadership: Development of a multidimensional measure and multi-level assessment. <em>Leadership Quarterly, 19,</em> 161–177.</div>
+<div class="source-entry"><sup>19</sup> Avolio, B. J., &amp; Gardner, W. L. (2005). Authentic leadership development: Getting to the root of positive forms of leadership. <em>Leadership Quarterly, 16,</em> 315–338; Gardner, W. L., Avolio, B. J., Luthans, F., May, D. R., &amp; Walumbwa, F. (2005). “Can you see the real me?” A self-based model of authentic leader and follower development. <em>Leadership Quarterly, 16,</em> 343–372.</div>
+<div class="source-entry"><sup>20</sup> Harris A (2013) <em>Distributed Leadership Matters; Potential, Practicalities and Possibilities.</em> Corwin Press; Somers, M. (2022). Why distributed leadership is the future of management. <em>MIT Management Sloan School.</em> https://mitsloan.mit.edu/ideas-made-to-matter/why-distributed-leadership-future-management; Ancona, D., &amp; Bresman, H. (2023). Turn Your Teams Inside Out. <em>MIT Sloan Management Review, 64</em>(2), 24-29.<div>
+<div class="source-entry"><sup>21</sup> Manimala, M. J., &amp; Wasdani, K. P. (2013). Distributed leadership at Google: Lessons from the billion-dollar brand; Šmite, D., Moe, N. B., Floryan, M., Gonzalez-Huerta, J., Dorner, M., &amp; Sablis, A. (2023). Decentralized decision-making and scaled autonomy at Spotify. <em>Journal of Systems and Software, 200,</em> 111649.</div>
+<div class="source-entry"><sup>22</sup> Salancik, G., &amp; Pfeffer, J. (1989). Who gets power. In M. Tushman, C. O’Reilly, &amp; D. Nadler (Eds.), <em>Management of Organizations</em>. Harper &amp; Row.</div>
+<div class="source-entry"><sup>23</sup> Bauman, E. (2019). The naive republic of aid: Grassroots exceptionalism in humanitarian memoir. <em>Global Humanitarianism and Media Culture</em>, 83-102.</div>
+<div class="source-entry"><sup>24</sup> French, J. P. R., Jr., &amp; Raven, B. (1960). The bases of social power. In D. Cartwright &amp; A. Zander (Eds.), <em>Group dynamics</em> (pp. 607–623). Harper and Row.</div>
+<div class="source-entry">Burns, J. M. (1978). <em>Leadership</em>. Harper &amp; Row.</div>
+<div class="source-entry"><sup>25</sup> Milgram, S. (1963). Behavioral study of obedience. <em>Journal of Abnormal and Social Psychology, 67</em>(4), 371–378.</div>
+<div class="source-entry"><sup>26</sup> Asch, S. E. (1956). Studies of independence and conformity. Psychological Monographs, 70(9), Whole No. 416.</div>
+<div class="source-entry"><sup>27</sup> Haney, C., Banks, W. C., &amp; Zimbardo, P. G. (1973). Interpersonal dynamics in a simulated prison. <em>International Journal of Criminology and Penology, 1,</em> 69–97.</div>
+<div class="source-entry"><sup>28</sup> Saunders, C. (1990). The strategic contingencies theory of power: Multiple perspectives. <em>Journal of Management Studies, 21</em>(1), 1–18.</div>
+<div class="source-entry"><sup>29</sup> Higgins, C. A., Judge, T. A., &amp; Ferris, G. R. (2003). Influence tactics and work outcomes: A meta-analysis. <em>Journal of Organizational Behavior, 24</em>, 89–106.</div>
+<div class="source-entry"><sup>30</sup> Wayne, S. J., &amp; Liden, R. C. (1995). Effects of impression management on performance ratings: A longitudinal study. <em>Academy of Management Journal, 38</em>(1), 232-260.</div>
+<div class="source-entry"><sup>31</sup> Brandon, R., &amp; Seldman, M. (2004). <em>Survival of the savvy: High-integrity political tactics for career and company success</em>. Free Press.</div>
+<div class="source-entry"><sup>32</sup> Granovetter, M. (1973). The strength of weak ties. <em>American Journal of Sociology, 78</em>(6), 1360–1380.</div>
+<div class="source-entry"><sup>33</sup> Javidan, M., Dorfman, P., Sully de Luque, M., &amp; House, R. (2006). In the eye of the beholder: Cross-cultural lessons in leadership from project GLOBE. <em>Academy of Management Perspectives, 20</em>, 67–90.</div>
+</div></div></section>
+</section></main></div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const tocLinks = Array.from(document.querySelectorAll('.sidebar a[href^="#"]'));
+  const targets = tocLinks
+    .map(link => {
+      const id = decodeURIComponent(link.getAttribute('href').slice(1));
+      const el = document.getElementById(id);
+      return el ? { id, el, link } : null;
+    })
+    .filter(Boolean);
+
+  function setActiveLink(activeId) {
+    tocLinks.forEach(link => {
+      const linkId = decodeURIComponent(link.getAttribute('href').slice(1));
+      link.classList.toggle('active', linkId === activeId);
+    });
+
+    const activeLink = document.querySelector('.sidebar a.active');
+    const sidebar = document.querySelector('.sidebar');
+    if (activeLink && sidebar) {
+      const linkTop = activeLink.offsetTop;
+      const linkBottom = linkTop + activeLink.offsetHeight;
+      const visibleTop = sidebar.scrollTop;
+      const visibleBottom = visibleTop + sidebar.clientHeight;
+
+      if (linkTop < visibleTop || linkBottom > visibleBottom) {
+        sidebar.scrollTo({
+          top: Math.max(linkTop - 80, 0),
+          behavior: 'smooth'
+        });
+      }
+    }
+  }
+
+  function updateActiveLink() {
+    if (!targets.length) return;
+
+    const readingLine = Math.max(120, window.innerHeight * 0.25);
+    let current = targets[0];
+
+    for (const target of targets) {
+      const rect = target.el.getBoundingClientRect();
+      if (rect.top <= readingLine) {
+        current = target;
+      } else {
+        break;
+      }
+    }
+
+    // Near the bottom of the page, force the final section to become active.
+    if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 10)) {
+      current = targets[targets.length - 1];
+    }
+
+    setActiveLink(current.id);
+  }
+
+  let ticking = false;
+  function requestUpdate() {
+    if (!ticking) {
+      window.requestAnimationFrame(function () {
+        updateActiveLink();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }
+
+  tocLinks.forEach(link => {
+    link.addEventListener('click', function () {
+      const id = decodeURIComponent(link.getAttribute('href').slice(1));
+      setActiveLink(id);
+    });
+  });
+
+  window.addEventListener('scroll', requestUpdate, { passive: true });
+  window.addEventListener('resize', requestUpdate);
+  updateActiveLink();
+});
+</script>
+</body></html>

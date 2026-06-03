@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Organizational Behavior - Module 7</title>
+<style>
+:root {
+  --bg: #f7f8fa;
+  --panel: #ffffff;
+  --ink: #222831;
+  --muted: #5c6773;
+  --line: #d7dde5;
+  --accent: #0f6c7b;
+  --accent-soft: #e8f4f6;
+  --note-bg: #fff7e8;
+  --note-line: #e6cf95;
+    --note:#eef79a;
+  --note2:#f5f8ad;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.65;
+}
+
+a { color: #0b5ea8; }
+.layout {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 4px;
+}
+.sidebar {
+  position: sticky;
+  top: 4px;
+  align-self: start;
+  max-height: calc(100vh - 32px);
+  overflow: auto;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 18px 18px 14px;
+  box-shadow: 0 6px 20px rgba(34,40,49,.06);
+}
+.sidebar h2 {
+  margin: 0 0 8px;
+  font-size: 1.45rem;
+}
+.sidebar p {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: .95rem;
+}
+.toc-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+.toc-list .toc-list {
+  padding-left: 10px;
+  margin-top: 4px;
+}
+.toc-list li {
+  margin: 3px 0;
+}
+.toc-list a {
+  display: block;
+  text-decoration: none;
+  color: #334155;
+  padding: 4px 6px;
+  border-radius: 8px;
+  font-size: .96rem;
+}
+.toc-list a:hover, .toc-list a.active {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.content {
+  min-width: 0;
+}
+.frontmatter, .module, .subsection {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 20px 10px;
+  box-shadow: 0 6px 18px rgba(34,40,49,.05);
+  margin-bottom: 15px;
+}
+.frontmatter h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  line-height: 1.15;
+}
+.subtitle {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+h2, h3, h4 {
+  scroll-margin-top: 24px;
+}
+.module > h2 {
+  margin: 0 0 6px;
+  font-size: 1.5rem;
+  color: var(--accent);
+}
+.level-2 > h3 {
+  margin: 4px 0 12px;
+  font-size: 1.35rem;
+}
+.level-3 > h4 {
+  margin: 4px 0 10px;
+  font-size: 1.12rem;
+}
+.insight, .insights {
+  background: var(--accent-soft);
+  border-right: 4px solid var(--accent);
+  padding: 12px 14px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+.box-2 > h3 {
+  margin: 4px 0 12px;
+  font-size: 1.35rem;
+}
+.table { width:100%; border-collapse:collapse; margin:16px 0 20px; font-size:.95rem; }
+th { background:var(--accent); color:#fff; text-align:left; padding:10px; border:1px solid #0b5965; }
+td { border:1px solid var(--line); padding:10px; vertical-align:top; background:#fff; }
+tr:nth-child(even) td { background:#fbfcfd; } tablecaption {
+  margin-top: 10px;
+  font-size: .96rem;
+  color: #000;
+  font-style: italic;
+text-align: left;
+}
+sup { font-size:0.72em; color:#0f6c7b; vertical-align:super; line-height:0; }
+.chart-wrap {
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:14px;
+  margin-top:10px;
+}
+.wrapper { max-width: 1180px; margin: 0 auto; }
+.card { background:#fff; border:1px solid #d7dde5; border-radius:16px; padding:16px; margin-bottom:22px; box-shadow:0 4px 14px rgba(0,0,0,.05); }
+.grid2 { display:grid; grid-template-columns:1fr; gap:18px; }
+.grid2 figure {
+  min-width: 0;
+}
+.grid2 figure svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.chart {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.chart-wide {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.chart-small {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+@media (min-width: 1300px) { .grid2 { grid-template-columns:1fr 1fr; } }
+
+.grid3 { display:grid; grid-template-columns:1fr; gap:18px; }
+.grid3 figure {
+  min-width: 0;
+}
+.grid3 figure svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+@media (min-width: 1100px) { .grid3 { grid-template-columns:1fr 1fr; } }
+@media (min-width: 1500px) { .grid3 { grid-template-columns:1fr 1fr 1fr; } }
+
+
+p {
+  margin: 0 0 14px;
+}
+ul {
+  margin: 0 0 14px 1rem;
+}
+li { margin-bottom: 7px; }
+figure {
+  margin: 20px 0 18px;
+  text-align: center;
+}
+figure img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+}
+figcaption {
+  margin-top: 10px;
+  font-size: .96rem;
+  color: #44515f;
+  font-style: italic;
+}
+.note {
+  background: var(--note-bg);
+  border-left: 4px solid var(--note-line);
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: .95rem;
+  margin-bottom: 12px;
+}
+.source-entry {
+  margin-bottom: 6px;
+  padding-bottom: 2px;
+    font-size: .8rem;
+  border-bottom: 1px dashed var(--line);
+}
+.source-entry:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+  font-size: .8rem;
+}
+@media (max-width: 1000px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    position: static;
+    max-height: none;
+  }
+}
+
+.grid-notes {
+  display:grid;
+  grid-template-columns:1fr;
+  gap:22px;
+  margin-top:14px;
+}
+
+@media (min-width:800px) {
+  .grid-notes { grid-template-columns:1fr 1fr; }
+}
+@media (min-width:1000px) {
+  .grid-notes { grid-template-columns:1fr 1fr 1fr; }
+}
+.term { font-weight:700; color:#12343b; }
+
+.note {
+  background:#fff7e8;
+  border-left:4px solid #e6cf95;
+  padding:12px 14px;
+  border-radius:8px;
+  font-size:.97rem;
+  margin-top:10px;
+}
+.small {
+  font-size:.93rem;
+  color:#44515f;
+}
+
+sup {
+  font-size: 0.72em;
+  color: #0f6c7b;
+  vertical-align: super;
+  line-height: 0;
+}
+
+.cite-ref {
+  position: relative;
+  display: inline-block;
+  cursor: help;
+}
+.cite-tooltip {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  left: 50%;
+  bottom: 125%;
+  transform: translateX(-50%);
+  width: min(320px, 70vw);
+  background: #1f2937;
+  color: #fff;
+  text-align: left;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 0.82rem;
+  line-height: 1.35;
+  box-shadow: 0 10px 24px rgba(0,0,0,.18);
+  z-index: 999;
+  transition: opacity .18s ease, visibility .18s ease;
+}
+.cite-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -6px;
+  border-width: 6px;
+  border-style: solid;
+  border-color: #1f2937 transparent transparent transparent;
+}
+.cite-ref:hover .cite-tooltip,
+.cite-ref:focus .cite-tooltip,
+.cite-ref:focus-within .cite-tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+.table-wrap { width:100%; max-width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; margin:16px 0 20px; }
+.table-wrap table { min-width:760px; }
+</style>
+</head>
+<body>
+<div class="layout">
+<aside aria-label="Table of contents" class="sidebar">
+<h2>Contents</h2>
+<ul class="toc-list">
+<li><strong><a href="#about-this-document">About This Document</a></strong></li>
+<li><strong><a href="#culture-change">Module 7: Organizational Culture and Change</a></strong>
+<ul class="toc-list">
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#why-culture-matters">Why Organizational Culture Matters</a></li>
+<li><a href="#levels-artifacts">Levels and Visible Elements of Culture</a></li>
+<li><a href="#culture-frameworks">Frameworks for Understanding Culture</a></li>
+<li><a href="#strong-subcultures">Culture Strength, Subcultures, and Countercultures</a></li>
+<li><a href="#culture-created-maintained">How Culture Is Created and Maintained</a></li>
+<li><a href="#change-causes">Organizational Change and Its Causes</a></li>
+<li><a href="#resistance">Resistance to Change</a></li>
+<li><a href="#change-models">Planning and Executing Change</a></li>
+<li><a href="#ethics-global">Ethics, National Culture, and Change</a></li>
+<li><a href="#key-takeaways">Key Takeaways</a></li>
+<li><a href="#managerial-insight">Managerial Insight</a></li>
+<li><a href="#sources">Key Sources</a></li>
+</ul></li></ul>
+</aside>
+<main class="content">
+<section class="frontmatter" id="about-this-document">
+<h1>Organizational Behavior</h1>
+<h2>About This Document</h2>
+<p>This document has been developed for students of Organizational Behavior. The topics contained herein have been carefully curated to help us accomplish the course goals; therefore, they are discussed at a managerial and applied level rather than with extensive technical depth. To learn about these topics in more depth, I recommend that you review the sources listed at the end of each module.</p>
+<p>This work is original and unique to this course, and as such, it is protected by copyright and the Digital Millennium Copyright Act (DMCA).</p>
+<p><strong>Copyright © 2026 Silvana Chambers.</strong></p>
+<p>This document reflects current research, real-world examples, and instructor-developed insights. <strong>Please do not share, reproduce, or distribute this document, or any part of it, outside of this class.</strong></p>
+<p>June 2026</p>
+</section>
+<section class="module level-1" id="culture-change">
+<h2>Organizational Culture and Change</h2>
+<section class="subsection level-2" id="introduction">
+<h3>Introduction</h3>
+<p><strong>Organizational culture</strong> is a system of shared assumptions, values, and beliefs that helps employees understand what behavior is appropriate or inappropriate. Culture shapes how people interact, how decisions are made, how employees respond to customers, and how organizations adapt to change. Culture is powerful because it often operates below conscious awareness. Employees may not notice their own organization’s culture until they compare it with another workplace that has different assumptions about communication, hierarchy, work-life boundaries, risk, or performance expectations.<span aria-label="Source 1" class="cite-ref" tabindex="0"><sup>1</sup><span class="cite-tooltip" role="tooltip">Chatman, J. A., &amp; Cha, S. E. (2003). Leading by leveraging culture. <em>California Management Review, 45</em>, 19–34; Kerr, J., &amp; Slocum, J. W., Jr. (2005). Managing corporate culture through reward systems. <em>Academy of Management Executive, 19</em>, 130–138.</span></span></p>
+<p>Culture and change belong together. Culture helps explain “how things are done around here,” while organizational change explains what happens when those ways of working must shift. Organizations change because of technology, globalization, workforce demographics, market conditions, growth, poor performance, mergers, or leadership transitions. However, any change effort must confront the existing culture, because people do not simply adopt new behaviors because leaders announce them. They must let go of old routines, learn new expectations, and believe the change is necessary and workable.</p>
+<div class="chart-wide">
+<figure>
+<svg aria-labelledby="m7FrameworkTitle m7FrameworkDesc" height="540" role="img" style="width:100%; height:auto; display:block;" viewbox="0 0 1200 540" xmlns="http://www.w3.org/2000/svg">
+<title id="m7FrameworkTitle">Organizational Behavior Framework for Organizational Culture and Change</title>
+<desc id="m7FrameworkDesc">
+    Three-column Organizational Behavior framework for Module 7. The first column shows drivers and causes divided into person and situation factors. The second column shows culture and change processes at the individual, group, and organizational levels. The third column shows consequences at the individual, group, and organizational levels.
+  </desc>
+<defs>
+<marker id="m7-arrowhead" markerheight="12" markerunits="userSpaceOnUse" markerwidth="12" orient="auto" refx="11" refy="6" viewbox="0 0 12 12">
+<path d="M0,0 L12,6 L0,12 Z" fill="#000000"></path>
+</marker>
+<style>
+      .m7-header { fill:#0f6c7b; }
+      .m7-box { fill:#fbfcfd; stroke:#333; stroke-width:1; }
+      .m7-title { fill:white; font-size:28px; font-family:Arial, sans-serif; font-weight:bold; text-anchor:middle; }
+      .m7-text { fill:black; font-size:18px; font-family:Arial, sans-serif; }
+      .m7-bold { font-weight:bold; }
+    </style>
+</defs>
+<!-- DRIVERS / CAUSES -->
+<rect class="m7-header" height="60" width="360" x="20" y="20"></rect>
+<text class="m7-title" x="200" y="58">Drivers / Causes</text>
+<rect class="m7-box" height="430" width="360" x="20" y="80"></rect>
+<text class="m7-text" x="40" y="110"><tspan class="m7-bold">• Person</tspan></text>
+<text class="m7-text" x="60" y="140">○ Political skill</text>
+<text class="m7-text" x="60" y="165">○ Social capital</text>
+<text class="m7-text" x="40" y="210"><tspan class="m7-bold">• Situation</tspan></text>
+<text class="m7-text" x="60" y="240">○ Organizational culture</text>
+<text class="m7-text" x="60" y="265">○ Leader’s values and</text>
+<text class="m7-text" x="78" y="290">behaviors</text>
+<text class="m7-text" x="60" y="320">○ HR practices and</text>
+<text class="m7-text" x="78" y="345">organizational policies</text>
+<text class="m7-text" x="60" y="375">○ Rewards</text>
+<text class="m7-text" x="60" y="405">○ Technology and markets</text>
+<text class="m7-text" x="60" y="435">○ Growth or poor performance</text>
+<!-- PROCESSES -->
+<rect class="m7-header" height="60" width="360" x="420" y="20"></rect>
+<text class="m7-title" x="600" y="58">Processes</text>
+<rect class="m7-box" height="430" width="360" x="420" y="80"></rect>
+<text class="m7-text" x="440" y="110"><tspan class="m7-bold">• Individual</tspan></text>
+<text class="m7-text" x="460" y="140">○ P–O fit</text>
+<text class="m7-text" x="460" y="165">○ Socialization</text>
+<text class="m7-text" x="460" y="190">○ Mentoring</text>
+<text class="m7-text" x="440" y="230"><tspan class="m7-bold">• Group</tspan></text>
+<text class="m7-text" x="460" y="260">○ Group/team dynamics</text>
+<text class="m7-text" x="460" y="285">○ Subculture</text>
+<text class="m7-text" x="460" y="310">○ Counterculture</text>
+<text class="m7-text" x="440" y="350"><tspan class="m7-bold">• Organization</tspan></text>
+<text class="m7-text" x="460" y="380">○ Culture maintenance</text>
+<text class="m7-text" x="460" y="405">○ Onboarding</text>
+<text class="m7-text" x="460" y="430">○ Mentoring</text>
+<text class="m7-text" x="460" y="455">○ Change management</text>
+<!-- CONSEQUENCES -->
+<rect class="m7-header" height="60" width="360" x="820" y="20"></rect>
+<text class="m7-title" x="1000" y="58">Consequences</text>
+<rect class="m7-box" height="430" width="360" x="820" y="80"></rect>
+<text class="m7-text" x="840" y="110"><tspan class="m7-bold">• Individual</tspan></text>
+<text class="m7-text" x="860" y="140">○ Workplace attitudes</text>
+<text class="m7-text" x="860" y="165">○ Turnover</text>
+<text class="m7-text" x="860" y="190">○ Task performance</text>
+<text class="m7-text" x="860" y="215">○ Career outcomes</text>
+<text class="m7-text" x="840" y="255"><tspan class="m7-bold">• Group</tspan></text>
+<text class="m7-text" x="860" y="285">○ Group performance</text>
+<text class="m7-text" x="860" y="310">○ Group cohesion/conflict</text>
+<text class="m7-text" x="840" y="350"><tspan class="m7-bold">• Organization</tspan></text>
+<text class="m7-text" x="860" y="380">○ Financial performance</text>
+<text class="m7-text" x="860" y="405">○ Customer satisfaction</text>
+<text class="m7-text" x="860" y="430">○ Innovation</text>
+<text class="m7-text" x="860" y="455">○ Efficiency</text>
+<text class="m7-text" x="860" y="480">○ Agility</text>
+<!-- ARROWS -->
+<line marker-end="url(#m7-arrowhead)" stroke="#000000" stroke-width="4.5" x1="380" x2="420" y1="250" y2="250"></line>
+<line marker-end="url(#m7-arrowhead)" stroke="#000000" stroke-width="4.5" x1="780" x2="820" y1="250" y2="250"></line>
+<path d="M1000,518 C850,545 350,545 200,518" fill="none" marker-end="url(#m7-arrowhead)" stroke="#000000" stroke-width="4.5"></path>
+</svg>
+<figcaption>Figure 7-1. Diagnostic Framework for Organizational Culture and Change</figcaption>
+</figure>
+</div>
+<p>The framework below shows why organizational culture and change must be diagnosed at multiple levels. Individual characteristics such as <strong>political skill</strong> and <strong>social capital</strong> affect how employees navigate culture, build relationships, and respond to change. Situational factors such as <strong>organizational culture</strong>, <strong>leader’s values and behaviors</strong>, <strong>HR practices and organizational policies</strong>, <strong>rewards</strong>, technology, market conditions, growth, and poor performance shape the processes through which culture is maintained or changed. These processes affect individual, group, and organizational outcomes.</p>
+<div class="note"><strong>Instructor's Note.</strong> Be able to explain how culture shapes behavior, how culture is maintained, why culture can become a barrier to change, and how managers can use change models to increase commitment rather than resistance.</div>
+</section>
+<section class="subsection level-2" id="why-culture-matters">
+<h3>Why Organizational Culture Matters</h3>
+<p>Culture can be one of an organization’s strongest assets, but it can also become one of its largest liabilities. When culture is rare, difficult to imitate, and aligned with the organization’s environment, it can become a source of sustained competitive advantage. A strong service culture, for example, can guide employees to solve customer problems even when no rule tells them exactly what to do. A strong safety culture can encourage employees to identify hazards and protect coworkers before accidents occur.<span aria-label="Source 2" class="cite-ref" tabindex="0"><sup>2</sup><span class="cite-tooltip" role="tooltip">Barney, J. B. (1986). Organizational culture: Can it be a source of sustained competitive advantage? <em>Academy of Management Review, 11</em>, 656–665; Kotter, J. P., &amp; Heskett, J. L. (1992). <em>Corporate culture and performance</em>. Free Press.</span></span></p>
+<p>Culture matters because it operates as a control mechanism. Formal policies cannot anticipate every situation employees face. Culture fills that gap by signaling priorities. If a company’s culture emphasizes customer service, employees may issue a refund, escalate a concern, or solve a customer problem without waiting for permission. If the culture emphasizes cost control, employees may prioritize efficiency and standardization. Neither value is automatically better; the effectiveness of culture depends on whether the values fit the strategy and environment.</p>
+<p>Culture can also become dangerous when it reinforces the wrong behaviors. A highly competitive, results-only culture may encourage employees to hit targets at any cost. A hierarchy culture may support reliability in a regulated environment but slow adaptation in a fast-changing market. The managerial question is therefore not whether a culture is “strong,” but whether it is aligned, ethical, and adaptable.</p>
+</section>
+<section class="subsection level-2" id="levels-artifacts">
+<h3>Levels and Visible Elements of Culture</h3>
+<p>Schein’s model describes culture at three levels: <strong>artifacts</strong>, <strong>values</strong>, and <strong>basic assumptions</strong>. Artifacts are visible aspects of culture, such as office layout, dress code, rituals, stories, policies, language, and symbols. Values are shared principles and goals that employees say matter, such as innovation, customer service, teamwork, safety, or efficiency. Basic assumptions are deeper, taken-for-granted beliefs about reality and human behavior, such as whether employees can be trusted, whether mistakes should be punished, or whether disagreement is respectful or disloyal.<span aria-label="Source 3" class="cite-ref" tabindex="0"><sup>3</sup><span class="cite-tooltip" role="tooltip">Schein, E. H. (1992). <em>Organizational culture and leadership</em>. Jossey-Bass.</span></span></p>
+<div class="table-wrap"><table>
+<tablecaption>Table 7.1 Levels of Organizational Culture</tablecaption>
+<thead><tr><th>Level of Culture</th><th>What It Means</th><th>Managerial Example</th></tr></thead>
+<tbody>
+<tr><td><strong>Artifacts</strong></td><td>Visible and tangible signs of culture.</td><td>Open office layouts, formal dress, award ceremonies, Slack norms, reserved executive spaces.</td></tr>
+<tr><td><strong>Values</strong></td><td>Stated principles and priorities.</td><td>“Customer first,” “safety above speed,” “move fast,” or “respect for people.”</td></tr>
+<tr><td><strong>Basic Assumptions</strong></td><td>Deep beliefs employees take for granted.</td><td>“Good employees are always available,” “leaders should not be challenged publicly,” or “mistakes are learning opportunities.”</td></tr>
+</tbody></table></div>
+<p>Artifacts are the easiest to observe but the hardest to interpret accurately. A casual dress code may indicate creativity, cost control, informality, or simply industry norms. To understand culture, managers must connect artifacts to values and assumptions. For example, Mayo Clinic’s mission that “the needs of the patient come first” is meaningful because its compensation and referral practices support patient-centered care. In contrast, Enron’s values statements about respect and integrity became meaningless because they did not match actual behavior and incentives.</p>
+<p>Culture is also communicated through rituals, policies, physical layout, and stories. Mary Kay award ceremonies reinforce achievement and enthusiasm. Walmart’s Saturday morning meetings reinforced accountability, performance orientation, and quick action. Nike’s campus communicates energy, athletics, and competitiveness, while Walmart’s modest corporate offices historically communicated thrift. Stories, such as 3M’s Post-it note story, transmit values like experimentation, persistence, and proactive problem solving.</p>
+</section>
+<section class="subsection level-2" id="culture-frameworks">
+<h3>Culture Dimensions and Culture Types</h3>
+<p>Because organizational culture is complex, managers need frameworks that help diagnose cultural patterns. Two useful frameworks are the <strong>Organizational Culture Profile</strong> (<strong>OCP</strong>) and the <strong>Competing Values Framework</strong> (CVF). The OCP describes specific cultural dimensions, while the CVF organizes broader cultural types around competing priorities.<span aria-label="Source 4,5" class="cite-ref" tabindex="0"><sup>4,5</sup><span class="cite-tooltip" role="tooltip">O’Reilly, C. A., Chatman, J., &amp; Caldwell, D. F. (1991). People and organizational culture: A profile comparison approach to assessing person–organization fit. <em>Academy of Management Journal, 34</em>(3), 487–516.; Cameron, K. S., &amp; Quinn, R. E. (2011). <em>Diagnosing and changing organizational culture: Based on the competing values framework</em>. Jossey-Bass.</span></span></p>
+<section class="subsection level-3" id="ocp">
+<h4>Organizational Culture Profile</h4>
+<p>The OCP identifies cultural dimensions such as innovation, aggressiveness, outcome orientation, stability, people orientation, team orientation, and detail orientation. These dimensions are useful because they move culture from a vague label to observable priorities. For example, an outcome-oriented culture may focus heavily on performance metrics and measurable results, while a people-oriented culture may emphasize fairness, support, and employee well-being.<span aria-label="Source 4" class="cite-ref" tabindex="0"><sup>4</sup><span class="cite-tooltip" role="tooltip">O’Reilly, C. A., Chatman, J., &amp; Caldwell, D. F. (1991). People and organizational culture: A profile comparison approach to assessing person–organization fit. <em>Academy of Management Journal, 34</em>(3), 487–516.</span></span></p>
+<div class="table-wrap"><table>
+<tablecaption>Table 7.2 Summary OCP Dimensions</tablecaption>
+<thead><tr><th>OCP Dimension</th><th>What It Emphasizes</th><th>Possible Risk if Taken Too Far</th></tr></thead>
+<tbody>
+<tr><td><strong>Innovation</strong></td><td>Creativity, experimentation, flexibility.</td><td>Constant change without follow-through.</td></tr>
+<tr><td><strong>Outcome orientation</strong></td><td>Results, performance, measurable goals.</td><td>Pressure to hit numbers at the expense of ethics or learning.</td></tr>
+<tr><td><strong>People orientation</strong></td><td>Fairness, support, employee well-being.</td><td>Avoiding difficult performance conversations.</td></tr>
+<tr><td><strong>Team orientation</strong></td><td>Collaboration, cohesion, shared effort.</td><td>Groupthink or slow decisions.</td></tr>
+<tr><td><strong>Detail orientation</strong></td><td>Accuracy, precision, attention to process.</td><td>Excessive caution or bureaucracy.</td></tr>
+<tr><td><strong>Stability</strong></td><td>Predictability, consistency, reliability.</td><td>Resistance to needed change.</td></tr>
+<tr><td><strong>Aggressiveness</strong></td><td>Competitiveness, speed, assertiveness.</td><td>Conflict, internal rivalry, or burnout.</td></tr>
+</tbody>
+</table></div>
+</section>
+<section class="subsection level-3" id="cvf">
+<h4>Competing Values Framework</h4>
+<p>The <strong>Competing Values Framework</strong> (CVF), The CVF organizes culture along two key dimensions. The first dimension ranges from <strong>flexibility and adaptability</strong> to <strong>stability and control</strong>, capturing whether an organization emphasizes change or consistency. The second dimension contrasts an <strong>internal focus</strong> (integration, unity, and cohesion) with an <strong>external focus</strong> (competition, differentiation, and positioning). Together, these dimensions form four quadrants, each representing a distinct definition of organizational effectiveness.<span aria-label="Source 5" class="cite-ref" tabindex="0"><sup>5</sup><span class="cite-tooltip" role="tooltip">Cameron, K. S., &amp; Quinn, R. E. (2011). <em>Diagnosing and changing organizational culture: Based on the competing values framework</em>. Jossey-Bass.</span></span></p>
+<p>A key insight of this framework is that these values are inherently competing. Flexibility conflicts with stability, and internal focus conflicts with external competitiveness. As a result, cultures positioned diagonally from each other reflect opposing assumptions. For example, a Collaborate (Clan) culture emphasizes relationships and cohesion, while a Compete (Market) culture emphasizes performance and results. Similarly, a Create (Adhocracy) culture, focused on innovation, contrasts with a Control (Hierarchy) culture, focused on consistency and efficiency. This means that strengthening one cultural dimension often requires trade-offs with others.<span aria-label="Source 5" class="cite-ref" tabindex="0"><sup>5</sup><span class="cite-tooltip" role="tooltip">Cameron, K. S., &amp; Quinn, R. E. (2011). <em>Diagnosing and changing organizational culture: Based on the competing values framework</em>. Jossey-Bass.</span></span></p>
+<p>The four core culture types are described below. The comparison table (Table 6.3) that follows summarizes key differences across dimensions such as leadership, values, and success criteria, allowing for direct
+comparison.</p>
+<h4>Clan Culture (Collaborate)</h4>
+<p><strong>Clan cultures</strong> emphasize collaboration, cohesion, and a strong sense of community. Organizations with this culture focus on involvement, participation, and long-term commitment, often seeking to be the employer of choice. Employees tend to share values, communicate openly, and identify strongly with the organization.</p>
+<p>From a management perspective, clan cultures create a friendly and supportive work environment where teamwork and consensus are emphasized. Leaders act as mentors or facilitators, focusing on building trust and strengthening relationships. This approach fosters loyalty and long-term employee development, which can become a competitive advantage through a strong organizational identity.</p>
+<p>Success in clan cultures is defined not only by performance but also by meeting stakeholder needs and caring for people, including employees and customers, who may be viewed as part of an extended community. Organizations such as Chick-fil-A, as well as many nonprofits and educational institutions, exemplify this culture.</p>
+<p>However, if taken too far, clan cultures can become overly permissive, where harmony is prioritized at the expense of accountability. When this occurs, performance standards may weaken, and the organization may struggle to achieve measurable results.</p>
+<h4>
+Adhocracy Culture (Create)</h4>
+<p><strong>Adhocracy cultures</strong> emphasize innovation, creativity, and adaptability. These organizations are future-oriented and thrive in dynamic, uncertain environments. Employees are encouraged to experiment, take risks, and generate new ideas, making this culture common in start-ups and technology-driven industries such as Apple, Dyson, and Samsung.</p>
+<p>
+Managers in adhocracy cultures create a dynamic and entrepreneurial environment that values initiative and autonomy. Leadership is characterized by vision, risk-taking, and innovation, with leaders and employees sharing a commitment to experimentation and growth. The organization’s competitive advantage comes from its ability to develop new products, services, and capabilities.</p>
+<p>
+Success is defined by innovation outcomes, such as introducing new products or entering new markets. This culture is particularly effective in industries where adaptability and creativity are critical to survival.</p>
+<p>
+However, the same flexibility that drives innovation can create problems if not balanced. When taken to an extreme, adhocracy cultures can become chaotic and unfocused, with too many ideas and insufficient structure. This can lead to inefficiency, lack of coordination, and difficulty achieving consistent results.
+</p>
+<h4>
+Market Culture (Compete)</h4>
+<p><strong>Market cultures</strong> emphasize competition, performance, and goal achievement. These organizations focus on external positioning, results, and winning in the marketplace. Employees are expected to be driven, productive, and focused on achieving targets, making this culture common in industries such as consulting, sales, marketing, and manufacturing. Amazon is often cited as an example.</p>
+<p>
+Managers in market cultures create a high-performance environment with clear expectations and strong accountability. Leadership is characterized by competitiveness, productivity, and a results-oriented mindset, with leaders acting as drivers who push for performance improvements.</p>
+<p>
+The organization’s values center on profitability, market share, speed, and measurable outcomes. Success is defined in terms of achieving goals, outperforming competitors, and delivering strong performance metrics. The competitive advantage lies in the ability to respond quickly to market demands and deliver results efficiently.</p>
+<p>
+However, when market cultures become too dominant, they can create excessive pressure, internal conflict, and self-interest. A narrow focus on results may lead to neglect of employee well-being, collaboration, or ethical considerations, increasing the risk of burnout and dysfunctional behavior.</p>
+<h4>
+Hierarchy Culture (Control)</h4>
+<p>Hierarchy cultures emphasize stability, efficiency, and structured processes. These organizations rely on formal rules, procedures, and clear roles to ensure predictable and reliable performance. This culture is common in industries where consistency, safety, and compliance are critical, such as government, banking, pharmaceuticals, and transportation. Examples include McDonald’s, Walmart, and large government institutions.</p>
+<p>
+Managers in hierarchy cultures create a formalized and structured environment where procedures guide behavior and reduce uncertainty. Leadership focuses on coordination, organization, and process optimization, ensuring that operations run smoothly and efficiently.</p>
+<p>
+The organization values consistency, quality, punctuality, and cost control, with success defined by reliable performance, efficiency, and low variability. This culture supports long-term stability and is particularly effective in environments where errors must be minimized.</p>
+<p>
+However, when taken to an extreme, hierarchy cultures can become overly bureaucratic, leading to excessive rules, slow decision-making, and resistance to change. This can result in stagnation and reduced innovation, especially in rapidly changing environments.</p>
+<div class="table-wrap"><table>
+<tablecaption>Table 7.3 Summary of Differences Among the CVF Four Core Cultures</tablecaption>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Clan (Collaborate)</th>
+<th>Adhocracy (Create)</th>
+<th>Market (Compete)</th>
+<th>Hierarchy (Control)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Managing Employees</strong></td>
+<td>Team-oriented, supportive, family-like environment</td>
+<td>Autonomous, creative, entrepreneurial</td>
+<td>Competitive, performance-driven, high expectations</td>
+<td>Structured, rule-based, clearly defined roles</td>
+</tr>
+<tr>
+<td><strong>Core Values</strong></td>
+<td>Loyalty, cohesion, commitment</td>
+<td>Innovation, growth, experimentation</td>
+<td>Results, market share, profitability</td>
+<td>Efficiency, consistency, reliability</td>
+</tr>
+<tr>
+<td><strong>Leadership Style</strong></td>
+<td>Mentor, facilitator, relationship builder</td>
+<td>Visionary, innovator, risk-taker</td>
+<td>Hard driver, competitor, results-focused</td>
+<td>Coordinator, organizer, efficiency-focused</td>
+</tr>
+<tr>
+<td><strong>Competitive Advantage</strong></td>
+<td>Employee commitment and culture strength</td>
+<td>Innovation and adaptability</td>
+<td>Speed, execution, and market dominance</td>
+<td>Efficiency, predictability, cost control</td>
+</tr>
+<tr>
+<td><strong>Definition of Success</strong></td>
+<td>Employee well-being and customer relationships</td>
+<td>New products, growth, and innovation</td>
+<td>Goal achievement and strong performance metrics</td>
+<td>Reliable delivery and operational efficiency</td>
+</tr>
+<tr>
+<td><strong>Potential Pitfalls</strong></td>
+<td>Too permissive, weak performance focus</td>
+<td>Chaotic, lack of structure</td>
+<td>Conflict, burnout, unethical risk</td>
+<td>Bureaucracy, rigidity, resistance to change</td>
+</tr>
+</tbody>
+</table></div>
+</section>
+<p>Two additional culture types are especially important in applied settings. A <strong>service culture</strong> emphasizes proactive problem solving for customers. In service cultures, employees are trained and empowered to respond to customer needs, as seen in examples such as Ritz-Carlton, Southwest Airlines, and Umpqua Bank. A <strong>safety culture</strong> emphasizes safe behaviors, hazard identification, and prevention. Safety culture is critical in industries where mistakes can cause serious harm, such as energy, aviation, construction, health care, and manufacturing.</p>
+</section>
+<section class="subsection level-2" id="strong-subcultures">
+<h3>Culture Strength, Subcultures, and Countercultures</h3>
+<p>A <strong>strong culture</strong> is one in which members widely share and understand the organization’s values. Strong cultures create consistency, identity, and behavioral guidance. In stable environments, strong cultures can produce reliable performance because employees know what is expected. However, strong cultures are not always beneficial. If the shared values are unethical, misaligned with strategy, or poorly suited to a changing environment, a strong culture can become a liability.<span aria-label="Source 6" class="cite-ref" tabindex="0"><sup>6</sup><span class="cite-tooltip" role="tooltip">Sorensen, J. B. (2002). The strength of corporate culture and the reliability of firm performance. <em>Administrative Science Quarterly, 47</em>, 70–91.</span></span></p>
+<p>Strong cultures can also resist change. Home Depot’s culture, for example, was historically decentralized and allowed store-level autonomy. When Robert Nardelli attempted to centralize decision-making and use more data-driven systems, he achieved some financial results but also faced resistance and criticism because the changes challenged deeply held cultural assumptions.<span aria-label="Source 11" class="cite-ref" tabindex="0"><sup>11</sup><span class="cite-tooltip" role="tooltip">Charan, R. (2006, April). Home Depot’s blueprint for culture change. <em>Harvard Business Review, 84</em>(4), 60–70.</span></span></p>
+<p>Organizations also rarely have only one culture. <strong>Subcultures</strong> may develop across departments, locations, occupations, or levels. Marketing may value creativity and external responsiveness, while manufacturing may value precision, consistency, and efficiency. Subcultures are not necessarily harmful; they may help different parts of the organization respond to different demands. Problems arise when subcultures become misaligned or undermine coordination.</p>
+<p>A <strong>counterculture</strong> is a <strong>subculture</strong> whose values oppose the dominant culture. A counterculture can be useful if it protects innovation, ethical dissent, or new ways of thinking. It can also be threatening if it undermines strategic alignment or creates conflict. Managers need to diagnose whether a counterculture is a source of renewal or a sign of destructive fragmentation.</p>
+<p>Subcultures influence <strong>group/team dynamics</strong> because employees in different departments or occupations may develop different assumptions about what matters most. These differences can improve problem solving when groups coordinate well, but they can also create <strong>group cohesion/conflict</strong> problems when subcultures compete or distrust one another.</p>
+</section>
+<section class="subsection level-2" id="culture-created-maintained">
+<h3>How Culture Is Created and Maintained</h3>
+<p>Culture is created as organizations solve external and internal problems. If a way of working helps the organization survive or succeed, it becomes repeated, taught, and eventually taken for granted. <strong>Founders</strong> often play a central role because their values shape early hiring, structures, routines, and stories. Ben &amp; Jerry’s reflects the social values of its founders, while Microsoft’s early competitiveness is often connected to Bill Gates’s own competitive orientation. <strong>Industry demands</strong> also shape culture. Banking, health care, and nuclear power often require more rules and stability, while high-tech industries often require speed, experimentation, and flexibility.<span aria-label="Source 3" class="cite-ref" tabindex="0"><sup>3</sup><span class="cite-tooltip" role="tooltip">Schein, E. H. (1992). <em>Organizational culture and leadership</em>. Jossey-Bass.</span></span></p>
+<div class="table-wrap"><table>
+<thead><tr><th>Mechanism</th><th>How It Maintains Culture</th><th>Managerial Example</th></tr></thead>
+<tbody>
+<tr><td><strong>Attraction-Selection-Attrition (ASA)</strong></td><td>People are attracted to, selected by, and remain in organizations where they fit. Those who do not fit often leave.</td><td>A team-oriented applicant may prefer a clan culture, while a highly competitive applicant may prefer a market culture.</td></tr>
+<tr><td><strong>Organizational Socialization / Onboarding</strong></td><td>New employees learn attitudes, behaviors, norms, politics, and expectations needed to function effectively.</td><td>Orientation, realistic job previews, mentors, feedback seeking, and relationship building help newcomers adjust.</td></tr>
+<tr><td><strong>Leadership</strong></td><td>Leaders model values, react to events, ask certain questions, and signal what matters.</td><td>A leader who asks “How do we prevent this accident again?” reinforces safety; a leader who only asks “How much did it cost?” signals different priorities.</td></tr>
+<tr><td><strong>Reward Systems</strong></td><td>Rewards, punishments, promotions, and recognition teach employees which behaviors matter.</td><td>Rewarding only individual sales results may produce a competitive culture; rewarding collaboration and service quality may support a team or service culture.</td></tr>
+</tbody></table></div>
+<p>The ASA process helps explain why cultures become self-reinforcing. Organizations attract and select people who fit, then people who do not fit may leave. Onboarding further teaches newcomers “how things are done here.” New employees can also shape their own adjustment by seeking feedback, building relationships, and learning informal norms.<span aria-label="Source 7,8" class="cite-ref" tabindex="0"><sup>7,8</sup><span class="cite-tooltip" role="tooltip">Schneider, B. (1987). The people make the place. <em>Personnel Psychology, 40</em>(3), 437–453.; Bauer, T. N., Bodner, T., Erdogan, B., Truxillo, D. M., &amp; Tucker, J. S. (2007). Newcomer adjustment during organizational socialization: A meta-analytic review. <em>Journal of Applied Psychology, 92</em>, 707–721.</span></span></p>
+<p><strong>Culture maintenance</strong> also depends on employees’ <strong>political skill</strong> and <strong>social capital</strong>. Employees with strong networks often learn informal expectations faster, gain access to mentors, and understand how influence works inside the organization. These relationships help newcomers interpret the culture, navigate informal rules, and build the credibility needed to succeed.</p>
+<p>The fit between employees and the organization is especially important. <strong>Person–organization fit</strong>, or <strong>P–O fit</strong>, occurs when an employee’s values and preferences align with the organization’s culture. Strong fit can improve <strong>workplace attitudes</strong>, commitment, and adjustment, while poor fit can increase dissatisfaction and <strong>turnover</strong>.<span aria-label="Source 4,9" class="cite-ref" tabindex="0"><sup>4,9</sup><span class="cite-tooltip" role="tooltip">O’Reilly, C. A., Chatman, J., &amp; Caldwell, D. F. (1991). People and organizational culture: A profile comparison approach to assessing person–organization fit. <em>Academy of Management Journal, 34</em>(3), 487–516.; Kristof-Brown, A. L., Zimmerman, R. D., &amp; Johnson, E. C. (2005). Consequences of individuals’ fit at work: A meta-analysis of person–job, person–organization, person–group, and person–supervisor fit. <em>Personnel Psychology, 58</em>, 281–342.</span></span></p>
+</section>
+<section class="subsection level-2" id="culture-change-2">
+<h3>Changing Organizational Culture</h3>
+<p><strong>Culture change</strong> is difficult because culture is part of an organization’s history and identity. Employees may resist change because old assumptions once helped the organization succeed. Culture change is more likely when the organization faces a crisis, declining performance, new competition, a merger, or a strategic shift that makes the old culture visibly ineffective.</p>
+<p>Successful culture change requires more than slogans or updated mission statements. It requires consistent changes in leadership behavior, systems, symbols, rewards, and everyday practices. Research and case studies identify several actions that increase the likelihood of success.<span aria-label="Source 10" class="cite-ref" tabindex="0"><sup>10</sup><span class="cite-tooltip" role="tooltip">Schein, E. H. (1990). Organizational culture. <em>American Psychologist, 45</em>, 109–119; Cummings, T. G., &amp; Worley, C. G. (2015). <em>Organization development and change</em> (10th ed.). Cengage Learning; Kotter, J. P. (1996). <em>Leading change</em>. Harvard Business School Press.</span></span></p>
+<div class="table-wrap"><table>
+<thead><tr><th>Culture Change Action</th><th>What It Means</th><th>Example</th></tr></thead>
+<tbody>
+<tr><td><strong>Create urgency</strong></td><td>Explain why the current culture no longer fits the organization’s environment or strategy.</td><td>Lou Gerstner used IBM’s crisis in the 1990s to help employees understand why the old way of operating had to change.<span aria-label="Source 12" class="cite-ref" tabindex="0"><sup>12</sup><span class="cite-tooltip" role="tooltip">Gerstner, L. V. (2002). <em>Who says elephants can’t dance? Inside IBM’s historic turnaround</em>. Harper-Collins; Kotter, J. P. (1996). <em>Leading change</em>. Harvard Business School Press.</span></span></td></tr>
+<tr><td><strong>Change leaders and key players</strong></td><td>Remove or reposition powerful individuals who block change and elevate people who support the new culture.</td><td>Robert Iger removed Disney’s central planning unit, which was viewed as a barrier to creativity.<span aria-label="Source 13" class="cite-ref" tabindex="0"><sup>13</sup><span class="cite-tooltip" role="tooltip">McGregor, J., McConnon, A., Weintraub, A., Holmes, S., &amp; Grover, R. (2007, May 14). The 25 most innovative companies. <em>Business Week, 4034</em>, 52–60.</span></span></td></tr>
+<tr><td><strong>Role model new behavior</strong></td><td>Leaders must demonstrate the behavior they expect from others.</td><td>Iger personally engaged in game development discussions to signal commitment to innovation.<span aria-label="Source 13" class="cite-ref" tabindex="0"><sup>13</sup><span class="cite-tooltip" role="tooltip">McGregor, J., McConnon, A., Weintraub, A., Holmes, S., &amp; Grover, R. (2007, May 14). The 25 most innovative companies. <em>Business Week, 4034</em>, 52–60.</span></span></td></tr>
+<tr><td><strong>Train employees</strong></td><td>Teach new norms, skills, and decision styles needed for the new culture.</td><td>NASA used training in team processes and cognitive bias awareness after the Columbia disaster.<span aria-label="Source 14" class="cite-ref" tabindex="0"><sup>14</sup><span class="cite-tooltip" role="tooltip">BST to guide culture change effort at NASA. (2004, June). <em>Professional Safety, 49</em>, 16; J. B. (2001, June). The Midas touch. <em>Training, 38</em>, 26.</span></span></td></tr>
+<tr><td><strong>Change reward systems</strong></td><td>Reward behaviors that support the desired culture and stop rewarding behaviors that reinforce the old culture.</td><td>Team-oriented cultures are undermined by purely individual incentives.</td></tr>
+<tr><td><strong>Create new symbols and stories</strong></td><td>Use rituals, symbols, and stories to communicate that the culture has changed.</td><td>Continental Airlines symbolized empowerment by burning its old 800-page policy manual and replacing it with a much shorter one.<span aria-label="Source 15" class="cite-ref" tabindex="0"><sup>15</sup><span class="cite-tooltip" role="tooltip">Higgins, J., &amp; McAllester, C. (2004). If you want strategic change, don’t forget to change your cultural artifacts. <em>Journal of Change Management, 4</em>, 63–73.</span></span></td></tr>
+</tbody>
+</table></div>
+<p>Culture change is especially difficult during mergers and acquisitions because organizations bring different histories, assumptions, and practices. The Daimler-Chrysler merger illustrates this problem. Daimler had a hierarchical engineering culture with long work hours and elite status assumptions, while Chrysler had a more autonomous sales-oriented culture. The clash created integration problems and contributed to the merger’s difficulties.<span aria-label="Source 16" class="cite-ref" tabindex="0"><sup>16</sup><span class="cite-tooltip" role="tooltip">Badrtalei, J., &amp; Bates, D. L. (2007). Effect of organizational cultures on mergers and acquisitions: The case of DaimlerChrysler. <em>International Journal of Management, 24</em>, 303–317; Bower, J. L. (2001). Not all M&amp;As are alike—and that matters. <em>Harvard Business Review, 79</em>, 92–101.</span></span></p>
+<p>Leaders must also watch for inconsistency. If the organization says it values safety but rewards speed over hazard reporting, employees will learn that speed matters more. If it says it values ethics but promotes high performers who mistreat others, employees will learn that ethics are optional. Culture change succeeds only when the new values are embedded in daily decisions, systems, and consequences.</p>
+<div class="note"><strong>Exam tip.</strong> Culture change is systemic. It requires changing leadership behavior, selection, onboarding, rewards, symbols, and stories. A new mission statement alone is not culture change.</div>
+</section>
+<section class="subsection level-2" id="change-causes">
+<h3>Organizational Change and Its Causes</h3>
+<p><strong>Organizational change</strong> is the movement of an organization from one state of affairs to another. Change may involve structure, strategy, policies, procedures, technology, culture, or work processes. It may be planned years in advance or forced by environmental shifts. It may be radical and transform how the organization operates, or incremental and slowly alter how work is done. Regardless of the type, change requires people to let go of old routines and adjust to new expectations, which makes change fundamentally a people-management challenge.<span aria-label="Source 17" class="cite-ref" tabindex="0"><sup>17</sup><span class="cite-tooltip" role="tooltip">Cummings, T. G., &amp; Worley, C. G. (2015). <em>Organization development and change</em> (10th ed.). Cengage Learning.</span></span></p>
+<div class="table-wrap"><table>
+<thead><tr><th>Cause of Change</th><th>How It Creates Pressure</th><th>Example</th></tr></thead>
+<tbody>
+<tr><td><strong>Workforce Demographics</strong></td><td>Changes in age, expectations, skills, or workforce composition require new benefits, work arrangements, and retention strategies.</td><td>An aging workforce may increase demand for flexible work, job sharing, knowledge transfer, and retirement planning.</td></tr>
+<tr><td><strong>Technology</strong></td><td>New technology can disrupt products, processes, business models, and customer expectations.</td><td>The music industry struggled when file sharing disrupted CD sales; Apple’s iTunes created a new digital distribution model.</td></tr>
+<tr><td><strong>Globalization</strong></td><td>Organizations must adapt to global competition, outsourcing, global teams, and different institutional environments.</td><td>Software development and service work moved to countries such as India, requiring firms to manage global workflows and employee stress from job relocation.</td></tr>
+<tr><td><strong>Market Conditions</strong></td><td>Shifts in demand, competition, regulation, or costs may force strategic and operational change.</td><td>Airlines adjusted pricing, amenities, and mergers as demand, fuel costs, and online comparison tools changed the industry.</td></tr>
+<tr><td><strong>Organizational Growth</strong></td><td>Successful start-ups become more complex and need new structures, departments, and systems.</td><td>Widmer Brothers Brewing grew from two founders to a larger brewery requiring formal departments and reporting structures.</td></tr>
+<tr><td><strong>Poor Performance</strong></td><td>Declining performance can create urgency and reduce complacency.</td><td>Polaroid failed to adapt quickly enough to one-hour photo development and digital photography.</td></tr>
+<tr><td><strong>Leadership Change</strong></td><td>New CEOs or top management teams often change strategy, structure, and culture.</td><td>Long-tenured leaders may continue old formulas for success, while new leaders may be more willing to question them.</td></tr>
+</tbody></table></div>
+<p>Environmental change does not automatically change an organization. Managers must notice the change, interpret it correctly, and act. Successful companies may be especially vulnerable because past success can create overconfidence and inertia. The phrase “nothing fails like success” captures this risk: what made the organization successful in the past may become the reason it fails to adapt.</p>
+<p>These pressures for change matter because they affect organizational outcomes. A company that responds effectively to technological, market, or competitive pressure may increase <strong>innovation</strong>, <strong>efficiency</strong>, and <strong>agility</strong>. A company that ignores these pressures may experience declining <strong>financial performance</strong>, weaker <strong>customer satisfaction</strong>, and reduced organizational effectiveness.<span aria-label="Source 17" class="cite-ref" tabindex="0"><sup>17</sup><span class="cite-tooltip" role="tooltip">Cummings, T. G., &amp; Worley, C. G. (2015). <em>Organization development and change</em> (10th ed.). Cengage Learning.</span></span></p>
+</section>
+<section class="subsection level-2" id="resistance">
+<h3>Resistance to Change</h3>
+<p>Change is often necessary for survival, but employees do not always welcome it. Reactions to change may range from active resistance to commitment. <strong>Active resistance</strong> includes open opposition or sabotage. <strong>Passive resistance</strong> includes quiet dislike, stress, withdrawal, or searching for another job without openly objecting. <strong>Compliance</strong> means going along with the change with little enthusiasm. <strong>Commitment</strong> means actively supporting the change and encouraging others to support it.</p>
+<p>Resistance can create serious organizational and personal consequences. Organizations may lose time, energy, and adaptability. Employees who react negatively to change may experience stress, negative emotions, more sick time, and higher turnover intentions. However, resistance is not always bad. It may provide useful feedback. Some of the most committed employees may resist because they believe the change will harm the organization. Managers should therefore diagnose resistance rather than simply blame it on disloyalty.<span aria-label="Source 19" class="cite-ref" tabindex="0"><sup>19</sup><span class="cite-tooltip" role="tooltip">Oreg, S., Vakola, M., &amp; Armenakis, A. (2011). Change recipients’ reactions to organizational change: A 60-year review of quantitative studies. <em>The Journal of Applied Behavioral Science, 47</em>(4), 461–524.</span></span></p>
+<div class="table-wrap"><table>
+<thead><tr><th>Reason for Resistance</th><th>Why It Happens</th><th>Managerial Response</th></tr></thead>
+<tbody>
+<tr><td><strong>Disrupted Habits</strong></td><td>Change interrupts routines that used to feel automatic.</td><td>Provide practice, training, and transition time.</td></tr>
+<tr><td><strong>Personality and Risk Tolerance</strong></td><td>Some employees are more optimistic, confident, or risk tolerant than others.</td><td>Acknowledge differences and provide support rather than assuming resistance is irrational.</td></tr>
+<tr><td><strong>Uncertainty</strong></td><td>People do not know what will happen to their job, status, workload, or future.</td><td>Communicate early, honestly, and repeatedly.</td></tr>
+<tr><td><strong>Fear of Failure</strong></td><td>Employees worry they will not perform well under the new system.</td><td>Build confidence through training, coaching, and early successes.</td></tr>
+<tr><td><strong>Personal Impact</strong></td><td>People evaluate whether the change helps or hurts them personally.</td><td>Explain benefits, address losses, and reduce unnecessary burdens.</td></tr>
+<tr><td><strong>Change Fatigue</strong></td><td>Employees become skeptical after repeated or short-lived change initiatives.</td><td>Prioritize changes, explain continuity, and avoid declaring constant “new directions.”</td></tr>
+<tr><td><strong>Perceived Loss of Power</strong></td><td>Changes may reduce status, control, expertise, or influence.</td><td>Address role changes directly and provide meaningful new responsibilities.</td></tr>
+</tbody></table></div>
+<p>The QWERTY keyboard provides a useful example of resistance to change. The Dvorak keyboard is more efficient, but QWERTY remained dominant because typists, teachers, manufacturers, and systems had invested in the old design. This shows that the best technical solution does not always win. Change also depends on habits, switching costs, power, training, and stakeholder resistance.</p>
+<p>Resistance also affects outcomes at multiple levels. At the individual level, poorly managed change can damage <strong>workplace attitudes</strong>, increase stress, and increase <strong>turnover</strong>. At the group level, it can reduce <strong>group performance</strong> or increase conflict. At the organizational level, resistance can slow implementation, reduce efficiency, and weaken agility.<span aria-label="Source 19" class="cite-ref" tabindex="0"><sup>19</sup><span class="cite-tooltip" role="tooltip">Oreg, S., Vakola, M., &amp; Armenakis, A. (2011). Change recipients’ reactions to organizational change: A 60-year review of quantitative studies. <em>The Journal of Applied Behavioral Science, 47</em>(4), 461–524.</span></span></p>
+</section>
+<section class="subsection level-2" id="change-models">
+<h3>Planning and Executing Change</h3>
+<div class="chart-wide">
+<figure>
+<svg aria-labelledby="m7ChangeTitle m7ChangeDesc" height="420" role="img" style="width:100%; height:auto; display:block;" viewbox="0 0 1200 420" xmlns="http://www.w3.org/2000/svg">
+<title id="m7ChangeTitle">Integrating Lewin’s and Kotter’s Change Models</title>
+<desc id="m7ChangeDesc">
+    Three-stage change framework connecting Lewin’s unfreezing, moving, and refreezing stages with Kotter’s change steps. The model shows preparation, implementation, and sustaining change.
+  </desc>
+<defs>
+<marker id="m7-change-arrow" markerheight="12" markerunits="userSpaceOnUse" markerwidth="12" orient="auto" refx="11" refy="6" viewbox="0 0 12 12">
+<path d="M0,0 L12,6 L0,12 Z" fill="#000000"></path>
+</marker>
+<style>
+      .m7c-header { fill:#0f6c7b; }
+      .m7c-box { fill:#fbfcfd; stroke:#333; stroke-width:1.2; }
+      .m7c-title { fill:white; font-size:26px; font-family:Arial, sans-serif; font-weight:bold; text-anchor:middle; }
+      .m7c-text { fill:black; font-size:18px; font-family:Arial, sans-serif; }
+      .m7c-bold { font-weight:bold; }
+      .m7c-sub { fill:#12343b; font-size:16px; font-family:Arial, sans-serif; font-weight:bold; text-anchor:middle; }
+    </style>
+</defs>
+<rect class="m7c-header" height="60" width="330" x="30" y="25"></rect>
+<text class="m7c-title" x="195" y="63">Preparing for Change</text>
+<rect class="m7c-box" height="265" width="330" x="30" y="85"></rect>
+<text class="m7c-sub" x="195" y="115">Lewin: Unfreezing</text>
+<text class="m7c-text" x="55" y="155">○ Sense of urgency</text>
+<text class="m7c-text" x="55" y="185">○ Guiding coalition</text>
+<text class="m7c-text" x="55" y="215">○ Participation</text>
+<text class="m7c-text" x="55" y="245">○ Readiness for change</text>
+<text class="m7c-text" x="55" y="275">○ Communication of need</text>
+<text class="m7c-text" x="55" y="305">○ Support for employees</text>
+<rect class="m7c-header" height="60" width="330" x="435" y="25"></rect>
+<text class="m7c-title" x="600" y="63">Implementing Change</text>
+<rect class="m7c-box" height="265" width="330" x="435" y="85"></rect>
+<text class="m7c-sub" x="600" y="115">Lewin: Moving / Changing</text>
+<text class="m7c-text" x="460" y="155">○ Vision for change</text>
+<text class="m7c-text" x="460" y="185">○ Communication</text>
+<text class="m7c-text" x="460" y="215">○ Remove obstacles</text>
+<text class="m7c-text" x="460" y="245">○ Small wins</text>
+<text class="m7c-text" x="460" y="275">○ Training and coaching</text>
+<text class="m7c-text" x="460" y="305">○ Stress management</text>
+<rect class="m7c-header" height="60" width="330" x="840" y="25"></rect>
+<text class="m7c-title" x="1005" y="63">Sustaining Change</text>
+<rect class="m7c-box" height="265" width="330" x="840" y="85"></rect>
+<text class="m7c-sub" x="1005" y="115">Lewin: Refreezing</text>
+<text class="m7c-text" x="865" y="155">○ Consolidate gains</text>
+<text class="m7c-text" x="865" y="185">○ Anchor change</text>
+<text class="m7c-text" x="865" y="215">○ Reward systems</text>
+<text class="m7c-text" x="865" y="245">○ Culture reinforcement</text>
+<text class="m7c-text" x="865" y="275">○ New routines</text>
+<text class="m7c-text" x="865" y="305">○ Continuous improvement</text>
+<line marker-end="url(#m7-change-arrow)" stroke="#000000" stroke-width="4.5" x1="360" x2="435" y1="210" y2="210"></line>
+<line marker-end="url(#m7-change-arrow)" stroke="#000000" stroke-width="4.5" x1="765" x2="840" y1="210" y2="210"></line>
+<path d="M1005,365 C820,400 380,400 195,365" fill="none" marker-end="url(#m7-change-arrow)" stroke="#000000" stroke-width="4.5"></path>
+</svg>
+<figcaption>Figure 7-2. Integrating Lewin’s and Kotter’s Change Models</figcaption>
+</figure>
+</div>
+<p>This framework shows how Lewin’s model and Kotter’s model complement each other. <strong>Lewin’s Three-Step Model</strong> provides the broad logic of change: prepare people for change, move to new behaviors, and reinforce those behaviors so they become normal. <strong>Kotter’s Eight-Step Model</strong> provides more detailed actions managers can use within those stages, including creating a <strong>sense of urgency</strong>, building a <strong>guiding coalition</strong>, communicating a <strong>vision for change</strong>, removing obstacles, creating <strong>small wins</strong>, consolidating gains, and <strong>anchoring change</strong> in the culture.<span aria-label="Source 18" class="cite-ref" tabindex="0"><sup>18</sup><span class="cite-tooltip" role="tooltip">Lewin, K. (1951). <em>Field theory in social science</em>. Harper; Kotter, J. P. (1996). <em>Leading change</em>. Harvard Business School Press.</span></span></p>
+<p>Two widely used models help managers plan change: <strong>Lewin’s three-step model</strong> and <strong>Kotter’s eight-step model</strong>. Lewin provides a broad framework: unfreeze, move, and refreeze. Kotter provides more detailed steps that fit within those stages. Together, the models show that successful change requires preparation, implementation, and long-term reinforcement.<span aria-label="Source 18" class="cite-ref" tabindex="0"><sup>18</sup><span class="cite-tooltip" role="tooltip">Lewin, K. (1951). <em>Field theory in social science</em>. Harper; Kotter, J. P. (1996). <em>Leading change</em>. Harvard Business School Press.</span></span></p>
+<div class="table-wrap"><table>
+<thead><tr><th>Lewin Stage</th><th>Related Kotter Steps</th><th>Purpose</th><th>Managerial Example</th></tr></thead>
+<tbody>
+<tr><td><strong>Unfreezing</strong></td><td>1. Establish urgency<br/>2. Build guiding coalition<br/>Provide support and participation</td><td>Prepare people to let go of the old way and accept that change is needed.</td><td>Lou Gerstner kept IBM’s crisis visible to create urgency rather than pretending everything was fine.</td></tr>
+<tr><td><strong>Moving / Changing</strong></td><td>3. Create vision<br/>4. Communicate vision<br/>5. Remove obstacles<br/>6. Create small wins</td><td>Implement the change while reducing uncertainty and building momentum.</td><td>Kimberly-Clark’s CEO repeatedly communicated support for a new performance appraisal system.</td></tr>
+<tr><td><strong>Refreezing</strong></td><td>7. Consolidate gains<br/>8. <strong>Anchor change</strong> in culture</td><td>Make the new behavior part of daily work, systems, rewards, and culture.</td><td>A wellness program becomes cultural when employee health is embedded in values, routines, and rewards rather than treated as a temporary initiative.</td></tr>
+</tbody></table></div>
+<p><strong>Unfreezing</strong> requires creating readiness. Employees must understand why the current way is no longer adequate. Establishing urgency does not mean creating panic, but it does require explaining the consequences of inaction. A guiding coalition is also important because change rarely succeeds through formal authority alone. Leaders need influential employees and managers who can build support through formal and informal networks.<span aria-label="Source 18" class="cite-ref" tabindex="0"><sup>18</sup><span class="cite-tooltip" role="tooltip">Lewin, K. (1951). <em>Field theory in social science</em>. Harper; Kotter, J. P. (1996). <em>Leading change</em>. Harvard Business School Press.</span></span></p>
+<p><strong>Moving</strong> requires a clear vision, communication, participation, and obstacle removal. Employees need to know what is changing, why it is changing, what will be expected of them, and how they will be supported. Communication reduces uncertainty, but communication alone is insufficient if systems, structures, or skills prevent the change from working. Small wins are especially useful because they show progress, build confidence, and increase credibility.<span aria-label="Source 18" class="cite-ref" tabindex="0"><sup>18</sup><span class="cite-tooltip" role="tooltip">Lewin, K. (1951). <em>Field theory in social science</em>. Harper; Kotter, J. P. (1996). <em>Leading change</em>. Harvard Business School Press.</span></span></p>
+<p><strong>Refreezing</strong> means making the change stick. New practices must be reinforced through rewards, routines, policies, leadership behavior, and culture. Organizations often fail by declaring victory too early. Instead, managers should consolidate gains, continue improving, and anchor new behaviors so they become normal. In other words, change becomes successful when it is no longer treated as a special initiative, but as “the way we do things here.”<span aria-label="Source 18" class="cite-ref" tabindex="0"><sup>18</sup><span class="cite-tooltip" role="tooltip">Lewin, K. (1951). <em>Field theory in social science</em>. Harper; Kotter, J. P. (1996). <em>Leading change</em>. Harvard Business School Press.</span></span></p>
+<p>Effective <strong>change management</strong> also supports employee development. During change, employees may need training, coaching, <strong>mentoring</strong>, and opportunities to practice new behaviors. These supports can improve <strong>task performance</strong>, strengthen <strong>career outcomes</strong>, and make the change more sustainable.</p>
+</section>
+<section class="subsection level-2" id="ethics-global">
+<h3>Ethics, National Culture, and Change</h3>
+<p>Ethics is inseparable from culture and change. Ethics training alone is unlikely to work if the culture rewards unethical behavior or if leaders contradict the values they claim to support. Leaders shape ethical culture through role modeling, decisions, rewards, and reactions to misconduct. If leaders create extremely difficult goals and reward only results, employees may learn that unethical behavior is acceptable as long as targets are met. Enron and WorldCom illustrate the risks of cultures where espoused values and actual incentives diverge.<span aria-label="Source 20" class="cite-ref" tabindex="0"><sup>20</sup><span class="cite-tooltip" role="tooltip">Gebler, D. (2006, May). Creating an ethical culture. <em>Strategic Finance, 87</em>, 28–34; Arogyaswamy, B., &amp; Byles, C. H. (1987). Organizational culture: Internal and external fits. <em>Journal of Management, 13</em>, 647–658.</span></span></p>
+<p>National culture also influences organizational culture. When founders create organizations, they often transmit values shaped by their broader society. A culture emphasizing competitiveness may produce more market-oriented organizations, while a culture emphasizing harmony may support more team-oriented practices. National culture can also shape architecture, hierarchy, communication patterns, and expectations about authority. This means that creating the “same” culture globally can be difficult because local norms influence how employees interpret values and practices.<span aria-label="Source 20" class="cite-ref" tabindex="0"><sup>20</sup><span class="cite-tooltip" role="tooltip">Gebler, D. (2006, May). Creating an ethical culture. <em>Strategic Finance, 87</em>, 28–34; Arogyaswamy, B., &amp; Byles, C. H. (1987). Organizational culture: Internal and external fits. <em>Journal of Management, 13</em>, 647–658.</span></span></p>
+<p>For managers, the global implication is clear: culture change cannot simply be copied and pasted across locations. A practice that signals empowerment in one country may create uncertainty in another. A practice that signals respect for hierarchy in one context may feel restrictive in another. Effective managers connect organizational values to local realities while still preserving core ethical principles.</p>
+<p>Ethical culture and global context also affect customer and stakeholder outcomes. When employees see that leaders behave consistently with stated values, the organization is more likely to maintain trust. When local cultural differences are ignored, change initiatives may be interpreted as disrespectful or unrealistic. These interpretations can affect <strong>customer satisfaction</strong>, employee trust, and the organization’s reputation.<span aria-label="Source 20" class="cite-ref" tabindex="0"><sup>20</sup><span class="cite-tooltip" role="tooltip">Gebler, D. (2006, May). Creating an ethical culture. <em>Strategic Finance, 87</em>, 28–34; Arogyaswamy, B., &amp; Byles, C. H. (1987). Organizational culture: Internal and external fits. <em>Journal of Management, 13</em>, 647–658.</span></span></p>
+</section>
+<section class="subsection level-2" id="key-takeaways">
+<h3>Key Takeaways</h3>
+<ul>
+<li>Organizational culture is a system of shared assumptions, values, and beliefs that guides behavior.</li>
+<li>Culture can be a competitive advantage when it is rare, difficult to imitate, ethical, and aligned with the environment.</li>
+<li>Culture operates at three levels: artifacts, values, and basic assumptions.</li>
+<li>Artifacts are visible, but assumptions are often the deepest drivers of behavior.</li>
+<li>The Competing Values Framework shows that culture involves trade-offs between flexibility and stability, and internal and external focus.</li>
+<li>Strong cultures create consistency, but they can also produce resistance to change and ethical blind spots.</li>
+<li>Culture is maintained through founder values, industry demands, ASA, onboarding, leadership, and reward systems.</li>
+<li>Organizational change may be caused by demographics, technology, globalization, market conditions, growth, poor performance, or leadership transitions.</li>
+<li>Resistance to change can be active, passive, compliance-based, or replaced by true commitment.</li>
+<li>Resistance may come from habits, uncertainty, fear of failure, change fatigue, or perceived loss of power.</li>
+<li>Lewin and Kotter both show that successful change requires preparation, implementation, and long-term reinforcement.</li>
+<li>Ethical and national culture shape both organizational culture and the success of change efforts.</li>
+</ul>
+</section>
+<section class="subsection level-2" id="managerial-insight">
+<h3>Managerial Insight</h3>
+<div class="insights">
+<p>Managers shape culture through what they hire for, what they reward, what they tolerate, what they measure, and how they respond to critical events. Culture cannot be changed simply by rewriting values statements. Employees watch what leaders actually do, which behaviors are rewarded, and whether stated values match daily decisions.</p>
+<p>Culture change is especially difficult because it asks people to change routines, assumptions, identities, and power relationships. Managers should therefore treat resistance as information, not merely as a problem. Some resistance reveals poor communication, weak training, unrealistic timelines, or valid concerns about whether the change will work.</p>
+<p>The most effective managers connect culture and change. They diagnose whether the existing culture supports or blocks strategy, communicate why change is necessary, involve credible allies, reduce uncertainty, create small wins, and reinforce new behaviors through systems and rewards. Ultimately, culture change succeeds when the new behaviors become embedded in the organization’s everyday routines and assumptions.</p>
+</div>
+</section>
+<section class="subsection level-2" id="sources"><h3>Key Sources</h3><div class="source-entry"><strong>1.</strong> Chatman, J. A., &amp; Cha, S. E. (2003). Leading by leveraging culture. <em>California Management Review, 45</em>, 19–34; Kerr, J., &amp; Slocum, J. W., Jr. (2005). Managing corporate culture through reward systems. <em>Academy of Management Executive, 19</em>, 130–138.</div><div class="source-entry"><strong>2.</strong> Barney, J. B. (1986). Organizational culture: Can it be a source of sustained competitive advantage? <em>Academy of Management Review, 11</em>, 656–665; Kotter, J. P., &amp; Heskett, J. L. (1992). <em>Corporate culture and performance</em>. Free Press.</div><div class="source-entry"><strong>3.</strong> Schein, E. H. (1992). <em>Organizational culture and leadership</em>. Jossey-Bass.</div><div class="source-entry"><strong>4.</strong> O’Reilly, C. A., Chatman, J., &amp; Caldwell, D. F. (1991). People and organizational culture: A profile comparison approach to assessing person–organization fit. <em>Academy of Management Journal, 34</em>(3), 487–516.</div><div class="source-entry"><strong>5.</strong> Cameron, K. S., &amp; Quinn, R. E. (2011). <em>Diagnosing and changing organizational culture: Based on the competing values framework</em>. Jossey-Bass.</div><div class="source-entry"><strong>6.</strong> Sorensen, J. B. (2002). The strength of corporate culture and the reliability of firm performance. <em>Administrative Science Quarterly, 47</em>, 70–91.</div><div class="source-entry"><strong>7.</strong> Schneider, B. (1987). The people make the place. <em>Personnel Psychology, 40</em>(3), 437–453.</div><div class="source-entry"><strong>8.</strong> Bauer, T. N., Bodner, T., Erdogan, B., Truxillo, D. M., &amp; Tucker, J. S. (2007). Newcomer adjustment during organizational socialization: A meta-analytic review. <em>Journal of Applied Psychology, 92</em>, 707–721.</div><div class="source-entry"><strong>9.</strong> Kristof-Brown, A. L., Zimmerman, R. D., &amp; Johnson, E. C. (2005). Consequences of individuals’ fit at work: A meta-analysis of person–job, person–organization, person–group, and person–supervisor fit. <em>Personnel Psychology, 58</em>, 281–342.</div><div class="source-entry"><strong>10.</strong> Schein, E. H. (1990). Organizational culture. <em>American Psychologist, 45</em>, 109–119; Cummings, T. G., &amp; Worley, C. G. (2015). <em>Organization development and change</em> (10th ed.). Cengage Learning; Kotter, J. P. (1996). <em>Leading change</em>. Harvard Business School Press.</div><div class="source-entry"><strong>11.</strong> Charan, R. (2006, April). Home Depot’s blueprint for culture change. <em>Harvard Business Review, 84</em>(4), 60–70.</div><div class="source-entry"><strong>12.</strong> Gerstner, L. V. (2002). <em>Who says elephants can’t dance? Inside IBM’s historic turnaround</em>. Harper-Collins; Kotter, J. P. (1996). <em>Leading change</em>. Harvard Business School Press.</div><div class="source-entry"><strong>13.</strong> McGregor, J., McConnon, A., Weintraub, A., Holmes, S., &amp; Grover, R. (2007, May 14). The 25 most innovative companies. <em>Business Week, 4034</em>, 52–60.</div><div class="source-entry"><strong>14.</strong> BST to guide culture change effort at NASA. (2004, June). <em>Professional Safety, 49</em>, 16; J. B. (2001, June). The Midas touch. <em>Training, 38</em>, 26.</div><div class="source-entry"><strong>15.</strong> Higgins, J., &amp; McAllester, C. (2004). If you want strategic change, don’t forget to change your cultural artifacts. <em>Journal of Change Management, 4</em>, 63–73.</div><div class="source-entry"><strong>16.</strong> Badrtalei, J., &amp; Bates, D. L. (2007). Effect of organizational cultures on mergers and acquisitions: The case of DaimlerChrysler. <em>International Journal of Management, 24</em>, 303–317; Bower, J. L. (2001). Not all M&amp;As are alike—and that matters. <em>Harvard Business Review, 79</em>, 92–101.</div><div class="source-entry"><strong>17.</strong> Cummings, T. G., &amp; Worley, C. G. (2015). <em>Organization development and change</em> (10th ed.). Cengage Learning.</div><div class="source-entry"><strong>18.</strong> Lewin, K. (1951). <em>Field theory in social science</em>. Harper; Kotter, J. P. (1996). <em>Leading change</em>. Harvard Business School Press.</div><div class="source-entry"><strong>19.</strong> Oreg, S., Vakola, M., &amp; Armenakis, A. (2011). Change recipients’ reactions to organizational change: A 60-year review of quantitative studies. <em>The Journal of Applied Behavioral Science, 47</em>(4), 461–524.</div><div class="source-entry"><strong>20.</strong> Gebler, D. (2006, May). Creating an ethical culture. <em>Strategic Finance, 87</em>, 28–34; Arogyaswamy, B., &amp; Byles, C. H. (1987). Organizational culture: Internal and external fits. <em>Journal of Management, 13</em>, 647–658.</div></section>
+</section>
+</main>
+</div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const tocLinks = Array.from(document.querySelectorAll('.sidebar a[href^="#"]'));
+  const targets = tocLinks
+    .map(link => {
+      const id = decodeURIComponent(link.getAttribute('href').slice(1));
+      const el = document.getElementById(id);
+      return el ? { id, el, link } : null;
+    })
+    .filter(Boolean);
+
+  function setActiveLink(activeId) {
+    tocLinks.forEach(link => {
+      const linkId = decodeURIComponent(link.getAttribute('href').slice(1));
+      link.classList.toggle('active', linkId === activeId);
+    });
+
+    const activeLink = document.querySelector('.sidebar a.active');
+    const sidebar = document.querySelector('.sidebar');
+    if (activeLink && sidebar) {
+      const linkTop = activeLink.offsetTop;
+      const linkBottom = linkTop + activeLink.offsetHeight;
+      const visibleTop = sidebar.scrollTop;
+      const visibleBottom = visibleTop + sidebar.clientHeight;
+
+      if (linkTop < visibleTop || linkBottom > visibleBottom) {
+        sidebar.scrollTo({
+          top: Math.max(linkTop - 80, 0),
+          behavior: 'smooth'
+        });
+      }
+    }
+  }
+
+  function updateActiveLink() {
+    if (!targets.length) return;
+
+    const readingLine = Math.max(120, window.innerHeight * 0.25);
+    let current = targets[0];
+
+    for (const target of targets) {
+      const rect = target.el.getBoundingClientRect();
+      if (rect.top <= readingLine) {
+        current = target;
+      } else {
+        break;
+      }
+    }
+
+    if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 10)) {
+      current = targets[targets.length - 1];
+    }
+
+    setActiveLink(current.id);
+  }
+
+  let ticking = false;
+  function requestUpdate() {
+    if (!ticking) {
+      window.requestAnimationFrame(function () {
+        updateActiveLink();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }
+
+  tocLinks.forEach(link => {
+    link.addEventListener('click', function () {
+      const id = decodeURIComponent(link.getAttribute('href').slice(1));
+      setActiveLink(id);
+    });
+  });
+
+  window.addEventListener('scroll', requestUpdate, { passive: true });
+  window.addEventListener('resize', requestUpdate);
+  updateActiveLink();
+});
+</script>
+</body>
+</html>

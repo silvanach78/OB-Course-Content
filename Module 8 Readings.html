@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Organizational Behavior - Module 8</title>
+<style>
+:root {
+  --bg: #f7f8fa;
+  --panel: #ffffff;
+  --ink: #222831;
+  --muted: #5c6773;
+  --line: #d7dde5;
+  --accent: #0f6c7b;
+  --accent-soft: #e8f4f6;
+  --note-bg: #fff7e8;
+  --note-line: #e6cf95;
+    --note:#eef79a;
+  --note2:#f5f8ad;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.65;
+}
+
+a { color: #0b5ea8; }
+.layout {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 4px;
+}
+.sidebar {
+  position: sticky;
+  top: 4px;
+  align-self: start;
+  max-height: calc(100vh - 32px);
+  overflow: auto;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 18px 18px 14px;
+  box-shadow: 0 6px 20px rgba(34,40,49,.06);
+}
+.sidebar h2 {
+  margin: 0 0 8px;
+  font-size: 1.45rem;
+}
+.sidebar p {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: .95rem;
+}
+.toc-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+.toc-list .toc-list {
+  padding-left: 10px;
+  margin-top: 4px;
+}
+.toc-list li {
+  margin: 3px 0;
+}
+.toc-list a {
+  display: block;
+  text-decoration: none;
+  color: #334155;
+  padding: 4px 6px;
+  border-radius: 8px;
+  font-size: .96rem;
+}
+.toc-list a:hover, .toc-list a.active {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.content {
+  min-width: 0;
+}
+.frontmatter, .module, .subsection {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 20px 10px;
+  box-shadow: 0 6px 18px rgba(34,40,49,.05);
+  margin-bottom: 15px;
+}
+.frontmatter h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  line-height: 1.15;
+}
+.subtitle {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+h2, h3, h4 {
+  scroll-margin-top: 24px;
+}
+.module > h2 {
+  margin: 0 0 6px;
+  font-size: 1.5rem;
+  color: var(--accent);
+}
+.level-2 > h3 {
+  margin: 4px 0 12px;
+  font-size: 1.35rem;
+}
+.level-3 > h4 {
+  margin: 4px 0 10px;
+  font-size: 1.12rem;
+}
+.insight, .insights {
+  background: var(--accent-soft);
+  border-right: 4px solid var(--accent);
+  padding: 12px 14px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+.box-2 > h3 {
+  margin: 4px 0 12px;
+  font-size: 1.35rem;
+}
+.table { width:100%; border-collapse:collapse; margin:16px 0 20px; font-size:.95rem; }
+th { background:var(--accent); color:#fff; text-align:left; padding:10px; border:1px solid #0b5965; }
+td { border:1px solid var(--line); padding:10px; vertical-align:top; background:#fff; }
+tr:nth-child(even) td { background:#fbfcfd; } tablecaption {
+  margin-top: 10px;
+  font-size: .96rem;
+  color: #000;
+  font-style: italic;
+}
+sup { font-size:0.72em; color:#0f6c7b; vertical-align:super; line-height:0; }
+.chart-wrap {
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:14px;
+  margin-top:10px;
+}
+.wrapper { max-width: 1180px; margin: 0 auto; }
+.card { background:#fff; border:1px solid #d7dde5; border-radius:16px; padding:16px; margin-bottom:22px; box-shadow:0 4px 14px rgba(0,0,0,.05); }
+.grid2 { display:grid; grid-template-columns:1fr; gap:18px; }
+.grid2 figure {
+  min-width: 0;
+}
+.grid2 figure svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.chart {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.chart-wide {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.chart-small {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+@media (min-width: 1300px) { .grid2 { grid-template-columns:1fr 1fr; } }
+
+.grid3 { display:grid; grid-template-columns:1fr; gap:18px; }
+.grid3 figure {
+  min-width: 0;
+}
+.grid3 figure svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+@media (min-width: 1100px) { .grid3 { grid-template-columns:1fr 1fr; } }
+@media (min-width: 1500px) { .grid3 { grid-template-columns:1fr 1fr 1fr; } }
+
+
+p {
+  margin: 0 0 14px;
+}
+ul {
+  margin: 0 0 14px 1rem;
+}
+li { margin-bottom: 7px; }
+figure {
+  margin: 20px 0 18px;
+  text-align: center;
+}
+figure img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+}
+figcaption {
+  margin-top: 10px;
+  font-size: .96rem;
+  color: #44515f;
+  font-style: italic;
+}
+.note {
+  background: var(--note-bg);
+  border-left: 4px solid var(--note-line);
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: .95rem;
+  margin-bottom: 12px;
+}
+.source-entry {
+  margin-bottom: 6px;
+  padding-bottom: 2px;
+    font-size: .8rem;
+  border-bottom: 1px dashed var(--line);
+}
+.source-entry:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+  font-size: .8rem;
+}
+@media (max-width: 1000px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    position: static;
+    max-height: none;
+  }
+}
+
+.grid-notes {
+  display:grid;
+  grid-template-columns:1fr;
+  gap:22px;
+  margin-top:14px;
+}
+
+@media (min-width:800px) {
+  .grid-notes { grid-template-columns:1fr 1fr; }
+}
+@media (min-width:1000px) {
+  .grid-notes { grid-template-columns:1fr 1fr 1fr; }
+}
+.term { font-weight:700; color:#12343b; }
+
+.note {
+  background:#fff7e8;
+  border-left:4px solid #e6cf95;
+  padding:12px 14px;
+  border-radius:8px;
+  font-size:.97rem;
+  margin-top:10px;
+}
+.small {
+  font-size:.93rem;
+  color:#44515f;
+}
+
+sup {
+  font-size: 0.72em;
+  color: #0f6c7b;
+  vertical-align: super;
+  line-height: 0;
+}
+
+.cite-ref {
+  position: relative;
+  display: inline-block;
+  cursor: help;
+}
+.cite-tooltip {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  left: 50%;
+  bottom: 125%;
+  transform: translateX(-50%);
+  width: min(320px, 70vw);
+  background: #1f2937;
+  color: #fff;
+  text-align: left;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 0.82rem;
+  line-height: 1.35;
+  box-shadow: 0 10px 24px rgba(0,0,0,.18);
+  z-index: 999;
+  transition: opacity .18s ease, visibility .18s ease;
+}
+.cite-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -6px;
+  border-width: 6px;
+  border-style: solid;
+  border-color: #1f2937 transparent transparent transparent;
+}
+.cite-ref:hover .cite-tooltip,
+.cite-ref:focus .cite-tooltip,
+.cite-ref:focus-within .cite-tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+</style>
+</head>
+<body>
+<div class="layout">
+<aside aria-label="Table of contents" class="sidebar">
+<h2>Contents</h2>
+<ul class="toc-list">
+<li><strong><a href="#about-this-document">About This Document</a></strong></li>
+<li><strong><a href="#technology-ob">Module 8: Technology, Innovation, and Organizational Behavior</a></strong>
+<ul class="toc-list">
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#reciprocal-relationship">The Reciprocal Relationship Between Technology and OB</a></li>
+<li><a href="#technology-influences-ob">How Technology Influences Organizational Behavior</a></li>
+<li><a href="#ob-influences-technology">How OB Influences Technology Adoption</a></li>
+<li><a href="#challenges-opportunities">Challenges and Opportunities of Technology Integration</a></li>
+<li><a href="#organizational-structure">Technology and Organizational Structure</a></li>
+<li><a href="#future-trends">Future Trends in Technology and OB</a></li>
+<li><a href="#responsible-ai">Responsible AI and Technology Governance</a></li>
+<li><a href="#key-takeaways">Key Takeaways</a></li>
+<li><a href="#managerial-insight">Managerial Insight</a></li>
+<li><a href="#sources">Key Sources</a></li>
+</ul>
+</li>
+</ul>
+</aside>
+<main class="content">
+<section class="frontmatter" id="about-this-document">
+<h1>Organizational Behavior</h1>
+<h2>About This Document</h2>
+<p>This document has been developed for students of Organizational Behavior. The topics contained herein have been carefully curated to help us accomplish the course goals; therefore, they are discussed at a managerial and applied level rather than with extensive theoretical depth. To learn about these topics in more depth, I recommend that you review the sources listed at the end of each module.</p>
+<p>This work is original, and as such, it is protected by copyright and the Digital Millennium Copyright Act (DMCA).</p>
+<p><strong>Copyright © 2026 Silvana Chambers.</strong></p>
+<p>This document reflects current research, real-world examples, and instructor-developed insights. <strong>Please do not share, reproduce, or distribute this document, or any part of it, outside of this class.</strong></p>
+<p>June 2026</p>
+</section>
+<section class="module level-1" id="technology-ob">
+<h2>Module 7: Technology, Innovation, and Organizational Behavior</h2>
+<section class="subsection level-2" id="introduction">
+<h3>Introduction</h3>
+<div class="chart-wide">
+<figure>
+<svg aria-labelledby="m8title m8desc" role="img" style="width:100%;height:auto;display:block;" viewbox="0 0 1200 540" xmlns="http://www.w3.org/2000/svg">
+<title id="m8title">Technology, Innovation, and Organizational Behavior Framework</title>
+<desc id="m8desc">Drivers, processes, and consequences associated with technology adoption and organizational behavior.</desc>
+<rect fill="#0f6c7b" height="60" width="360" x="20" y="20"></rect><rect fill="#f3f4f6" height="430" stroke="#333" width="360" x="20" y="80"></rect>
+<text fill="white" font-size="28" font-weight="bold" text-anchor="middle" x="200" y="58">Drivers / Causes</text>
+<text font-size="18" font-weight="bold" x="40" y="120">• Person</text>
+<text font-size="18" x="60" y="150">○ Digital literacy</text><text font-size="18" x="60" y="175">○ Technology attitudes</text>
+<text font-size="18" x="60" y="200">○ Learning agility</text><text font-size="18" x="60" y="225">○ Trust in technology</text>
+<text font-size="18" font-weight="bold" x="40" y="270">• Situation</text>
+<text font-size="18" x="60" y="300">○ AI and automation</text><text font-size="18" x="60" y="325">○ Organizational culture</text>
+<text font-size="18" x="60" y="350">○ Leadership support</text><text font-size="18" x="60" y="375">○ Data availability</text>
+<text font-size="18" x="60" y="400">○ Competitive pressure</text>
+<rect fill="#0f6c7b" height="60" width="360" x="420" y="20"></rect><rect fill="#f3f4f6" height="430" stroke="#333" width="360" x="420" y="80"></rect>
+<text fill="white" font-size="28" font-weight="bold" text-anchor="middle" x="600" y="58">Processes</text>
+<text font-size="18" font-weight="bold" x="440" y="120">• Individual</text>
+<text font-size="18" x="460" y="150">○ Technology acceptance</text><text font-size="18" x="460" y="175">○ Upskilling</text>
+<text font-size="18" x="460" y="200">○ Reskilling</text>
+<text font-size="18" font-weight="bold" x="440" y="250">• Group</text>
+<text font-size="18" x="460" y="280">○ Collaboration</text><text font-size="18" x="460" y="305">○ Knowledge sharing</text>
+<text font-size="18" x="460" y="330">○ Virtual teamwork</text>
+<text font-size="18" font-weight="bold" x="440" y="380">• Organization</text>
+<text font-size="18" x="460" y="410">○ Change management</text><text font-size="18" x="460" y="435">○ Technology adoption</text>
+<text font-size="18" x="460" y="460">○ Agile structures</text>
+<rect fill="#0f6c7b" height="60" width="360" x="820" y="20"></rect><rect fill="#f3f4f6" height="430" stroke="#333" width="360" x="820" y="80"></rect>
+<text fill="white" font-size="28" font-weight="bold" text-anchor="middle" x="1000" y="58">Consequences</text>
+<text font-size="18" font-weight="bold" x="840" y="120">• Individual</text>
+<text font-size="18" x="860" y="150">○ Job performance</text><text font-size="18" x="860" y="175">○ Engagement</text>
+<text font-size="18" x="860" y="200">○ Well-being</text><text font-size="18" x="860" y="225">○ Career outcomes</text>
+<text font-size="18" font-weight="bold" x="840" y="270">• Group</text>
+<text font-size="18" x="860" y="300">○ Team performance</text><text font-size="18" x="860" y="325">○ Knowledge sharing</text>
+<text font-size="18" font-weight="bold" x="840" y="380">• Organization</text>
+<text font-size="18" x="860" y="410">○ Innovation</text><text font-size="18" x="860" y="435">○ Agility</text>
+<text font-size="18" x="860" y="460">○ Customer satisfaction</text><text font-size="18" x="860" y="485">○ Financial performance</text>
+</svg>
+<figcaption>Figure 8.1 Organizational Behavior Framework for Technology, Innovation, and Organizational Behavior</figcaption>
+</figure>
+</div>
+
+<p>Technology is no longer simply a tool that organizations use to complete tasks more efficiently. It is now a major force shaping how organizations communicate, make decisions, design jobs, structure teams, manage people, and compete. Digital platforms, automation, artificial intelligence, analytics, cloud computing, robotics, and virtual collaboration tools are changing not only work processes but also employee expectations, leadership practices, and organizational culture.<span aria-label="Source 1" class="cite-ref" tabindex="0"><sup>1</sup><span class="cite-tooltip" role="tooltip">McKinsey &amp; Company. (2023). What matters most: Eight priorities for CEOs in 2024; Cascio, W. F., &amp; Montealegre, R. (2016). How technology is changing work and organizations. Annual Review of Organizational Psychology and Organizational Behavior, 3, 349–375.</span></span></p>
+<p>For organizational behavior, the central issue is not whether technology is useful. The more important question is how technology changes human behavior and how human behavior shapes whether technology succeeds. A new system may be technically powerful, but if employees do not trust it, understand it, see its usefulness, or believe leaders are using it ethically, the organization may not realize its benefits. This means that technology adoption is not only a technical project; it is also a behavioral, cultural, and managerial challenge.</p>
+<p>This module examines the relationship between technology and organizational behavior. It explains how technology affects communication, decision-making, work design, skills, structure, and employee experience. It also explains how organizational culture, leadership, employee attitudes, and change management shape technology adoption. The goal is to help managers think about technology not as a replacement for OB, but as a force that makes OB even more important.</p>
+</section>
+<section class="subsection level-2" id="reciprocal-relationship">
+<h3>The Reciprocal Relationship Between Technology and OB</h3>
+<p>The relationship between technology and organizational behavior is reciprocal. Technology shapes how employees work, communicate, collaborate, and make decisions, while organizational behavior shapes how technology is selected, adopted, interpreted, and used. For example, a collaboration platform may allow faster communication across locations, but whether employees actually share knowledge depends on trust, norms, incentives, and leadership support.<span aria-label="Source 2" class="cite-ref" tabindex="0"><sup>2</sup><span class="cite-tooltip" role="tooltip">Ertmer, P. A., &amp; Newby, T. J. (2016). Learning theory and technology: A reciprocal relationship; Itami, H., &amp; Numagami, T. (1992). Dynamic interaction between strategy and technology. Strategic Management Journal, 13(S2), 119–135.</span></span></p>
+<p>This reciprocal relationship is especially important because technology often changes work before organizations fully understand the behavioral consequences. A company may introduce AI analytics to improve decision-making, but employees may interpret the system as surveillance or as a threat to their expertise. A company may automate routine tasks to increase efficiency, but employees may experience anxiety if they believe automation will make their roles obsolete. If managers ignore these reactions, even well-designed technology can produce resistance, disengagement, or underuse.</p>
+<p>The managerial implication is that technology implementation must be treated as an organizational change process. Managers must ask how the technology affects work design, power, trust, skill requirements, communication, and employee attitudes. They must also ask whether the culture supports experimentation, learning, and adaptation. Technology creates possibilities, but organizational behavior determines whether those possibilities become improved performance.</p>
+<div class="note"><strong>Managerial implication. </strong> Technology influences OB by changing communication, decision-making, work design, structure, and skill requirements. OB influences technology by shaping employee attitudes, culture, leadership support, trust, and willingness to adopt new tools.</div>
+</section>
+<section class="subsection level-2" id="technology-influences-ob">
+<h3>How Technology Influences Organizational Behavior</h3>
+<p>One of the most immediate effects of technology is the transformation of <strong>communication</strong>. Email, instant messaging, video conferencing, project management platforms, and shared digital workspaces allow employees to communicate quickly across time zones and locations. These tools can increase speed and access to information, but they also change the quality of interactions. Less face-to-face contact can weaken informal relationship building, make trust harder to develop, and increase the risk of miscommunication.<span aria-label="Source 3" class="cite-ref" tabindex="0"><sup>3</sup><span class="cite-tooltip" role="tooltip">Riedl, R. (2022). On the stress potential of videoconferencing. Electronic Markets, 32, 153–177; Stavrova et al. (2023). Does remote work erode trust in organizations? Social and Personality Psychology Compass, 17(7), e12762.</span></span></p>
+<p>Technology also changes <strong>decision-making</strong>. Big data, analytics, dashboards, and AI-driven insights can help leaders make more evidence-based decisions. These tools can improve accuracy, speed, and pattern recognition, especially when decisions involve large volumes of data. However, they also change employee roles and expectations, because workers may need stronger data literacy and may need to interpret algorithmic recommendations rather than rely only on experience or managerial judgment.</p>
+<p>Automation, AI, and machine learning also affect <strong>work design</strong> and job roles. Routine or repetitive tasks may be automated, which can free employees to focus on problem solving, customer relationships, creativity, or more complex analysis. At the same time, automation can create job displacement, role ambiguity, and anxiety about future employability. If technology changes what employees do, then organizations must also rethink training, performance expectations, career paths, and motivation.</p>
+<p>Technology can improve efficiency, but efficiency does not automatically produce a healthier organization. If digital tools create constant availability expectations, employees may <strong>experience</strong> stress and work-life boundary erosion. If monitoring tools are used without transparency, employees may feel controlled rather than supported. Managers must therefore evaluate not only whether technology increases productivity, but also whether it strengthens or undermines trust, engagement, and well-being.</p>
+<table>
+<caption>Table 7.1 Summary of How Technology Influences OB</caption>
+<thead>
+<tr>
+<th>Area of OB</th>
+<th>How Technology Changes It</th>
+<th>Managerial Risk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Communication</strong></td>
+<td>Enables faster communication across locations and time zones.</td>
+<td>May weaken trust, increase overload, or reduce informal relationship building.</td>
+</tr>
+<tr>
+<td><strong>Decision-Making</strong></td>
+<td>Provides data, analytics, and AI-driven insights.</td>
+<td>May create overreliance on algorithms or reduce human judgment.</td>
+</tr>
+<tr>
+<td><strong>Work Design</strong></td>
+<td>Automates routine tasks and shifts employees toward complex work.</td>
+<td>May create job displacement, role ambiguity, or reskilling pressure.</td>
+</tr>
+<tr>
+<td><strong>Employee Experience</strong></td>
+<td>Can personalize development, feedback, and work support.</td>
+<td>May feel invasive if data use is unclear or unfair.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="subsection level-2" id="ob-influences-technology">
+<h3>How OB Influences Technology Adoption</h3>
+<p>Organizational culture plays a major role in whether technology is adopted successfully. Cultures that value innovation, experimentation, learning, and adaptability are more likely to test and integrate new technologies. In contrast, cultures that are risk-averse, highly hierarchical, or resistant to change may struggle to implement technology even when the technical case is strong. This explains why two organizations can purchase similar systems but experience very different outcomes.<span aria-label="Source 4" class="cite-ref" tabindex="0"><sup>4</sup><span class="cite-tooltip" role="tooltip">Al-Dmour, H. (2017). The influence of organizational culture on e-commerce adoption; Roberts, R., Millar, D., Corradi, L., &amp; Flin, R. (2021). What use is technology if no one uses it? Technology, Mind, and Behavior, 2(1).</span></span></p>
+<p>Employee attitudes are equally important. The Technology Acceptance Model, or TAM, suggests that employees are more likely to adopt technology when they believe it is useful and easy to use. <strong>Perceived usefulness</strong> refers to whether employees believe the technology will improve their work or performance. <strong>Perceived ease of use</strong> refers to whether employees believe the technology will be understandable and manageable. If employees believe a tool is difficult, irrelevant, or threatening, adoption is likely to be weak even if leaders see the tool as valuable.<span aria-label="Source 5" class="cite-ref" tabindex="0"><sup>5</sup><span class="cite-tooltip" role="tooltip">Davis, F. D. (1986). A technology acceptance model for empirically testing new end-user information systems; Venkatesh, V., &amp; Davis, F. D. (2000). A theoretical extension of the Technology Acceptance Model. Management Science, 46(2), 186–204.</span></span></p>
+<div style="chart">
+<figure>
+<svg aria-labelledby="tam-title tam-desc" role="img" style="width:100%; height:auto; display:block;" viewbox="0 0 1652 710" xmlns="http://www.w3.org/2000/svg"> <title id="tam-title">Technology Acceptance Model diagram</title> <desc id="tam-desc">This figure illustrates the Technology Acceptance Model (TAM) and the relationships among its key components. On the left side, two factors—perceived ease of use and perceived usefulness—serve as primary inputs. Perceived ease of use is shown influencing perceived usefulness, indicating that technologies that are easier to use are also more likely to be seen as useful. Both perceived ease of use and perceived usefulness influence a user’s attitude toward using the technology. Perceived usefulness also has a direct effect on behavioral intention to use, in addition to its indirect effect through attitude. Attitude toward using then influences behavioral intention to use, which represents the user’s likelihood or willingness to adopt the technology. Finally, behavioral intention to use leads to actual technology use, indicating that intentions translate into real usage behavior. The model overall shows how perceptions about a technology shape attitudes and intentions, which ultimately determine whether the technology is used.</desc> <defs> <marker id="arrowhead" markerheight="9" markerwidth="11" orient="auto" refx="10" refy="4.5"> <path d="M0,0 L11,4.5 L0,9 Z" fill="#000000"></path> </marker> </defs> <rect fill="#ffffff" height="710" width="1652"></rect> <!-- Boxes --> <rect fill="#f3f3f3" height="151" rx="10" stroke="#000000" stroke-width="3" width="304" x="24" y="35"></rect> <text fill="#000000" font-family="Arial, Helvetica, sans-serif" font-size="35" font-weight="700" text-anchor="middle" x="176" y="103"> <tspan dy="0" x="176">Perceived</tspan> <tspan dy="40" x="176">Usefulness</tspan> </text> <rect fill="#f3f3f3" height="151" rx="10" stroke="#000000" stroke-width="3" width="304" x="24" y="509"></rect> <text fill="#000000" font-family="Arial, Helvetica, sans-serif" font-size="35" font-weight="700" text-anchor="middle" x="176" y="576"> <tspan dy="0" x="176">Perceived Ease</tspan> <tspan dy="40" x="176">of Use</tspan> </text> <rect fill="#f3f3f3" height="150" rx="10" stroke="#000000" stroke-width="3" width="304" x="472" y="323"></rect> <text fill="#000000" font-family="Arial, Helvetica, sans-serif" font-size="35" font-weight="700" text-anchor="middle" x="624" y="389"> <tspan dy="0" x="624">Attitude</tspan> <tspan dy="40" x="624">Toward Using</tspan> </text> <rect fill="#f3f3f3" height="150" rx="10" stroke="#000000" stroke-width="3" width="323" x="893" y="323"></rect> <text fill="#000000" font-family="Arial, Helvetica, sans-serif" font-size="35" font-weight="700" text-anchor="middle" x="1054.5" y="389"> <tspan dy="0" x="1054.5">Behavioral</tspan> <tspan dy="40" x="1054.5">Intention to Use</tspan> </text> <rect fill="#f3f3f3" height="150" rx="10" stroke="#000000" stroke-width="3" width="323" x="1314" y="323"></rect> <text fill="#000000" font-family="Arial, Helvetica, sans-serif" font-size="35" font-weight="700" text-anchor="middle" x="1475.5" y="389"> <tspan dy="0" x="1475.5">Actual</tspan> <tspan dy="40" x="1475.5">Technology Use</tspan> </text> <!-- Arrows --> <line marker-end="url(#arrowhead)" stroke="#000000" stroke-width="6" x1="176" x2="176" y1="509" y2="190"></line> <line marker-end="url(#arrowhead)" stroke="#000000" stroke-width="6" x1="328" x2="467" y1="584" y2="460"></line> <line marker-end="url(#arrowhead)" stroke="#000000" stroke-width="6" x1="328" x2="468" y1="109" y2="333"></line> <line marker-end="url(#arrowhead)" stroke="#000000" stroke-width="6" x1="328" x2="888" y1="109" y2="334"></line> <line marker-end="url(#arrowhead)" stroke="#000000" stroke-width="6" x1="776" x2="888" y1="398" y2="398"></line> <line marker-end="url(#arrowhead)" stroke="#000000" stroke-width="6" x1="1216" x2="1309" y1="398" y2="398"></line> </svg><figcaption>Figure 7.1 The Technology Acceptance Model (TAM) provides a useful framework for understanding how employees perceive and adopt new technologies like AI. By focusing on the factors of perceived usefulness and perceived ease of use, managers can foster a positive attitude towards AI, and can significantly improve the likelihood of successful technology and AI implementation.</figcaption></figure>
+</div>
+<p>Leadership support also shapes technology adoption. Employees look to leaders for signals about whether a new technology is important, ethical, and worth the effort required to learn it. Leaders influence adoption by communicating the purpose of the technology, providing training, removing obstacles, and modeling appropriate use. When leaders introduce technology without explanation or support, employees may interpret the change as cost-cutting, surveillance, or another short-lived initiative.</p>
+<p>After adoption, OB continues to shape how technology is used. A collaborative culture may use communication platforms to share knowledge widely, while a hierarchical culture may limit participation or use the same tools mainly for top-down communication. A learning-oriented culture may use analytics as a tool for improvement, while a blame-oriented culture may use the same data to punish employees. The technology is the same, but the organizational behavior surrounding it changes its meaning and impact.</p>
+<table>
+<caption>Table 7.2 Summary of Key Factors in the Technology Acceptance Model</caption>
+<thead>
+<tr>
+<th>TAM Factor</th>
+<th>Meaning</th>
+<th>Managerial Application</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Perceived Usefulness</strong></td>
+<td>Employees believe the technology helps them perform better.</td>
+<td>Explain how the tool improves work quality, speed, service, safety, or decision-making.</td>
+</tr>
+<tr>
+<td><strong>Perceived Ease of Use</strong></td>
+<td>Employees believe the technology is understandable and manageable.</td>
+<td>Provide training, support, user-friendly design, and time to practice.</td>
+</tr>
+<tr>
+<td><strong>Attitude Toward Use</strong></td>
+<td>Employees develop positive or negative feelings about using the technology.</td>
+<td>Address concerns, involve employees, and connect the technology to meaningful work.</td>
+</tr>
+<tr>
+<td><strong>Behavioral Intention</strong></td>
+<td>Employees intend to use the technology consistently.</td>
+<td>Reinforce usage through leadership, workflow integration, and clear expectations.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="subsection level-2" id="challenges-opportunities">
+<h3>Challenges and Opportunities of Technology Integration</h3>
+<p>Technology integration creates both opportunities and challenges. On the opportunity side, technology can streamline processes, reduce costs, improve decision speed, support innovation, and create new products, services, and business models. AI and machine learning can support personalized customer experiences, predictive maintenance, fraud detection, risk management, and data-informed decision-making. Organizations that use technology well can become more agile and responsive to customer and market changes.</p>
+<p>At the same time, technology integration often creates <strong>resistance</strong>. Employees may fear the unknown, worry about job security, or feel uncomfortable learning new systems. Even when employees are not opposed to the technology itself, they may resist the disruption it creates in existing routines, roles, and relationships. This means that technology implementation should be managed as a change effort rather than a purely technical rollout.<span aria-label="Source 6" class="cite-ref" tabindex="0"><sup>6</sup><span class="cite-tooltip" role="tooltip">Warrick, D. D. (2023). Revisiting resistance to change and how to manage it. Business Horizons, 66(4), 433–441; Stadler, C., Helfat, C. E., &amp; Verona, G. (2021). 3 strategies for rolling out new tech within your company. Harvard Business Review.</span></span></p>
+<p>Training and development are also major challenges. New technologies often require <strong>reskilling</strong> and <strong>upskilling</strong>, especially when employees are expected to interpret data, work with AI systems, manage digital workflows, or collaborate through new platforms. Training can be costly and time-consuming, but insufficient training creates even higher costs through underuse, errors, frustration, and resistance. If employees are expected to change how they work, the organization must invest in their ability to succeed under the new system.</p>
+<p>Temporary productivity slowdowns are also common. Employees may need time to learn new tools, redesign workflows, and adjust to new expectations. Managers should not interpret every early difficulty as evidence that the technology has failed. Instead, they should monitor adoption, gather feedback, remove obstacles, and communicate small wins. Effective technology integration requires patience, support, and continuous learning.</p>
+<div class="note"><strong>Managerial implication.</strong> Technology adoption succeeds when managers assign responsibility for change, provide simple change guidelines, organize learning sessions, support employees through the transition, and treat resistance as useful information rather than disloyalty.</div>
+<div style="chart">
+<figure>
+<svg aria-labelledby="title desc" role="img" style="width:100%; height:auto; display:block;" viewbox="0 0 1490 637" xmlns="http://www.w3.org/2000/svg">
+<title id="title">Upskilling and reskilling diagram</title> <desc id="desc">This image illustrates how efficiencies gained from technological changes increase the need for both upskilling and reskilling. The visual is divided into two halves. On the left side, a circular graphic labeled “Upskilling” shows a head with gears and an upward arrow, representing the enhancement of existing skills. Surrounding the circle are colored segments with check marks, suggesting progress or continuous development within the same role or domain. On the right side, a similar circular graphic labeled “Reskilling” shows a head with gears inside a circular arrow, representing the learning of entirely new skills for different roles or career paths. This side also includes colored segments with check marks, indicating successful transitions or adaptation. A vertical dotted line separates the two concepts, emphasizing the distinction between improving current capabilities (upskilling) and acquiring new ones to remain relevant.</desc> <rect fill="#ffffff" height="637" width="1490"></rect> <defs> <marker id="arrowBlack" markerheight="12" markerwidth="12" orient="auto" refx="10" refy="6"> <path d="M0,0 L12,6 L0,12 Z" fill="#000000"></path> </marker> </defs> <!-- Center divider --> <line stroke="#777777" stroke-dasharray="10 7" stroke-width="2.5" x1="798" x2="798" y1="89" y2="613"></line> <!-- LEFT SEMICIRCLE: UPSKILLING --> <g transform="translate(20,341)"> <circle cx="0" cy="0" fill="#f0f0f0" r="206"></circle>
+<!-- colored arc segments -->
+<path d="M -6 -279 A 279 279 0 0 1 187 -207" fill="none" stroke="#ff100b" stroke-width="39"></path>
+<path d="M 203 -194 A 279 279 0 0 1 260 -7" fill="none" stroke="#0877bf" stroke-width="39"></path>
+<path d="M 260 6 A 279 279 0 0 1 196 174" fill="none" stroke="#c800f2" stroke-width="39"></path>
+<path d="M 182 190 A 279 279 0 0 1 1 259" fill="none" stroke="#f5ae28" stroke-width="39"></path>
+<text fill="#000000" font-family="Arial, Helvetica, sans-serif" font-size="33" font-weight="700" text-anchor="middle" x="89" y="-34">UPSKILLING</text>
+<!-- head with gears -->
+<g transform="translate(-20,50) scale(.4)">
+<path d="M 99 109 L 99 28 C 66 15 45 -18 45 -62 C 45 -128 96 -181 163 -181 C 230 -181 278 -133 279 -66 L 314 3 C 320 15 314 30 300 33 L 279 37 L 279 70 C 279 96 257 112 229 112 L 204 112 L 204 177 L 99 177 Z" fill="#000000"></path>
+<g transform="translate(96,-34)">
+<path d="M0,-35 L9,-32 L14,-24 L25,-25 L31,-17 L28,-8 L37,-3 L37,6 L28,11 L31,21 L23,28 L13,26 L6,36 L-4,36 L-10,27 L-20,29 L-28,22 L-26,11 L-36,6 L-36,-5 L-27,-10 L-30,-20 L-23,-28 L-12,-26 L-6,-35 Z" fill="#ffffff"></path>
+<circle fill="#000000" r="14"></circle>
+</g>
+<g transform="translate(147,-79)">
+<path d="M0,-35 L9,-32 L14,-24 L25,-25 L31,-17 L28,-8 L37,-3 L37,6 L28,11 L31,21 L23,28 L13,26 L6,36 L-4,36 L-10,27 L-20,29 L-28,22 L-26,11 L-36,6 L-36,-5 L-27,-10 L-30,-20 L-23,-28 L-12,-26 L-6,-35 Z" fill="#ffffff"></path>
+<circle fill="#000000" r="14"></circle>
+</g>
+</g>
+<!-- upward growth arrow -->
+<polyline fill="none" points="84,150 126,66 161,83 199,8" stroke="#000000" stroke-width="7"></polyline>
+<path d="M 181 2 L 220 -8 L 207 31 Z" fill="#000000"></path>
+</g> <!-- left check marks --> <g transform="translate(267,119)"> <circle fill="#ff100b" r="39"></circle> <path d="M -16 0 L -5 17 L 22 -21" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"></path> </g> <g transform="translate(345,339)"> <circle fill="#0877bf" r="39"></circle> <path d="M -16 0 L -5 17 L 22 -21" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"></path> </g> <g transform="translate(272,558)"> <circle fill="#c800f2" r="39"></circle> <path d="M -16 0 L -5 17 L 22 -21" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"></path> </g> <!-- Left explanatory text --> <text fill="#000000" font-family="Arial, Helvetica, sans-serif" font-size="29" x="322" y="94"> <tspan dy="0" x="322">Enhances </tspan><tspan font-weight="700">employees'</tspan> <tspan dy="33" font-weight="700" x="322">existing skills</tspan><tspan> to adapt to new</tspan> <tspan dy="33" x="322">technology-related tasks within</tspan> <tspan dy="33" x="322">their current roles.</tspan> </text> <text fill="#000000" font-family="Arial, Helvetica, sans-serif" font-size="29" x="402" y="315"> <tspan dy="0" x="402">Provides training on using</tspan> <tspan dy="33" x="402">new tools, software, or</tspan> <tspan dy="33" x="402">processes to improve job</tspan> <tspan dy="33" x="402">performance in </tspan><tspan font-weight="700">current role.</tspan> </text> <text fill="#000000" font-family="Arial, Helvetica, sans-serif" font-size="29" x="326" y="538"> <tspan dy="0" x="326">Empowers employees to take on</tspan> <tspan dy="33" font-weight="700" x="326">more complex responsibilities</tspan> <tspan dy="33" x="326">as technology evolves.</tspan> </text> <!-- RIGHT SEMICIRCLE: RESKILLING --> <g transform="translate(1484,341)"> <circle cx="0" cy="0" fill="#f0f0f0" r="206"></circle>
+<!-- colored arc segments -->
+<path d="M 2 -259 A 279 279 0 0 0 -179 -188" fill="none" stroke="#f5ae28" stroke-width="39"></path>
+<path d="M -194 -174 A 279 279 0 0 0 -258 -16" fill="none" stroke="#c800f2" stroke-width="39"></path>
+<path d="M -259 -3 A 279 279 0 0 0 -189 191" fill="none" stroke="#ff100b" stroke-width="39"></path>
+<path d="M -175 207 A 279 279 0 0 0 8 256" fill="none" stroke="#0877bf" stroke-width="39"></path>
+<text fill="#000000" font-family="Arial, Helvetica, sans-serif" font-size="33" font-weight="700" text-anchor="middle" x="-98" y="-34">RESKILLING</text>
+<!-- circular arrows -->
+<g transform="translate (-100,60)">
+<path d="M -84 0 A 84 84 0 0 1 0 -84 A 84 84 0 0 1 84 0" fill="none" marker-end="url(#arrowBlack)" stroke="#000000" stroke-width="3"></path>
+<path d="M 84 0 A 84 84 0 0 1 0 84 A 84 84 0 0 1 -84 0" fill="none" marker-end="url(#arrowBlack)" stroke="#000000" stroke-width="3"></path>
+</g>
+<!-- head with gears -->
+<g transform="translate(-40,62) scale(-.4, .4)">
+<path d="M 99 109 L 99 28 C 66 15 45 -18 45 -62 C 45 -128 96 -181 163 -181 C 230 -181 278 -133 279 -66 L 314 3 C 320 15 314 30 300 33 L 279 37 L 279 70 C 279 96 257 112 229 112 L 204 112 L 204 177 L 99 177 Z" fill="#000000"></path>
+<g transform="translate(96,-34)">
+<path d="M0,-35 L9,-32 L14,-24 L25,-25 L31,-17 L28,-8 L37,-3 L37,6 L28,11 L31,21 L23,28 L13,26 L6,36 L-4,36 L-10,27 L-20,29 L-28,22 L-26,11 L-36,6 L-36,-5 L-27,-10 L-30,-20 L-23,-28 L-12,-26 L-6,-35 Z" fill="#ffffff"></path>
+<circle fill="#000000" r="14"></circle>
+</g>
+<g transform="translate(147,-79)">
+<path d="M0,-35 L9,-32 L14,-24 L25,-25 L31,-17 L28,-8 L37,-3 L37,6 L28,11 L31,21 L23,28 L13,26 L6,36 L-4,36 L-10,27 L-20,29 L-28,22 L-26,11 L-36,6 L-36,-5 L-27,-10 L-30,-20 L-23,-28 L-12,-26 L-6,-35 Z" fill="#ffffff"></path>
+<circle fill="#000000" r="14"></circle>
+</g>
+</g>
+</g> <!-- right check marks --> <g transform="translate(1226,121)"> <circle fill="#f5ae28" r="39"></circle> <path d="M -16 0 L -5 17 L 22 -21" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"></path> </g> <g transform="translate(1159,338)"> <circle fill="#c800f2" r="39"></circle> <path d="M -16 0 L -5 17 L 22 -21" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"></path> </g> <g transform="translate(1248,558)"> <circle fill="#ff100b" r="39"></circle> <path d="M -16 0 L -5 17 L 22 -21" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"></path> </g> <!-- Right explanatory text --> <text fill="#000000" font-family="Arial, Helvetica, sans-serif" font-size="29" text-anchor="left" x="1058" y="89"> <tspan dy="0" x="858">Training employees in</tspan> <tspan dy="33" font-weight="700" x="858">entirely new skills</tspan><tspan> to</tspan> <tspan dy="33" x="858">transition to different roles</tspan> <tspan dy="33" x="858">within the organization.</tspan> </text> <text fill="#000000" font-family="Arial, Helvetica, sans-serif" font-size="29" text-anchor="left" x="866" y="315"> <tspan dy="0" x="810">Prepares employees for</tspan> <tspan dy="33" font-weight="700" x="816">future positions</tspan> <tspan dy="33" x="816">created by technological</tspan> <tspan dy="33" x="816">advancements.</tspan> </text> <text fill="#000000" font-family="Arial, Helvetica, sans-serif" font-size="29" text-anchor="right" x="84" y="538"> <tspan dy="0" x="854">Facilitates </tspan><tspan font-weight="700">lateral moves</tspan> <tspan dy="33" x="854">and career shifts within the</tspan> <tspan dy="33" x="854">organization.</tspan> </text> </svg><figcaption>Figure 7.2 Efficiencies Gained by Technological Changes Increase the Need for Upskilling and Reskilling</figcaption>
+</figure>
+</div>
+</section>
+<section class="subsection level-2" id="organizational-structure">
+<h3>Technology and Organizational Structure</h3>
+<p>Technology has transformed organizational structures by making communication faster, information more accessible, and decision-making less dependent on formal hierarchy. Traditional organizations often relied on top-down communication, where information moved upward for approval and downward for implementation. Digital tools make it easier for employees across levels and locations to access information, coordinate work, and make decisions closer to the point of action. This shift supports more networked, decentralized, and flexible structures.<span aria-label="Source 7" class="cite-ref" tabindex="0"><sup>7</sup><span class="cite-tooltip" role="tooltip">Joseph, J., &amp; Gaba, V. (2020). Organizational structure, information processing, and decision-making. Academy of Management Annals, 14(1), 267–302; Denning, S. (2016). How to make the whole organization agile. Strategy &amp; Leadership, 44(4), 10–17.</span></span></p>
+<p>Networked structures rely less on rigid chains of command and more on connections among people, teams, and information systems. In these structures, influence often depends on expertise, access to information, and the ability to collaborate across boundaries. This can improve responsiveness and innovation because employees do not always need to wait for multiple layers of approval. However, networked structures also require clarity about decision rights, accountability, and coordination, or flexibility can become confusion.</p>
+<p>Technology has also supported agile structures. Agile organizations use flexible teams, decentralized decision-making, cross-functional collaboration, iterative work cycles, customer focus, and continuous feedback. These structures are common in technology-driven industries, but the logic applies more broadly: when environments change quickly, organizations need structures that allow them to learn and adjust quickly. Spotify and Google are often discussed as examples of organizations that use team-based or distributed approaches to support innovation and responsiveness.</p>
+<p>Agility does not mean the absence of structure. Agile organizations still need shared goals, communication routines, performance expectations, and leadership support. Daily stand-ups, retrospectives, sprints, and cross-functional teams are not simply “informal” practices; they are structured mechanisms for coordination and learning. The managerial challenge is to create enough structure to support accountability while preserving enough flexibility to respond to change.</p>
+<table>
+<caption>Table 7.3 Key Differences Between Traditional and Agile Organizational Structures</caption>
+<thead>
+<tr>
+<th>Traditional Hierarchical Structure</th>
+<th>Technology-Enabled Networked or Agile Structure</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Decision-making concentrated at the top.</td>
+<td>Decision-making pushed closer to the point of action.</td>
+</tr>
+<tr>
+<td>Information flows through formal reporting lines.</td>
+<td>Information flows across teams, platforms, and networks.</td>
+</tr>
+<tr>
+<td>Departments operate with clear boundaries.</td>
+<td>Cross-functional teams collaborate around problems or projects.</td>
+</tr>
+<tr>
+<td>Stability and control are emphasized.</td>
+<td>Adaptability, learning, and speed are emphasized.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="subsection level-2" id="future-trends">
+<h3>Future Trends in Technology and OB</h3>
+<p>Artificial intelligence and machine learning are among the most important trends shaping the future of organizational behavior. These technologies are moving beyond routine automation and are increasingly used in data analysis, decision support, hiring, performance management, customer service, creative work, and personalized employee experiences. As AI systems become more sophisticated, employees will need to learn how to work with AI rather than simply work around it. This requires digital skills, critical thinking, ethical awareness, and the ability to evaluate machine-generated recommendations.<span aria-label="Source 8" class="cite-ref" tabindex="0"><sup>8</sup><span class="cite-tooltip" role="tooltip">Bankins, S., Ocampo, A. C., Marrone, M., Restubog, S. L. D., &amp; Woo, S. E. (2024). A multilevel review of artificial intelligence in organizations. Journal of Organizational Behavior, 45(2), 159–182; Morandini et al. (2023). The impact of artificial intelligence on workers’ skills. Informing Science, 26, 39–68.</span></span></p>
+<p>AI can also personalize the employee experience. By analyzing employee behavior, preferences, skills, and performance data, organizations may tailor training, development opportunities, feedback, and work support. This can increase engagement and retention when used responsibly. However, personalization can also become intrusive if employees do not understand how data are collected, interpreted, or used. The same technology that supports development can feel like surveillance if governance and communication are weak.</p>
+<p>Remote and hybrid work will continue to influence organizational behavior. Digital collaboration tools already allow employees to work across locations, and emerging technologies such as virtual reality and augmented reality may create more immersive training, meetings, simulations, and collaborative workspaces. These tools may help remote employees feel more connected, but they do not automatically create trust or inclusion. Managers must still design communication norms, meeting practices, feedback systems, and relationship-building opportunities.</p>
+<p>The future of technology and OB will also require organizations to balance efficiency with humanity. Technology may make some processes faster and more measurable, but measurable work is not always meaningful work. Employees may welcome tools that reduce unnecessary effort, but resist tools that reduce autonomy, dignity, or voice. Managers must therefore ask not only what technology can do, but what kind of organization it helps create.</p>
+</section>
+<section class="subsection level-2" id="responsible-ai">
+<h3>Responsible AI and Technology Governance</h3>
+<p>As organizations adopt AI and digital technologies, responsible governance becomes essential. AI systems depend on data quality, design choices, assumptions, and organizational use. If data are biased, incomplete, or poorly governed, AI recommendations may reproduce or amplify unfairness. If employees do not understand how decisions are made, AI-driven systems can reduce trust even when they appear efficient.</p>
+<p>Responsible AI requires leadership and governance. Organizations need clear accountability for AI initiatives, guidelines for ethical use, and processes for monitoring bias, fairness, transparency, privacy, and performance. Leaders must understand enough about AI to ask informed questions, not simply delegate responsibility to technical experts. They must also ensure that AI use aligns with organizational values, legal requirements, and employee dignity.</p>
+<p>Data infrastructure and data quality are also critical. AI systems require accurate, accessible, and well-managed data. Poor data quality can lead to poor decisions, inaccurate predictions, and loss of trust. Organizations also need talent and skills, including data scientists, AI specialists, analysts, and managers who can translate technical insights into sound organizational decisions.</p>
+<p>Finally, responsible technology integration requires performance measurement. Organizations should define the KPIs used to evaluate whether AI or other technologies are actually improving business and human outcomes. This can be implemented with a scorecard that defines assessment criteria and the key questions that managers should be asking for each metric of AI-readiness.<span aria-label="Source 8" class="cite-ref" tabindex="0"><sup>13</sup><span class="cite-tooltip" role="tooltip"> Blasch, E., Sung, J., &amp; Nguyen, T. (2021). Multisource AI scorecard table for system evaluation. arXiv preprint arXiv:2102.03985; Holmström, J. (2022). From AI to digital transformation: The AI readiness framework. <em>Business Horizons, 65</em>(3), 329-339.</span></span> 
+These metrics should include not only financial returns but also adoption, fairness, employee experience, service quality, safety, and learning. If organizations measure only efficiency, they may miss the broader organizational consequences of technology use.</p>
+<table>
+<caption>Table 7.4 From Technical Readiness to Behavioral Readiness: OB Adaptation of an AI Scorecard Table</caption>
+<thead>
+<tr>
+<th>AI-Readiness Dimension</th>
+<th>Assessment Criteria</th>
+<th>OB-Focused Key Questions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>AI Strategy and Vision</strong></td>
+<td>The AI strategy is co‑created with input from multiple levels of the organization, fostering shared ownership. The vision communicates how AI supports employee well‑being, autonomy, and meaningful work, not just business outcomes.</td>
+<td>Do employees understand and identify with the AI vision? How does AI strategy influence job satisfaction and role clarity?</td>
+</tr>
+<tr>
+<td><strong>Leadership and Governance</strong></td>
+<td>Leaders model inclusive, transparent decision‑making about AI. Governance structures empower teams, encourage upward feedback, and ensure accountability for AI’s impact on people and processes.</td>
+<td>How do leaders involve employees in AI governance? Are there mechanisms to address concerns about surveillance, job displacement, or algorithmic control?</td>
+</tr>
+<tr>
+<td><strong>Data Infrastructure and Quality</strong></td>
+<td>Data systems are designed to promote trust, accessibility, and psychological safety. Employees understand how data is used, have input into data quality practices, and feel confident that data supports fair treatment.</td>
+<td>How transparent is data collection to employees? Do teams have the authority to improve local data practices without bureaucratic barriers?</td>
+</tr>
+<tr>
+<td><strong>Talent and Skills</strong></td>
+<td>The organization values cognitive diversity, learning agility, and cross‑functional collaboration. Upskilling programs are inclusive, growth‑oriented, and recognize that AI skills develop through psychological safety and peer learning.</td>
+<td>Are employees encouraged to experiment with AI without fear of failure? How are mid‑career or non‑technical staff supported in building AI literacy?</td>
+</tr>
+<tr>
+<td><strong>Technology and Tools</strong></td>
+<td>AI tools are chosen and configured with attention to user experience, job autonomy, and team workflows. Technology adoption is facilitated by change management and ongoing dialogue about how tools affect collaboration and workload.</td>
+<td>Do employees perceive AI tools as enablers or controllers? How are their insights incorporated into tool design or redeployment?</td>
+</tr>
+<tr>
+<td><strong>Innovation and Experimentation</strong></td>
+<td>A culture of intelligent risk‑taking is cultivated through formal and informal support for bottom‑up AI experiments. Failure is treated as a learning opportunity, and cross‑disciplinary teams are empowered to pilot new ideas.</td>
+<td>How is psychological safety maintained during AI experiments? Are there forums for sharing both successes and failures across teams?</td>
+</tr>
+<tr>
+<td><strong>AI Ethics and Responsible Use</strong></td>
+<td>Ethical AI is operationalized through participatory processes that surface bias, fairness, and transparency concerns from diverse employee perspectives. Accountability for ethical outcomes is distributed, not just top‑down.</td>
+<td>How do employees report or escalate ethical AI concerns? Is there a feedback loop to adjust AI models based on perceived unfairness?</td>
+</tr>
+<tr>
+<td><strong>Performance Measurement and ROI</strong></td>
+<td>Performance metrics combine business outcomes with human factors such as trust, engagement, and perceived fairness. ROI discussions include impacts on turnover, collaboration quality, and employee morale.</td>
+<td>Are employees included in defining KPIs for AI? How is the “cost” of eroded autonomy or increased stress factored into ROI calculations?</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="subsection level-2" id="key-takeaways">
+<h3>Key Takeaways</h3>
+<ul>
+<li>Technology is not only a tool for efficiency; it is a force that shapes communication, decision-making, work design, structure, culture, and employee experience.</li>
+<li>The relationship between technology and organizational behavior is reciprocal. Technology changes behavior, and organizational behavior determines whether technology is adopted and used effectively.</li>
+<li>Digital communication tools can improve speed and access, but they may also weaken trust, increase overload, and reduce informal relationship building if not managed well.</li>
+<li>AI, analytics, and big data can improve decision-making, but they also require data literacy, ethical judgment, and careful balance between human judgment and machine recommendations.</li>
+<li>Automation can free employees from routine work, but it may also create job displacement concerns and increase the need for upskilling and reskilling.</li>
+<li>The Technology Acceptance Model emphasizes perceived usefulness and perceived ease of use as major drivers of technology adoption.</li>
+<li>Technology integration is a change management issue. Resistance, training needs, workflow disruptions, and change fatigue must be managed intentionally.</li>
+<li>Technology can support networked and agile structures, but flexibility must be balanced with accountability and coordination.</li>
+<li>AI and digital tools can personalize employee experiences, but they also raise concerns about privacy, surveillance, fairness, and transparency.</li>
+<li>Responsible technology use requires governance, high-quality data, ethical guidelines, skilled employees, and performance metrics that capture both business and human outcomes.</li>
+</ul>
+</section>
+<section class="subsection level-2" id="managerial-insight">
+<h3>Managerial Insight</h3>
+<div class="insights">
+<p>Managers should treat technology implementation as an organizational behavior challenge, not simply an IT project. A technically sophisticated tool will not create value if employees do not trust it, understand it, see its usefulness, or receive the support needed to use it effectively. This is why technology adoption requires communication, training, participation, leadership support, and attention to culture.</p>
+<p>Effective managers also understand that technology changes the psychological experience of work. Employees may gain flexibility, better information, and more meaningful work, but they may also experience anxiety, overload, monitoring, or loss of control. Managers should therefore evaluate technology not only by productivity metrics, but also by its effects on motivation, trust, fairness, job design, and well-being.</p>
+<p>The best technology strategies are human-centered. They clarify the purpose of the technology, involve employees early, reduce unnecessary uncertainty, provide reskilling opportunities, and establish responsible governance. When managers align technology with organizational values and employee needs, technology can support innovation, agility, and performance without undermining the human foundations of organizational effectiveness.</p>
+</div>
+</section>
+<section class="subsection level-2" id="sources">
+<h3>Key Sources</h3>
+<div class="source-entry"><sup>1</sup> Bankins, S., Ocampo, A. C., Marrone, M., Restubog, S. L. D., &amp; Woo, S. E. (2024). A multilevel review of artificial intelligence in organizations: Implications for organizational behavior research and practice. <em>Journal of Organizational Behavior, 45</em>(2), 159–182.</div>
+<div class="source-entry"><sup>2</sup> Baptista, J., Stein, M. K., Klein, S., Watson-Manheim, M. B., &amp; Lee, J. (2020). Digital work and organisational transformation: Emergent digital/human work configurations in modern organisations. <em>The Journal of Strategic Information Systems, 29</em>(2), 101618.</div>
+<div class="source-entry"><sup>3</sup> Cappelli, P., &amp; Tavis, A. (2018). The performance management revolution. <em>Harvard Business Review</em>.</div>
+<div class="source-entry"><sup>4</sup> Cascio, W. F., &amp; Montealegre, R. (2016). How technology is changing work and organizations. <em>Annual Review of Organizational Psychology and Organizational Behavior, 3</em>, 349–375.</div>
+<div class="source-entry"><sup>5</sup> Davis, F. D. (1986). <em>A technology acceptance model for empirically testing new end-user information systems: Theory and results</em>. Doctoral dissertation, MIT Sloan School of Management.</div>
+<div class="source-entry"><sup>6</sup> Denning, S. (2016). How to make the whole organization agile. <em>Strategy &amp; Leadership, 44</em>(4), 10–17.</div>
+<div class="source-entry">Duan, Y., Edwards, J. S., &amp; Dwivedi, Y. K. (2019). Artificial intelligence for decision making in the era of big data: Evolution, challenges and research agenda. <em>International Journal of Information Management, 48</em>, 63–71.</div>
+<div class="source-entry"><sup>7</sup> Joseph, J., &amp; Gaba, V. (2020). Organizational structure, information processing, and decision-making: A retrospective and road map for research. <em>Academy of Management Annals, 14</em>(1), 267–302.</div>
+<div class="source-entry"><sup>8</sup> Marangunić, N., &amp; Granić, A. (2015). Technology acceptance model: A literature review from 1986 to 2013. <em>Universal Access in the Information Society, 14</em>, 81–95.</div>
+<div class="source-entry"><sup>9</sup> Morandini, S., Fraboni, F., De Angelis, M., Puzzo, G., Giusino, D., &amp; Pietrantoni, L. (2023). The impact of artificial intelligence on workers’ skills: Upskilling and reskilling in organisations. <em>Informing Science, 26</em>, 39–68.</div>
+<div class="source-entry"><sup>10</sup> Orlikowski, W. J., &amp; Scott, S. V. (2008). Sociomateriality: Challenging the separation of technology, work and organization. <em>The Academy of Management Annals, 2</em>(1), 433–474.</div>
+<div class="source-entry">Roberts, R., Millar, D., Corradi, L., &amp; Flin, R. (2021). What use is technology if no one uses it? The psychological factors that influence technology adoption decisions in oil and gas. <em>Technology, Mind, and Behavior, 2</em>(1).</div>
+<div class="source-entry"><sup>11</sup> Venkatesh, V., &amp; Davis, F. D. (2000). A theoretical extension of the Technology Acceptance Model: Four longitudinal field studies. <em>Management Science, 46</em>(2), 186–204.</div>
+<div class="source-entry"><sup>12</sup> Warrick, D. D. (2023). Revisiting resistance to change and how to manage it: What has been learned and what organizations need to do. <em>Business Horizons, 66</em>(4), 433–441.</div>
+<div class="source-entry"><sup>13</sup> Blasch, E., Sung, J., &amp; Nguyen, T. (2021). Multisource AI scorecard table for system evaluation. arXiv preprint arXiv:2102.03985; Holmström, J. (2022). From AI to digital transformation: The AI readiness framework. <em>Business Horizons, 65</em>(3), 329-339.</div>
+</section>
+</section>
+</main>
+</div>
+</body>
+</html>

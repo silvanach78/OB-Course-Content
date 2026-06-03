@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Organizational Behavior - Module 1</title>
+<style>
+:root {
+  --bg: #f7f8fa;
+  --panel: #ffffff;
+  --ink: #222831;
+  --muted: #5c6773;
+  --line: #d7dde5;
+  --accent: #0f6c7b;
+  --accent-soft: #e8f4f6;
+  --note-bg: #fff7e8;
+  --note-line: #e6cf95;
+    --note:#eef79a;
+  --note2:#f5f8ad;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.65;
+}
+
+a { color: #0b5ea8; }
+.layout {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 4px;
+}
+.sidebar {
+  position: sticky;
+  top: 4px;
+  align-self: start;
+  max-height: calc(100vh - 32px);
+  overflow: auto;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 18px 18px 14px;
+  box-shadow: 0 6px 20px rgba(34,40,49,.06);
+}
+.sidebar h2 {
+  margin: 0 0 8px;
+  font-size: 1.45rem;
+}
+.sidebar p {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: .95rem;
+}
+.toc-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+.toc-list .toc-list {
+  padding-left: 10px;
+  margin-top: 4px;
+}
+.toc-list li {
+  margin: 3px 0;
+}
+.toc-list a {
+  display: block;
+  text-decoration: none;
+  color: #334155;
+  padding: 4px 6px;
+  border-radius: 8px;
+  font-size: .96rem;
+}
+.toc-list a:hover, .toc-list a.active {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.content {
+  min-width: 0;
+}
+.frontmatter, .module, .subsection {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 20px 10px;
+  box-shadow: 0 6px 18px rgba(34,40,49,.05);
+  margin-bottom: 15px;
+}
+.frontmatter h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  line-height: 1.15;
+}
+.subtitle {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+h2, h3, h4 {
+  scroll-margin-top: 24px;
+}
+.module > h2 {
+  margin: 0 0 6px;
+  font-size: 1.5rem;
+  color: var(--accent);
+}
+.level-2 > h3 {
+  margin: 4px 0 12px;
+  font-size: 1.35rem;
+}
+.level-3 > h4 {
+  margin: 4px 0 10px;
+  font-size: 1.12rem;
+}
+.insight, .insights {
+  background: var(--accent-soft);
+  border-right: 4px solid var(--accent);
+  padding: 12px 14px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+.box-2 > h3 {
+  margin: 4px 0 12px;
+  font-size: 1.35rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0 20px;
+  font-size: .95rem;
+}
+.table-wrap {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 16px 0 20px;
+}
+.table-wrap table {
+  margin: 0;
+}
+caption {
+  caption-side: top;
+  text-align: left;
+  margin: 0 0 8px;
+  font-size: .96rem;
+  color: #44515f;
+  font-style: italic;
+}
+th {
+  background: var(--accent);
+  color: #fff;
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #0b5965;
+  overflow-wrap: anywhere;
+}
+td {
+  border: 1px solid var(--line);
+  padding: 10px;
+  vertical-align: top;
+  background: #fff;
+  overflow-wrap: anywhere;
+}
+tr:nth-child(even) td { background:#fbfcfd; }
+
+@media (max-width: 600px) {
+  .frontmatter, .module, .subsection {
+    padding: 16px 8px;
+  }
+  table {
+    font-size: .86rem;
+    min-width: 640px;
+  }
+  th, td {
+    padding: 8px;
+  }
+  caption {
+    font-size: .9rem;
+  }
+}
+
+sup { font-size:0.72em; color:#0f6c7b; vertical-align:super; line-height:0; }
+.chart-wrap {
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:14px;
+  margin-top:10px;
+}
+.wrapper { max-width: 1180px; margin: 0 auto; }
+.card { background:#fff; border:1px solid #d7dde5; border-radius:16px; padding:16px; margin-bottom:22px; box-shadow:0 4px 14px rgba(0,0,0,.05); }
+.grid2 { display:grid; grid-template-columns:1fr; gap:18px; }
+.grid2 figure {
+  min-width: 0;
+}
+.grid2 figure svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.chart {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.chart-wide {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.chart-small {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+@media (min-width: 1300px) { .grid2 { grid-template-columns:1fr 1fr; } }
+
+.grid3 { display:grid; grid-template-columns:1fr; gap:18px; }
+.grid3 figure {
+  min-width: 0;
+}
+.grid3 figure svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+@media (min-width: 1100px) { .grid3 { grid-template-columns:1fr 1fr; } }
+@media (min-width: 1500px) { .grid3 { grid-template-columns:1fr 1fr 1fr; } }
+
+
+p {
+  margin: 0 0 14px;
+}
+ul {
+  margin: 0 0 14px 1rem;
+}
+li { margin-bottom: 7px; }
+figure {
+  margin: 20px 0 18px;
+  text-align: center;
+}
+figure img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+}
+figcaption {
+  margin-top: 10px;
+  font-size: .96rem;
+  color: #44515f;
+  font-style: italic;
+}
+.note {
+  background: var(--note-bg);
+  border-left: 4px solid var(--note-line);
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: .95rem;
+  margin-bottom: 12px;
+}
+.source-entry {
+  margin-bottom: 6px;
+  padding-bottom: 2px;
+    font-size: .8rem;
+  border-bottom: 1px dashed var(--line);
+}
+.source-entry:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+  font-size: .8rem;
+}
+@media (max-width: 1000px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    position: static;
+    max-height: none;
+  }
+}
+
+.grid-notes {
+  display:grid;
+  grid-template-columns:1fr;
+  gap:22px;
+  margin-top:14px;
+}
+
+@media (min-width:800px) {
+  .grid-notes { grid-template-columns:1fr 1fr; }
+}
+@media (min-width:1000px) {
+  .grid-notes { grid-template-columns:1fr 1fr 1fr; }
+}
+.term { font-weight:700; color:#12343b; }
+
+.note {
+  background:#fff7e8;
+  border-left:4px solid #e6cf95;
+  padding:12px 14px;
+  border-radius:8px;
+  font-size:.97rem;
+  margin-top:10px;
+}
+.small {
+  font-size:.93rem;
+  color:#44515f;
+}
+
+sup {
+  font-size: 0.72em;
+  color: #0f6c7b;
+  vertical-align: super;
+  line-height: 0;
+}
+
+.cite-ref {
+  position: relative;
+  display: inline-block;
+  cursor: help;
+}
+.cite-tooltip {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  left: 50%;
+  bottom: 125%;
+  transform: translateX(-50%);
+  width: min(320px, 70vw);
+  background: #1f2937;
+  color: #fff;
+  text-align: left;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 0.82rem;
+  line-height: 1.35;
+  box-shadow: 0 10px 24px rgba(0,0,0,.18);
+  z-index: 999;
+  transition: opacity .18s ease, visibility .18s ease;
+}
+.cite-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -6px;
+  border-width: 6px;
+  border-style: solid;
+  border-color: #1f2937 transparent transparent transparent;
+}
+.cite-ref:hover .cite-tooltip,
+.cite-ref:focus .cite-tooltip,
+.cite-ref:focus-within .cite-tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+.content, .frontmatter, .module, .subsection {
+  max-width: 100%;
+}
+img, svg {
+  max-width: 100%;
+  height: auto;
+}
+p, li, td, th {
+  overflow-wrap: anywhere;
+}
+
+</style>
+</head>
+<body>
+<div class="layout">
+<aside aria-label="Table of contents" class="sidebar"><h2>Contents</h2><ul class="toc-list">
+<li><strong><a href="#about-this-document">About This Document</a></strong></li>
+<li><strong><a href="#module-1">Module 1: Organizational Behavior and Ethical Decision-Making</a></strong>
+<ul class="toc-list">
+<li><a href="#what-is-OB">What is Organizational Behavior?</a></li>
+<li><a href="#diagnostic-lens">Applying OB for Diagnostics and Interventions</a></li>
+<li><a href="#why-OB-matters">Why Organizational Behavior Matters</a></li>
+<li><a href="#levels-of-OB">Levels of Organizational Behavior</a></li>
+<li><a href="#OB-research">Understanding How OB Research Is Conducted</a></li>
+<li><a href="#the-role-of-ethics-in-OB">The Role of Ethics in Organizational Behavior</a></li>
+<li><a href="#ethical-dilemmas-contemporary-challenges">Ethical Dilemmas and Contemporary OB Challenges</a></li>
+<li><a href="#key-takeaways">Key Takeaways</a></li>
+<li><a href="#managerial-insight">Managerial Insight</a></li>
+<li><a href="#sources">Sources</a></li>
+</ul>
+</li>
+</ul></aside>
+<main class="content"><section class="frontmatter" id="about-this-document"><h1>Organizational Behavior</h1><h2>About This Document</h2><p>This document has been developed for students of Organizational Behavior. The topics contained herein have been carefully curated to help us accomplish the course goals; therefore, they are discussed at a managerial and applied level rather than with extensive technical depth. To learn about these topics in more depth, I recommend that you review the sources listed at the end of each module.</p><p>This work is original and unique to this course, and as such, it is protected by copyright and the Digital Millennium Copyright Act (DMCA).</p><p><strong>Copyright © 2026 Silvana Chambers.</strong></p><p>This document reflects current research, real-world examples, and instructor-developed insights. <strong>Please do not share, reproduce, or distribute this document, or any part of it, outside of this class.</strong></p><p>June 2026</p></section><section class="module level-1" id="module-1"><h2>Introduction to Organizational Behavior</h2><section class="subsection level-2" id="what-is-OB"><h3>What is Organizational Behavior?</h3><p>
+Adults spend a significant portion of their waking lives at work, making it essential to understand the forces that shape workplace experiences. Organizational Behavior, or OB, is the <strong>systematic study and application of knowledge about how individuals and groups act within organizations</strong>. It examines behavior at the individual, group, and organizational levels, recognizing that these levels are analytically distinct but deeply interconnected. This multi-level perspective allows managers to diagnose problems more accurately and design targeted interventions.</p>
+<p>At its core, Organizational Behavior seeks to <strong>explain and predict behavior within organizations</strong>. A central principle is that <strong>individuals and organizational systems continuously influence each other</strong>. Employees shape organizational outcomes through their actions, while organizations shape behavior through culture, structure, incentives, and leadership. This <strong>reciprocal relationship</strong> creates an ongoing feedback loop that determines how organizations function and evolve.</p>
+<p>Unlike approaches that rely primarily on numerical analysis, OB emphasizes psychological and social processes. Understanding how people think, feel, and behave provides deeper insight into organizational dynamics. Managers who develop this understanding are better equipped to anticipate challenges, resolve conflicts, and improve performance.</p>
+<p>Studying OB is also a process of self-awareness. By connecting concepts to personal experiences, individuals gain insight into how their own behavior affects others and how organizational environments influence their actions. This dual focus on understanding oneself and understanding organizations is central to becoming a more effective and ethical contributor in the workplace.</p>
+<p>Since individual behavior is at the core of OB, we should emphasize that behavior is a function of the person in their environment.</p>
+<div class="chart">
+<figure>
+<svg role="img" viewbox="0 0 1000 200" xmlns="http://www.w3.org/2000/svg">
+<title>Behavior function equation</title>
+<desc>The equation B equals f of P comma E, representing behavior as a function of person and environment.</desc>
+<!-- Background -->
+<rect fill="#fff" height="200" width="1000" x="0" y="0"></rect>
+<!-- Text -->
+<text fill="#000000" font-family="Arial, Helvetica, sans-serif" font-size="40" font-style="italic" font-weight="700" text-anchor="middle" x="500" y="100">
+    B = f(P, E)
+  </text>
+</svg>
+<figcaption>Figure 1-1. Lewin's Equation: Behavior (B) is a function of the person (P), and the environment (E). 
+</figcaption>
+</figure>
+</div>
+<p>This famous formula, proposed by psychologist Kurt Lewin in 1936, means that behavior is not determined solely by the person who enacts it, or solely by the situation or the environment, but rather by the interaction between the two. Therefore, in OB, to understand behavior, we consider both types of variables: those related to the <strong>person (internal)</strong> such as personality, values, and skills, and those related to the <strong>environment or situation (external)</strong> such as rewards, organizational culture, and policies.<span aria-label="Source 1" class="cite-ref" tabindex="0"><sup>1</sup><span class="cite-tooltip" role="tooltip">Lewin, K. (1936). Principles of Topological Psychology . McGraw Hill.</span></span></p>
+</section>
+<section class="subsection level-2" id="levels-of-OB"><h3>Levels of Organizational Behavior</h3><p>
+Organizational Behavior examines behavior at three levels, each with distinct focus areas and theoretical foundations.</p><p>
+
+At the <strong>individual level</strong>, OB focuses on personal characteristics and internal processes that influence behavior. These include personality, motivation, perception, attitudes, emotions, decision-making, and learning. Theories such as the Big Five personality traits and motivation theories help explain why individuals behave the way they do. The key question at this level is <strong>why a particular individual behaves in a certain way.</strong></p><p>
+
+At the <strong>group level</strong>, OB examines interactions among individuals. This includes communication, leadership, power, conflict, and team dynamics. Theories such as social identity theory, stages of group development, and leader-member exchange explain how group processes influence behavior and outcomes. The key question at this level is <strong>how interactions within a group shape performance and behavior.</strong></p><p>
+
+At the <strong>organizational level</strong>, OB focuses on broader systems such as organizational culture, structure, policies, and change processes. Frameworks such as organizational culture models and change theories explain how organizations influence behavior on a larger scale. The key question at this level is <strong>how organizational systems shape behavior across the organization.</strong></p><p>
+
+These levels are <strong>interdependent</strong>. Behavior can flow from individuals to groups and from groups to organizations, but it can also flow from organizations down to groups and individuals. For example, a toxic organizational culture can create conflict within teams and reduce individual motivation. Understanding these relationships helps managers identify the root causes of problems rather than addressing only their symptoms.</p></section>
+<section class="subsection level-2" id="OB-framework">
+<h3>OB as Framework for Diagnostics and Interventions</h3>
+<p>In Organizational Behavior, managers rarely start with a clearly defined problem. Instead, they observe <strong>symptoms</strong>, such as turnover, absenteeism, conflict, low engagement, poor performance, or lack of innovation. These observable problems are not root causes. Effective managers diagnose the situation by identifying the underlying issue, tracing its causes, and selecting appropriate actions.</p>
+<p>The OB framework for diagnostics and interventions helps managers address those symptoms by explaining that they are the consequence of specific drivers and processes. As shown in Figure 1-2, consequences represent observable outcomes such as performance, turnover, innovation, and conflict. These are often symptoms of deeper issues. OB helps managers diagnose these outcomes by identifying the processes and drivers that produce them, distinguishing between factors managers can influence and those they cannot, and applying evidence-based interventions to address root causes.
+</p>
+<div class="chart-wide">
+<figure>
+<svg height="470" role="img" viewbox="0 0 1200 440" width="1200" xmlns="http://www.w3.org/2000/svg">
+<title>Organizational Behavior Framework: Drivers, Processes, and Consequences</title>
+<desc>
+    Three-column framework illustrating Organizational Behavior. The first column shows Drivers/Causes including Person factors such as personality traits, cognitive ability, and skills, and Situation factors such as leadership, organizational culture, and policies and procedures. 
+    The second column shows Processes at the individual level including perception, attribution, and decision-making; at the group level including group norms, communication, and trust; and at the organizational level including talent management, change management, and employee development. 
+    The third column shows Consequences at the individual level including work attitudes, performance, and resignations; at the group level including group performance, collaboration, and conflict; and at the organizational level including organizational performance, innovation, and reputation.
+  </desc>
+<!-- Colors -->
+<defs>
+<marker id="arrowhead" markerheight="12" markerunits="userSpaceOnUse" markerwidth="12" orient="auto" refx="11" refy="6" viewbox="0 0 12 12">
+<path d="M0,0 L12,6 L0,12 Z" fill="#000000"></path>
+</marker>
+<style>
+      .header { fill:#0f6c7b; }
+      .box { fill:#fbfcfd; stroke:#333; stroke-width:1; }
+      .title { fill:white; font-size:28px; font-family:Arial, sans-serif; font-weight:bold; text-anchor:middle; }
+      .text { fill:black; font-size:18px; font-family:Arial, sans-serif; }
+      .bold { font-weight:bold; }
+    </style>
+</defs>
+<!-- COLUMN WIDTH -->
+<!-- Each column ~360px wide -->
+<!-- Column 1 -->
+<rect class="header" height="60" width="360" x="20" y="20"></rect>
+<text class="title" x="200" y="58">Drivers</text>
+<rect class="box" height="350" width="360" x="20" y="80"></rect>
+<text class="text" x="40" y="110">
+<tspan class="bold">• Person.</tspan> Examples:
+  </text>
+<text class="text" x="60" y="140">○ Personality traits</text>
+<text class="text" x="60" y="165">○ Cognitive ability</text>
+<text class="text" x="60" y="190">○ Skills</text>
+<text class="text" x="40" y="225">
+<tspan class="bold">• Situation.</tspan> Examples:
+  </text>
+<text class="text" x="60" y="255">○ Leadership</text>
+<text class="text" x="60" y="280">○ Organizational culture</text>
+<text class="text" x="60" y="305">○ Policies and procedures</text>
+<!-- Column 2 -->
+<rect class="header" height="60" width="360" x="420" y="20"></rect>
+<text class="title" x="600" y="58">Processes</text>
+<rect class="box" height="350" width="360" x="420" y="80"></rect>
+<text class="text" x="440" y="110">
+<tspan class="bold">• Individual.</tspan> Examples:
+  </text>
+<text class="text" x="460" y="140">○ Perception</text>
+<text class="text" x="460" y="165">○ Attribution</text>
+<text class="text" x="460" y="190">○ Decision-making</text>
+<text class="text" x="440" y="225">
+<tspan class="bold">• Group.</tspan> Examples:
+  </text>
+<text class="text" x="460" y="255">○ Group norms</text>
+<text class="text" x="460" y="280">○ Communication</text>
+<text class="text" x="460" y="305">○ Trust</text>
+<text class="text" x="440" y="340">
+<tspan class="bold">• Organization.</tspan> Examples:
+  </text>
+<text class="text" x="460" y="370">○ Talent management</text>
+<text class="text" x="460" y="395">○ Change management</text>
+<text class="text" x="460" y="420">○ Employee development</text>
+<!-- Column 3 -->
+<rect class="header" height="60" width="360" x="820" y="20"></rect>
+<text class="title" x="1000" y="58">Consequences</text>
+<rect class="box" height="350" width="360" x="820" y="80"></rect>
+<text class="text" x="840" y="110">
+<tspan class="bold">• Individual.</tspan> Examples:
+  </text>
+<text class="text" x="860" y="140">○ Work attitudes</text>
+<text class="text" x="860" y="165">○ Performance</text>
+<text class="text" x="860" y="190">○ Resignations (turnover)</text>
+<text class="text" x="840" y="225">
+<tspan class="bold">• Group.</tspan> Examples:
+  </text>
+<text class="text" x="860" y="255">○ Group performance</text>
+<text class="text" x="860" y="280">○ Collaboration</text>
+<text class="text" x="860" y="305">○ Conflict</text>
+<text class="text" x="840" y="340">
+<tspan class="bold">• Organization.</tspan> Examples:
+  </text>
+<text class="text" x="860" y="370">○ Org. performance</text>
+<text class="text" x="860" y="395">○ Innovation</text>
+<text class="text" x="860" y="420">○ Reputation</text>
+<line marker-end="url(#arrowhead)" stroke="#000000" stroke-width="4.5" x1="780" x2="820" y1="220" y2="220"></line>
+<line marker-end="url(#arrowhead)" stroke="#000000" stroke-width="4.5" x1="380" x2="420" y1="220" y2="220"></line>
+<line marker-end="url(#arrowhead)" stroke="#000000" stroke-width="4.5" x1="820" x2="780" y1="320" y2="320"></line>
+<path d="M1000,433 C850,460 350,460 200,433" fill="none" marker-end="url(#arrowhead)" stroke="#000000" stroke-width="4.5"></path>
+</svg>
+<figcaption>
+Figure 1-2. Framework for Applying OB as a Diagnostic Tool for Problem-Solving
+</figcaption>
+</figure>
+</div>
+<p class="note">
+<strong>Instructor's note.</strong> Consequences are often observable and easy to see; they are what managers may want to address. Start with consequences and work backwards to see the processes and drivers that influence that problem. Use theory and best practices to make evidence-based recommendations. 
+</p>
+<section class="subsection level-3" id="applying-ob-framework"><h4>Applying the OB Framework</h4>
+<p>
+To simplify the application of the OB framework, Table 1-1, lists the steps and questions to ask to diagnose organizational problems, identify their root causes, and recommend managerial actions.
+</p>
+<p>
+<strong>Diagnostic logic:</strong> Observable problem → underlying issue → root causes → managerial action
+</p>
+<p><em>Note:</em> In this template, observable problems correspond to consequences in the framework, underlying issues reflect OB processes or concepts, and root causes represent the drivers that managers may be able to influence.</p>
+<div class="table-wrap">
+<table>
+<caption>Table 1-1. Diagnostic Template for Applying OB Concepts</caption>
+<thead>
+<tr>
+<th>Step</th>
+<th>Question to Ask</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Identify the observable problem</strong></td>
+<td>What symptoms are we seeing?</td>
+<td>High turnover, absenteeism, low innovation, conflict, customer complaints, safety incidents</td>
+</tr>
+<tr>
+<td><strong>2. Identify the underlying issue</strong></td>
+<td>What OB concept best explains this problem?</td>
+<td>Low job satisfaction, weak leadership, poor communication, lack of trust, misaligned culture</td>
+</tr>
+<tr>
+<td><strong>3. Locate the OB level</strong></td>
+<td>Is this mainly an individual, team, or organizational issue?</td>
+<td>Individual attitudes, team dynamics, or organizational systems (e.g., structure, culture)</td>
+</tr>
+<tr>
+<td><strong>4. Identify root causes</strong></td>
+<td>What factors are driving or reinforcing the problem?</td>
+<td>Leadership behavior, rewards, fairness, structure, job design, norms, resource constraints</td>
+</tr>
+<tr>
+<td><strong>5. Choose managerial action</strong></td>
+<td>What can managers change to improve the situation?</td>
+<td>Adjust rewards, change leadership behavior, redesign work, clarify expectations, strengthen systems</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="note">
+<strong>Instructor's note.</strong> The goal is not to memorize isolated concepts, but to use them as a diagnostic toolkit. Effective managers move from symptoms to root causes before recommending solutions.
+</p>
+</section>
+</section>
+<section class="subsection level-2" id="OB-not-common-sense"><h3>Organizational Behavior is an Applied Science, Not Just Common Sense</h3><p>Although many OB concepts may appear intuitive, the field is <strong>not simply common sense</strong>. Human judgment is subject to biases, selective perception, and faulty reasoning. People often rely on limited observations or personal experiences, which can lead to incorrect conclusions. OB uses the <strong>scientific method</strong> of observation, theory formulation, data collection, and experimentation, rather than just intuition or common sense to understand workplace behavior.</p>
+<p>Therefore, in this course, by learning OB, you will gather science-based tools that will help you solve organizational problems. As an <strong>interdisciplinary field</strong>, OB draws from research in multiple disciplines. <strong>Psychology</strong> contributes to the study of personality, motivation, and perception, which are key drivers of workplace outcomes. <strong>Anthropology</strong> contributes to the understanding of national culture by identifying the core values, communication styles, and hierarchies that drive employee behavior in different countries.   <strong>Sociology</strong> informs group dynamics and social interaction to help us improve group performance. <strong>Economics</strong> influences decision-making and resource allocation. <strong>Political science</strong> explains power and influence within organizations. <strong>Medicine</strong> contributes to understanding stress and well-being. This interdisciplinary foundation allows OB to <strong>address complex organizational problems</strong> from multiple perspectives.</p>
+</section>
+<section class="subsection level-2" id="OB-research"><h3>Understanding How OB Research is Conducted</h3>
+<p>Organizational behavior research uses several methods to understand behavior in organizations. <strong>Surveys</strong> collect data on attitudes and perceptions. <strong>Field studies</strong> examine behavior in real organizational settings and can establish causal relationships when experimental designs are used. As you know, <strong>experimental studies</strong> are the gold standard in research; however, in organizational settings, they are not always feasible or ethical; therefore, in OB, <strong>laboratory studies</strong> are used (controlled, experimental, or observational studies) as they allow researchers to control variables and test cause-and-effect relationships. One of the weaknesses of laboratory studies is that they may lack realism. Another way causal relationships are tested in OB is with <strong>quasi-experimental studies</strong> as they allow OB researchers to analyze workplace interventions (e.g., training, policy changes, effects of relocation) without random assignment, making them essential for real-world research. Quasi-experimental studies help establish causality while navigating ethical and practical constraints. <strong>Case studies</strong> provide in-depth insights into specific situations, while <strong>meta-analysis</strong> combines results from multiple studies to identify consistent patterns.  For example, meta-analysis has been used to clarify the relationship between job satisfaction and job performance.<span aria-label="Source 4" class="cite-ref" tabindex="0"><sup>4</sup><span class="cite-tooltip" role="tooltip">Judge, T. A., Thoresen, C. J., Bono, J. E., &amp; Patton, G. K. (2001). The job satisfaction–job performance relationship: A qualitative and quantitative review. Psychological Bulletin, 127(3), 376–407.</span></span></p><p>
+A critical distinction in research is between <strong>correlation</strong> and <strong>causation</strong>. Correlation indicates that two variables move together, but it does not mean that one causes the other. Misinterpreting correlation as causation can lead to flawed decisions, which is why rigorous research methods are essential.</p>
+<p>In this course, relationships are made clear. Most of the concepts and theories we cover in OB have been widely studied, meaning that <strong>drivers</strong> and <strong>consequences</strong> we discuss in the course have been compellingly established. Therefore, when you read that X leads to Y, it is because research largely supports that claim. For example, you may read that job satisfaction leads to or is a driver of retention/turnover because there is a well-established empirical relationship between job satisfaction, turnover intention, and turnover. Job satisfaction is widely recognized as a primary driver of turnover intention, meaning that when satisfaction increases, the tendency to leave decreases, and when satisfaction drops, turnover intent increases.<span aria-label="Source 19" class="cite-ref" tabindex="0"><sup>19</sup><span class="cite-tooltip" role="tooltip">Tett, R. P., &amp; Meyer, J. P. (1993). Job satisfaction, organizational commitment, turnover intention, and turnover: Path analyses based on meta-analytic findings. Personnel Psychology, 46 (2), 259–293.</span></span></p>
+<p>Similarly, you may be aware that organizations with more women on their boards of directors tend to perform better than those that have more homogenous boards. However, that does not mean that increasing women's representation on boards leads to better performance. The relationship is not causal; it is a correlation, and in the course's readings, that distinction will be made clear.</p>
+<p>Another important issue in Organizational Behavior research is the measurement of key variables. Two key concepts in measurement are <strong>reliability</strong> and <strong>validity</strong>. <strong>Reliability</strong> refers to consistency, while <strong>validity</strong> refers to accuracy. A measure can be consistent but still incorrect. Understanding this distinction is essential for interpreting research findings and making informed decisions.</p></section>
+<section class="subsection level-2" id="why-OB-matters"><h3>Why Organizational Behavior Matters</h3>
+<p>Organizational Behavior matters because it directly influences outcomes that individuals and organizations care about, including job performance, satisfaction, teamwork, leadership effectiveness, and well-being. Employers consistently emphasize skills such as problem-solving, communication, leadership, adaptability, and teamwork, all of which are grounded in OB.<span aria-label="Source 2" class="cite-ref" tabindex="0"><sup>2</sup><span class="cite-tooltip" role="tooltip">National Association of Colleges and Employers. (2025). Job Outlook 2025 . https://www.naceweb.org/docs/default-source/default-document-library/2025/publication/research-report/2025-nace-job-outlook-jan-2025.pdf?Status=Master&amp;sfvrsn=57d47fb0_3</span></span></p>
+<p>These capabilities are often called <strong>soft skills</strong>, but the term can be misleading because they are not secondary or optional. <strong>Hard skills</strong> are technical abilities that can be taught, measured, and tested, such as data analysis, accounting, programming, or using specific software. <strong>Soft skills</strong> are interpersonal and behavioral capabilities that shape how people work with others, respond to problems, communicate ideas, adapt to change, and exercise leadership. NACE’s <em>Job Outlook 2025</em> report shows that many of the attributes employers most often seek in candidates are soft skills, including problem-solving, teamwork, communication, initiative, adaptability, and leadership.<span aria-label="Source 2" class="cite-ref" tabindex="0"><sup>2</sup><span class="cite-tooltip" role="tooltip">National Association of Colleges and Employers. (2025). Job Outlook 2025 . https://www.naceweb.org/docs/default-source/default-document-library/2025/publication/research-report/2025-nace-job-outlook-jan-2025.pdf?Status=Master&amp;sfvrsn=57d47fb0_3</span></span></p>
+<p>Research shows that <strong>organizations with strong OB practices outperform those that do not</strong>. These organizations tend to invest in employee development, promote transparency, encourage participation in decision-making, and foster collaborative environments. In contrast, organizations that ignore human dynamics often experience disengagement, conflict, and inefficiency.<span aria-label="Source 3" class="cite-ref" tabindex="0"><sup>3</sup><span class="cite-tooltip" role="tooltip">Huselid, M. A. (1995). The impact of human resource management practices on turnover, productivity, and corporate financial performance. Academy of Management Journal, 38 (3), 635–672; Pfeffer, J. (1998). The human equation: Building profits by putting people first . Harvard Business School Press; Pfeffer, J., &amp; Veiga, J. F. (1999). Putting people first for organizational success. Academy of Management Executive, 13 , 37–48; Welbourne, T., &amp; Andrews, A. (1996). Predicting performance of initial public offering firms: Should HRM be in the equation? Academy of Management Journal, 39 , 910–911.</span></span></p>
+<p>The importance of OB becomes especially clear when comparing workplace environments. An employee working in a supportive, collaborative environment is more likely to feel motivated and engaged. Another employee with similar technical abilities working in a competitive and unsupportive environment may experience stress, uncertainty, and lower performance. These differences highlight that <strong>behavior and performance are shaped not only by individual characteristics and technical knowledge, but also by how people interact and by the organizational context in which they work.</strong></p></section>
+<section class="subsection level-2" id="the-role-of-ethics-in-OB"><h3>The Role of Ethics in Organizational Behavior</h3><p>Ethics refers to the standards that guide behavior in personal and professional contexts. Organizations affect many stakeholders, including employees, customers, communities, and the environment. Ethical decision-making requires considering the impact of actions on all stakeholders.</p>
+<section class="subsection level-3" id="ethical-frameworks"><h4>Ethical Frameworks</h4><p>
+It is important to distinguish between law and ethics. Laws establish minimum standards that must be followed, while ethics goes beyond legal compliance. An action may be legal but still be considered unethical. Organizations that focus only on compliance risk overlooking important moral considerations.</p>
+<p style="margin:20px">
+<strong>Utilitarianism</strong> focuses on outcomes and seeks to maximize overall benefits. Decisions are evaluated based on their consequences, with the goal of achieving the greatest good for the greatest number. This approach is commonly used in business through cost-benefit analysis, but it may overlook fairness or the rights of individuals.<span aria-label="Source 5" class="cite-ref" tabindex="0"><sup>5</sup><span class="cite-tooltip" role="tooltip">Mill, J. S. (2016). Utilitarianism . Routledge. (Original work published 1863); Crimmins, J. E. (2015). Jeremy Bentham. In E. N. Zalta (Ed.), The Stanford Encyclopedia of Philosophy ; Williams, B., Smart, J. J. C., &amp; Williams, B. (1973). A critique of utilitarianism . Cambridge University Press.</span></span></p>
+<p style="margin:20px">
+<strong>Deontology</strong> focuses on duties and principles. According to this perspective, actions are ethical if they follow universal rules, regardless of outcomes. This approach emphasizes integrity and respect for individuals, but it can be difficult to apply in complex situations where rules conflict.<span aria-label="Source 6" class="cite-ref" tabindex="0"><sup>6</sup><span class="cite-tooltip" role="tooltip">Bowie, N. E. (2002). A Kantian approach to business ethics. In T. L. Beauchamp &amp; N. E. Bowie (Eds.), Ethical issues in business: A philosophical approach (pp. 61–72). Pearson; Alexander, L., &amp; Moore, M. (2007). Deontological ethics.</span></span></p>
+<p style="margin:20px">
+<strong>Virtue ethics</strong> focuses on the character of the decision-maker. Ethical behavior arises from developing habits such as honesty, fairness, and courage. This approach emphasizes moral development over specific rules or outcomes.<span aria-label="Source 7" class="cite-ref" tabindex="0"><sup>7</sup><span class="cite-tooltip" role="tooltip">Audi, R. (2012). Virtue ethics as a resource in business. Business Ethics Quarterly, 22 (2), 273–291.</span></span></p>
+<p style="margin:20px">
+<strong>Legalism</strong> defines ethical behavior strictly in terms of compliance with laws and regulations. While it provides clear guidance, it is limited because legality does not always align with morality.<span aria-label="Source 8" class="cite-ref" tabindex="0"><sup>8</sup><span class="cite-tooltip" role="tooltip">Shklar, J. N. (1986). Legalism: Law, morals, and political trials . Harvard University Press.</span></span></p>
+<p style="margin:20px">
+<strong>Enlightened self-interest</strong> suggests that individuals and organizations can achieve their own goals by considering the interests of others. For example, investing in sustainable practices can improve reputation and long-term profitability.<span aria-label="Source 9" class="cite-ref" tabindex="0"><sup>9</sup><span class="cite-tooltip" role="tooltip">De Tocqueville, A. (1899). Democracy in America: Volume II (Vol. 2). D. Appleton; Keim, G. D. (1978). Corporate social responsibility: An assessment of the enlightened self-interest model. Academy of Management Review, 3 (1), 32–39; Martinson, D. L. (1994). Enlightened self-interest fails as an ethical baseline in public relations. Journal of Mass Media Ethics, 9 (2), 100–108; Rocha, H. O., &amp; Ghoshal, S. (2006). Beyond self-interest revisited. Journal of Management Studies, 43 (3), 585–619.</span></span></p>
+<p style="margin:20px">
+
+The <strong>light of day</strong> approach evaluates decisions based on how they would be perceived if made public. This framework emphasizes transparency and accountability by asking whether a decision would be acceptable if exposed to public scrutiny.<span aria-label="Source 10" class="cite-ref" tabindex="0"><sup>10</sup><span class="cite-tooltip" role="tooltip">Mallinger, M. (1997). Decisive decision-making: An exercise using ethical frameworks. Journal of Management Education, 21 , 411–417; Steiner, G. A., &amp; Steiner, J. F. (1985). Business, government and society (4th ed.). Random House; James, C. R., &amp; Smith, J. G. (2007). George Williams in Thailand: An ethical decision-making exercise. Journal of Management Education, 31 (5), 696–712.</span></span></p>
+<p style="margin:20px">
+<strong>Cultural relativism</strong> evaluates behavior based on local cultural norms. While it promotes respect for cultural differences, it can create ethical challenges when local practices conflict with broader principles such as fairness or human rights.<span aria-label="Source 11" class="cite-ref" tabindex="0"><sup>11</sup><span class="cite-tooltip" role="tooltip">Donaldson, T. (1993). When in Rome, do… what? International business and cultural relativism. In The ethics of business in a global economy (pp. 67–78). Springer.</span></span></p>
+<p>
+Different ethical frameworks provide structured approaches to evaluating decisions. In business, applying a consistent framework is important because a decision that appears ethical under one framework may be judged differently under another.</p>
+</section><section class="subsection level-3" id="ethical-blind-spots"><h4>Ethical Blind Spots</h4><p>Even when individuals intend to act ethically, cognitive biases can lead to unethical behavior. These biases are known as ethical blind spots because people often do not recognize them in the moment. They are not typically the result of deliberate misconduct at the outset. Instead, individuals genuinely believe they are acting appropriately, which is precisely why these blind spots are so dangerous. Because they are difficult to detect while they are occurring, understanding them in advance, along with their remedies, is essential.<span aria-label="Source 12" class="cite-ref" tabindex="0"><sup>12</sup><span class="cite-tooltip" role="tooltip">Bazerman, M. H., &amp; Tenbrunsel, A. E. (2011). Blind spots: Why we fail to do what’s right and what to do about it . Princeton University Press; Bazerman, M. H., &amp; Tenbrunsel, A. E. (2011, April). Ethical breakdowns. Harvard Business Review .</span></span></p>
+<p style="margin:20px">
+<strong>Ill-conceived goals</strong> arise when goals or incentive systems are designed without considering unintended consequences. A well-known example is the Wells Fargo scandal, in which employees opened millions of unauthorized accounts to meet aggressive sales targets. The organization emphasized outcomes without sufficient attention to how those outcomes were achieved. The remedy is to carefully evaluate incentive systems before implementation by asking what unintended behaviors they might encourage. Managers should reward not only results but also the processes used to achieve them and should monitor for early signs of misconduct.<span aria-label="Source 13" class="cite-ref" tabindex="0"><sup>13</sup><span class="cite-tooltip" role="tooltip">Ordóñez, L. D., Schweitzer, M. E., Galinsky, A. D., &amp; Bazerman, M. H. (2009). Goals gone wild: The systematic side effects of overprescribing goal setting. Academy of Management Perspectives, 23 (1), 6–16.</span></span></p>
+<p style="margin:20px">
+<strong>Motivated blindness</strong> occurs when individuals overlook unethical behavior because it is in their interest to do so. In the Enron scandal, employees and auditors failed to act on clear signs of accounting fraud because acknowledging the problem would have threatened their financial interests and professional positions. The remedy is to actively identify and eliminate conflicts of interest rather than simply disclosing them. Organizations should create independent oversight mechanisms and encourage a culture where raising concerns is expected and protected.</p>
+<p style="margin:20px">
+<strong>Indirect blindness</strong> refers to the tendency to judge unethical behavior less harshly when it is carried out by others, especially third parties. For example, companies such as Apple faced criticism for labor abuses in their supply chains but initially distanced themselves by attributing responsibility to suppliers. Similarly, Merck’s association with dramatic price increases of a life-saving drug after transferring distribution rights illustrates how organizations may overlook their indirect role in harmful outcomes. The remedy is to take responsibility for the full chain of activities connected to the organization. Managers should ask whether outsourcing decisions might create ethical risks and ensure accountability extends beyond direct actions.</p>
+<p style="margin:20px">
+<strong>The slippery slope</strong> describes how small ethical lapses can gradually escalate into major violations. The Theranos case is a powerful example. What began as overstating the capabilities of a new technology evolved into widespread deception, fraud, and ultimately criminal convictions. Each step seemed minor in isolation, but over time, the behavior became normalized. The remedy is to address even minor ethical concerns immediately. Organizations should create systems that encourage speaking up early and reinforce that small deviations from ethical standards are not acceptable.</p>
+<p style="margin:20px">
+<strong>Overvaluing outcomes</strong> occurs when individuals justify unethical behavior because the results are positive. The Ford Pinto case illustrates this bias, as the company chose not to fix a known safety flaw because doing so would have been more costly than settling potential lawsuits. The decision prioritized financial outcomes over human safety. The remedy is to evaluate both the outcomes and the decision-making process. Organizations should reward ethical decision processes, not just successful results, and regularly assess whether goals are being achieved in responsible ways.</p>
+<p>
+
+Recognizing these blind spots is critical because they often operate invisibly. Individuals rarely perceive themselves as acting unethically in these situations. By understanding how these biases work and implementing safeguards, managers can design systems and cultures that reduce the likelihood of ethical failures and promote more responsible decision-making.<span aria-label="Source 12" class="cite-ref" tabindex="0"><sup>12</sup><span class="cite-tooltip" role="tooltip">Bazerman, M. H., &amp; Tenbrunsel, A. E. (2011). Blind spots: Why we fail to do what’s right and what to do about it . Princeton University Press; Bazerman, M. H., &amp; Tenbrunsel, A. E. (2011, April). Ethical breakdowns. Harvard Business Review .</span></span></p>
+</section>
+</section><section class="subsection level-2" id="ethical-dilemmas-contemporary-challenges"><h3>Ethical Dilemmas and Contemporary Challenges</h3><p>Even without the influence of ethical blind spots, managers regularly face ethical dilemmas. These are situations in which there are two or more competing choices, and none provides a clearly acceptable ethical solution. In many cases, doing what appears morally right leads to negative consequences, while doing what seems morally questionable may produce better outcomes. Ethical dilemmas often involve a conflict between equally valid principles, such as fairness versus profitability, transparency versus confidentiality, or short-term survival versus long-term responsibility. Because no option is clearly “correct,” decision-makers must rely on judgment, ethical frameworks, and an understanding of consequences to navigate these situations.</p>
+<section class="subsection level-3" id="employee-data-privacy"><h4>Employee Data Privacy</h4>
+<p>One of the most immediate ethical challenges individuals encounter in the workplace today relates to <strong>data privacy and employee monitoring</strong>. Organizations now collect vast amounts of personal data, often without employees or customers fully understanding how that data is used. The 2018 Equifax breach, which exposed the personal information of over 143 million individuals, illustrates the scale of risk associated with data mismanagement. At the same time, many employees willingly trade privacy for convenience, whether through wearable devices, workplace monitoring software, or digital platforms. Regulations such as the European Union’s General Data Protection Regulation (GDPR) have attempted to address these concerns by giving individuals more control over their data, including the “right to be forgotten.” However, enforcement remains complex, and organizations must constantly balance innovation, efficiency, and ethical responsibility when handling sensitive information.<span aria-label="Source 20" class="cite-ref" tabindex="0"><sup>20</sup><span class="cite-tooltip" role="tooltip">PwC. (2017). Pulse survey: US companies ramping up General Data Protection Regulation (GDPR) budgets ; Stone, E. F., &amp; Stone, D. L. (1990). Privacy in organizations: Theoretical issues, research findings, and protection mechanisms. Research in Personnel and Human Resources Management, 8 , 349–411; Fontana, J. (2016). Tough new privacy laws in EU could signal global changes. ZDNet ; Berreby, D. (2017). Click to agree with what? No one reads terms of service, studies confirm. The Guardian .</span></span></p></section>
+<section class="subsection level-3" id="technology-and-AI"><h4>Technology, Automation, and Artificial Intelligence</h4><p>Closely related to this issue is the rapid advancement of technology and artificial intelligence (AI), which is transforming the nature of work. Technological innovation has always reshaped organizations, but the current wave of generative and agentic AI is fundamentally changing how both technical and interaction-based work is performed. AI can now generate marketing content, assist with coding, analyze legal documents, and even support hiring decisions. While these tools can significantly increase efficiency, they also raise important ethical and organizational questions. Employees may worry about job displacement, fairness in AI-driven decisions, or lack of transparency in how algorithms operate. At the same time, organizations often invest heavily in AI without adequately preparing employees to use it, creating a gap between technological capability and human readiness.<span aria-label="Source 14" class="cite-ref" tabindex="0"><sup>14</sup><span class="cite-tooltip" role="tooltip">Chui, M., Roberts, R., &amp; Yee, L. (2022). Generative AI is here: How tools like ChatGPT could change your business. McKinsey &amp; Company.</span></span></p><p>For individuals entering the workforce, this is particularly relevant. Many are expected to use AI tools without formal training, while also navigating concerns about whether these tools will eventually replace aspects of their roles. This creates both opportunity and uncertainty. Organizations that succeed in this environment are those that treat AI as a complement to human capabilities rather than a replacement, while also ensuring ethical, transparent, and responsible implementation.</p><p>At the same time, AI adoption and automation are reshaping skill requirements. While technical skills remain important, there is increasing emphasis on human capabilities such as emotional intelligence, adaptability, communication, and critical thinking. As automation takes over routine tasks, these “soft skills” become essential for leadership and collaboration. However, there is often a gap between what managers believe they provide, such as feedback and recognition, and what employees actually experience. Closing this gap is critical for building trust and engagement.<span aria-label="Source 15" class="cite-ref" tabindex="0"><sup>15</sup><span class="cite-tooltip" role="tooltip">McRae, E. R., Aykens, P., Lowmaster, K., &amp; Shepp, J. (2025). 9 trends that will shape work in 2025 and beyond. Harvard Business Review . https://hbr.org/2025/01/9-trends-that-will-shape-work-in-2025-and-beyond.</span></span></p></section>
+<section class="subsection level-3" id="remote-work"><h4>Remote Work</h4>
+<p>Another major shift affecting Organizational Behavior is the rise of remote and hybrid work. The COVID-19 pandemic accelerated a transition toward flexible work arrangements, and many organizations continue to operate in hybrid formats. Remote work offers clear advantages, including flexibility, reduced commuting time, and access to a broader talent pool. Many employees report higher satisfaction and productivity when given autonomy over where and how they work.<span aria-label="Source 16" class="cite-ref" tabindex="0"><sup>16</sup><span class="cite-tooltip" role="tooltip">McKinsey Global Institute. (2021). The future of work after COVID-19 . https://www.mckinsey.com/featured-insights/future-of-work/the-future-of-work-after-covid-19.</span></span></p>
+<p>
+However, these benefits come with significant challenges. Remote work can blur the boundaries between work and personal life, leading to burnout and difficulty disconnecting. Communication becomes more complex, especially for tasks that require collaboration, trust-building, or sensitive feedback. Employees may also experience isolation or a reduced sense of belonging, particularly when onboarding into organizations remotely. For managers, the challenge lies in maintaining engagement, fostering team cohesion, and ensuring that all employees feel included, regardless of location.</p></section>
+<section class="subsection level-3" id="information-quality"><h4>Information Quality</h4>
+<p>Another critical issue in today’s workplace is information quality. Access to information has never been greater, yet this does not guarantee accuracy. The spread of misinformation during events such as the COVID-19 pandemic highlights how easily false or misleading information can influence decisions. In organizational settings, poor information quality can lead to flawed strategies, ineffective policies, and ethical misjudgments. As a result, employees and managers must develop the ability to critically evaluate sources, verify claims, and distinguish between reliable and unreliable information. Initiatives such as The Trust Project have attempted to establish indicators of credible information, emphasizing transparency, source verification, and methodological clarity.<span aria-label="Source 21" class="cite-ref" tabindex="0"><sup>21</sup><span class="cite-tooltip" role="tooltip">Lehrman, S., &amp; Vincent, S. (2018). The Trust Project ; Saum, S. B., &amp; Lohse, D. (2018). Trust me. Santa Clara Magazine .</span></span></p></section>
+<section class="subsection level-3" id="engagement-wellbeing"><h4>Employee Engagement and Well-Being</h4>
+<p>
+Beyond these structural and technological changes, many individuals are already experiencing broader workplace challenges related to engagement, job markets, and well-being. Despite relatively strong economic indicators, employee engagement has reached historically low levels. Many employees remain in their jobs not because they are satisfied, but because they feel they lack better alternatives, a phenomenon sometimes referred to as “the Great Detachment.” This creates workplaces where employees are physically present but psychologically disengaged.<span aria-label="Source 17" class="cite-ref" tabindex="0"><sup>17</sup><span class="cite-tooltip" role="tooltip">Gallup. (2024). State of the Global Workplace Report . https://www.gallup.com/workplace/349484/state-of-the-global-workplace.aspx.</span></span></p>
+<p>
+Well-being is another growing concern. A significant proportion of employees report not “thriving” in their overall lives, and many feel that their organizations do not genuinely support their well-being. This has implications for absenteeism, turnover, and performance. Organizations that fail to address these issues risk losing talent, even in competitive job markets.</p>
+<p>
+Finally, modern workplaces must address issues of flexibility and inclusion, particularly for working parents and caregivers. Many employees, especially women, face difficult trade-offs between career advancement and family responsibilities. Organizations that fail to provide flexibility risk losing highly skilled employees, while those that adapt can improve retention and performance.<span aria-label="Source 18" class="cite-ref" tabindex="0"><sup>18</sup><span class="cite-tooltip" role="tooltip">Wigert, B., &amp; Pendell, R. (2024). 7 workplace challenges for 2025. Gallup Workplace Insights . https://www.gallup.com/workplace/654329/workplace-challenges-2025.aspx.</span></span></p></section>
+<section class="subsection level-3" id="sustainability"><h4>Sustainability</h4>
+<p>
+In addition, organizations are increasingly expected to address sustainability and social responsibility. While the traditional goal of businesses has been to maximize shareholder wealth, many organizations now adopt a broader perspective known as the triple bottom line, which considers economic, social, and environmental performance. This shift has created both opportunities and challenges. Some companies have successfully integrated sustainability into their business models, such as Toyota with hybrid vehicles or Amazon’s Climate Pledge initiatives. Others engage in “greenwashing,” promoting environmentally friendly practices without meaningful action. The challenge for managers is to balance profitability with genuine social and environmental responsibility, while maintaining credibility with stakeholders.</p>
+</section>
+<p>
+Collectively, these challenges illustrate that <strong>Organizational Behavior is not just theoretical</strong>. It is directly connected to the realities that workers are already experiencing or will soon encounter in their careers. Ethical dilemmas, technological change, shifting work arrangements, and evolving expectations about work and well-being all require thoughtful, informed decision-making. Understanding OB provides the tools to navigate these complexities, make better decisions, and contribute to more effective and ethical organizations.</p></section><section class="subsection level-2" id="key-takeaways"><h3>Key Takeaways</h3><p>Organizational Behavior provides a systematic and evidence-based framework for understanding how people behave in organizations. By integrating theory, research, and ethical reasoning, it helps individuals and managers make better decisions, build stronger relationships, and create more effective workplaces. Ultimately, organizational success depends not only on strategy and structure, but on people and how they behave within the systems that surround them.</p></section><section class="insights box-2" id="managerial-insight"><h3>Managerial Insight</h3>
+<p>
+    Ethical decision-making is not an abstract concept reserved for extreme situations; it is embedded in everyday managerial choices. Managers shape organizational behavior through the goals they set, the incentives they design, the technologies they adopt, and the culture they reinforce. As a result, their decisions influence not only organizational performance but also the well-being of employees, customers, and society at large.
+  </p>
+<p>
+    One of the most important responsibilities of managers is recognizing that unethical outcomes often do not begin with unethical intentions. As discussed in this module, ethical blind spots can lead well-intentioned individuals to make decisions that cause harm. For example, setting aggressive performance targets without considering unintended consequences can encourage misconduct, while ignoring conflicts of interest can lead to motivated blindness. Effective managers proactively design systems that reduce these risks by aligning incentives with ethical behavior, encouraging transparency, and creating environments where employees feel safe speaking up.
+  </p>
+<p>
+    The increasing use of technology and artificial intelligence further amplifies managerial responsibility. Decisions about how AI is implemented, how employee data are collected, and how performance is monitored have ethical implications that extend beyond efficiency. Managers must ensure that these tools are used in ways that are transparent, fair, and respectful of individual privacy. This requires not only technical understanding but also ethical judgment and a commitment to responsible use of technology.
+  </p>
+<p>
+    At the same time, managers play a critical role in addressing broader societal challenges through their organizations. Issues such as employee well-being, equitable access to opportunities, and environmental sustainability are no longer peripheral concerns. They are central to how organizations are evaluated by employees, customers, and stakeholders. Managers who take a proactive approach to these issues can create organizations that are both high-performing and socially responsible.
+  </p>
+<p>
+    Ultimately, effective management requires more than achieving short-term results. It requires making decisions that are defensible, consistent with ethical principles, and aligned with long-term societal impact. Managers who develop this mindset are better equipped to build trust, foster engagement, and lead organizations that contribute positively to both their stakeholders and the broader community.
+  </p></section>
+<section class="subsection level-2" id="sources"><h3>Key Sources</h3><div class="source-entry"><sup>1</sup> Lewin, K. (1936). . McGraw Hill.</div><div class="source-entry"><sup>2</sup> National Association of Colleges and Employers. (2025). . https://www.naceweb.org/docs/default-source/default-document-library/2025/publication/research-report/2025-nace-job-outlook-jan-2025.pdf?Status=Master&amp;sfvrsn=57d47fb0_3</div><div class="source-entry"><sup>3</sup> Huselid, M. A. (1995). The impact of human resource management practices on turnover, productivity, and corporate financial performance. (3), 635–672; Pfeffer, J. (1998). . Harvard Business School Press; Pfeffer, J., &amp; Veiga, J. F. (1999). Putting people first for organizational success. , 37–48; Welbourne, T., &amp; Andrews, A. (1996). Predicting performance of initial public offering firms: Should HRM be in the equation? , 910–911.</div><div class="source-entry"><sup>4</sup> Judge, T. A., Thoresen, C. J., Bono, J. E., &amp; Patton, G. K. (2001). The job satisfaction–job performance relationship: A qualitative and quantitative review. (3), 376–407.</div><div class="source-entry"><sup>5</sup> Mill, J. S. (2016). . Routledge. (Original work published 1863); Crimmins, J. E. (2015). Jeremy Bentham. In E. N. Zalta (Ed.), ; Williams, B., Smart, J. J. C., &amp; Williams, B. (1973). . Cambridge University Press.</div><div class="source-entry"><sup>6</sup> Bowie, N. E. (2002). A Kantian approach to business ethics. In T. L. Beauchamp &amp; N. E. Bowie (Eds.),  (pp. 61–72). Pearson; Alexander, L., &amp; Moore, M. (2007). Deontological ethics.</div><div class="source-entry"><sup>7</sup> Audi, R. (2012). Virtue ethics as a resource in business. (2), 273–291.</div><div class="source-entry"><sup>8</sup> Shklar, J. N. (1986). . Harvard University Press.</div><div class="source-entry"><sup>9</sup> De Tocqueville, A. (1899).  (Vol. 2). D. Appleton; Keim, G. D. (1978). Corporate social responsibility: An assessment of the enlightened self-interest model. (1), 32–39; Martinson, D. L. (1994). Enlightened self-interest fails as an ethical baseline in public relations. (2), 100–108; Rocha, H. O., &amp; Ghoshal, S. (2006). Beyond self-interest revisited. (3), 585–619.</div><div class="source-entry"><sup>10</sup> Mallinger, M. (1997). Decisive decision-making: An exercise using ethical frameworks. , 411–417; Steiner, G. A., &amp; Steiner, J. F. (1985).  (4th ed.). Random House; James, C. R., &amp; Smith, J. G. (2007). George Williams in Thailand: An ethical decision-making exercise. (5), 696–712.</div><div class="source-entry"><sup>11</sup> Donaldson, T. (1993). When in Rome, do… what? International business and cultural relativism. In  (pp. 67–78). Springer.</div><div class="source-entry"><sup>12</sup> Bazerman, M. H., &amp; Tenbrunsel, A. E. (2011). . Princeton University Press; Bazerman, M. H., &amp; Tenbrunsel, A. E. (2011, April). Ethical breakdowns. .</div><div class="source-entry"><sup>13</sup> Ordóñez, L. D., Schweitzer, M. E., Galinsky, A. D., &amp; Bazerman, M. H. (2009). Goals gone wild: The systematic side effects of overprescribing goal setting. (1), 6–16.</div><div class="source-entry"><sup>14</sup> Chui, M., Roberts, R., &amp; Yee, L. (2022). Generative AI is here: How tools like ChatGPT could change your business. McKinsey &amp; Company.</div><div class="source-entry"><sup>15</sup> McRae, E. R., Aykens, P., Lowmaster, K., &amp; Shepp, J. (2025). 9 trends that will shape work in 2025 and beyond. . https://hbr.org/2025/01/9-trends-that-will-shape-work-in-2025-and-beyond.</div><div class="source-entry"><sup>16</sup> McKinsey Global Institute. (2021). . https://www.mckinsey.com/featured-insights/future-of-work/the-future-of-work-after-covid-19.</div><div class="source-entry"><sup>17</sup> Gallup. (2024). . https://www.gallup.com/workplace/349484/state-of-the-global-workplace.aspx.</div><div class="source-entry"><sup>18</sup> Wigert, B., &amp; Pendell, R. (2024). 7 workplace challenges for 2025. . https://www.gallup.com/workplace/654329/workplace-challenges-2025.aspx.</div><div class="source-entry"><sup>19</sup> Tett, R. P., &amp; Meyer, J. P. (1993). Job satisfaction, organizational commitment, turnover intention, and turnover: Path analyses based on meta-analytic findings. (2), 259–293.</div><div class="source-entry"><sup>20</sup> PwC. (2017). ; Stone, E. F., &amp; Stone, D. L. (1990). Privacy in organizations: Theoretical issues, research findings, and protection mechanisms. , 349–411; Fontana, J. (2016). Tough new privacy laws in EU could signal global changes. ; Berreby, D. (2017). Click to agree with what? No one reads terms of service, studies confirm. .</div><div class="source-entry"><sup>21</sup> Lehrman, S., &amp; Vincent, S. (2018). ; Saum, S. B., &amp; Lohse, D. (2018). Trust me. .</div></section></section></main>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const links = Array.from(document.querySelectorAll('.sidebar a'));
+  const sections = links
+    .map(a => document.querySelector(a.getAttribute('href')))
+    .filter(Boolean);
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const id = entry.target.getAttribute('id');
+      const link = document.querySelector('.sidebar a[href="#' + id + '"]');
+      if (!link) return;
+      if (entry.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px', threshold: 0 });
+
+  sections.forEach(section => observer.observe(section));
+});
+</script>
+</body>
+</html>

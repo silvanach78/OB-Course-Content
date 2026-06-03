@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Organizational Behavior-Module 3</title>
+<style>
+
+:root {
+  --bg: #f7f8fa;
+  --panel: #ffffff;
+  --ink: #222831;
+  --muted: #5c6773;
+  --line: #d7dde5;
+  --accent: #0f6c7b;
+  --accent-soft: #e8f4f6;
+  --note-bg: #fff7e8;
+  --note-line: #e6cf95;
+    --note:#eef79a;
+  --note2:#f5f8ad;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.65;
+}
+
+a { color: #0b5ea8; }
+.layout {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 4px;
+}
+.sidebar {
+  position: sticky;
+  top: 4px;
+  align-self: start;
+  max-height: calc(100vh - 32px);
+  overflow: auto;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 18px 18px 14px;
+  box-shadow: 0 6px 20px rgba(34,40,49,.06);
+}
+.sidebar h2 {
+  margin: 0 0 8px;
+  font-size: 1.45rem;
+}
+.sidebar p {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: .95rem;
+}
+.toc-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+.toc-list .toc-list {
+  padding-left: 10px;
+  margin-top: 4px;
+}
+.toc-list li {
+  margin: 3px 0;
+}
+.toc-list a {
+  display: block;
+  text-decoration: none;
+  color: #334155;
+  padding: 4px 6px;
+  border-radius: 8px;
+  font-size: .96rem;
+}
+.toc-list a:hover, .toc-list a.active {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.content {
+  min-width: 0;
+}
+.frontmatter, .module, .subsection {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 20px 10px;
+  box-shadow: 0 6px 18px rgba(34,40,49,.05);
+  margin-bottom: 15px;
+}
+.frontmatter h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  line-height: 1.15;
+}
+.subtitle {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+h2, h3, h4 {
+  scroll-margin-top: 24px;
+}
+.module > h2 {
+  margin: 0 0 6px;
+  font-size: 1.5rem;
+  color: var(--accent);
+}
+.level-2 > h3 {
+  margin: 4px 0 12px;
+  font-size: 1.35rem;
+}
+.level-3 > h4 {
+  margin: 4px 0 10px;
+  font-size: 1.12rem;
+}
+.insight, .insights {
+  background: var(--accent-soft);
+  border-right: 4px solid var(--accent);
+  padding: 12px 14px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+.box-2 > h3 {
+  margin: 4px 0 12px;
+  font-size: 1.35rem;
+}
+
+.wrapper { max-width: 1180px; margin: 0 auto; }
+.card { background:#fff; border:1px solid #d7dde5; border-radius:16px; padding:16px; margin-bottom:22px; box-shadow:0 4px 14px rgba(0,0,0,.05); }
+.grid2 { display:grid; grid-template-columns:1fr; gap:18px; }
+.grid2 figure {
+  min-width: 0;
+}
+.grid2 figure svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.chart {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.chart-wide {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.chart-small {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+@media (min-width: 1300px) { .grid2 { grid-template-columns:1fr 1fr; } }
+
+.grid3 { display:grid; grid-template-columns:1fr; gap:18px; }
+.grid3 figure {
+  min-width: 0;
+}
+.grid3 figure svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+@media (min-width: 1100px) { .grid3 { grid-template-columns:1fr 1fr; } }
+@media (min-width: 1500px) { .grid3 { grid-template-columns:1fr 1fr 1fr; } }
+
+
+p {
+  margin: 0 0 14px;
+}
+ul {
+  margin: 0 0 14px 1rem;
+}
+li { margin-bottom: 7px; }
+figure {
+  margin: 20px 0 18px;
+  text-align: center;
+}
+figure img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+}
+figcaption {
+  margin-top: 10px;
+  font-size: .96rem;
+  color: #44515f;
+  font-style: italic;
+}
+.note {
+  background: var(--note-bg);
+  border-left: 4px solid var(--note-line);
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: .95rem;
+  margin-bottom: 12px;
+}
+.source-entry {
+  margin-bottom: 6px;
+  padding-bottom: 2px;
+    font-size: .8rem;
+  border-bottom: 1px dashed var(--line);
+}
+.source-entry:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+  font-size: .8rem;
+}
+@media (max-width: 1000px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    position: static;
+    max-height: none;
+  }
+}
+
+.grid-notes {
+  display:grid;
+  grid-template-columns:1fr;
+  gap:22px;
+  margin-top:14px;
+}
+
+@media (min-width:800px) {
+  .grid-notes { grid-template-columns:1fr 1fr; }
+}
+@media (min-width:1000px) {
+  .grid-notes { grid-template-columns:1fr 1fr 1fr; }
+}
+.sticky {
+  background:linear-gradient(180deg,var(--note2),var(--note));
+  border:1px solid #d7df7a;
+  min-height:230px;
+  padding:20px 18px 18px;
+  box-shadow:0 10px 16px rgba(0,0,0,.08);
+  transform:rotate(-1deg);
+  position:relative;
+}
+.sticky:nth-child(2) { transform:rotate(1deg); }
+.sticky:nth-child(3) { transform:rotate(-0.5deg); }
+.sticky:nth-child(4) { transform:rotate(0.8deg); }
+.sticky:nth-child(5) { transform:rotate(-1deg); }
+.sticky:nth-child(6) { transform:rotate(0.5deg); }
+.sticky:before {
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:22px;
+  background:rgba(255,255,255,.18);
+}
+.sticky h3 {
+  margin:4px 0 12px;
+  font-size:1.15rem;
+  line-height:1.15;
+  font-weight:700;
+  font-family: "Comic Sans MS", Chalkboard SE, Marker Felt, cursive; 
+}
+.sticky p, .sticky li {
+  font-size:0.95rem;
+  line-height:1.45;
+  font-family: "Comic Sans MS", Chalkboard SE, Marker Felt, cursive; 
+}
+.sticky ul {
+  margin:0 0 0 18px;
+  padding:0;
+}
+.chart-wrap {
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:14px;
+  margin-top:10px;
+}
+.note {
+  background:#fff7e8;
+  border-left:4px solid #e6cf95;
+  padding:12px 14px;
+  border-radius:8px;
+  font-size:.97rem;
+  margin-top:10px;
+}
+.small {
+  font-size:.93rem;
+  color:#44515f;
+}
+
+sup {
+  font-size: 0.72em;
+  color: #0f6c7b;
+  vertical-align: super;
+  line-height: 0;
+}
+
+.cite-ref {
+  position: relative;
+  display: inline-block;
+  cursor: help;
+}
+.cite-tooltip {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  left: 50%;
+  bottom: 125%;
+  transform: translateX(-50%);
+  width: min(320px, 70vw);
+  background: #1f2937;
+  color: #fff;
+  text-align: left;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 0.82rem;
+  line-height: 1.35;
+  box-shadow: 0 10px 24px rgba(0,0,0,.18);
+  z-index: 999;
+  transition: opacity .18s ease, visibility .18s ease;
+}
+.cite-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -6px;
+  border-width: 6px;
+  border-style: solid;
+  border-color: #1f2937 transparent transparent transparent;
+}
+.cite-ref:hover .cite-tooltip,
+.cite-ref:focus .cite-tooltip,
+.cite-ref:focus-within .cite-tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+</style> </head>
+<body>
+<div class="layout">
+<aside aria-label="Table of contents" class="sidebar">
+<h2>Contents</h2>
+<ul class="toc-list">
+<li><strong><a href="#about-this-document">About This Document</a></strong></li>
+<li><strong><a href="#module-3">Module 3: Individual Differences and Work Behavior</a></strong>
+<ul class="toc-list">
+<li><a href="#intro">Introduction</a></li>
+<li><a href="#stability">Individual Differences and Their Stability</a></li>
+<li><a href="#cognitive-ability">Cognitive Ability</a></li>
+<li><a href="#values">Values</a></li><li><a href="#role-of-fit">The Role of Fit</a></li>
+<li><a href="#personality">Personality</a></li>
+<li><a href="#big-five">The Big Five Personality Traits</a></li>
+<li><a href="#attitudes">Work Attitudes</a></li>
+<li><a href="#perception">Perceptual and Attributional Processes
+</a></li>
+<li><a href="#attribution">Attribution and Managerial Judgment</a></li>
+<li><a href="#work-behaviors">Key Workplace Behaviors</a></li>
+<li><a href="#key-takeaways">Key Takeaways</a></li>
+<li><a href="#managerial-insight">Managerial Insight</a></li>
+<li><a href="#sources">Sources</a></li>
+</ul>
+</li>
+</ul>
+</aside>
+<main class="content">
+<section class="frontmatter" id="about-this-document">
+<h1>Organizational Behavior</h1>
+<h2>About This Document</h2>
+<p>This document has been developed for students of Organizational Behavior. The topics contained herein have been carefully curated to help us accomplish the course goals; therefore, they are discussed at a managerial and applied level rather than with extensive technical depth. To learn about these topics in more depth, I recommend that you review the sources listed at the end of each module.</p>
+<p>This work is original and unique to this course, and as such, it is protected by copyright and the Digital Millennium Copyright Act (DMCA).</p>
+<p><strong>Copyright © 2026 Silvana Chambers.</strong></p>
+<p>This document reflects current research, real-world examples, and instructor-developed insights. <strong>Please do not share, reproduce, or distribute this document, or any part of it, outside of this class.</strong></p>
+<p>June 2026</p>
+</section>
+<section class="module level-1" id="module-3">
+<h2>Module 3: Individual Differences and Work Behavior</h2>
+<section class="subsection level-2" id="intro">
+<h3>Introduction</h3>
+<p>Employees do not enter organizations as blank slates. They bring with them a set of individual differences that shape how they think, feel, and behave at work. These differences influence how employees solve problems, respond to challenges, interact with others, and perform in their roles. Understanding these differences is central to Organizational Behavior because it helps explain variation in performance, motivation, cooperation, and withdrawal.<span aria-label="Source 1" class="cite-ref" tabindex="0"><sup>1</sup><span class="cite-tooltip" role="tooltip"> Humphreys, M. S., &amp; Revelle, W. (1984). Personality, motivation, and performance: A theory of the relationship between individual differences and information processing. Psychological Review, 91(2), 153.</span></span></p>
+<p>A key insight for managers is that individual differences vary in their stability. Some characteristics, such as cognitive ability and personality, are relatively stable and difficult to change. Others, such as attitudes, perceptions, and emotions, are more flexible and can be influenced by the work environment. This distinction matters because managers cannot make employees more intelligent or fundamentally change their personality, but they can shape how employees feel about their work, how they interpret situations, and how motivated they are to perform.<span aria-label="Source 1" class="cite-ref" tabindex="0"><sup>2</sup><span class="cite-tooltip" role="tooltip"> Alwin, D. F. (2019). Aging, personality, and social change: The stability of individual differences over the adult life span. In <em>Life-span development and behavior </em>(pp. 135-186).; Furnham, A., &amp; Eysenck, H. J. (2002).<em> Personality at work: Individual differences in the workplace.</em> Routledge.</span></span></p>
+<div class="chart-wide">
+<figure>
+<svg aria-labelledby="m3FrameworkTitle m3FrameworkDesc" height="470" role="img" style="width:100%; height:auto; display:block;" viewbox="0 0 1200 470" xmlns="http://www.w3.org/2000/svg">
+<title id="m3FrameworkTitle">Organizational Behavior Framework for Individual Differences and Work Behavior</title>
+<desc id="m3FrameworkDesc">
+    Three-column Organizational Behavior framework for Module 3. The first column shows drivers and causes divided into person and situation factors. The second column shows processes at the individual, group, and organizational levels. The third column shows consequences at the individual, group, and organizational levels.
+  </desc>
+<defs>
+<marker id="m3-arrowhead" markerheight="12" markerunits="userSpaceOnUse" markerwidth="12" orient="auto" refx="11" refy="6" viewbox="0 0 12 12">
+<path d="M0,0 L12,6 L0,12 Z" fill="#000000"></path>
+</marker>
+<style>
+      .m3-header { fill:#0f6c7b; }
+      .m3-box { fill:#fbfcfd; stroke:#333; stroke-width:1; }
+      .m3-title { fill:white; font-size:28px; font-family:Arial, sans-serif; font-weight:bold; text-anchor:middle; }
+      .m3-text { fill:black; font-size:18px; font-family:Arial, sans-serif; }
+      .m3-bold { font-weight:bold; }
+    </style>
+</defs>
+<!-- DRIVERS / CAUSES -->
+<rect class="m3-header" height="60" width="360" x="20" y="20"></rect>
+<text class="m3-title" x="200" y="58">Drivers / Causes</text>
+<rect class="m3-box" height="350" width="360" x="20" y="80"></rect>
+<text class="m3-text" x="40" y="110"><tspan class="m3-bold">• Person</tspan></text>
+<text class="m3-text" x="60" y="140">○ Cognitive ability</text>
+<text class="m3-text" x="60" y="165">○ Personality</text>
+<text class="m3-text" x="60" y="190">○ Self-efficacy</text>
+<text class="m3-text" x="60" y="215">○ Emotional intelligence</text>
+<text class="m3-text" x="60" y="240">○ Values</text>
+<text class="m3-text" x="60" y="265">○ Attitudes</text>
+<text class="m3-text" x="60" y="290">○ Intentions</text>
+<text class="m3-text" x="40" y="330"><tspan class="m3-bold">• Situation</tspan></text><text class="m3-text" x="60" y="360">○ Person-job fit</text><text class="m3-text" x="60" y="385">○ Person-organization fit</text>
+<!-- PROCESSES -->
+<rect class="m3-header" height="60" width="360" x="420" y="20"></rect>
+<text class="m3-title" x="600" y="58">Processes</text>
+<rect class="m3-box" height="350" width="360" x="420" y="80"></rect>
+<text class="m3-text" x="440" y="110"><tspan class="m3-bold">• Individual</tspan></text>
+<text class="m3-text" x="460" y="140">○ Emotion</text>
+<text class="m3-text" x="460" y="165">○ Perception</text>
+<text class="m3-text" x="440" y="205"><tspan class="m3-bold">• Group</tspan></text>
+<text class="m3-text" x="460" y="235">○ Group management</text>
+<text class="m3-text" x="460" y="260">○ Team dynamics</text>
+<text class="m3-text" x="440" y="300"><tspan class="m3-bold">• Organization</tspan></text>
+<text class="m3-text" x="460" y="330">○ Diversity management</text>
+<text class="m3-text" x="460" y="355">○ Talent management</text>
+<text class="m3-text" x="460" y="380">○ Workforce planning</text>
+<!-- CONSEQUENCES -->
+<rect class="m3-header" height="60" width="360" x="820" y="20"></rect>
+<text class="m3-title" x="1000" y="58">Consequences</text>
+<rect class="m3-box" height="350" width="360" x="820" y="80"></rect>
+<text class="m3-text" x="840" y="110"><tspan class="m3-bold">• Individual</tspan></text>
+<text class="m3-text" x="860" y="140">○ Task performance</text>
+<text class="m3-text" x="860" y="165">○ Workplace attitudes</text>
+<text class="m3-text" x="860" y="190">○ Well-being</text>
+<text class="m3-text" x="860" y="215">○ Turnover</text>
+<text class="m3-text" x="860" y="240">○ Career outcomes</text>
+<text class="m3-text" x="840" y="280"><tspan class="m3-bold">• Group</tspan></text>
+<text class="m3-text" x="860" y="310">○ Group performance</text>
+<text class="m3-text" x="840" y="350"><tspan class="m3-bold">• Organization</tspan></text>
+<text class="m3-text" x="860" y="380">○ Financial performance</text>
+<text class="m3-text" x="860" y="405">○ Customer satisfaction</text>
+<text class="m3-text" x="860" y="430">○ Reputation</text>
+<!-- ARROWS -->
+<line marker-end="url(#m3-arrowhead)" stroke="#000000" stroke-width="4.5" x1="380" x2="420" y1="220" y2="220"></line>
+<line marker-end="url(#m3-arrowhead)" stroke="#000000" stroke-width="4.5" x1="780" x2="820" y1="220" y2="220"></line>
+<path d="M1000,433 C850,460 350,460 200,433" fill="none" marker-end="url(#m3-arrowhead)" stroke="#000000" stroke-width="4.5"></path>
+</svg>
+<figcaption>Figure 3-1. Diagnostic Framework for Individual Differences and Work Behavior</figcaption>
+</figure>
+</div>
+<p>This module uses individual differences as a diagnostic tool. Some causes of work behavior are located in the person, including <strong>cognitive ability</strong>, <strong>personality</strong>, <strong>self-efficacy</strong>, <strong>emotional intelligence</strong>, <strong>values</strong>, <strong>attitudes</strong>, and behavioral <strong>intentions</strong>. These factors influence how employees interpret events, manage emotion, interact with others, and respond to work demands. Managers should therefore ask whether a performance or behavior problem reflects ability, fit, attitudes, perceptions, or the work situation before deciding how to respond.</p>
+</section>
+<section class="subsection level-2" id="stability">
+<h3>Individual Differences and Their Stability</h3>
+<p>Individual differences include psychological characteristics such as cognitive ability, values, personality, attitudes, and emotions. These characteristics influence outcomes such as job performance, job satisfaction, organizational commitment, absenteeism, turnover, and organizational citizenship behavior. From a managerial perspective, the most important distinction is between relatively stable and relatively flexible differences. Stable characteristics are most useful in selection and placement decisions because they are difficult to change. Flexible characteristics are more relevant for ongoing leadership because they can be shaped by job design, feedback, fairness, and organizational culture.<span aria-label="Source 3" class="cite-ref" tabindex="0"><sup>3</sup><span class="cite-tooltip" role="tooltip"> Chatman, J. A. (1989). Improving interactional organizational research: A model of person-organization fit. <em>Academy of Management Review, 14</em>(3), 333-349.</span></span></p>
+<p>This distinction helps managers focus their efforts where they are most effective. Trying to change stable traits is usually unproductive. Designing jobs and environments that improve attitudes and engagement is far more practical and far more influential in day-to-day management.</p>
+<div class="chart">
+<figure>
+<svg aria-labelledby="titleStable descStable" role="img" style="width:100%; height:auto;" viewbox="0 0 900 200" xmlns="http://www.w3.org/2000/svg">
+<title id="titleStable">Individual Differences: Stability Continuum</title>
+<desc id="descStable">
+    Horizontal continuum showing individual differences ranging from relatively stable to relatively flexible.
+    From left to right: Cognitive Ability, Values, Personality, Attitudes, and Emotions and Moods.
+  </desc>
+<defs>
+<style>
+      .title { font: 700 20px "Segoe UI", Arial, sans-serif; fill:#222; }
+      .label { font: 600 14px "Segoe UI", Arial, sans-serif; fill:#222; }
+      .node { fill:#f2f2f2; stroke:#555; stroke-width:1.5; }
+      .arrow { stroke:#333; stroke-width:2.5; fill:none; marker-end:url(#arrowhead); }
+    </style>
+<marker id="arrowhead" markerheight="8" markerwidth="10" orient="auto" refx="9" refy="4">
+<path d="M0,0 L10,4 L0,8 Z" fill="#333"></path>
+</marker>
+<!-- Gradient -->
+<lineargradient id="grad" x1="0%" x2="100%" y1="0%" y2="0%">
+<stop offset="0%" stop-color="#d9e3f0"></stop>
+<stop offset="100%" stop-color="#f5dcdc"></stop>
+</lineargradient>
+</defs>
+<rect fill="white" height="200" width="900"></rect>
+<!-- Title -->
+<text class="title" text-anchor="middle" x="450" y="28">
+    Individual Differences: From Stable to Flexible
+  </text>
+<!-- Gradient bar -->
+<rect fill="url(#grad)" height="40" rx="20" stroke="#bbb" width="740" x="80" y="90"></rect>
+<!-- Arrow -->
+<line class="arrow" x1="80" x2="820" y1="150" y2="150"></line>
+<!-- Labels -->
+<text class="label" x="80" y="175">More Stable</text>
+<text class="label" x="720" y="175">More Flexible</text>
+<!-- Nodes -->
+<g>
+<rect class="node" height="40" rx="10" width="115" x="80" y="70"></rect>
+<text class="label" text-anchor="middle" x="137" y="95">Cognitive Ability</text>
+<rect class="node" height="40" rx="10" width="90" x="200" y="70"></rect>
+<text class="label" text-anchor="middle" x="245" y="95">Values</text>
+<rect class="node" height="40" rx="10" width="120" x="300" y="70"></rect>
+<text class="label" text-anchor="middle" x="360" y="95">Personality Traits</text>
+<rect class="node" height="40" rx="10" width="100" x="500" y="70"></rect>
+<text class="label" text-anchor="middle" x="550" y="95">Attitudes</text>
+<rect class="node" height="40" rx="10" width="90" x="615" y="70"></rect>
+<text class="label" text-anchor="middle" x="660" y="95">Emotions</text>
+<rect class="node" height="40" rx="10" width="100" x="720" y="70"></rect>
+<text class="label" text-anchor="middle" x="770" y="95">Moods</text>
+</g>
+</svg>
+<figcaption>Figure 3-2. Relative Stability of Individual Differences</figcaption></figure>
+</div>
+</section>
+<section class="subsection level-2" id="cognitive-ability">
+<h3>Cognitive Ability</h3>
+<p>Cognitive ability refers to a person’s capacity to reason, solve problems, think abstractly, and learn from experience. It is one of the strongest predictors of job performance because employees with higher cognitive ability generally process information more efficiently, learn new tasks more quickly, and adapt more effectively to changing demands.<span aria-label="Source 4" class="cite-ref" tabindex="0"><sup>4</sup><span class="cite-tooltip" role="tooltip"> Schmidt, F. L. (2002). The role of general cognitive ability and job performance: Why there cannot be a debate. In <em>Role of General Mental Ability in industrial, Work, and Organizational Psychology</em> (pp. 187-210). Psychology Press.</span></span></p>
+<p>This is especially important in jobs requiring complex decision-making, analytical thinking, and continuous learning. At the same time, cognitive ability is relatively stable. Training can improve specific skills, but it does not fundamentally change an employee’s underlying mental capacity. For managers, this means cognitive ability is more relevant to hiring and placement than to ongoing efforts to change behavior.</p>
+<p>Cognitive ability also has implications beyond individual task completion. In teams, differences in analytical skill, learning speed, and problem-solving capacity can affect how work is distributed, how quickly the group adapts, and how effectively members coordinate complex tasks. For managers, this means cognitive ability is relevant not only to hiring and placement, but also to <strong>talent management</strong> and <strong>workforce planning</strong>, especially when organizations need employees who can learn quickly in changing environments.</p>
+</section>
+<section class="subsection level-2" id="values">
+<h3>Values</h3>
+<p>Values are enduring beliefs about what is important, desirable, and appropriate. They guide decision-making, shape preferences, and influence how individuals evaluate situations. Because values develop early and tend to remain relatively stable, they play an important role in person–organization fit. Employees are more likely to accept jobs, stay with organizations, and feel satisfied when their values align with those of the organization.<span aria-label="Source 5" class="cite-ref" tabindex="0"><sup>5</sup><span class="cite-tooltip" role="tooltip"> Rokeach, M. (1973). <em>The nature of human values</em>; Judge, T. A., &amp; Bretz, R. D. (1992). Effects of work values on job choice decisions.; George, J. M., &amp; Jones, G. R. (1996). The experience of work and turnover intentions: Interactive effects of value attainment, job satisfaction, and positive mood.</span></span></p>
+<p>Values also affect what employees find motivating. Someone who values achievement may be energized by challenging goals, while someone who values security may prefer predictability and stability. Managers cannot easily change an employee’s values, but they can better understand what different employees care about and how that shapes satisfaction, commitment, and fit.</p>
+<p>Values connect individual differences to long-term career and organizational outcomes. When employees experience strong alignment between their values and the organization’s values, they are more likely to develop positive <strong>workplace attitudes</strong>, commitment, and intentions to stay. When values are misaligned, employees may experience frustration or disengagement, which can increase <strong>turnover</strong> intentions and affect longer-term <strong>career outcomes</strong>.</p>
+</section>
+<section class="subsection level-2" id="role-of-fit">
+<h3>The Role of Fit</h3>
+<p>Understanding individual differences is essential because employees do not work in isolation. They bring their personalities, values, abilities, and other characteristics into organizations, but the effect of those characteristics depends on the environment in which they are expressed. According to the <strong>interactionist perspective</strong>, behavior is a function of both the person and the situation. In other words, the same individual may behave differently depending on the context.</p>
+<p>Consider a shy student in a classroom. Under normal circumstances, the student may rarely participate. However, if the student is highly interested in the topic, knows the answers, feels comfortable in the classroom environment, and the instructor encourages participation, the student may contribute despite being naturally reserved. Similarly, a proactive, creative, and risk-taking employee may thrive in one organization but struggle in another, depending on the culture, leadership style, and job requirements.</p>
+<p><strong>Person–organization fit</strong> refers to the degree to which an employee’s values, personality, goals, and preferences align with those of the organization. When employees perceive that they fit well with the organization’s culture and mission, they are more likely to develop positive <strong>workplace attitudes</strong>, stronger <strong>organizational commitment</strong>, and higher engagement. Research has linked person–organization fit to higher organizational commitment, higher organizational citizenship behaviors, lower <strong>turnover</strong>, and, in some cases, stronger performance.</p>
+<p><strong>Person–job fit</strong> refers to the degree to which an employee’s knowledge, skills, abilities, personality, and other characteristics match the requirements of a specific job. A highly proactive and creative employee may be an excellent fit for a research scientist role or an entrepreneurial technology company, but may be less effective in a highly structured job that rewards routine, predictability, and strict adherence to procedures. Organizations often evaluate person–job fit during recruitment and selection because it is associated with job satisfaction, job performance, organizational identification, and retention.</p>
+<p>The concept of fit helps connect the individual and situational sides of Organizational Behavior. Employees do not succeed solely because they possess desirable traits, and organizations do not succeed solely because they have supportive cultures. Success depends on the interaction between the person and the environment. As a result, managers should focus not only on hiring talented employees but also on placing employees in jobs and organizations where they can thrive. From the perspective of this module’s framework, fit influences <strong>task performance</strong>, <strong>career outcomes</strong>, <strong>turnover</strong>, and broader organizational outcomes such as <strong>customer satisfaction</strong> and <strong>reputation</strong>.<span aria-label="Source 6" class="cite-ref" tabindex="0"><sup>6</sup><span class="cite-tooltip" role="tooltip">Hoffman, B. J., &amp; Woehr, D. J. (2006). A quantitative review of the relationship between person–organization fit and behavioral outcomes. <em>Journal of Vocational Behavior, 68</em>(3), 389–399.; Kristof-Brown, A. L., Zimmerman, R. D., &amp; Johnson, E. C. (2005). Consequences of individuals’ fit at work: A meta-analysis of person–job, person–organization, person–group, and person–supervisor fit. <em>Personnel Psychology, 58</em>(2), 281–342.; Arthur, W., Bell, S. T., Villado, A. J., &amp; Doverspike, D. (2006). The use of person–organization fit in employment decision making: An assessment of its criterion-related validity. <em>Journal of Applied Psychology, 91</em>(4), 786–801.; Cable, D. M., &amp; DeRue, D. S. (2002). The convergent and discriminant validity of subjective fit perceptions. <em>Journal of Applied Psychology, 87</em>(5), 875–884.; Erdogan, B., Kraimer, M. L., &amp; Liden, R. C. (2004). Work value congruence and intrinsic career success. <em>Personnel Psychology, 57</em>(2), 305–332.</span></span></p>
+</section>
+
+<section class="subsection level-2" id="personality">
+<h3>Personality</h3>
+<p>Personality refers to the relatively stable patterns of thoughts, emotions, and behaviors that distinguish individuals from one another. Although personality can evolve gradually over long periods of time, it is generally stable enough to provide meaningful insight into workplace behavior.<span aria-label="Source 6" class="cite-ref" tabindex="0"><sup>6</sup><span class="cite-tooltip" role="tooltip"> Roberts, B. W., Walton, K. E., &amp; Viechtbauer, W. (2006). Patterns of mean-level change in personality traits across the life course: a meta-analysis of longitudinal studies.; Judge, T. A., Higgins, C. A., Thoresen, C. J., &amp; Barrick, M. R. (1999). The big five personality traits, general mental ability, and career success across the life span.</span></span></p>
+<p>Because personality is complex, researchers have developed several frameworks to understand it. Some models focus on broad traits, while others classify individuals into types. In organizational settings, these frameworks are useful not because they perfectly predict behavior, but because they help managers think more carefully about job fit, team composition, and the kinds of work situations in which people are likely to thrive.</p>
+<section class="subsection level-3" id="MBTI">
+<h4>Myers-Briggs Type Indicator (MBTI)</h4>
+<p>One widely used framework in practice is the Myers-Briggs Type Indicator, or MBTI, which classifies individuals into personality types based on preferences such as introversion versus extraversion or thinking versus feeling. MBTI is often used in training and team-building because people find it intuitive and easy to discuss. In some parts of East Asia, especially South Korea and China, MBTI has become a popular social and professional shorthand, and some job applicants have even been asked to disclose their type during recruitment processes.<span aria-label="Source 7" class="cite-ref" tabindex="0"><sup>7</sup><span class="cite-tooltip" role="tooltip"> Carlyn, M. (1977). An assessment of the Myers-Briggs type indicator.; Ma, X. (2025). A comparison of MBTI and Big Five personality.; Quan, R., &amp; Rui, C. (2024). MBTI assessment as social currency: A new digital cultural phenomenon in the meta-media era.</span></span></p>
+<p>However, MBTI has important limitations. It places people into categories instead of measuring traits along a continuum, which reduces its predictive power. Related ideas such as core self-evaluations also matter in organizations because they capture how people view themselves and their capabilities through traits such as self-esteem, self-efficacy, emotional stability, and locus of control. These ideas are useful, but in Organizational Behavior the most widely accepted and research-supported model of personality remains the Big Five.</p>
+</section>
+<section class="subsection level-3" id="big-five">
+<h4>The Big Five Personality Traits</h4>
+<p>The Big Five model organizes personality into five broad dimensions. These traits are measured along a continuum, which means people vary in degree rather than fitting into rigid categories. The model is especially useful because it connects personality to important work outcomes such as performance, leadership, teamwork, absenteeism, and job satisfaction.<span aria-label="Source 8" class="cite-ref" tabindex="0"><sup>8</sup><span class="cite-tooltip" role="tooltip"> Goldberg, L. R. (1992). The development of markers for the Big-Five factor structure. <em>Psychological Assessment, 4</em>(1), 26.</span></span></p>
+<p><strong>Openness to experience</strong> reflects curiosity, creativity, and a willingness to consider new ideas. Employees high in openness tend to adapt well to change, generate novel ideas, and learn quickly in dynamic settings. Those lower in openness often do well in roles that reward consistency, structure, and dependable execution.</p>
+<p><strong>Conscientiousness</strong> reflects organization, reliability, and goal orientation. It is one of the strongest predictors of job performance across jobs because conscientious people are more dependable, persistent, and likely to follow through on their responsibilities.<span aria-label="Source 9" class="cite-ref" tabindex="0"><sup>9</sup><span class="cite-tooltip" role="tooltip"> Barrick, M. R., &amp; Mount, M. K. (1991). The big five personality dimensions and job performance: a meta‐analysis.; Dudley, N. M., Orvis, K. A., Lebiecki, J. E., &amp; Cortina, J. M. (2006). A meta-analytic investigation of conscientiousness in the prediction of job performance: examining the intercorrelations and the incremental validity of narrow traits.</span></span></p>
+<p><strong>Extraversion</strong> reflects sociability, assertiveness, and energy. Extraverts often perform well in roles involving interaction, persuasion, and leadership. Introverts, in contrast, may excel in roles requiring careful reflection, concentration, and independent work.</p>
+<p><strong>Agreeableness</strong> reflects cooperativeness, trust, and concern for others. Highly agreeable individuals often contribute to teamwork and helping behavior, while those lower in agreeableness may be more willing to challenge assumptions and engage in constructive debate.</p>
+<p><strong>Neuroticism</strong>, or low emotional stability, reflects a tendency toward anxiety, irritability, and stronger negative emotional reactions. Employees lower in neuroticism tend to remain calmer under pressure, although moderate vigilance and sensitivity can be useful in settings where risk detection matters.</p>
+<p>A key takeaway for managers is that no trait is inherently good or bad. The value of a trait depends on the role, the team, and the work context. Rather than trying to change personality, managers should focus on aligning people with roles and teams that fit the way they are naturally inclined to think and behave.</p>
+<p>Personality traits also influence group and organizational outcomes. For example, conscientiousness can support dependable performance, agreeableness can strengthen cooperation in service and team settings, and openness can support learning and adaptation. In customer-facing work, traits that affect patience, emotional control, and interpersonal sensitivity can influence <strong>customer satisfaction</strong>. Over time, repeated employee-customer interactions can also shape an organization’s <strong>reputation</strong>.</p>
+</section>
+</section>
+<section class="subsection level-2" id="attitudes">
+<h3>Work Attitudes</h3>
+<p>
+    While personality and cognitive ability shape what employees <em>can</em> do, 
+    <strong>work attitudes shape what employees choose to do</strong>. Unlike stable traits, attitudes are relatively flexible and can be influenced by leadership, job design, and organizational practices. As a result, they are among the most important drivers of behavior in organizations.<span aria-label="Source 10" class="cite-ref" tabindex="0"><sup>10</sup><span class="cite-tooltip" role="tooltip"> Judge, T. A., Thoresen, C. J., Bono, J. E., &amp; Patton, G. K. (2001). The job satisfaction–job performance relationship: A qualitative and quantitative review.; Organ, D. W. (1997). Organizational citizenship behavior: It's construct clean-up time.</span></span></p>
+<p>
+    Work attitudes influence key outcomes such as performance, absenteeism, organizational citizenship behavior, and turnover. 
+    Understanding these attitudes allows managers to diagnose problems and take action where it is most effective.
+  </p>
+<p>Attitudes are especially important because they often link individual experiences to organizational outcomes. Employees who are satisfied, committed, and engaged are more likely to contribute to <strong>task performance</strong>, discretionary effort, and <strong>group performance</strong>. Employees with negative attitudes may withdraw, reduce effort, or share dissatisfaction with others. As a result, workplace attitudes can eventually influence customer experiences, employer reputation, and even broader indicators of organizational effectiveness.</p>
+<section class="subsection level-3" id="job-satisfaction">
+<h4>Job Satisfaction</h4>
+<p>
+<strong>Job satisfaction</strong> refers to the overall evaluation employees have of their job. It is not a single feeling, but a composite of multiple facets, including the nature of the work itself, relationships with supervisors and coworkers, rewards, opportunities for growth, and the broader work environment.<span aria-label="Source 11" class="cite-ref" tabindex="0"><sup>11</sup><span class="cite-tooltip" role="tooltip"> Locke, E. A. (1976). The nature and causes of job satisfaction. In M. D. Dunnette (Ed.), <em>Handbook of Industrial and Organizational Psychology</em>.</span></span></p>
+<p>
+    Job satisfaction is shaped by how employees interpret their work experience. Employees evaluate whether their expectations have been met, whether they are treated fairly, whether their needs are fulfilled, and whether their work aligns with their values. 
+    Personality also plays a role, as some individuals are more predisposed to experience satisfaction than others.
+  </p>
+<p>
+    Job satisfaction is associated with several important outcomes. Employees who are satisfied with their jobs are more likely to perform well, engage in organizational citizenship behaviors, and maintain positive relationships at work. They are also less likely to be absent or leave 
+    the organization. Conversely, low job satisfaction is often associated with withdrawal behaviors such as absenteeism and turnover intentions, as well as negative effects on physical and mental health, including stress.<span aria-label="Source 12" class="cite-ref" tabindex="0"><sup>12</sup><span class="cite-tooltip" role="tooltip"> Harrison, D. A., Newman, D. A., &amp; Roth, P. L. (2006). How important are job attitudes? Meta-analytic comparisons of integrative behavioral outcomes.; Podsakoff, N. P., Whiting, S. W., Podsakoff, P. M., &amp; Blume, B. D. (2009). Individual- and organizational-level consequences of organizational citizenship behaviors.</span></span></p>
+<p>
+    For managers, job satisfaction is a key diagnostic indicator. If an organization is experiencing high absenteeism, low performance, or increased turnover, job satisfaction is often an important underlying factor.<span aria-label="Source 13" class="cite-ref" tabindex="0"><sup>13</sup><span class="cite-tooltip" role="tooltip"> Locke, E. A. (1976). The nature and causes of job satisfaction. In M. D. Dunnette (Ed.), <em>Handbook of Industrial and Organizational Psychology</em>.</span></span>  Managers can influence job satisfaction by improving job design, ensuring fairness, providing recognition, supporting employee development, and creating a positive work environment.
+  </p>
+<p>Employees who experience strong <strong>person–job fit</strong> are generally more satisfied because the demands of the job align with their abilities, interests, and preferences.</p><div style="chart">
+<figure><svg aria-labelledby="titleJobSat descJobSat" role="img" style="width:100%; height:auto;" viewbox="0 0 1200 620" xmlns="http://www.w3.org/2000/svg">
+<title id="titleJobSat">Job Satisfaction: Antecedents, Components, and Outcomes</title>
+<desc id="descJobSat">This diagram presents a structured overview of the antecedents and outcomes of job satisfaction.
+The figure is organized into three vertical sections. On the left, a panel titled “Cognitive Appraisal Processes” identifies key factors that shape how employees evaluate their work experience. These include met expectations, reflecting the psychological contract between employee and employer; perceptions of fairness or justice; the extent to which individual needs are fulfilled; the degree to which personal values are attained through work; and dispositional factors such as personality. Together, these elements represent how employees interpret and evaluate their work environment and experiences.
+In the center, a panel titled “Job Satisfaction” presents the core construct as a composite of multiple job facets. These facets include the job itself, characterized by elements such as variety, identity, significance, feedback, and autonomy; the supervisor; coworkers; rewards, including pay, benefits, and perks; opportunities for growth and recognition; and the broader work environment, including factors such as workload and flexibility. This central section emphasizes that job satisfaction is not a single dimension but an overall evaluation formed from multiple aspects of the job.
+On the right, a panel titled “Outcomes of Job Satisfaction” lists key consequences associated with employees’ attitudes toward their work. These outcomes include job performance, organizational citizenship behaviors (OCB), absenteeism, withdrawal cognitions and turnover intentions, actual turnover, and physical and mental health outcomes such as stress.
+Overall, the diagram illustrates that job satisfaction arises from employees’ individual and value-based evaluations of their work experiences and is associated with a range of important behavioral and well-being outcomes in organizations.</desc>
+<defs>
+<style>
+      .title { font: 700 28px "Segoe UI", Arial, sans-serif; fill: #222; }
+      .panel-title { font: 700 22px "Segoe UI", Arial, sans-serif; fill: #111; }
+      .box-main { font: 700 18px "Segoe UI", Arial, sans-serif; fill: #111; }
+      .box-sub { font: 400 12px "Segoe UI", Arial, sans-serif; fill: #111; }
+      .box-mid { font: 700 17px "Segoe UI", Arial, sans-serif; fill: #111; }
+      .stroke { stroke: #222; stroke-width: 2; }
+      .arrow { stroke: #222; stroke-width: 2.4; fill: none; marker-end: url(#arrowhead); }
+    </style>
+<marker id="arrowhead" markerheight="10" markerunits="strokeWidth" markerwidth="12" orient="auto" refx="10" refy="5">
+<path d="M0,0 L10,5 L0,10 Z" fill="#222"></path>
+</marker>
+<filter height="130%" id="shadow" width="130%" x="-10%" y="-10%">
+<fedropshadow dx="2" dy="3" flood-color="#000" flood-opacity="0.12" stddeviation="2"></fedropshadow>
+</filter>
+</defs>
+<rect fill="white" height="620" width="1200"></rect>
+<text class="title" y="42">Job Satisfaction: Antecedents, Components, and Outcomes</text>
+<!-- Left panel -->
+<rect class="stroke" fill="#ead7ca" height="500" rx="20" ry="20" width="350" x="20" y="70"></rect>
+<rect class="stroke" fill="none" height="492" rx="18" ry="18" width="342" x="24" y="74"></rect>
+<text class="panel-title" text-anchor="middle" x="195" y="124">Cognitive Appraisal</text>
+<text class="panel-title" text-anchor="middle" x="195" y="154">Processes</text>
+<!-- Left boxes -->
+<g filter="url(#shadow)">
+<rect class="stroke" fill="#f8f8f8" height="66" width="305" x="42" y="182"></rect>
+<rect class="stroke" fill="#f8f8f8" height="66" width="305" x="42" y="258"></rect>
+<rect class="stroke" fill="#f8f8f8" height="66" width="305" x="42" y="334"></rect>
+<rect class="stroke" fill="#f8f8f8" height="66" width="305" x="42" y="410"></rect>
+<rect class="stroke" fill="#f8f8f8" height="66" width="305" x="42" y="486"></rect>
+</g>
+<text class="box-main" text-anchor="middle" x="185" y="219">Met Expectations</text>
+<text class="box-sub" text-anchor="middle" x="185" y="241">(psychological contract)</text>
+<text class="box-main" text-anchor="middle" x="185" y="299">Fairness / Justice</text>
+<text class="box-main" text-anchor="middle" x="185" y="375">Need Fulfillment</text>
+<text class="box-main" text-anchor="middle" x="185" y="451">Value Attainment</text>
+<text class="box-main" text-anchor="middle" x="185" y="523">Dispositional Factors</text>
+<text class="box-sub" text-anchor="middle" x="185" y="545">(personality)</text>
+<!-- Middle panel -->
+<rect class="stroke" fill="#d9eaf4" height="500" rx="20" ry="20" width="350" x="425" y="70"></rect>
+<rect class="stroke" fill="none" height="492" rx="18" ry="18" width="342" x="429" y="74"></rect>
+<text class="panel-title" text-anchor="middle" x="600" y="124">Job Satisfaction</text>
+<g filter="url(#shadow)">
+<rect class="stroke" fill="#f8f8f8" height="58" width="306" x="447" y="160"></rect>
+<rect class="stroke" fill="#f8f8f8" height="58" width="306" x="447" y="228"></rect>
+<rect class="stroke" fill="#f8f8f8" height="58" width="306" x="447" y="296"></rect>
+<rect class="stroke" fill="#f8f8f8" height="58" width="306" x="447" y="364"></rect>
+<rect class="stroke" fill="#f8f8f8" height="58" width="306" x="447" y="432"></rect>
+<rect class="stroke" fill="#f8f8f8" height="58" width="306" x="447" y="500"></rect>
+</g>
+<text class="box-main" text-anchor="middle" x="600" y="188">Job Itself</text>
+<text class="box-sub" text-anchor="middle" x="600" y="201">(variety, identity, significance,</text>
+<text class="box-sub" text-anchor="middle" x="600" y="214">feedback, autonomy, )</text>
+<text class="box-mid" text-anchor="middle" x="600" y="260">Supervisor</text>
+<text class="box-mid" text-anchor="middle" x="600" y="330">Coworkers</text>
+<text class="box-mid" text-anchor="middle" x="600" y="394">Rewards</text>
+<text class="box-sub" text-anchor="middle" x="600" y="410">(pay, benefits, perks)</text>
+<text class="box-mid" text-anchor="middle" x="600" y="465">Growth and Recognition</text>
+<text class="box-main" text-anchor="middle" x="600" y="528">Work Environment</text>
+<text class="box-sub" text-anchor="middle" x="600" y="545">(workload, flexibility, etc.)</text>
+<!-- Right panel -->
+<rect class="stroke" fill="#dfe9d5" height="500" rx="20" ry="20" width="350" x="830" y="70"></rect>
+<rect class="stroke" fill="none" height="492" rx="18" ry="18" width="342" x="834" y="74"></rect>
+<text class="panel-title" text-anchor="middle" x="1005" y="118">Outcomes of Job</text>
+<text class="panel-title" text-anchor="middle" x="1005" y="148">Satisfaction</text>
+<g filter="url(#shadow)">
+<rect class="stroke" fill="#f8f8f8" height="58" width="306" x="852" y="160"></rect>
+<rect class="stroke" fill="#f8f8f8" height="58" width="306" x="852" y="228"></rect>
+<rect class="stroke" fill="#f8f8f8" height="58" width="306" x="852" y="296"></rect>
+<rect class="stroke" fill="#f8f8f8" height="58" width="306" x="852" y="364"></rect>
+<rect class="stroke" fill="#f8f8f8" height="58" width="306" x="852" y="432"></rect>
+<rect class="stroke" fill="#f8f8f8" height="58" width="306" x="852" y="500"></rect>
+</g>
+<text class="box-main" text-anchor="middle" x="1005" y="198">Performance</text>
+<text class="box-mid" text-anchor="middle" x="1005" y="260">Organizational Citizenship</text>
+<text class="box-mid" text-anchor="middle" x="1005" y="276">Behaviors (OCB)</text>
+<text class="box-mid" text-anchor="middle" x="1005" y="330">Absenteeism</text>
+<text class="box-mid" text-anchor="middle" x="1005" y="394">Withdrawal Cognitions and</text>
+<text class="box-mid" text-anchor="middle" x="1005" y="410">Turnover Intentions</text>
+<text class="box-mid" text-anchor="middle" x="1005" y="465">Turnover</text>
+<text class="box-main" text-anchor="middle" x="1005" y="528">Physical and Mental Health</text>
+<text class="box-sub" text-anchor="middle" x="1005" y="545">(stress)</text>
+<!-- Arrows left to middle -->
+<line class="arrow" x1="368" x2="427" y1="367" y2="367"></line>
+<!-- Arrows middle to right -->
+<line class="arrow" x1="773" x2="832" y1="357" y2="357"></line>
+</svg>
+<figcaption>Figure 3-3. Predictors, components, and consequences of job satisfaction</figcaption></figure>
+<p class="note">Note. Job satisfaction results from employees’ evaluations of key job facets, shaped by cognitive appraisal processes (such as expectations and fairness judgments) and individual differences (such as personality, values, and needs); in turn job satisfaction influences important organizational outcomes such as performance, organizational citizenship behaviors, and turnover.</p>
+</div>
+</section>
+<section class="subsection level-3" id="organizational-commitment">
+<h4>Organizational Commitment</h4>
+<p>
+<strong>Organizational commitment</strong> refers to the emotional attachment employees feel toward their organization. While job satisfaction reflects how employees feel about their job, commitment reflects <strong>how they feel about the organization itself.</strong><span aria-label="Source 14" class="cite-ref" tabindex="0"><sup>14</sup><span class="cite-tooltip" role="tooltip"> Meyer, J. P., &amp; Allen, N. J. (1991). A three-component conceptualization of organizational commitment. <em>Human Resource Management Review</em>, 1(1), 61–89.</span></span></p>
+<p>
+    Employees with high organizational commitment identify with organizational goals and are more likely to remain with the organization over time. 
+    This makes commitment a critical predictor of turnover. Even employees who are satisfied with specific aspects of their job may choose to leave if they do not feel a strong connection to the organization.
+  </p>
+<p>
+    Organizational commitment also influences behavior beyond retention. Committed employees are more likely to go beyond minimum job requirements, support organizational initiatives, and contribute to a positive work environment.<span aria-label="Source 15" class="cite-ref" tabindex="0"><sup>15</sup><span class="cite-tooltip" role="tooltip"> Meyer, J. P., Stanley, D. J., Herscovitch, L., &amp; Topolnytsky, L. (2002). Affective, continuance, and normative commitment to the organization: A meta-analysis. <em>Journal of Vocational Behavior</em>, 61(1), 20–52.</span></span></p>
+<p>
+    Managers influence commitment through factors such as trust, fairness, organizational support, and alignment between employee values and organizational values. 
+    Clear communication, ethical leadership, and consistent treatment across employees are particularly important in building commitment.
+  </p>
+<p>
+    From a managerial perspective, distinguishing between job satisfaction and organizational commitment is essential. An employee may be satisfied with their job but not committed to the organization, or vice versa. Understanding this distinction allows managers to more accurately diagnose issues related to retention and engagement.<span aria-label="Source 16" class="cite-ref" tabindex="0"><sup>16</sup><span class="cite-tooltip" role="tooltip"> Riketta, M. (2002). Attitudinal organizational commitment and job performance: a meta‐analysis.; Organ, D. W., &amp; Ryan, K. (1995). A meta‐analytic review of attitudinal and dispositional predictors of organizational citizenship behavior.; Cohen, A. (1993). Organizational commitment and turnover: A meta-analysis.</span></span>
+</p>
+<p>Strong <strong>person–organization fit</strong> is one of the most consistent predictors of organizational commitment because employees are more likely to identify with and support organizations whose values align with their own.</p><div style="chart">
+<figure>
+<svg aria-labelledby="titleCommit descCommit" role="img" style="width:100%; height:auto;" viewbox="0 0 1200 720" xmlns="http://www.w3.org/2000/svg">
+<title id="titleCommit">Organizational Commitment: Antecedents, Components, and Outcomes</title>
+<desc id="descCommit">
+    This diagram presents a structured overview of organizational commitment, its antecedents, and its outcomes. 
+    At the top center, an oval labeled “Job Satisfaction” indicates that overall satisfaction with facets of work, 
+    such as supervision, rewards, and growth, contributes to organizational commitment. On the left, a panel titled 
+    “Individual and Value-Based Evaluations” lists individual differences, perceived organizational support (POS), 
+    fairness or justice, value alignment, and person-organization fit as important antecedents. In the center, a panel 
+    titled “Organizational Commitment” presents three components: affective commitment, meaning the desire or want to stay; 
+    normative commitment, meaning the sense that one ought to stay; and continuance commitment, meaning the perceived need to stay. 
+    On the right, a panel titled “Outcomes of Organizational Commitment” lists performance, organizational citizenship behaviors (OCB), 
+    absenteeism, withdrawal cognitions and turnover intentions, turnover, and physical and mental health outcomes such as stress.
+  </desc>
+<defs>
+<style>
+      .title { font: 700 30px "Segoe UI", Arial, sans-serif; fill: #111; }
+      .panel-title { font: 700 22px "Segoe UI", Arial, sans-serif; fill: #111; }
+      .box-main { font: 700 17px "Segoe UI", Arial, sans-serif; fill: #111; }
+      .box-sub { font: 600 11.5px "Segoe UI", Arial, sans-serif; fill: #111; }
+      .stroke { stroke: #222; stroke-width: 2; }
+      .arrow { stroke: #222; stroke-width: 2.6; fill: none; marker-end: url(#arrowhead); }
+    </style>
+<marker id="arrowhead" markerheight="10" markerunits="strokeWidth" markerwidth="12" orient="auto" refx="10" refy="5">
+<path d="M0,0 L10,5 L0,10 Z" fill="#222"></path>
+</marker>
+<filter height="130%" id="shadow" width="130%" x="-8%" y="-8%">
+<fedropshadow dx="2" dy="3" flood-color="#000" flood-opacity="0.14" stddeviation="2"></fedropshadow>
+</filter>
+</defs>
+<rect fill="white" height="720" width="1200"></rect>
+<!-- Top oval -->
+<ellipse class="stroke" cx="600" cy="74" fill="#d8edf8" rx="152" ry="64"></ellipse>
+<text class="panel-title" text-anchor="middle" x="600" y="60">Job Satisfaction</text>
+<text class="box-main" style="font-size:13px;" text-anchor="middle" x="600" y="84">(all facets: supervision,</text>
+<text class="box-main" style="font-size:13px;" text-anchor="middle" x="600" y="102">rewards, growth, etc.)</text>
+<!-- Left panel -->
+<rect class="stroke" fill="#f0ddd0" height="500" rx="18" ry="18" width="320" x="18" y="190"></rect>
+<text class="panel-title" text-anchor="middle" x="178" y="228">Individual and Value-</text>
+<text class="panel-title" text-anchor="middle" x="178" y="256">Based Evaluations</text>
+<g filter="url(#shadow)">
+<rect class="stroke" fill="#f8f8f8" height="60" width="286" x="34" y="288"></rect>
+<rect class="stroke" fill="#f8f8f8" height="60" width="286" x="34" y="362"></rect>
+<rect class="stroke" fill="#f8f8f8" height="60" width="286" x="34" y="436"></rect>
+<rect class="stroke" fill="#f8f8f8" height="60" width="286" x="34" y="510"></rect>
+<rect class="stroke" fill="#f8f8f8" height="60" width="286" x="34" y="584"></rect>
+</g>
+<text class="box-main" text-anchor="middle" x="177" y="317">Individual Differences</text>
+<text class="box-sub" text-anchor="middle" x="177" y="340">(e.g., values, personality)</text>
+<text class="box-main" text-anchor="middle" x="177" y="391">Perceived Organizational</text>
+<text class="box-main" text-anchor="middle" x="177" y="414">Support (POS)</text>
+<text class="box-main" text-anchor="middle" x="177" y="473">Fairness / Justice</text>
+<text class="box-main" text-anchor="middle" x="177" y="547">Value Alignment</text>
+<text class="box-main" text-anchor="middle" x="177" y="621">Person-Organization Fit</text>
+<!-- Center panel -->
+<rect class="stroke" fill="#f1dbde" height="370" rx="18" ry="18" width="276" x="462" y="230"></rect>
+<text class="panel-title" text-anchor="middle" x="600" y="269">Organizational</text>
+<text class="panel-title" text-anchor="middle" x="600" y="297">Commitment</text>
+<g filter="url(#shadow)">
+<rect class="stroke" fill="#f8f8f8" height="66" width="240" x="480" y="330"></rect>
+<rect class="stroke" fill="#f8f8f8" height="66" width="240" x="480" y="418"></rect>
+<rect class="stroke" fill="#f8f8f8" height="66" width="240" x="480" y="506"></rect>
+</g>
+<text class="box-main" text-anchor="middle" x="600" y="356">Affective Commitment</text>
+<text class="box-sub" text-anchor="middle" x="600" y="378">(The "Want to" stay)</text>
+<text class="box-main" text-anchor="middle" x="600" y="444">Normative Commitment</text>
+<text class="box-sub" text-anchor="middle" x="600" y="466">(The “Ought to” stay)</text>
+<text class="box-main" text-anchor="middle" x="600" y="532">Continuance Commitment</text>
+<text class="box-sub" text-anchor="middle" x="600" y="554">(The “Need to” stay)</text>
+<!-- Right panel -->
+<rect class="stroke" fill="#dfead8" height="500" rx="18" ry="18" width="360" x="820" y="190"></rect>
+<text class="panel-title" text-anchor="middle" x="1000" y="228">Outcomes of Organizational</text>
+<text class="panel-title" text-anchor="middle" x="1000" y="256">Commitment</text>
+<g filter="url(#shadow)">
+<rect class="stroke" fill="#f8f8f8" height="56" width="320" x="840" y="280"></rect>
+<rect class="stroke" fill="#f8f8f8" height="56" width="320" x="840" y="346"></rect>
+<rect class="stroke" fill="#f8f8f8" height="56" width="320" x="840" y="412"></rect>
+<rect class="stroke" fill="#f8f8f8" height="56" width="320" x="840" y="478"></rect>
+<rect class="stroke" fill="#f8f8f8" height="56" width="320" x="840" y="544"></rect>
+<rect class="stroke" fill="#f8f8f8" height="56" width="320" x="840" y="610"></rect>
+</g>
+<text class="box-main" text-anchor="middle" x="1000" y="314">Performance</text>
+<text class="box-main" text-anchor="middle" x="1000" y="370">Organizational Citizenship</text>
+<text class="box-main" text-anchor="middle" x="1000" y="390">Behaviors (OCB)</text>
+<text class="box-main" text-anchor="middle" x="1000" y="445">Absenteeism</text>
+<text class="box-main" text-anchor="middle" x="1000" y="505">Withdrawal cognitions and</text>
+<text class="box-main" text-anchor="middle" x="1000" y="525">turnover Intentions</text>
+<text class="box-main" text-anchor="middle" x="1000" y="580">Turnover</text>
+<text class="box-main" text-anchor="middle" x="1000" y="638">Physical and Mental Health</text>
+<text class="box--sub" text-anchor="middle" x="1000" y="658">(stress)</text>
+<!-- Arrows -->
+<line class="arrow" x1="338" x2="462" y1="406" y2="406"></line>
+<line class="arrow" x1="738" x2="820" y1="406" y2="406"></line>
+<line class="arrow" x1="600" x2="600" y1="138" y2="230"></line>
+</svg>
+<figcaption>Figure 3-4. Predictors, components, and consequences of organizational commitment</figcaption></figure>
+<p class="note">Note. Organizational commitment comprises affective, normative, and continuance components; it is shaped by job satisfaction and employee evaluations (e.g., support, justice, fit) and is linked to key work outcomes. It is important to note when evaluating each of the components of organizational commitment rather than as a whole, the strength of the relationships with its antecedents and outcomes varies greatly.</p>
+</div>
+</section>
+<section class="subsection level-3" id="engagement">
+<h4>Employee Engagement</h4>
+<p>
+    Closely related to both job satisfaction and organizational commitment is <strong>employee engagement</strong>, which refers to the level of energy, dedication, and focus employees bring to their work.<span aria-label="Source 17" class="cite-ref" tabindex="0"><sup>17</sup><span class="cite-tooltip" role="tooltip"> Kahn, W. A. (1990). Psychological conditions of personal engagement and disengagement at work.; Schaufeli, W. B., Salanova, M., González-Romá, V., &amp; Bakker, A. B. (2002). The measurement of engagement and burnout.</span></span></p><p>
+ Gallup’s global findings also highlight why engagement matters: highly engaged teams perform better across critical outcomes, and managers account for a large share of the variation in team engagement<span aria-label="Source 18" class="cite-ref" tabindex="0"><sup>18</sup><span class="cite-tooltip" role="tooltip">Gallup (2024). State of the Global Workplace Report. Gallup Group. Retrieved from https://www.gallup.com/workplace/349484/state-of-the-global-workplace.aspx</span></span></p>
+<p>
+    Engaged employees are not only satisfied; they are actively invested in their work and motivated to contribute. They are more likely to take initiative, persist in the face of challenges, and contribute ideas that improve organizational performance. In contrast, disengaged employees may perform only the minimum required tasks or withdraw psychologically from their work.</p>
+<p>
+    Engagement is influenced by many of the same factors that shape job satisfaction and commitment, including meaningful work, recognition, feedback, and supportive leadership. However, engagement emphasizes the intensity of involvement, not just the evaluation of the job or organization.<span aria-label="Source 19" class="cite-ref" tabindex="0"><sup>19</sup><span class="cite-tooltip" role="tooltip"> Schaufeli, W. B., Bakker, A. B., &amp; Salanova, M. (2006). The measurement of work engagement with a short questionnaire: A cross-national study. Educational and psychological measurement, 66(4), 701-716</span></span></p>
+<p>
+    For managers, engagement is a critical outcome because it directly influences performance and innovation. Improving engagement requires creating an environment where employees feel valued, supported, and connected to their work.
+  </p>
+<p>
+  Organizations can assess attitudes systematically through confidential pulse surveys, AI-powered analytics, and tracking daily behavioral data such as absenteeism and collaboration metrics; exit interviews are also useful ways of gathering employee attitude data. Doing so can help leaders identify patterns of dissatisfaction and disengagement before they become turnover problems.<span aria-label="Source 20" class="cite-ref" tabindex="0"><sup>20</sup><span class="cite-tooltip" role="tooltip"> Pace, V. L., &amp; Kisamore, J. L. (2017). Strategic exit interviewing: encouraging voice, enhancing alignment and examining process. <em>Journal of Organizational Effectiveness: People and Performance, 4</em>(1), 59-75.</span></span></p>
+</section></section>
+<section class="subsection level-2" id="perception">
+<h3>Perceptual and Attributional Processes</h3>
+<p>Before employees form attitudes or take action, they must first interpret what is happening around them. In organizations, behavior is not driven solely by objective reality, but by how individuals perceive and make sense of that reality. Two employees can experience the same situation and arrive at very different conclusions, leading to different attitudes and behaviors. For this reason, understanding perceptual and attributional processes is essential for explaining workplace outcomes.</p>
+<p>
+Perception refers to the process through which individuals select, organize, and interpret information from their environment. Because attention is limited, individuals do not process all available information. Instead, they focus on certain cues while ignoring others, often relying on prior experiences, expectations, and assumptions. This selective process makes perception efficient, but it also introduces the possibility of bias and error.</p>
+<p>
+
+Once individuals perceive a situation, they often seek to explain it. This is where attribution comes into play. Attribution refers to the process of determining the causes of behavior, whether one’s own or that of others. Individuals tend to ask whether a behavior is driven by internal factors, such as ability or effort, or by external factors, such as situational constraints. These explanations are not trivial. They shape how people respond, including how managers evaluate performance, assign responsibility, and make decisions.</p>
+<p>
+
+Together, perception and attribution form the foundation for many important organizational processes. They influence how employees evaluate fairness, how they interpret feedback, how they respond to leadership, and how managers diagnose problems. Understanding these processes allows managers to recognize potential biases, make more balanced judgments, and improve the quality of their decisions.</p>
+<p>At the individual level, <strong>emotion</strong> and <strong>perception</strong> shape how employees interpret the same workplace event. A performance conversation, customer complaint, or change initiative may be viewed as helpful by one employee and threatening by another. These interpretations influence attitudes, behavior, and the quality of managerial decisions. At the group level, perception also affects <strong>team dynamics</strong> because members may interpret silence, disagreement, or feedback differently.</p>
+<section class="subsection level-3" id="perception-bias">
+<h4>Perception and Bias</h4>
+<p>
+    Perception is not a passive recording of reality. It is an active process in which individuals select, organize, and interpret information. Because attention is limited, employees and managers rely on shortcuts to make sense of complex environments. These shortcuts make perception efficient, but they also introduce systematic bias.<span aria-label="Source 21" class="cite-ref" tabindex="0"><sup>21</sup><span class="cite-tooltip" role="tooltip"> Higgins, E. T., &amp; Bargh, J. A. (1987). Social cognition and social perception; Keltner, D., Ellsworth, P. C., &amp; Edwards, K. (1993). Beyond simple pessimism: Effects of sadness and anger on social perception; Walsh, J. P. (1988). Selectivity and selective perception: An investigation of managers' belief structures and information processing. </span></span></p>
+<p>
+    Several perceptual biases are especially important in organizational settings. <strong>Stereotyping</strong> occurs when individuals assign characteristics to someone based on group membership rather than individual behavior. While stereotypes can simplify information processing, they often lead to inaccurate evaluations and unfair expectations.
+  </p>
+<p>
+    The <strong>halo effect</strong> occurs when a single positive characteristic influences overall judgment. For example, a manager may assume that a highly articulate employee is also highly competent, even when performance data do not support that conclusion. The opposite, sometimes called the horn effect, occurs when one negative characteristic dominates evaluation.
+  </p>
+<p>
+<strong>Selective perception</strong> occurs when individuals focus on information that confirms their existing beliefs while ignoring contradictory evidence. A manager who believes an employee is unreliable may notice every missed deadline but overlook consistent on-time performance.
+  </p>
+<p>
+    These biases are not simply cognitive errors. They have real consequences. They influence hiring decisions, performance evaluations, promotion opportunities, and interpersonal relationships. Over time, they can also contribute to self-fulfilling prophecies, where expectations shape behavior in ways that reinforce the original belief.
+  </p>
+<p>
+    Effective managers do not try to eliminate bias completely, which is unrealistic. Instead, they reduce its impact by relying on structured evaluation criteria, seeking multiple perspectives, and questioning initial impressions before making decisions.
+  </p>
+</section>
+<section class="subsection level-3" id="attribution">
+<h4>Attribution and Managerial Judgment</h4>
+<p>
+    After perceiving behavior, individuals naturally ask why it occurred. The answer they construct is an <strong>attribution</strong>, or a causal explanation for behavior. These explanations are critical because they directly shape managerial decisions, including feedback, discipline, rewards, and support.<span aria-label="Source 22" class="cite-ref" tabindex="0"><sup>22</sup><span class="cite-tooltip" role="tooltip"> Pace, V. L., &amp; Kisamore, J. L. (2017). Kelley, H. H., &amp; Michela, J. L. (1980). Attribution theory and research. <em>Annual Review of Psychology, 31</em>(1), 457-501.</span></span></p>
+<p>
+    Attributions can be <strong>internal</strong>, assigning behavior to factors such as ability, effort, or motivation, or <strong>external</strong>, assigning behavior to situational factors such as workload, unclear expectations, or lack of resources. The distinction is important because it determines how managers respond.
+  </p>
+<p>
+    Consider a missed deadline. If a manager attributes the delay to lack of effort, the likely response is criticism or disciplinary action. If the same behavior is attributed to unrealistic workload or unclear instructions, the response is more likely to involve support, clarification, or resource adjustment. In this way, attribution directly influences leadership behavior.
+  </p>
+<p>
+    In theory, individuals should evaluate behavior using three types of information: <strong>consensus</strong> (do others behave this way?), <strong>distinctiveness</strong> (does this person behave this way in other situations?), and <strong>consistency</strong> (does this behavior occur repeatedly?). In practice, however, managers often rely on quicker, less systematic judgments.<span aria-label="Source 24" class="cite-ref" tabindex="0"><sup>24</sup><span class="cite-tooltip" role="tooltip"> Pace, V. L., &amp; Kisamore, J. L. (2017). Kelley, H. H. (1973). The processes of causal attribution. <em>American Psychologist, 28</em>(2), 107.</span></span></p>
+<p>
+    Two attributional biases are especially important. The <strong>fundamental attribution error</strong> is the tendency to overemphasize internal causes and underestimate situational factors when evaluating others. For example, a manager may label an employee as “unmotivated” without considering competing demands, unclear priorities, or inadequate support.
+  </p>
+<p>
+    The <strong>self-serving bias</strong> refers to the tendency to attribute one’s own successes to internal factors and failures to external factors. An employee may credit their success to skill but blame poor performance on difficult circumstances. While this bias can protect self-esteem, it can also limit learning and accountability.<span aria-label="Source 25" class="cite-ref" tabindex="0"><sup>25</sup><span class="cite-tooltip" role="tooltip"> Ross, L. (1977). The intuitive psychologist and his shortcomings: Distortions in the attribution process.; Miller, D. T., &amp; Ross, M. (1975). Self-serving biases in the attribution of causality: Fact or fiction?.; Shepperd, J., Malone, W., &amp; Sweeny, K. (2008). Exploring causes of the self‐serving bias.</span></span></p>
+<p>
+    These biases have significant consequences for performance management. Misattributions can lead to unfair evaluations, ineffective coaching, and poor decision-making. As shown in the short video below, over time, they can damage trust, reduce motivation, and reinforce incorrect conclusions about employees.<span aria-label="Source 23" class="cite-ref" tabindex="0"><sup>23</sup><span class="cite-tooltip" role="tooltip"> Harvey, P., Madison, K., Martinko, M., Crook, T. R., &amp; Crook, T. A. (2014). Attribution theory in the organizational sciences: The road traveled and the path ahead. <em>Academy of Management Perspectives, 28</em>(2), 128-146.</span></span> </p>
+<p>
+    Effective managers improve their judgment by slowing down the attribution process. This involves asking what situational factors might explain behavior, examining patterns over time, and using evidence rather than assumptions. By doing so, managers make more accurate evaluations and respond in ways that improve both performance and fairness.
+  </p>
+<iframe width="728" height="409.5" src="https://www.youtube.com/embed/fbxVsKMWENA?si=GgsEX4uBf2hnvphu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+</section>
+</section>
+<section class="subsection level-2" id="work-behaviors">
+<h3>Key Workplace Behaviors</h3>
+<p>
+    A central goal of Organizational Behavior is to understand why employees behave the way they do at work. While attitudes and individual differences provide important insight, organizations ultimately evaluate outcomes through behavior. For this reason, several key workplace behaviors are tracked closely as indicators of organizational effectiveness.
+  </p>
+<p>
+    Four behaviors are especially important in most organizations: <strong>job performance</strong>, <strong>organizational citizenship behaviors (OCB)</strong>, <strong>absenteeism</strong>, and <strong>turnover</strong>. These behaviors are commonly used as key performance indicators (KPIs) because they directly affect productivity, costs, and organizational success.<span aria-label="Source 26" class="cite-ref" tabindex="0"><sup>26</sup><span class="cite-tooltip" role="tooltip"> Campbell, J. P., &amp; Wiernik, B. M. (2015). The modeling and assessment of work performance. Annu. Rev. Organ. Psychol. Organ. Behav., 2(1), 47-74.</span></span></p>
+<p>
+<strong>Job performance</strong> refers to how well employees fulfill the responsibilities outlined in their job description. It includes the quality, quantity, and efficiency of work. Because performance determines rewards, promotions, and retention decisions, it is one of the most closely monitored behaviors in organizations.
+  </p>
+<p>
+<strong>Organizational citizenship behaviors (OCB)</strong> are voluntary actions that go beyond formal job requirements, such as helping coworkers, sharing knowledge, or suggesting improvements. Although these behaviors are not always formally rewarded, they contribute significantly to team effectiveness and organizational functioning.
+  </p>
+<p>
+<strong>Absenteeism</strong> refers to unscheduled absences from work. It is costly because it disrupts operations and often requires last-minute adjustments. While some absenteeism is unavoidable, high levels are often a signal of underlying issues such as stress, poor work–life balance, or dissatisfaction.
+  </p>
+<p>
+<strong>Turnover</strong> refers to employees leaving the organization. Turnover is particularly costly when high-performing employees leave, as organizations must invest time and resources in recruiting and training replacements. High turnover rates often indicate problems with job satisfaction, organizational commitment, or work conditions.
+  </p>
+<p>
+    A key insight from research is that behavior is rarely explained by a single factor. Instead, workplace behavior is best understood as the result of three interacting elements: <strong>the person</strong>, <strong>motivation</strong>, and <strong>the environment</strong>.
+  </p>
+<div class="note">
+<strong>Behavior = Ability × Motivation × Environment</strong><br/>
+    Employees perform well when they have the ability to do the job, are motivated to apply effort, and are supported by an environment that enables success.
+  </div>
+<p>
+    The <strong>person</strong> includes relatively stable characteristics such as cognitive ability, personality, and skills. These factors influence what employees are capable of doing. <strong>Motivation</strong> reflects the willingness to exert effort, which is strongly influenced by attitudes such as job satisfaction, commitment, and engagement. <strong>The environment</strong> includes organizational factors such as leadership, job design, resources, fairness, and culture.
+  </p>
+<p>
+    This framework helps managers diagnose problems more effectively. For example, poor performance may be caused by lack of ability, low motivation, or environmental constraints. Each cause requires a different response. Training may address ability gaps, incentives and recognition may improve motivation, and changes to workload, communication, or resources may address environmental barriers.
+  </p>
+<p>
+    Importantly, many of the behaviors discussed here are outcomes of earlier concepts in this module. Job satisfaction and commitment influence turnover and absenteeism. Engagement influences performance and citizenship behavior. Perceptions and attributional biases influence how these behaviors are evaluated. Understanding these connections allows managers to move beyond symptoms and address underlying causes.
+  </p>
+<p>At the organizational level, individual differences inform <strong>diversity management</strong>, <strong>talent management</strong>, and <strong>workforce planning</strong>. Managers use knowledge of ability, personality, values, attitudes, and perception to place employees in roles where they can succeed, build balanced teams, and anticipate training or support needs. These decisions do not only affect individual employees. When repeated across the organization, they influence productivity, service quality, retention, <strong>financial performance</strong>, customer satisfaction, and organizational reputation.</p>
+<p>Individual differences also matter for <strong>group management</strong>. Teams are easier to manage when managers understand how members differ in ability, personality, emotional regulation, values, and attitudes. These differences can improve problem solving when they are coordinated well, but they can also create conflict or uneven participation when managers ignore them.</p>
+</section>
+<section class="subsection level-2" id="key-takeaways">
+<h3>Key Takeaways</h3>
+<ul>
+<li>Organizational Behavior focuses on understanding how individual differences, attitudes, and environmental factors shape workplace behavior.</li>
+<li>Individual differences such as cognitive ability, values, and personality are relatively stable and influence how employees interpret situations and respond to their work environment.</li>
+<li>Work attitudes, including job satisfaction, organizational commitment, and engagement, are more flexible and are strongly related to key workplace behaviors.</li>
+<li>Organizations track behaviors such as job performance, organizational citizenship behaviors, absenteeism, and turnover because they directly affect organizational effectiveness.</li>
+<li>Workplace behavior is best understood as a function of ability, motivation, and the environment, meaning that behavior results from both individual characteristics and situational factors.</li>
+<li>Managers have limited ability to change stable individual differences, but they have significant influence over the work environment and employee attitudes.</li>
+<li>By shaping the work environment, managers can influence employee attitudes, which in turn influence behavior and ultimately organizational outcomes.</li>
+<li>Effective managers diagnose problems by identifying whether issues are driven by ability, motivation, or environmental constraints, rather than relying on assumptions or surface-level observations.</li>
+</ul>
+</section>
+<section class="insights box-2" id="managerial-insight">
+<h3>Managerial Insight</h3>
+<p>
+    A central insight from Organizational Behavior is that employee behavior is not random. It is shaped by a combination of individual differences, work attitudes, and the environment in which employees operate. Managers study concepts such as personality, values, and cognitive ability not because they can easily change them, but because these factors influence how employees think, feel, and behave at work.
+  </p>
+<p>
+    At the same time, work attitudes such as job satisfaction, organizational commitment, and engagement play a critical role in shaping key workplace behaviors, including performance, absenteeism, organizational citizenship behaviors, and turnover. Unlike stable individual differences, these attitudes are more flexible and can be influenced through managerial actions such as job design, leadership, recognition, and fairness.
+  </p>
+<p>
+    This distinction is essential. Managers have limited influence over who employees are, but they have substantial influence over how employees experience their work. By shaping the work environment, managers can influence attitudes, which in turn influence behavior and ultimately determine organizational outcomes.
+  </p>
+<p>
+    Effective management therefore requires a diagnostic approach. When performance is low or turnover is high, the solution is not always to replace employees. Instead, managers must determine whether the issue is related to ability, motivation, or environmental factors, and respond accordingly. This perspective allows managers to move beyond surface-level symptoms and address the underlying drivers of behavior.
+  </p>
+</section>
+<section class="subsection level-2" id="sources">
+<h3>Sources</h3>
+<div class="source-entry"><sup>1</sup> Humphreys, M. S., &amp; Revelle, W. (1984). Personality, motivation, and performance: a theory of the relationship between individual differences and information processing. <em>Psychological review, 91</em> (2), 153. </div>
+<div class="source-entry"><sup>2</sup> Alwin, D. F. (2019). Aging, personality, and social change: The stability of individual differences over the adult life span. In <em>Life-span development and behavior </em>(pp. 135-186).; Furnham, A., &amp; Eysenck, H. J. (2002).<em> Personality at work: Individual differences in the workplace.</em> Routledge.</div>
+<div class="source-entry"><sup>3</sup> Chatman, J. A. (1989). Improving interactional organizational research: A model of person-organization fit. <em>Academy of Management Review, 14</em>(3), 333-349.</div>
+<div class="source-entry"><sup>4</sup> Schmidt, F. L. (2002). The role of general cognitive ability and job performance: Why there cannot be a debate. In <em>Role of General Mental Ability in industrial, Work, and Organizational Psychology</em> (pp. 187-210). Psychology Press.</div>
+<div class="source-entry"><sup>5</sup> Rokeach, M. (1973). <em>The nature of human values</em>. Free Press.; Judge, T. A., &amp; Bretz, R. D. (1992). Effects of work values on job choice decisions. <em>Journal of Applied Psychology, 77</em>(3), 261.; George, J. M., &amp; Jones, G. R. (1996). The experience of work and turnover intentions: Interactive effects of value attainment, job satisfaction, and positive mood. <em>Journal of Applied Psychology, 81</em>(3), 318.</div>
+<div class="source-entry"><sup>6</sup> Roberts, B. W., Walton, K. E., &amp; Viechtbauer, W. (2006). Patterns of mean-level change in personality traits across the life course: a meta-analysis of longitudinal studies. <em>Psychological Bulletin, 132</em>(1) 1-25; Judge, T. A., Higgins, C. A., Thoresen, C. J., &amp; Barrick, M. R. (1999). The big five personality traits, general mental ability, and career success across the life span. <em>Personnel Psychology, 52</em>(3), 621-652.</div>
+<div class="source-entry"><sup>7</sup> Carlyn, M. (1977). An assessment of the Myers-Briggs type indicator. <em>Journal of Personality Assessment, 41</em>(5), 461-473.; Ma, X. (2025). A comparison of MBTI and Big Five personality. <em>Interdisciplinary Humanities and Communication Studies, 1</em>(3).; Quan, R., &amp; Rui, C. (2024). MBTI assessment as social currency: A new digital cultural phenomenon in the meta-media era. <em>Contemporary Social Sciences, 9</em>(4), 53-67.</div>
+<div class="source-entry"><sup>8</sup> Goldberg, L. R. (1992). The development of markers for the Big-Five factor structure. <em>Psychological Assessment, 4</em>(1), 26.</div>
+<div class="source-entry"><sup>9</sup> Barrick, M. R., &amp; Mount, M. K. (1991). The big five personality dimensions and job performance: a meta‐analysis. <em>Personnel Psychology, 44</em>(1), 1-26.; Dudley, N. M., Orvis, K. A., Lebiecki, J. E., &amp; Cortina, J. M. (2006). A meta-analytic investigation of conscientiousness in the prediction of job performance: examining the intercorrelations and the incremental validity of narrow traits. <em>Journal of Applied Psychology, 91</em>(1), 40.</div>
+<div class="source-entry"><sup>10</sup> Judge, T. A., Thoresen, C. J., Bono, J. E., &amp; Patton, G. K. (2001). The job satisfaction–job performance relationship: A qualitative and quantitative review. <em>Psychological Bulletin</em>, 127(3), 376–407. Organ, D. W. (1997). Organizational citizenship behavior: It's construct clean-up time. <em>Human Performance</em>, 10(2), 85–97.</div>
+<div class="source-entry"><sup>11</sup> Locke, E. A. (1976). The nature and causes of job satisfaction. In M. D. Dunnette (Ed.), <em>Handbook of industrial and organizational psychology</em>.</div>
+<div class="source-entry"><sup>12</sup> Harrison, D. A., Newman, D. A., &amp; Roth, P. L. (2006). How important are job attitudes? Meta-analytic comparisons of integrative behavioral outcomes. <em>Academy of Management Journal</em>, 49(2), 305–325.; Podsakoff, N. P., Whiting, S. W., Podsakoff, P. M., &amp; Blume, B. D. (2009). Individual- and organizational-level consequences of organizational citizenship behaviors. <em>Journal of Applied Psychology</em>, 94(1), 122–141.</div>
+<div class="source-entry"><sup>13</sup> Locke, E. A. (1970). Job satisfaction and job performance: A theoretical analysis. <em>Organizational Behavior and Human Performance, 5</em>(5), 484-500.</div>
+<div class="source-entry"><sup>14</sup> Meyer, J. P., &amp; Allen, N. J. (1991). A three-component conceptualization of organizational commitment. <em>Human Resource Management Review</em>, 1(1), 61–89.</div>
+<div class="source-entry"><sup>15</sup> Meyer, J. P., Stanley, D. J., Herscovitch, L., &amp; Topolnytsky, L. (2002). Affective, continuance, and normative commitment to the organization: A meta-analysis. <em>Journal of Vocational Behavior</em>, 61(1), 20–52.</div>
+<div class="source-entry"><sup>16</sup> Riketta, M. (2002). Attitudinal organizational commitment and job performance: a meta‐analysis. <em>Journal of Organizational Behavior: The International Journal of Industrial, Occupational and Organizational Psychology and Behavior, 23</em>(3), 257-266; Organ, D. W., &amp; Ryan, K. (1995). A meta‐analytic review of attitudinal and dispositional predictors of organizational citizenship behavior. <em>Personnel Psychology, 48</em>(4), 775-802.; Cohen, A. (1993). Organizational commitment and turnover: A meta-analysis. <em>Academy of Management Journal, 36</em>(5), 1140-1157.</div>
+<div class="source-entry"><sup>17</sup> Kahn, W. A. (1990). Psychological conditions of personal engagement and disengagement at work. <em>Academy of Management Journal</em>, 33(4), 692–724. Schaufeli, W. B., Salanova, M., González-Romá, V., &amp; Bakker, A. B. (2002). The measurement of engagement and burnout. <em>Journal of Happiness Studies</em>, 3(1), 71–92.</div>
+<div class="source-entry"><sup>18</sup> Gallup (2024). State of the Global Workplace Report. Gallup Group. Retrieved from https://www.gallup.com/workplace/349484/state-of-the-global-workplace.aspx</div>
+<div class="source-entry"><sup>19</sup> Schaufeli, W. B., Bakker, A. B., &amp; Salanova, M. (2006). The measurement of work engagement with a short questionnaire: A cross-national study. Educational and psychological measurement, 66(4), 701-716.</div>
+<div class="source-entry"><sup>20</sup> Pace, V. L., &amp; Kisamore, J. L. (2017). Strategic exit interviewing: encouraging voice, enhancing alignment and examining process. <em>Journal of Organizational Effectiveness: People and Performance, 4</em>(1), 59-75.</div>
+<div class="source-entry"><sup>21</sup> Higgins, E. T., &amp; Bargh, J. A. (1987). Social cognition and social perception. <em>Annual Review of Psychology, 38</em>(1), 369-425.; Keltner, D., Ellsworth, P. C., &amp; Edwards, K. (1993). Beyond simple pessimism: Effects of sadness and anger on social perception. <em>Journal of Personality and Social Psychology, 64</em>(5), 740.; Walsh, J. P. (1988). Selectivity and selective perception: An investigation of managers' belief structures and information processing. <em>Academy of Management Journal, 31</em>(4), 873-896.</div>
+<div class="source-entry"><sup>22</sup> Kelley, H. H., &amp; Michela, J. L. (1980). Attribution theory and research. <em>Annual Review of Psychology, 31</em>(1), 457-501.</div>
+<div class="source-entry"><sup>23</sup> Harvey, P., Madison, K., Martinko, M., Crook, T. R., &amp; Crook, T. A. (2014). Attribution theory in the organizational sciences: The road traveled and the path ahead. <em>Academy of Management Perspectives, 28</em>(2), 128-146.</div>
+<div class="source-entry"><sup>24</sup> Kelley, H. H. (1973). The processes of causal attribution. <em>American Psychologist, 28</em>(2), 107.</div>
+<div class="source-entry"><sup>25</sup> Ross, L. (1977). The intuitive psychologist and his shortcomings: Distortions in the attribution process. In <em>Advances in Experimental Social Psychology</em> (Vol. 10, pp. 173-220). Academic Press.; Miller, D. T., &amp; Ross, M. (1975). Self-serving biases in the attribution of causality: Fact or fiction?. <em>Psychological Bulletin, 82</em>(2), 213.; Shepperd, J., Malone, W., &amp; Sweeny, K. (2008). Exploring causes of the self‐serving bias. <em>Social and Personality Psychology Compass, 2</em>(2), 895-908.</div>
+<div class="source-entry"><sup>26</sup> Campbell, J. P., &amp; Wiernik, B. M. (2015). The modeling and assessment of work performance. Annu. Rev. Organ. Psychol. Organ. Behav., 2(1), 47-74.</div>
+
+<div class="source-entry"><strong>6</strong> Hoffman, B. J., &amp; Woehr, D. J. (2006). A quantitative review of the relationship between person–organization fit and behavioral outcomes. <em>Journal of Vocational Behavior, 68</em>(3), 389–399.; Kristof-Brown, A. L., Zimmerman, R. D., &amp; Johnson, E. C. (2005). Consequences of individuals’ fit at work: A meta-analysis of person–job, person–organization, person–group, and person–supervisor fit. <em>Personnel Psychology, 58</em>(2), 281–342.; Arthur, W., Bell, S. T., Villado, A. J., &amp; Doverspike, D. (2006). The use of person–organization fit in employment decision making: An assessment of its criterion-related validity. <em>Journal of Applied Psychology, 91</em>(4), 786–801.; Cable, D. M., &amp; DeRue, D. S. (2002). The convergent and discriminant validity of subjective fit perceptions. <em>Journal of Applied Psychology, 87</em>(5), 875–884.; Erdogan, B., Kraimer, M. L., &amp; Liden, R. C. (2004). Work value congruence and intrinsic career success. <em>Personnel Psychology, 57</em>(2), 305–332.</div>
+</section>
+</section>
+</main>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const links = Array.from(document.querySelectorAll('.sidebar a'));
+  const sections = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const id = entry.target.getAttribute('id');
+      const link = document.querySelector('.sidebar a[href="#' + id + '"]');
+      if (!link) return;
+      if (entry.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px', threshold: 0 });
+
+  sections.forEach(section => observer.observe(section));
+});
+</script>
+</body>
+</html>

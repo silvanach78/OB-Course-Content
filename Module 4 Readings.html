@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Organizational Behavior - Module 4</title>
+<style>
+:root {
+  --bg: #f7f8fa;
+  --panel: #ffffff;
+  --ink: #222831;
+  --muted: #5c6773;
+  --line: #d7dde5;
+  --accent: #0f6c7b;
+  --accent-soft: #e8f4f6;
+  --note-bg: #fff7e8;
+  --note-line: #e6cf95;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin:0; font-family:"Segoe UI", Arial, Helvetica, sans-serif; color:var(--ink); background:var(--bg); line-height:1.65; }
+a { color:#0b5ea8; }
+.layout { display:grid; grid-template-columns:300px minmax(0,1fr); gap:20px; max-width:1400px; margin:0 auto; padding:4px; }
+.sidebar { position:sticky; top:4px; align-self:start; max-height:calc(100vh - 32px); overflow:auto; background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:18px 18px 14px; box-shadow:0 6px 20px rgba(34,40,49,.06); }
+.sidebar h2 { margin:0 0 8px; font-size:1.45rem; }
+.toc-list { list-style:none; padding-left:0; margin:0; }
+.toc-list .toc-list { padding-left:10px; margin-top:4px; }
+.toc-list li { margin:3px 0; }
+.toc-list a { display:block; text-decoration:none; color:#334155; padding:4px 6px; border-radius:8px; font-size:.96rem; }
+.toc-list a:hover, .toc-list a.active { background:var(--accent-soft); color:var(--accent); }
+.content { min-width:0; }
+.frontmatter, .module, .subsection { background:var(--panel); border:1px solid var(--line); border-radius:18px; padding:20px 10px; box-shadow:0 6px 18px rgba(34,40,49,.05); margin-bottom:15px; }
+.frontmatter h1 { margin:0; font-size:1.8rem; line-height:1.15; }
+h2, h3, h4 { scroll-margin-top:24px; }
+.module > h2 { margin:0 0 6px; font-size:1.5rem; color:var(--accent); }
+.level-2 > h3 { margin:4px 0 12px; font-size:1.35rem; }
+p { margin:0 0 14px; }
+ul { margin:0 0 14px 1rem; }
+li { margin-bottom:7px; }
+.wrapper { max-width: 1180px; margin: 0 auto; }
+.card { background:#fff; border:1px solid #d7dde5; border-radius:16px; padding:16px; margin-bottom:22px; box-shadow:0 4px 14px rgba(0,0,0,.05); }
+.grid2 { display:grid; grid-template-columns:1fr; gap:18px; }
+.grid2 figure {
+  min-width: 0;
+}
+.grid2 figure svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.chart {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.chart-wide {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.chart-small {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+@media (min-width: 1300px) { .grid2 { grid-template-columns:1fr 1fr; } }
+.note { background:var(--note-bg); border-left:4px solid var(--note-line); padding:12px 14px; border-radius:8px; font-size:.95rem; margin-bottom:12px; }
+.insights { background:var(--accent-soft); border-right:4px solid var(--accent); padding:12px 14px; border-radius:8px; margin-bottom:15px; }
+.source-entry { margin-bottom:6px; padding-bottom:2px; font-size:.8rem; border-bottom:1px dashed var(--line); }
+.source-entry:last-child { border-bottom:0; padding-bottom:0; }
+sup { font-size:0.72em; color:#0f6c7b; vertical-align:super; line-height:0; }
+.cite-ref { position:relative; display:inline-block; cursor:help; }
+.cite-tooltip { visibility:hidden; opacity:0; position:absolute; left:50%; bottom:125%; transform:translateX(-50%); width:min(360px,75vw); background:#1f2937; color:#fff; text-align:left; border-radius:8px; padding:10px 12px; font-size:0.82rem; line-height:1.35; box-shadow:0 10px 24px rgba(0,0,0,.18); z-index:999; transition:opacity .18s ease, visibility .18s ease; }
+.cite-tooltip::after { content:""; position:absolute; top:100%; left:50%; margin-left:-6px; border-width:6px; border-style:solid; border-color:#1f2937 transparent transparent transparent; }
+.cite-ref:hover .cite-tooltip, .cite-ref:focus .cite-tooltip, .cite-ref:focus-within .cite-tooltip { visibility:visible; opacity:1; }
+@media (max-width:1000px){ .layout { grid-template-columns:1fr; } .sidebar { position:static; max-height:none; } }
+</style>
+</head>
+<body>
+<div class="layout">
+<aside aria-label="Table of contents" class="sidebar">
+<h2>Contents</h2>
+<ul class="toc-list">
+<li><strong><a href="#about-this-document">About This Document</a></strong></li>
+<li><strong><a href="#motivation">Module 4: Motivation and Work Design</a></strong>
+<ul class="toc-list">
+<li><a href="#intro">Introduction</a></li>
+<li><a href="#need-based">Need-Based Theories of Motivation</a>
+<ul class="toc-list"><li><a href="#need-strategies">Applying Need-Based Motivational Strategies</a></li></ul>
+</li>
+<li><a href="#process-theories">Process Theories of Motivation</a>
+<ul class="toc-list"><li><a href="#process-strategies">Applying Process-Based Motivational Strategies</a></li></ul>
+</li>
+<li><a href="#contemporary">Contemporary Theories of Motivation and Work Design</a>
+<ul class="toc-list">
+<li><a href="#contemporary-strategies">Contemporary Motivational Strategies</a></li>
+</ul>
+</li>
+<li><a href="#skinners-box">Theory Spotlight: Skinner's Box</a></li>
+<li><a href="#key-takeaways">Key Takeaways</a></li>
+<li><a href="#managerial-insight">Managerial Insight</a></li>
+<li><a href="#sources">Sources</a></li>
+</ul>
+</li>
+</ul>
+</aside>
+<main class="content">
+<section class="frontmatter" id="about-this-document">
+<h1>Organizational Behavior</h1>
+<h2>About This Document</h2>
+<p>This document has been developed for students of Organizational Behavior. The topics contained herein have been carefully curated to help us accomplish the course goals; therefore, they are discussed at a managerial and applied level rather than with extensive technical depth. To learn about these topics in more depth, I recommend that you review the sources listed at the end of each section.</p>
+<p>This work is original and unique to this course, and as such, it is protected by copyright and the Digital Millennium Copyright Act (DMCA).</p>
+<p><strong>Copyright © 2026 Silvana Chambers.</strong></p>
+<p>This document reflects current research, real-world examples, and instructor-developed insights. <strong>Please do not share, reproduce, or distribute this document, or any part of it, outside of this class.</strong></p>
+<p>June 2026</p>
+</section>
+<section class="module level-2" id="motivation-intro">
+<h2>Motivation and Work Design</h2>
+<p>
+Motivation is a central driver of employee behavior and organizational effectiveness. It refers to the desire to achieve a goal or a certain level of performance, leading to goal-directed behavior. However, motivation alone does not guarantee high performance. Consistent with earlier concepts in Organizational Behavior, performance is best understood as a function of <strong>ability, motivation, and the environment</strong>. Even highly motivated employees will struggle without the necessary skills or organizational support, while capable employees may underperform if they lack motivation.
+</p>
+<p>
+For managers, the key challenge is not simply to increase effort, but to understand what drives motivation and how it can be influenced. Over time, scholars have developed different theoretical perspectives to explain why individuals exert effort and how organizations can create conditions that sustain motivation.
+</p>
+<p>
+<strong>Motivation theories have evolved</strong> from early models focused on universal human needs to more complex frameworks that emphasize cognition, fairness, and the work environment. These perspectives can be grouped into three broad categories: <strong>need-based theories</strong>, which focus on what motivates individuals; <strong>process theories</strong>, which explain how motivation occurs; and <strong>contemporary and applied approaches</strong>, which translate theory into managerial practice.
+</p><p>This module also uses motivation as a diagnostic tool. Some causes of motivation are located in the person, such as <strong>personality</strong>, <strong>attitudes</strong>, <strong>values</strong>, and <strong>needs</strong>. Others are located in the situation, such as the <strong>work environment</strong>, available <strong>motivators</strong>, <strong>job design</strong>, <strong>leadership</strong>, <strong>job characteristics</strong>, and the broader <strong>organizational climate</strong>. Managers therefore need to look beyond effort alone and ask whether the conditions surrounding employees support or undermine motivation.</p>
+<div class="chart-wide">
+<figure>
+<svg aria-labelledby="m4FrameworkTitle m4FrameworkDesc" height="490" role="img" style="width:100%; height:auto; display:block;" viewbox="0 0 1200 490" xmlns="http://www.w3.org/2000/svg">
+<title id="m4FrameworkTitle">Organizational Behavior Framework for Motivation and Work Design</title>
+<desc id="m4FrameworkDesc">Three-column Organizational Behavior framework for Module 4. The first column shows drivers and causes divided into person and situation factors. The second column shows motivation-related processes at the individual, group, and organizational levels. The third column shows consequences at the individual, group, and organizational levels.</desc>
+<defs><marker id="m4-arrowhead" markerheight="12" markerunits="userSpaceOnUse" markerwidth="12" orient="auto" refx="11" refy="6" viewbox="0 0 12 12"><path d="M0,0 L12,6 L0,12 Z" fill="#000000"></path></marker>
+<style>.m4-header{fill:#0f6c7b}.m4-box{fill:#fbfcfd;stroke:#333;stroke-width:1}.m4-title{fill:white;font-size:28px;font-family:Arial,sans-serif;font-weight:bold;text-anchor:middle}.m4-text{fill:black;font-size:18px;font-family:Arial,sans-serif}.m4-bold{font-weight:bold}</style></defs>
+<rect class="m4-header" height="60" width="360" x="20" y="20"></rect><text class="m4-title" x="200" y="58">Drivers / Causes</text><rect class="m4-box" height="370" width="360" x="20" y="80"></rect>
+<text class="m4-text" x="40" y="110"><tspan class="m4-bold">• Person</tspan></text><text class="m4-text" x="60" y="140">○ Personality</text><text class="m4-text" x="60" y="165">○ Attitudes</text><text class="m4-text" x="60" y="190">○ Values</text><text class="m4-text" x="60" y="215">○ Needs</text>
+<text class="m4-text" x="40" y="255"><tspan class="m4-bold">• Situation</tspan></text><text class="m4-text" x="60" y="285">○ Work environment</text><text class="m4-text" x="60" y="310">○ Motivators</text><text class="m4-text" x="60" y="335">○ Job design</text><text class="m4-text" x="60" y="360">○ Leadership</text><text class="m4-text" x="60" y="385">○ Job characteristics</text><text class="m4-text" x="60" y="410">○ Organizational climate</text>
+<rect class="m4-header" height="60" width="360" x="420" y="20"></rect><text class="m4-title" x="600" y="58">Processes</text><rect class="m4-box" height="370" width="360" x="420" y="80"></rect>
+<text class="m4-text" x="440" y="110"><tspan class="m4-bold">• Individual</tspan></text><text class="m4-text" x="460" y="140">○ Perceptions of justice</text><text class="m4-text" x="460" y="165">  and equity</text><text class="m4-text" x="460" y="195">○ Expectancy</text><text class="m4-text" x="460" y="220">○ Goal setting</text>
+<text class="m4-text" x="440" y="260"><tspan class="m4-bold">• Group</tspan></text><text class="m4-text" x="460" y="290">○ Group management</text><text class="m4-text" x="460" y="315">○ Team dynamics</text>
+<text class="m4-text" x="440" y="355"><tspan class="m4-bold">• Organization</tspan></text><text class="m4-text" x="460" y="385">○ Reward distribution</text><text class="m4-text" x="460" y="410">○ Policy enforcement</text><text class="m4-text" x="460" y="435">○ Performance management</text>
+<rect class="m4-header" height="60" width="360" x="820" y="20"></rect><text class="m4-title" x="1000" y="58">Consequences</text><rect class="m4-box" height="370" width="360" x="820" y="80"></rect>
+<text class="m4-text" x="840" y="110"><tspan class="m4-bold">• Individual</tspan></text><text class="m4-text" x="860" y="140">○ Motivation</text><text class="m4-text" x="860" y="165">○ Task performance</text><text class="m4-text" x="860" y="190">○ Workplace attitudes</text><text class="m4-text" x="860" y="215">○ Well-being</text><text class="m4-text" x="860" y="240">○ Turnover</text><text class="m4-text" x="860" y="265">○ Creativity</text>
+<text class="m4-text" x="840" y="300"><tspan class="m4-bold">• Group</tspan></text><text class="m4-text" x="860" y="330">○ Group performance</text><text class="m4-text" x="840" y="365"><tspan class="m4-bold">• Organization</tspan></text><text class="m4-text" x="860" y="395">○ Financial performance</text><text class="m4-text" x="860" y="420">○ Customer satisfaction</text><text class="m4-text" x="860" y="445">○ Innovation and reputation</text>
+<line marker-end="url(#m4-arrowhead)" stroke="#000000" stroke-width="4.5" x1="380" x2="420" y1="220" y2="220"></line><line marker-end="url(#m4-arrowhead)" stroke="#000000" stroke-width="4.5" x1="780" x2="820" y1="220" y2="220"></line>
+<g transform="translate(0,20)">
+<path d="M1000,433 C850,460 350,460 200,433" fill="none" marker-end="url(#m4-arrowhead)" stroke="#000000" stroke-width="4.5"></path></g>
+</svg><figcaption>Figure 4-1. Diagnostic Framework for Motivation and Work Design</figcaption></figure></div>
+<section class="subsection level-2" id="need-based">
+<h3>Need-Based Theories of Motivation</h3>
+<p>Need-based theories of motivation, sometimes called <strong>content theories</strong>, focus on a foundational question: <strong><em>what do people need that drives their behavior?</em></strong> These theories assume that individuals direct effort toward satisfying unmet needs and that motivation is shaped, at least in part, by what employees are trying to obtain from work.<span aria-label="Source 1" class="cite-ref" tabindex="0"><sup>1</sup><span class="cite-tooltip" role="tooltip">Alderfer, C. P. (1969). An empirical test of a new theory of human needs. <em>Organizational Behavior and Human Performance, 4</em>(2), 142–175.; Baumeister, R. F. (2016). Toward a general theory of motivation: Problems, challenges, opportunities, and the big picture. <em>Motivation and Emotion, 40</em>, 1–10.; Cook, D. A., &amp; Artino, A. R., Jr. (2016). Motivation to learn: An overview of contemporary theories. <em>Medical Education, 50</em>(10), 997–1014.</span></span></p>
+<p>Although these theories are older and do not capture all the complexity of modern work, they remain useful because they help managers think systematically about why the same reward, task, or work condition may motivate one employee but not another. In practice, need-based theories remind us that motivation is not one-size-fits-all. Employees differ in what they value, what they lack, and what they are seeking from work.<span aria-label="Source 2" class="cite-ref" tabindex="0"><sup>2</sup><span class="cite-tooltip" role="tooltip">Ryan, R. M., Bradshaw, E., Deci, E. L., Sternberg, R., &amp; Pickren, W. (2019). A history of human motivation theories. In <em>The Cambridge handbook of the intellectual history of psychology</em> (pp. 391–411).</span></span></p> <p>Need-based theories share the assumption that unmet needs energize behavior. They differ, however, in how they define needs, whether they assume a fixed order, and how useful they are for explaining workplace behavior. Four need-based theories are especially influential in Organizational Behavior: Maslow’s hierarchy of needs, Alderfer’s ERG theory, Herzberg’s two-factor theory, and McClelland’s acquired needs theory.<span aria-label="Source 3" class="cite-ref" tabindex="0"><sup>3</sup><span class="cite-tooltip" role="tooltip">Gawel, J. E. (2019). Herzberg’s theory of motivation and Maslow’s hierarchy of needs. <em>Practical Assessment, Research, and Evaluation, 5</em>(1), 11.; Herzberg, F. (2003). One more time: How do you motivate employees? <em>Harvard Business Review, 81</em>(1), 86–96.</span></span></p>
+<div class="chart-wide">
+<figure>
+<svg aria-labelledby="titleNeeds descNeeds" role="img" style="width:100%; height:auto;" viewbox="0 0 1200 420" xmlns="http://www.w3.org/2000/svg"> <title id="titleNeeds">Summary of need and content theories of motivation</title> <desc id="descNeeds">Four side-by-side panels compare Maslow’s Hierarchy of Needs, Alderfer’s ERG Theory, Herzberg’s Two Factor Theory, and Acquired Needs Theory. The first panel shows Maslow’s five levels: self-actualization, esteem, social, safety, and physiological, with a dashed divider separating the upper three from the lower two. The second panel shows Alderfer’s three categories: growth, relatedness, and existence, with a dashed divider separating existence from the upper two. The third panel shows Herzberg’s motivating factors above a dashed divider and hygiene factors below it. The fourth panel shows McClelland’s acquired needs: achievement, power, and affiliation.</desc> <defs> <style> .panel-bg { fill: #e9e9e9; stroke: #7f7f7f; stroke-width: 2; } .box-bg { fill: #f7f7f7; stroke: #b9b9b9; stroke-width: 1.5; } .box-title { font: 700 19px "Segoe UI", Arial, sans-serif; fill: #111; } .label { font: 400 18px "Segoe UI", Arial, sans-serif; fill: #111; } .dash { stroke: #8a8a8a; stroke-width: 2; stroke-dasharray: 8 6; } </style> </defs> <rect fill="white" height="420" width="1200"></rect>
+<!-- Panel 1: Maslow --> <rect class="panel-bg" height="390" rx="20" ry="20" width="290" x="16" y="16"></rect> <text class="box-title" text-anchor="middle" x="161" y="48">Maslow’s Hierarchy of</text> <text class="box-title" text-anchor="middle" x="161" y="74">Needs (1943)</text> <rect class="box-bg" height="52" rx="10" ry="10" width="260" x="30" y="88"></rect> <text class="label" text-anchor="middle" x="160" y="120">Self-actualization</text> <rect class="box-bg" height="52" rx="10" ry="10" width="260" x="30" y="148"></rect> <text class="label" text-anchor="middle" x="160" y="180">Esteem</text> <rect class="box-bg" height="52" rx="10" ry="10" width="260" x="30" y="208"></rect> <text class="label" text-anchor="middle" x="160" y="240">Social</text> <line class="dash" x1="16" x2="306" y1="270" y2="270"></line> <rect class="box-bg" height="52" rx="10" ry="10" width="260" x="30" y="286"></rect> <text class="label" text-anchor="middle" x="160" y="318">Safety</text> <rect class="box-bg" height="52" rx="10" ry="10" width="260" x="30" y="346"></rect> <text class="label" text-anchor="middle" x="160" y="378">Physiological</text>
+<!-- Panel 2: ERG --> <rect class="panel-bg" height="390" rx="20" ry="20" width="290" x="320" y="16"></rect> <text class="box-title" text-anchor="middle" x="465" y="48">Alderfer’s ERG Theory</text> <text class="box-title" text-anchor="middle" x="465" y="74">(1969)</text> <rect class="box-bg" height="108" rx="18" ry="18" width="260" x="334" y="88"></rect> <text class="label" text-anchor="middle" x="464" y="148">Growth</text> <rect class="box-bg" height="52" rx="10" ry="10" width="260" x="334" y="208"></rect> <text class="label" text-anchor="middle" x="464" y="240">Relatedness</text> <line class="dash" x1="320" x2="610" y1="270" y2="270"></line> <rect class="box-bg" height="108" rx="18" ry="18" width="260" x="334" y="286"></rect> <text class="label" text-anchor="middle" x="464" y="346">Existence</text> <!-- Panel 3: Herzberg --> <rect class="panel-bg" height="390" rx="20" ry="20" width="290" x="624" y="16"></rect> <text class="box-title" text-anchor="middle" x="769" y="48">Herzberg’s Two Factor</text> <text class="box-title" text-anchor="middle" x="769" y="74">Theory (1959)</text> <rect class="box-bg" height="170" rx="18" ry="18" width="260" x="638" y="88"></rect> <text class="label" text-anchor="middle" x="768" y="162">Motivating factors</text> <line class="dash" x1="624" x2="914" y1="270" y2="270"></line> <rect class="box-bg" height="108" rx="18" ry="18" width="260" x="638" y="286"></rect> <text class="label" text-anchor="middle" x="768" y="346">Hygiene factors</text>
+<!-- Panel 4: McClelland --> <rect class="panel-bg" height="255" rx="20" ry="20" width="256" x="928" y="16"></rect> <text class="box-title" text-anchor="middle" x="1056" y="48">Acquired Needs Theory</text> <text class="box-title" text-anchor="middle" x="1056" y="74">(McClelland, 1961)</text> <rect class="box-bg" height="52" rx="10" ry="10" width="228" x="942" y="88"></rect> <text class="label" text-anchor="middle" x="1056" y="120">Achievement (nAff)</text> <rect class="box-bg" height="52" rx="10" ry="10" width="228" x="942" y="148"></rect> <text class="label" text-anchor="middle" x="1056" y="180">Power (nPow)</text> <rect class="box-bg" height="52" rx="10" ry="10" width="228" x="942" y="208"></rect> <text class="label" text-anchor="middle" x="1056" y="240">Affiliation (nAff)</text> </svg><figcaption>4.2 Summary of Key Content Theories of Motivation</figcaption>
+</figure>
+</div>
+<section class="subsection level-3" id="maslow">
+<h3>Maslow’s Hierarchy of Needs</h3>
+<p>Maslow proposed that human needs are arranged in a hierarchy, beginning with physiological and safety needs and progressing to social needs, esteem, and self-actualization. The central idea is that when lower-level needs are unmet, they dominate attention; once they are sufficiently satisfied, higher-order needs become more influential. In a workplace context, this suggests that employees who are worried about pay, job security, or basic safety are less likely to be strongly motivated by growth opportunities or recognition alone.<span aria-label="Source 4" class="cite-ref" tabindex="0"><sup>4</sup><span class="cite-tooltip" role="tooltip">Maslow, A. H. (1943). A theory of human motivation. <em>Psychological Review, 50</em>, 370–396.; Maslow, A. H. (1954). <em>Motivation and personality</em>. Harper.</span></span></p>
+<p>Maslow’s model remains influential because it offers an intuitive way to think about employee motivation and helps explain why the same managerial action can have very different effects across employees. However, research has not strongly supported the theory’s strict hierarchy, nor the claim that only one need is dominant at a time. Cross-cultural evidence also suggests that the ordering of needs may differ across contexts. Even so, Maslow’s framework remains useful as a broad reminder that employees may be motivated by different needs depending on their circumstances.<span aria-label="Source 5" class="cite-ref" tabindex="0"><sup>5</sup><span class="cite-tooltip" role="tooltip">Baumeister, R. F., &amp; Leary, M. R. (1995). The need to belong: Desire for interpersonal attachments as a fundamental human motivation. <em>Psychological Bulletin, 117</em>, 497–529.; Neher, A. (1991). Maslow’s theory of motivation: A critique. <em>Journal of Humanistic Psychology, 31</em>, 89–112.; Rauschenberger, J., Schmitt, N., &amp; Hunter, J. E. (1980). A test of the need hierarchy concept by a Markov model of change in need strength. <em>Administrative Science Quarterly, 25</em>, 654–670.</span></span></p>
+</section>
+<section class="subsection level-3" id="erg">
+<h3>Alderfer’s ERG Theory</h3>
+<p>Alderfer revised Maslow’s framework by condensing needs into three categories: <strong>existence</strong>, <strong>relatedness</strong>, and <strong>growth</strong>. Existence includes material and safety concerns, relatedness captures social connection and recognition from others, and growth refers to development, advancement, and personal accomplishment. Unlike Maslow’s theory, ERG theory does not require needs to be satisfied in a fixed sequence and explicitly recognizes that multiple needs may operate at the same time.<span aria-label="Source 6" class="cite-ref" tabindex="0"><sup>6</sup><span class="cite-tooltip" role="tooltip">Alderfer, C. P. (1969). An empirical test of a new theory of human needs. <em>Organizational Behavior and Human Performance, 4</em>(2), 142–175.</span></span></p>
+<p>One of ERG theory’s most useful contributions is the frustration-regression principle. When employees are unable to satisfy higher-level needs, they may shift attention back to lower-level ones. For example, an employee blocked from growth opportunities may place greater emphasis on social connection or security. This makes ERG theory especially useful in organizations, where employees often pursue several needs simultaneously and where setbacks in one area can change what becomes motivationally important.<span aria-label="Source 7" class="cite-ref" tabindex="0"><sup>7</sup><span class="cite-tooltip" role="tooltip">Alderfer, C. P. (1969). An empirical test of a new theory of human needs. <em>Organizational Behavior and Human Performance, 4</em>(2), 142–175.</span></span></p>
+</section>
+<section class="subsection level-3" id="herzberg">
+<h3>Herzberg’s Two-Factor Theory</h3>
+<p>Herzberg approached motivation differently by arguing that the factors that create dissatisfaction are not the same as those that create satisfaction. He called the first group <strong>hygiene factors</strong>, which include salary, policies, supervision, working conditions, and job security. When these are poor, employees become dissatisfied. However, improving them does not necessarily create strong motivation; it often only removes dissatisfaction. The second group, <strong>motivators</strong>, includes achievement, recognition, responsibility, advancement, and growth. These factors, which are more intrinsic to the work itself, are what Herzberg argued truly drive satisfaction and motivation.<span aria-label="Source 8" class="cite-ref" tabindex="0"><sup>8</sup><span class="cite-tooltip" role="tooltip">Herzberg, F. (1965). The motivation to work among Finnish supervisors. <em>Personnel Psychology, 18</em>, 393–402.; Herzberg, F., Mausner, B., &amp; Snyderman, B. (1959). <em>The motivation to work</em>. Wiley.</span></span></p>
+<p>For managers, this distinction is highly important because it suggests that fixing pay problems or improving policies is necessary but not sufficient. Organizations that want employees to be energized must also provide meaningful work, recognition, and opportunities to grow. Herzberg’s theory has been criticized because some factors, such as pay, can function differently depending on context, and because the original research method has limitations. Still, the theory’s main lesson remains highly practical: reducing dissatisfaction is not the same as creating motivation.<span aria-label="Source 9" class="cite-ref" tabindex="0"><sup>9</sup><span class="cite-tooltip" role="tooltip">Cummings, L. L., &amp; Elsalmi, A. M. (1968). Empirical research on the bases and correlates of managerial motivation. <em>Psychological Bulletin, 70</em>, 127–144.; House, R. J., &amp; Wigdor, L. A. (1967). Herzberg’s dual-factor theory of job satisfaction and motivation: A review of the evidence and a criticism. <em>Personnel Psychology, 20</em>, 369–389.</span></span></p>
+</section>
+<section class="subsection level-3" id="mcclelland">
+<h3>McClelland’s Acquired Needs Theory</h3>
+<p>McClelland’s theory argues that individuals develop learned needs through life experiences, especially the need for <strong>achievement</strong>, <strong>affiliation</strong>, and <strong>power</strong>. Employees high in achievement seek challenge, feedback, and opportunities to excel. Those high in affiliation value relationships, acceptance, and harmony. Those high in power seek influence and the ability to shape outcomes. Rather than assuming the same needs dominate for everyone, this theory emphasizes that motivational differences across individuals are meaningful and consequential at work.<span aria-label="Source 10" class="cite-ref" tabindex="0"><sup>10</sup><span class="cite-tooltip" role="tooltip">McClelland, D. C. (1961). <em>The achieving society</em>. Van Nostrand.; McClelland, D. C. (1985). How motives, skills, and values determine what people do. <em>American Psychologist, 40</em>(7), 812–825.</span></span></p>
+<p>This theory is especially useful for managers because it helps explain why employees respond differently to the same situation. High-achievement employees may thrive on stretch goals and performance feedback, whereas employees high in affiliation may be more motivated by collaboration and social support. A strong need for power can be constructive when it is directed toward organizational goals, but it can also create interpersonal problems if it is pursued mainly for status or control. McClelland’s theory is also valuable because it highlights that characteristics that support performance in one role may become liabilities in another. For example, high achievement can be advantageous in individual contributor roles but may make delegation and coaching more difficult in management positions.<span aria-label="Source 11" class="cite-ref" tabindex="0"><sup>11</sup><span class="cite-tooltip" role="tooltip">McClelland, D. C., &amp; Boyatzis, R. E. (1982). Leadership motive pattern and long-term success in management. <em>Journal of Applied Psychology, 67</em>, 737–743.; McClelland, D. C., &amp; Burnham, D. H. (1976). Power is the great motivator. <em>Harvard Business Review, 25</em>, 159–166.; Wong, M. M., &amp; Csikszentmihalyi, M. (1991). Affiliation motivation and daily experience: Some issues on gender differences. <em>Journal of Personality and Social Psychology, 60</em>, 154–164.</span></span></p>
+</section>
+<section class="subsection level-2" id="need-strategies"><h3>Need-Focused Motivational Strategies</h3>
+<p>When these theories are considered together, a clear practical conclusion emerges: organizations motivate employees more effectively when they address multiple levels of need rather than relying on a single incentive. At the most basic level, employees need fair pay, safe working conditions, and some degree of security. When these needs are neglected, people are likely to focus their energy on protecting themselves rather than contributing fully to the organization.<span aria-label="Source 12" class="cite-ref" tabindex="0"><sup>12</sup><span class="cite-tooltip" role="tooltip">Maslow, A. H. (1943). A theory of human motivation. <em>Psychological Review, 50</em>, 370–396.; Alderfer, C. P. (1969). An empirical test of a new theory of human needs. <em>Organizational Behavior and Human Performance, 4</em>(2), 142–175.</span></span></p>
+<p>Organizations must also create conditions that support belonging and relatedness. Supportive supervision, respectful treatment, collaboration, and recognition matter because employees are motivated not only by material rewards, but also by the quality of their relationships and their sense of connection to others. In today’s workplace, this is especially important in hybrid and remote contexts, where social needs can be more easily overlooked.<span aria-label="Source 13" class="cite-ref" tabindex="0"><sup>13</sup><span class="cite-tooltip" role="tooltip">Baumeister, R. F., &amp; Leary, M. R. (1995). The need to belong: Desire for interpersonal attachments as a fundamental human motivation. <em>Psychological Bulletin, 117</em>, 497–529.; Wong, M. M., &amp; Csikszentmihalyi, M. (1991). Affiliation motivation and daily experience: Some issues on gender differences. <em>Journal of Personality and Social Psychology, 60</em>, 154–164.</span></span></p>
+<p>Beyond these foundational needs, organizations should also provide opportunities for growth, challenge, and recognition. Herzberg’s theory is especially helpful here because it reminds managers that eliminating dissatisfaction is not enough. If work is monotonous, offers no autonomy, and provides little opportunity to achieve or grow, employees may be comfortable but not truly motivated. Jobs that offer challenge, meaningful contribution, visible recognition, and room to develop are more likely to sustain higher motivation over time.<span aria-label="Source 14" class="cite-ref" tabindex="0"><sup>14</sup><span class="cite-tooltip" role="tooltip">Herzberg, F. (2003). One more time: How do you motivate employees? <em>Harvard Business Review, 81</em>(1), 86–96.; Herzberg, F. (1966). <em>Work and the nature of man</em>. World Publishing.</span></span></p>
+<p>McClelland’s framework adds a more individualized perspective. Employees high in achievement often respond best to challenging goals, feedback, and opportunities to demonstrate competence. Employees high in affiliation are often energized by teamwork, supportive relationships, and social acceptance. Employees high in power may respond to leadership opportunities, influence, and visible responsibility. For managers, this means that effective motivation often requires tailoring opportunities and rewards to the motivational profile of the employee rather than assuming that everyone values the same outcomes.<span aria-label="Source 15" class="cite-ref" tabindex="0"><sup>15</sup><span class="cite-tooltip" role="tooltip">McClelland, D. C. (1985). How motives, skills, and values determine what people do. <em>American Psychologist, 40</em>(7), 812–825.; Harrell, A. M., &amp; Stahl, M. J. (1981). A behavioral decision theory approach for measuring McClelland’s trichotomy of needs. <em>Journal of Applied Psychology, 66</em>, 242–247.</span></span></p>
+<div class="note"><strong>Managerial implication.</strong> Need-focused motivation works best when managers address multiple needs at once: ensuring that employees feel secure, supported, respected, challenged, and able to grow. These theories are most useful not as rigid formulas, but as frameworks for diagnosing what employees may be missing and what kinds of responses are most likely to matter.</div>
+</section>
+</section>
+<section class="subsection level-2" id="process-theories">
+<h3>Process Theories of Motivation</h3>
+<p>Process theories of motivation shift attention from <em>what</em> people need to <em>how</em> motivation actually occurs. These theories assume that employees are not simply driven by unmet needs. Instead, they interpret situations, assess fairness, anticipate consequences, and respond to the rewards and punishments they experience. In this sense, motivation is shaped by cognitive processes, perceptions, and learned associations as much as by underlying needs.<span aria-label="Source 16" class="cite-ref" tabindex="0"><sup>16</sup><span class="cite-tooltip" role="tooltip">Adams, J. S. (1965). Inequity in social exchange. In L. Berkowitz (Ed.), <em>Advances in Experimental Social Psychology</em> (Vol. 2, pp. 267–299). Academic Press.; Vroom, V. H., Porter, L. W., &amp; Lawler, E. E. (2015). Expectancy theories. In <em>Organizational Behavior 1</em> (pp. 94–113). Routledge.; Skinner, B. F. (1953). <em>Science and human behavior</em>. Free Press.</span></span></p>
+<p>This perspective is especially useful for managers because it emphasizes that motivation is dynamic and heavily influenced by the organizational environment. Employees ask whether they are being treated fairly, whether effort will lead to performance, whether performance will be rewarded, and whether rewards are meaningful. They also learn from the consequences of their actions. As a result, process theories provide a powerful framework for diagnosing motivational problems and designing systems that support sustained effort and performance.<span aria-label="Source 17" class="cite-ref" tabindex="0"><sup>17</sup><span class="cite-tooltip" role="tooltip">Cropanzano, R., Bowen, D. E., &amp; Gilliland, S. W. (2007). The management of organizational justice. <em>Academy of Management Perspectives, 21</em>, 34–48.; Cook, C. W. (1980). Guidelines for managing motivation. <em>Business Horizons, 23</em>, 61–69.</span></span></p>
+<p>Process theories explain motivation as a function of employee perceptions, judgments, and responses to consequences. Four theories are especially influential in Organizational Behavior: Adams’ <strong>equity</strong> theory, organizational justice theory, expectancy theory, and reinforcement theory. Together, they help explain why fairness, expectations, and consequences can either strengthen or weaken motivation in powerful ways.<span aria-label="Source 18" class="cite-ref" tabindex="0"><sup>18</sup><span class="cite-tooltip" role="tooltip">Carrell, M. R., &amp; Dittrich, J. E. (1978). Equity theory: The recent literature, methodological considerations, and new directions. <em>Academy of Management Review, 3</em>, 202–210.; Colquitt, J. A., Conlon, D. E., Wesson, M. J., Porter, C. O. L. H., &amp; Ng, K. Y. (2001). Justice at the millennium: A meta-analytic review of 25 years of organizational justice research. <em>Journal of Applied Psychology, 86</em>, 425–445.</span></span></p>
+<div class="chart-wide">
+<figure>
+<svg aria-labelledby="titleProcess descProcess" role="img" style="width:100%; height:auto;" viewbox="0 0 1200 420" xmlns="http://www.w3.org/2000/svg"> <title id="titleProcess">Summary of process theories of motivation</title> <desc id="descProcess">Four light gray panels summarize Adams’ Equity Theory, Greenberg’s Organizational Justice Theory, Vroom’s Expectancy Theory, and Reinforcement Theory. All panels use gray and white boxes with dark text. The equity panel shows two side-by-side input and outcome comparisons labeled Person and Referent other. The organizational justice panel lists procedural, distributive, and interactional justice. The expectancy panel explains motivation as a function of expectancy, instrumentality, and valence. The reinforcement panel explains positive and negative reinforcement, punishment, and extinction.</desc> <defs> <style> .panel { fill:#e9e9e9; stroke:#7f7f7f; stroke-width:2; } .box { fill:#f7f7f7; stroke:#b9b9b9; stroke-width:1.5; } .box-title { font:700 18px "Segoe UI", Arial, sans-serif; fill:#111; } .titleSmall { font:700 16px "Segoe UI", Arial, sans-serif; fill:#111; } .body { font:400 15px "Segoe UI", Arial, sans-serif; fill:#222; } .bodyBold { font:700 16px "Segoe UI", Arial, sans-serif; fill:#111; } .mini { font:400 13px "Segoe UI", Arial, sans-serif; fill:#333; } .eq { font:700 26px "Segoe UI", Arial, sans-serif; fill:#111; } .divider { stroke:#b9b9b9; stroke-width:1.5; } </style> </defs> <rect fill="white" height="470" width="1200"></rect> <!-- Panel 1 --> <rect class="panel" height="400" rx="16" ry="16" width="288" x="16" y="14"></rect> <text class="box-title" text-anchor="middle" x="140" y="38">Adams’ Equity Theory</text> <text class="titleSmall" text-anchor="start" x="240" y="38">(1965)</text>
+<text class="body" text-anchor="middle" x="160" y="74">The process of comparing our</text>
+<text class="body" text-anchor="middle" x="160" y="92">inputs (what we give)</text>
+<text class="body" text-anchor="middle" x="160" y="110">and outcomes (what we get)</text>
+<text class="body" text-anchor="middle" x="160" y="128"> to others’ inputs and outcomes.</text>
+<text class="body" text-anchor="middle" x="82" y="210">Person</text>
+<text class="body" text-anchor="middle" x="228" y="210">Referent other</text>
+<rect class="box" height="38" rx="10" ry="10" width="100" x="34" y="224"></rect> <text class="bodybold" text-anchor="middle" x="84" y="248">Outcomes</text> <line class="divider" x1="44" x2="114" y1="268" y2="268"></line> <rect class="box" height="38" rx="10" ry="10" width="100" x="34" y="276"></rect> <text class="bodybold" text-anchor="middle" x="84" y="300">Inputs</text> <rect class="box" height="38" rx="10" ry="10" width="100" x="180" y="224"></rect> <text class="bodybold" text-anchor="middle" x="230" y="248">Outcomes</text> <line class="divider" x1="190" x2="260" y1="268" y2="268"></line> <rect class="box" height="38" rx="10" ry="10" width="100" x="180" y="276"></rect> <text class="bodybold" text-anchor="middle" x="230" y="300">Inputs</text>
+<text class="eq" text-anchor="middle" x="152" y="287">=</text>
+<!-- Panel 2 --> <rect class="panel" height="400" rx="16" ry="16" width="288" x="314" y="14"></rect> <text class="box-title" text-anchor="middle" x="458" y="38">Greenberg’s Organizational</text> <text class="box-title" text-anchor="middle" x="458" y="60">Justice Theory (1987)</text>
+<text class="body" text-anchor="middle" x="458" y="94">The degree to which employees</text>
+<text class="body" text-anchor="middle" x="458" y="112">believe that they are being treated fairly</text>
+<text class="body" text-anchor="middle" x="458" y="130">by the organization and its agents.</text>
+<rect class="box" height="70" rx="10" ry="10" width="256" x="330" y="158"></rect> <text class="bodyBold" text-anchor="middle" x="458" y="190">Procedural Justice</text> <text class="body" text-anchor="middle" x="458" y="215">(fairness in the process)</text> <rect class="box" height="70" rx="10" ry="10" width="256" x="330" y="238"></rect> <text class="bodyBold" text-anchor="middle" x="458" y="272">Distributive justice</text> <text class="body" text-anchor="middle" x="458" y="294">(fairness of outcome)</text> <rect class="box" height="70" rx="10" ry="10" width="256" x="330" y="318"></rect> <text class="bodyBold" text-anchor="middle" x="458" y="348">Interactional justice</text> <text class="body" text-anchor="middle" x="458" y="370">(fairness in the interactions)</text>
+<!-- Panel 3 --> <rect class="panel" height="400" rx="16" ry="16" width="288" x="612" y="14"></rect> <text class="box-title" text-anchor="middle" x="756" y="38">Vroom’s Expectancy</text> <text class="box-title" text-anchor="middle" x="756" y="60">Theory (1964)</text>
+<text class="body" text-anchor="middle" x="756" y="90">Individuals make choices based on</text>
+<text class="body" text-anchor="middle" x="756" y="108">their anticipated outcomes</text>
+<text class="body" text-anchor="middle" x="756" y="126">Motivation is a function of expectancy,</text>
+<text class="body" text-anchor="middle" x="756" y="144">instrumentality, and valence.</text>
+<text class="body" text-anchor="middle" x="756" y="162"></text>
+<rect class="box" height="70" rx="10" ry="10" width="256" x="628" y="158"></rect> <text class="bodyBold" text-anchor="middle" x="756" y="190">Expectancy</text> <text class="body" text-anchor="middle" x="756" y="215">effort leads to performance</text> <rect class="box" height="70" rx="10" ry="10" width="256" x="628" y="238"></rect> <text class="bodyBold" text-anchor="middle" x="756" y="272">Instrumentality</text> <text class="body" text-anchor="middle" x="756" y="294">performance leads to a reward</text> <rect class="box" height="70" rx="10" ry="10" width="256" x="628" y="318"></rect> <text class="bodyBold" text-anchor="middle" x="756" y="348">Valence</text> <text class="body" text-anchor="middle" x="756" y="370">the reward is valued/desired</text>
+<!-- Panel 4 --> <rect class="panel" height="400" rx="16" ry="16" width="274" x="910" y="14"></rect> <text class="box-title" text-anchor="middle" x="1047" y="38">Reinforcement Theory</text>
+<text class="body" text-anchor="middle" x="1047" y="74">To strengthen or weaken a behavior</text>
+<text class="body" text-anchor="middle" x="1047" y="92">contingent consequences should be</text>
+<text class="body" text-anchor="middle" x="1047" y="110">presented/withdrawn.</text>
+<text class="body" text-anchor="middle" x="1047" y="128">Based on Thorndike's Law of Effect,</text>
+<text class="body" text-anchor="middle" x="1047" y="146">and Skinner's operant conditioning. </text>
+<rect class="box" height="80" rx="10" ry="10" width="242" x="926" y="200"></rect> <text class="body" text-anchor="middle" x="1047" y="226">To strengthen behavior:</text> <text class="bodyBold" text-anchor="middle" x="1047" y="250">Positive and negative</text> <text class="bodyBold" text-anchor="middle" x="1047" y="268">reinforcement.</text> <rect class="box" height="80" rx="10" ry="10" width="242" x="926" y="306"></rect> <text class="body" text-anchor="middle" x="1047" y="332">To weaken behavior:</text> <text class="bodyBold" text-anchor="middle" x="1047" y="356">Punishment and</text> <text class="bodyBold" text-anchor="middle" x="1047" y="374">extinction.</text> </svg>
+<figcaption>4.3 Summary of Key Process Theories of Motivation</figcaption>
+</figure>
+</div>
+<section class="subsection level-2" id="equity">
+<h3>Adams’ Equity Theory</h3>
+<p>Equity theory proposes that employees are motivated by fairness. Individuals compare their own ratio of inputs to outcomes with that of a referent other. Inputs may include effort, experience, education, loyalty, and time, while outcomes may include pay, recognition, status, or opportunities. When employees believe that their ratio is similar to that of a comparison person, they perceive equity. When they perceive inequity, tension is created, and they become motivated to reduce it.<span aria-label="Source 19" class="cite-ref" tabindex="0"><sup>19</sup><span class="cite-tooltip" role="tooltip">Adams, J. S. (1965). Inequity in social exchange. In L. Berkowitz (Ed.), <em>Advances in Experimental Social Psychology</em> (Vol. 2, pp. 267–299). Academic Press.</span></span></p>
+<p>The practical importance of the theory lies in how employees respond to perceived unfairness. They may reduce effort, seek increased rewards, change the person to whom they compare themselves, distort perceptions of the situation, or leave the organization altogether. Research also shows that in some cases employees respond to underpayment inequity with theft or other withdrawal behaviors. Because fairness judgments are subjective, managers must recognize that even well-intentioned decisions can be interpreted as inequitable if employees do not understand the basis for differences in outcomes.<span aria-label="Source 20" class="cite-ref" tabindex="0"><sup>20</sup><span class="cite-tooltip" role="tooltip">Goodman, P. S., &amp; Friedman, A. (1971). An examination of Adams’ theory of inequity. <em>Administrative Science Quarterly, 16</em>, 271–288.; Greenberg, J. (1993). Stealing in the name of justice: Informational and interpersonal moderators of theft reactions to underpayment inequity. <em>Organizational Behavior and Human Decision Processes, 54</em>, 81–103.; Schmidt, D. R., &amp; Marwell, G. (1972). Withdrawal and reward reallocation as responses to inequity. <em>Journal of Experimental Social Psychology, 8</em>, 207–211.</span></span></p>
+</section>
+<section class="subsection level-2" id="justice">
+<h3>Organizational Justice</h3>
+<p>Organizational justice extends equity theory by recognizing that employees care not only about the fairness of outcomes, but also about the fairness of procedures and interpersonal treatment. <strong>Distributive justice</strong> refers to the perceived fairness of outcomes such as pay, promotions, or workloads. <strong>Procedural justice</strong> concerns the fairness of the processes used to arrive at decisions. <strong>Interactional justice</strong> refers to the degree to which employees are treated with dignity, respect, and transparency in interpersonal interactions.<span aria-label="Source 21" class="cite-ref" tabindex="0"><sup>21</sup><span class="cite-tooltip" role="tooltip">Colquitt, J. A., Conlon, D. E., Wesson, M. J., Porter, C. O. L. H., &amp; Ng, K. Y. (2001). Justice at the millennium: A meta-analytic review of 25 years of organizational justice research. <em>Journal of Applied Psychology, 86</em>, 425–445.; Cropanzano, R., Bowen, D. E., &amp; Gilliland, S. W. (2007). The management of organizational justice. <em>Academy of Management Perspectives, 21</em>, 34–48.</span></span></p>
+<p>This broader view of fairness is important because employees often react strongly when procedures are opaque or when managers communicate decisions disrespectfully, even if the final outcome is acceptable. Research shows that justice perceptions influence commitment, job performance, organizational citizenship behavior, customer satisfaction, retaliation, and even psychological well-being. For managers, the implication is clear: fair outcomes matter, but so do voice, consistency, explanation, and respectful treatment.<span aria-label="Source 22" class="cite-ref" tabindex="0"><sup>22</sup><span class="cite-tooltip" role="tooltip">Brockner, J., &amp; Wiesenfeld, B. M. (1996). An integrative framework for explaining reactions to decisions: Interactive effects of outcomes and procedures. <em>Psychological Bulletin, 120</em>, 189–208.; Greenberg, J. (1993). Stealing in the name of justice: Informational and interpersonal moderators of theft reactions to underpayment inequity. <em>Organizational Behavior and Human Decision Processes, 54</em>, 81–103.; Cohen-Charash, Y., &amp; Spector, P. E. (2001). The role of justice in organizations: A meta-analysis. <em>Organizational Behavior and Human Decision Processes, 86</em>, 278–321.</span></span></p><p>At the organizational level, justice perceptions are shaped by the systems managers use to allocate outcomes and apply rules. <strong>Reward distribution</strong> affects distributive justice because employees compare what they receive with what others receive. <strong>Policy enforcement</strong> affects procedural justice because employees pay attention to whether rules are applied consistently across people and situations. <strong>Performance management</strong> affects both fairness and motivation because employees use evaluations, feedback, and promotion decisions to judge whether effort, performance, and outcomes are meaningfully connected.</p>
+</section>
+<section class="subsection level-2" id="expectancy">
+<h3>Expectancy Theory</h3>
+<p>Expectancy theory explains motivation as a rational decision process. According to this model, motivation depends on three judgments. <strong>Expectancy</strong> is the belief that effort will lead to successful performance. <strong>Instrumentality</strong> is the belief that performance will lead to outcomes. <strong>Valence</strong> is the value the employee places on those outcomes. Motivation is highest when employees believe they can perform successfully, trust that performance will be rewarded, and value the rewards being offered.<span aria-label="Source 23" class="cite-ref" tabindex="0"><sup>23</sup><span class="cite-tooltip" role="tooltip">Vroom, V. H. (1964). <em>Work and motivation</em>. Wiley.; Porter, L. W., &amp; Lawler, E. E. (1968). <em>Managerial attitudes and performance</em>. Irwin.</span></span></p>
+<p>This theory is especially powerful because it offers direct managerial guidance. Employees are unlikely to be motivated if they lack the resources or clarity to perform, if reward systems are inconsistent or opaque, or if the available rewards are not meaningful to them. In other words, motivation drops when employees do not believe effort will matter, when they doubt the organization will follow through, or when the outcome simply is not attractive. Managers therefore need to strengthen all three links rather than focusing only on incentives.<span aria-label="Source 24" class="cite-ref" tabindex="0"><sup>24</sup><span class="cite-tooltip" role="tooltip">Cook, C. W. (1980). Guidelines for managing motivation. <em>Business Horizons, 23</em>, 61–69.; Vroom, V. H., Porter, L. W., &amp; Lawler, E. E. (2015). Expectancy theories. In <em>Organizational Behavior 1</em> (pp. 94–113). Routledge.</span></span></p>
+</section>
+<section class="subsection level-2" id="reinforcement">
+<h3>Reinforcement Theory</h3>
+<p>Reinforcement theory takes a behavioral rather than cognitive approach. It argues that behavior is a function of its consequences. Behaviors followed by favorable outcomes are more likely to be repeated, while behaviors followed by unfavorable outcomes become less likely. This idea builds on Thorndike’s law of effect and the later work of Skinner on operant conditioning.<span aria-label="Source 25" class="cite-ref" tabindex="0"><sup>25</sup><span class="cite-tooltip" role="tooltip">Thorndike, E. (1927). The law of effect. <em>The American Journal of Psychology, 39</em>(1/4), 212–222.; Skinner, B. F. (1953). <em>Science and human behavior</em>. Free Press.; Skinner, B. F. (1958). Reinforcement today. <em>American Psychologist, 13</em>(3), 94–99.</span></span></p>
+<p>In organizations, the theory highlights an important managerial reality: employees learn quickly from what is rewarded, ignored, or punished. Desired behaviors that go unrecognized may fade, while undesirable behaviors that accidentally produce positive consequences may become more frequent. This is why reinforcement theory is especially useful in performance management and reward system design. Managers do not need to rely only on formal incentives; everyday responses such as praise, recognition, attention, or silence also shape future behavior.<span aria-label="Source 26" class="cite-ref" tabindex="0"><sup>26</sup><span class="cite-tooltip" role="tooltip">Stajkovic, A. D., &amp; Luthans, F. (1997). A meta-analysis of the effects of organizational behavior modification on task performance, 1975–1995. <em>Academy of Management Journal, 40</em>(5), 1122–1149.</span></span></p>
+</section>
+<section class="subsection level-2" id="process-strategies"><h3>Process-Focused Motivational Strategies</h3>
+<p>These theories together suggest that employees are most motivated when they believe the workplace is fair, when they understand how effort leads to outcomes, and when desirable behaviors are reinforced consistently. From an equity perspective, organizations should monitor pay structures, workloads, promotions, and recognition systems so that employees can reasonably perceive them as fair. Transparency matters because employees often fill informational gaps with assumptions, and those assumptions are not always favorable.<span aria-label="Source 27" class="cite-ref" tabindex="0"><sup>27</sup><span class="cite-tooltip" role="tooltip">Adams, J. S. (1965). Inequity in social exchange. In L. Berkowitz (Ed.), <em>Advances in Experimental Social Psychology</em> (Vol. 2, pp. 267–299). Academic Press.; Carrell, M. R., &amp; Dittrich, J. E. (1978). Equity theory: The recent literature, methodological considerations, and new directions. <em>Academy of Management Review, 3</em>, 202–210.</span></span></p>
+<p>From an organizational justice perspective, managers should go beyond fair outcomes and ensure that procedures are consistent, employees have voice where appropriate, and decisions are explained respectfully. Employees are more likely to accept even unfavorable outcomes when they believe the process was fair and when they feel treated with dignity. This is especially relevant in performance evaluations, reward decisions, restructuring, and disciplinary situations.<span aria-label="Source 28" class="cite-ref" tabindex="0"><sup>28</sup><span class="cite-tooltip" role="tooltip">Brockner, J., Fishman, A. Y., Reb, J., Goldman, B., Spiegel, S., &amp; Garden, C. (2007). Procedural fairness, outcome favorability, and judgments of an authority’s responsibility. <em>Journal of Applied Psychology, 92</em>, 1657–1671.; Cropanzano, R., Bowen, D. E., &amp; Gilliland, S. W. (2007). The management of organizational justice. <em>Academy of Management Perspectives, 21</em>, 34–48.</span></span></p>
+<p>Expectancy theory suggests that managers should clarify role expectations, ensure that employees have the resources and support to succeed, and make performance–reward relationships visible and credible. Employees must be able to see the line of sight between their effort, their performance, and the outcomes that follow. Rewards also need to align with what employees actually value, which requires managers to avoid assuming that everyone is motivated by the same incentives.<span aria-label="Source 29" class="cite-ref" tabindex="0"><sup>29</sup><span class="cite-tooltip" role="tooltip">Cook, C. W. (1980). Guidelines for managing motivation. <em>Business Horizons, 23</em>, 61–69.; Vroom, V. H., Porter, L. W., &amp; Lawler, E. E. (2015). Expectancy theories. In <em>Organizational Behavior 1</em> (pp. 94–113). Routledge.</span></span></p>
+<p>Reinforcement theory adds an important reminder: organizations should pay close attention to the behaviors they are actually reinforcing. If collaboration, initiative, or quality are valued, those behaviors must be noticed and rewarded. If managers inadvertently reward shortcuts, politicking, or visible busyness instead of meaningful results, employees will learn accordingly. In practice, motivational systems are strongest when fairness, clarity, and reinforcement are aligned.<span aria-label="Source 30" class="cite-ref" tabindex="0"><sup>30</sup><span class="cite-tooltip" role="tooltip">Skinner, B. F. (1953). <em>Science and human behavior</em>. Free Press.; Stajkovic, A. D., &amp; Luthans, F. (1997). A meta-analysis of the effects of organizational behavior modification on task performance, 1975–1995. <em>Academy of Management Journal, 40</em>(5), 1122–1149.</span></span></p>
+<div class="note"><strong>Managerial implication.</strong> Process-focused motivation is strongest when organizations build systems employees perceive as fair, understandable, and responsive. Employees are more likely to invest effort when they trust the process, believe effort will matter, and see that desired behaviors are consistently reinforced.</div>
+</section>
+</section>
+<section class="subsection level-2" id="contemporary">
+<h3>Contemporary Theories of Motivation</h3>
+<p>Contemporary theories of motivation build on earlier need-based and process approaches, but they place stronger emphasis on intrinsic motivation, autonomy, meaning, and the psychological experience of work. These theories emerged in response to changes in the workplace, especially the growth of knowledge work, team-based work, and jobs that require creativity, judgment, and continuous learning. In these settings, motivation cannot be understood only in terms of external rewards or unmet needs. It also depends on whether employees feel capable, empowered, connected, and psychologically invested in what they do.<span aria-label="Source 31" class="cite-ref" tabindex="0"><sup>31</sup><span class="cite-tooltip" role="tooltip">Deci, E. L., &amp; Ryan, R. M. (2012). Self-determination theory. In <em>Handbook of theories of social psychology</em> (Vol. 1, pp. 416–433).; Gagné, M., &amp; Deci, E. L. (2005). Self-determination theory and work motivation. <em>Journal of Organizational Behavior, 26</em>(4), 331–362.</span></span></p>
+<p>These perspectives are especially relevant because many organizations now depend on employees not only to perform assigned tasks, but also to solve problems, collaborate effectively, adapt to change, and contribute ideas. As a result, contemporary theories help managers think beyond simple reward systems and focus on how work can be designed and led in ways that sustain deeper and more durable motivation.<span aria-label="Source 32" class="cite-ref" tabindex="0"><sup>32</sup><span class="cite-tooltip" role="tooltip">Ahearne, M., Mathieu, J., &amp; Rapp, A. (2005). To empower or not to empower your sales force? An empirical examination of the influence of leadership empowerment behavior on customer satisfaction and performance. <em>Journal of Applied Psychology, 90</em>, 945–955.; Chen, G., Kirkman, B. L., Kanfer, R., Allen, D., &amp; Rosen, B. (2007). A multilevel study of leadership, empowerment, and performance in teams. <em>Journal of Applied Psychology, 92</em>, 331–346.</span></span></p>
+<p>Contemporary motivational theories are especially concerned with the quality of motivation rather than simply the amount of effort employees exert. They ask whether employees are motivated because they feel controlled and pressured, or because they find their work meaningful, valuable, and engaging. Three ideas are especially influential in this area: self-determination theory, psychological empowerment, and <strong>goal setting</strong> theory. Together, they help explain why some work environments energize employees while others produce compliance without real commitment.<span aria-label="Source 33" class="cite-ref" tabindex="0"><sup>33</sup><span class="cite-tooltip" role="tooltip">Gagné, M., &amp; Deci, E. L. (2005). Self-determination theory and work motivation. <em>Journal of Organizational Behavior, 26</em>(4), 331–362.; Thomas, K. W., &amp; Velthouse, B. A. (1990). Cognitive elements of empowerment: An interpretive model of intrinsic task motivation. <em>Academy of Management Review, 15</em>(4), 666–681.; Locke, E. A., &amp; Latham, G. P. (1990). <em>A theory of goal setting and task performance</em>. Prentice Hall.</span></span></p>
+<section class="subsection level-2" id="self-determination">
+<h3>Self-Determination Theory</h3>
+<p>Self-determination theory proposes that employees are most likely to experience strong and sustainable motivation when three basic psychological needs are satisfied: <strong>autonomy</strong>, <strong>competence</strong>, and <strong>relatedness</strong>. Autonomy refers to the need to feel that one has meaningful choice or control over one’s actions. Competence reflects the need to feel capable, effective, and able to master challenges. Relatedness refers to the need to feel connected to and valued by others. When these needs are met, employees are more likely to experience <strong>intrinsic motivation</strong>, meaning that they engage in work because they find it interesting, meaningful, or personally worthwhile rather than simply because they are trying to obtain an external reward or avoid punishment.<span aria-label="Source 34" class="cite-ref" tabindex="0"><sup>34</sup><span class="cite-tooltip" role="tooltip">Deci, E. L., &amp; Ryan, R. M. (2012). Self-determination theory. In <em>Handbook of theories of social psychology</em> (Vol. 1, pp. 416–433).; Gagné, M., &amp; Deci, E. L. (2005). Self-determination theory and work motivation. <em>Journal of Organizational Behavior, 26</em>(4), 331–362.</span></span></p>
+<p>This theory is important because it explains why an employee can be externally compliant without being deeply motivated. For example, someone may complete a task because a manager insists, but that is very different from feeling energized by the work itself. Self-determination theory suggests that controlling environments, micromanagement, poor feedback, and weak social connection can undermine intrinsic motivation even when pay is competitive. In contrast, work environments that support discretion, skill development, and positive relationships are more likely to foster stronger engagement and persistence over time.<span aria-label="Source 35" class="cite-ref" tabindex="0"><sup>35</sup><span class="cite-tooltip" role="tooltip">Deci, E. L., Koestner, R., &amp; Ryan, R. M. (1999). A meta-analytic review of experiments examining the effects of extrinsic rewards on intrinsic motivation. <em>Psychological Bulletin, 125</em>(6), 627–668.; Gagné, M., &amp; Deci, E. L. (2005). Self-determination theory and work motivation. <em>Journal of Organizational Behavior, 26</em>(4), 331–362.</span></span></p>
+<p>For managers, the theory has direct implications. Employees are more motivated when they understand why a task matters, have some discretion in how to accomplish it, receive developmental feedback that strengthens competence, and feel part of a supportive work group. This does not mean managers should remove all structure. Rather, it means structure should support autonomy and growth rather than crowd them out.</p><p>The social context of work also matters. A supportive climate can strengthen autonomy, competence, and relatedness, while a controlling or disrespectful climate can undermine them. As a result, self-determination theory helps explain why two employees with similar skills may show very different levels of motivation depending on the quality of leadership, feedback, resources, and relationships surrounding their work.</p>
+</section>
+<section class="subsection level-2" id="psychological-empowerment">
+<h3>Psychological Empowerment</h3>
+<p>Psychological empowerment focuses on how employees experience their role in the organization and whether that role generates intrinsic task motivation. It consists of four dimensions: <strong>meaning</strong>, <strong>competence</strong>, <strong>self-determination</strong>, and <strong>impact</strong>. Meaning refers to the degree to which the work feels personally important. Competence refers to confidence in one’s ability to perform well. Self-determination reflects autonomy in how work is carried out. Impact refers to the belief that one’s actions can influence outcomes in the organization. When employees experience these four elements, they are more likely to feel energized, responsible, and committed to their work.<span aria-label="Source 36" class="cite-ref" tabindex="0"><sup>36</sup><span class="cite-tooltip" role="tooltip">Thomas, K. W., &amp; Velthouse, B. A. (1990). Cognitive elements of empowerment: An interpretive model of intrinsic task motivation. <em>Academy of Management Review, 15</em>(4), 666–681.; Spreitzer, G. M. (1995). Psychological empowerment in the workplace: Dimensions, measurement, and validation. <em>Academy of Management Journal, 38</em>, 1442–1465.</span></span></p>
+<p>Importantly, psychological empowerment is not just an internal attitude. It is influenced by structural conditions in the workplace. Employees are more likely to feel empowered when they have access to information, resources, support, learning opportunities, and some control over their work. Leadership behavior also matters. Managers who share information, involve employees in decisions, encourage problem solving, and provide developmental support create the structural conditions that make empowerment possible. Without these structural supports, telling employees they are empowered is unlikely to have much effect.<span aria-label="Source 37" class="cite-ref" tabindex="0"><sup>37</sup><span class="cite-tooltip" role="tooltip">Liden, R. C., Wayne, S. J., &amp; Sparrowe, R. T. (2000). An examination of the mediating role of psychological empowerment on the relations between the job, interpersonal relationships, and work outcomes. <em>Journal of Applied Psychology, 85</em>, 407–416.; Chen, G., Kirkman, B. L., Kanfer, R., Allen, D., &amp; Rosen, B. (2007). A multilevel study of leadership, empowerment, and performance in teams. <em>Journal of Applied Psychology, 92</em>, 331–346.; Ahearne, M., Mathieu, J., &amp; Rapp, A. (2005). To empower or not to empower your sales force? <em>Journal of Applied Psychology, 90</em>, 945–955.</span></span></p>
+<p>For managers, this means empowerment is both psychological and structural. Employees are unlikely to feel meaning, self-determination, or impact if decisions are centralized, information is withheld, and discretion is tightly constrained. Empowerment therefore requires more than encouraging words. It requires systems, access, trust, and leadership practices that allow employees to exercise judgment in meaningful ways.</p><p>Psychological empowerment also helps explain why motivation can influence outcomes beyond the individual employee. Empowered employees are more likely to take initiative, solve problems, and contribute ideas, which can support <strong>creativity</strong> and organizational <strong>innovation</strong>. In customer-facing roles, empowerment can also improve responsiveness and service quality, which may strengthen <strong>customer satisfaction</strong> when employees have the authority and confidence to address customer needs effectively.</p>
+</section>
+<section class="subsection level-2" id="goal-setting">
+<h3>Goal Setting Theory</h3>
+<p>Goal setting theory is one of the most widely used and most strongly supported theories of motivation in both research and practice. It proposes that <strong>specific and challenging goals</strong> lead to higher performance than vague goals, easy goals, or no goals at all, especially when employees receive feedback and are committed to the goal. Goals motivate by directing attention, increasing effort, encouraging persistence, and prompting employees to develop strategies for performance.<span aria-label="Source 38" class="cite-ref" tabindex="0"><sup>38</sup><span class="cite-tooltip" role="tooltip">Locke, E. A., &amp; Latham, G. P. (1990). <em>A theory of goal setting and task performance</em>. Prentice Hall.; Locke, E. A., &amp; Latham, G. P. (2002). Building a practically useful theory of goal setting and task motivation: A 35-year odyssey. <em>American Psychologist, 57</em>(9), 705–717.</span></span></p>
+<p>The theory is highly practical, which helps explain its influence. Managers use goals in performance management systems, project planning, coaching, and development. One widely used application is the idea of <strong>SMART goals</strong>, which encourages goals to be specific, measurable, achievable, relevant, and time-bound. SMART goals are not the theory itself, but they translate its core logic into a usable managerial tool by helping managers and employees create goals that are clearer, more observable, and easier to monitor over time.<span aria-label="Source 39" class="cite-ref" tabindex="0"><sup>39</sup><span class="cite-tooltip" role="tooltip">Locke, E. A., &amp; Latham, G. P. (2002). Building a practically useful theory of goal setting and task motivation: A 35-year odyssey. <em>American Psychologist, 57</em>(9), 705–717.; Drucker, P. F. (1954). <em>The practice of management</em>. Harper &amp; Row.</span></span></p>
+<p>At the same time, the theory also has boundaries. Goals are most motivating when employees are committed to them, believe they are attainable, and receive feedback that helps them adjust their effort and strategies. Poorly designed goals can create problems. Unrealistic or narrowly defined goals may encourage frustration, tunnel vision, or even unethical behavior if employees become overly focused on hitting a target at any cost. For this reason, managers must treat goals as part of a broader motivational system rather than as a simple performance lever.</p><p>Goal setting also operates in group contexts. Many employees pursue individual goals while also contributing to team goals, which means that effective <strong>group management</strong> and healthy <strong>team dynamics</strong> influence whether goals motivate or frustrate people. When team goals are clear, roles are coordinated, and feedback is constructive, goal setting can improve both individual effort and <strong>group performance</strong>. When goals conflict or accountability is unclear, goal setting can create competition, confusion, or disengagement.</p>
+</section>
+</section>
+<section class="subsection level-2" id="work-design-strategies">
+<h3>Work Design Motivational Strategies</h3>
+<p>
+The most practical contributions of motivation research come from approaches that translate theory into workplace design and managerial practices.
+</p>
+<section class="subsection level-3" id="designing-work">
+<h4>Designing Meaningful Jobs</h4>
+<p>Contemporary motivation research emphasizes that employees are more motivated when the work itself is engaging, meaningful, and aligned with their psychological needs. Self-determination theory explains that intrinsic motivation is strongest when employees experience autonomy, competence, and relatedness in their work. In practice, these elements are often embedded through job design. Jobs that provide meaningful responsibility, opportunities to develop skills, and a clear sense of purpose are more likely to foster sustained motivation than jobs that rely primarily on external rewards.<span aria-label="Source 40" class="cite-ref" tabindex="0"><sup>40</sup><span class="cite-tooltip" role="tooltip">Gagné, M., &amp; Deci, E. L. (2005). Self-determination theory and work motivation. <em>Journal of Organizational Behavior, 26</em>(4), 331–362.; Deci, E. L., &amp; Ryan, R. M. (2012). Self-determination theory. In <em>Handbook of theories of social psychology</em> (Vol. 1, pp. 416–433).</span></span></p>
+<p>Similarly, the <strong>job characteristics model</strong> focuses on desinging meaningful jobs. The model identifies five core job dimensions: skill variety, task identity, task significance, autonomy, and feedback, that influence motivation through their impact on psychological states. Jobs that are meaningful, provide responsibility, and offer feedback are more likely to lead to higher motivation and performance.
+</p>
+<p>This perspective reinforces the idea that motivation is not something that can simply be added through incentives. Instead, it must be built into how work is structured. When employees understand how their work contributes to broader organizational goals, have some discretion in how they perform their tasks, and receive feedback that helps them grow, they are more likely to feel internally motivated and engaged.</p>
+</section>
+<section class="subsection level-3" id="empowerment-through-structure">
+<h4>Empowerment Through Structure and Leadership</h4>
+<p>Psychological empowerment highlights that motivation depends not only on the design of work, but also on how employees experience their role within the organization. Employees are more motivated when they perceive their work as meaningful, feel capable of performing effectively, have autonomy in their actions, and believe their efforts have an impact. However, these perceptions do not arise in isolation. They are shaped by the structural and leadership context in which employees operate.<span aria-label="Source 41" class="cite-ref" tabindex="0"><sup>41</sup><span class="cite-tooltip" role="tooltip">Thomas, K. W., &amp; Velthouse, B. A. (1990). Cognitive elements of empowerment: An interpretive model of intrinsic task motivation. <em>Academy of Management Review, 15</em>(4), 666–681.; Spreitzer, G. M. (1995). Psychological empowerment in the workplace: Dimensions, measurement, and validation. <em>Academy of Management Journal, 38</em>, 1442–1465.</span></span></p>
+<p>Organizations foster empowerment by providing access to information, resources, and support, as well as by allowing employees discretion in decision-making. Leadership plays a critical role in reinforcing these conditions. Managers who involve employees in decisions, encourage initiative, and provide developmental feedback are more likely to create an environment where empowerment is experienced rather than simply communicated. Without these structural supports, attempts to empower employees may feel superficial and fail to improve motivation.<span aria-label="Source 42" class="cite-ref" tabindex="0"><sup>42</sup><span class="cite-tooltip" role="tooltip">Liden, R. C., Wayne, S. J., &amp; Sparrowe, R. T. (2000). An examination of the mediating role of psychological empowerment on the relations between the job, interpersonal relationships, and work outcomes. <em>Journal of Applied Psychology, 85</em>, 407–416.; Ahearne, M., Mathieu, J., &amp; Rapp, A. (2005). To empower or not to empower your sales force? <em>Journal of Applied Psychology, 90</em>, 945–955.; Chen, G., Kirkman, B. L., Kanfer, R., Allen, D., &amp; Rosen, B. (2007). A multilevel study of leadership, empowerment, and performance in teams. <em>Journal of Applied Psychology, 92</em>, 331–346.</span></span></p>
+</section>
+<section class="subsection level-3" id="goal-setting-performance-management">
+<h4>Goal Setting and Performance Management</h4>
+<p>Goal setting theory remains one of the most widely used and practically influential approaches to motivation. In organizational settings, it is most visible through performance management systems, where goals are used to direct effort, clarify expectations, and evaluate performance. Research consistently shows that specific and challenging goals, combined with feedback, lead to higher performance than vague or easy goals.<span aria-label="Source 43" class="cite-ref" tabindex="0"><sup>43</sup><span class="cite-tooltip" role="tooltip">Locke, E. A., &amp; Latham, G. P. (1990). <em>A theory of goal setting and task performance</em>. Prentice Hall.; Locke, E. A., &amp; Latham, G. P. (2002). Building a practically useful theory of goal setting and task motivation: A 35-year odyssey. <em>American Psychologist, 57</em>(9), 705–717.</span></span></p>
+<p>A widely used application of this theory is the concept of <strong>SMART goals</strong>, which encourages goals to be specific, measurable, achievable, relevant, and time-bound. While SMART goals provide a useful framework, their effectiveness depends on proper implementation. Goals must be meaningful, aligned with organizational priorities, and supported by feedback that allows employees to adjust their effort and strategies over time. When used effectively, goal setting provides direction and focus. When used poorly, it can create confusion or unintended consequences.<span aria-label="Source 44" class="cite-ref" tabindex="0"><sup>44</sup><span class="cite-tooltip" role="tooltip">Locke, E. A., &amp; Latham, G. P. (2002). Building a practically useful theory of goal setting and task motivation: A 35-year odyssey. <em>American Psychologist, 57</em>(9), 705–717.; Drucker, P. F. (1954). <em>The practice of management</em>. Harper &amp; Row.</span></span></p>
+</section>
+<section class="subsection level-3" id="gamification-modern-tools">
+<h4>Gamification and Modern Motivation Tools</h4>
+<p>Some organizations have introduced gamification as a way to enhance motivation by incorporating elements such as points, rankings, and rewards into work processes. These tools can increase engagement in the short term, particularly when tasks are repetitive or lack inherent interest. However, their effectiveness depends on how they are designed and implemented.<span aria-label="Source 45" class="cite-ref" tabindex="0"><sup>45</sup><span class="cite-tooltip" role="tooltip">Deterding, S., Dixon, D., Khaled, R., &amp; Nacke, L. (2011). From game design elements to gamefulness: Defining gamification. In <em>Proceedings of the 15th International Academic MindTrek Conference</em> (pp. 9–15). ACM.; Hamari, J., Koivisto, J., &amp; Sarsa, H. (2014). Does gamification work? A literature review of empirical studies. In <em>2014 47th Hawaii International Conference on System Sciences</em> (pp. 3025–3034). IEEE.</span></span></p>
+<p>Gamification is most effective when it supports intrinsic motivation by making work more engaging or providing meaningful feedback. It is less effective when it relies solely on external rewards, which may shift attention away from the work itself. In such cases, employees may become more focused on earning rewards than on performing well or contributing meaningfully to organizational goals.</p>
+</section>
+<section class="subsection level-3" id="risks-misalignment">
+<h4>Risks and Misalignment in Motivation Systems</h4>
+<p>Although contemporary motivational strategies provide powerful tools, they can also be misapplied. Poorly designed systems may undermine motivation rather than enhance it. For example, overly aggressive or narrowly defined goals can encourage unethical behavior, reduce collaboration, or create excessive pressure. Similarly, empowerment without sufficient structure, resources, or clarity can lead to role ambiguity and stress instead of increased motivation.<span aria-label="Source 46" class="cite-ref" tabindex="0"><sup>46</sup><span class="cite-tooltip" role="tooltip">Locke, E. A., &amp; Latham, G. P. (2002). Building a practically useful theory of goal setting and task motivation: A 35-year odyssey. <em>American Psychologist, 57</em>(9), 705–717.; Chen, G., Kirkman, B. L., Kanfer, R., Allen, D., &amp; Rosen, B. (2007). A multilevel study of leadership, empowerment, and performance in teams. <em>Journal of Applied Psychology, 92</em>, 331–346.</span></span></p>
+<p>Efforts to enhance intrinsic motivation may also fail if basic organizational systems are not functioning effectively. Employees are unlikely to feel motivated if rewards are perceived as unfair, expectations are unclear, or leadership is inconsistent. In practice, motivation depends on alignment across systems. Work design, leadership behavior, and performance management must reinforce one another rather than operate in isolation.</p>
+</section>
+<section class="subsection level-2" id="contemporary-strategies">
+<h3>Contemporary and Work Design Motivation Strategies</h3>
+<p>Taken together, contemporary theories suggest that modern motivation is strongest when organizations create conditions that support meaningful, self-directed, and competent action. Employees are more likely to invest sustained effort when they find their work worthwhile, feel capable of succeeding, and experience enough autonomy to exercise judgment rather than simply comply with instructions. These theories therefore direct managers’ attention away from rewards alone and toward the broader psychological and structural environment of work.<span aria-label="Source 47" class="cite-ref" tabindex="0"><sup>47</sup><span class="cite-tooltip" role="tooltip">Gagné, M., &amp; Deci, E. L. (2005). Self-determination theory and work motivation. <em>Journal of Organizational Behavior, 26</em>(4), 331–362.; Spreitzer, G. M. (1995). Psychological empowerment in the workplace: Dimensions, measurement, and validation. <em>Academy of Management Journal, 38</em>, 1442–1465.</span></span></p>
+<p>In practice, this means motivation should be supported at several levels simultaneously. Work should be designed to provide meaning and growth, leadership should reinforce autonomy and confidence, performance systems should clarify goals and provide useful feedback, and newer tools such as gamification should be used carefully so that they enhance engagement rather than crowd out intrinsic interest. The theories are most powerful when they are applied as a coordinated system rather than as isolated techniques.<span aria-label="Source 48" class="cite-ref" tabindex="0"><sup>48</sup><span class="cite-tooltip" role="tooltip">Locke, E. A., &amp; Latham, G. P. (2002). Building a practically useful theory of goal setting and task motivation: A 35-year odyssey. <em>American Psychologist, 57</em>(9), 705–717.; Ahearne, M., Mathieu, J., &amp; Rapp, A. (2005). To empower or not to empower your sales force? <em>Journal of Applied Psychology, 90</em>, 945–955.; Hamari, J., Koivisto, J., &amp; Sarsa, H. (2014). Does gamification work? A literature review of empirical studies. In <em>2014 47th Hawaii International Conference on System Sciences</em> (pp. 3025–3034). IEEE.</span></span></p><p>Job design has important consequences for <strong>workplace attitudes</strong>, <strong>well-being</strong>, and <strong>turnover</strong>. When jobs provide meaningful work, autonomy, feedback, and opportunities for skill use, employees are more likely to feel engaged and committed. When jobs are poorly designed, overly controlled, or disconnected from meaningful outcomes, employees may become dissatisfied, withdraw effort, or eventually leave the organization.</p>
+<div class="note"><strong>Managerial implication.</strong> For managers, the broader lesson is that contemporary motivation is not just about encouraging more effort. It is about creating a work environment in which employees can experience ownership, progress, and purpose. When these elements are present, motivation is more likely to be durable, ethical, and aligned with high performance.</div>
+</section>
+</section>
+<section class="subsection level-2" id="skinners-box">
+<div class="chart-wide">
+<figure>
+<svg aria-labelledby="titleSkinnerSocial descSkinnerSocial" role="img" style="width:100%; height:auto; display:block;" viewbox="0 0 1100 900" xmlns="http://www.w3.org/2000/svg">
+<title id="titleSkinnerSocial">Skinner’s Box to Social Media: Reinforcement in Everyday Life</title>
+<desc id="descSkinnerSocial">Infographic comparing Skinner’s Box with social media reinforcement. A teal title banner sits at the top. Below it, a short explanatory panel says that Skinner showed behavior is shaped by consequences, and that similar principles help explain swiping and scrolling on social media. The left half is titled Skinner’s Box and shows a rat in an operant conditioning chamber with labels for light, indicator light, lever, food dispenser, and electrified floor. Next to it is a box titled How It Works with bullet points explaining that the rat presses the lever, receives a reward such as food, behavior is strengthened, and avoiding the electrified floor removes an unpleasant stimulus. Below is a Key Takeaways box summarizing reinforcement and schedules of reinforcement. The right half is titled The Instagram or TikTok Algorithm and shows three smartphone screens stacked vertically. The first connects to an unrewarded outcome labeled content not of interest and no reward. The second connects to a rewarded outcome labeled enjoyable or interesting content and dopamine hit. The third connects to intermittent reinforcement and says it keeps users coming back for more. A side box explains why people keep swiping, noting variable reward schedules, anticipation, and reinforced attention. A bottom think and share prompt asks students to identify other real-world examples where reinforcement shapes behavior.</desc>
+<defs>
+<style>
+      .teal { fill:#0d8b8b; }
+      .teal-dark { fill:#0b6a6a; }
+      .bg { fill:#eef3f3; stroke:#0b6a6a; stroke-width:3; }
+      .panel { fill:#e3e7e8; stroke:#c6cecf; stroke-width:1.5; }
+      .soft { fill:#f5f7f7; stroke:#c8d1d1; stroke-width:1.5; }
+      .pink { fill:#f6e6e6; stroke:#d97a7a; stroke-width:1.5; }
+      .green { fill:#e6f2e0; stroke:#8ab06e; stroke-width:1.5; }
+      .gold { fill:#faf1db; stroke:#d4b15a; stroke-width:1.5; }
+      .cream { fill:#f6efdd; stroke:#d9c48a; stroke-width:1.5; }
+      .phone { fill:#1d1d1d; stroke:#444; stroke-width:1.5; }
+      .phone-screen { fill:#ffffff; stroke:#d0d0d0; stroke-width:1; }
+      .title { font:700 31px "Segoe UI", Arial, sans-serif; fill:#fff; }
+      .sectionTitle { font:700 22px "Segoe UI", Arial, sans-serif; fill:#fff; }
+      .h3 { font:700 22px "Segoe UI", Arial, sans-serif; fill:#0b6a6a; }
+      .text { font:400 20px "Segoe UI", Arial, sans-serif; fill:#222; }
+      .textSmall { font:400 18px "Segoe UI", Arial, sans-serif; fill:#222; }
+      .textBold { font:700 20px "Segoe UI", Arial, sans-serif; fill:#111; }
+      .textCenter { font:400 20px "Segoe UI", Arial, sans-serif; fill:#222; text-anchor:middle; }
+      .textCenterBold { font:700 16px "Segoe UI", Arial, sans-serif; fill:#111; text-anchor:middle; }
+      .bullet { font:400 18px "Segoe UI", Arial, sans-serif; fill:#111; }
+      .label { font:400 19px "Segoe UI", Arial, sans-serif; fill:#333; }
+      .divider { stroke:#c7d0d1; stroke-width:2; }
+      .arrow { stroke:#0b6a6a; stroke-width:4; fill:none; marker-end:url(#arrowhead); }
+      .dot { fill:#0b6a6a; }
+    </style>
+<marker id="arrowhead" markerheight="10" markerwidth="10" orient="auto" refx="8" refy="5">
+<path d="M0,0 L10,5 L0,10 Z" fill="#0b6a6a"></path>
+</marker>
+</defs>
+<rect class="bg" height="886" rx="22" ry="22" width="1096" x="2" y="2"></rect>
+<rect class="teal" height="80" rx="18" ry="18" width="1100" x="0" y="0"></rect>
+<text class="title" text-anchor="middle" x="550" y="50">Reinforcement Theory: Skinner’s Box</text>
+<rect class="panel" height="95" rx="16" ry="16" width="1060" x="20" y="90"></rect>
+<text class="textCenter" x="550" y="116">Invented by B.F. Skinner in the mid-20th century, the operant conditioning chamber (commonly known as the Skinner Box) is</text>
+<text class="textCenter" x="550" y="144">designed to study how behaviors are influenced by their effects. Inside the box, an animal, typically a rat or pigeon, interacts</text>
+<text class="textCenter" x="550" y="172">with a lever or disk that, when activated, can release food or disable an electric shock, depending on the experiment setup.</text>
+<g transform="translate(34,212)">
+<rect class="soft" height="350" width="470" x="0" y="0"></rect>
+<!-- Chamber -->
+<polygon fill="#d3dbe0" points="20,70 130,10 420,10 330,70" stroke="#444" stroke-width="1.5"></polygon>
+<polygon fill="#b8c4cc" points="20,70 20,290 130,230 130,10" stroke="#444" stroke-width="1.5"></polygon>
+<polygon fill="#d9e1e6" points="130,10 420,10 420,230 130,230" stroke="#444" stroke-width="1.5"></polygon>
+<polygon fill="#d1d6db" points="20,290 130,230 420,230 330,290" stroke="#444" stroke-width="1.5"></polygon>
+<polygon fill="#c3ccd3" points="420,10 460,50 460,280 420,230" stroke="#444" stroke-width="1.5"></polygon>
+<polygon fill="#d0d5da" points="330,290 420,230 460,280 370,340" stroke="#444" stroke-width="1.5"></polygon>
+<!-- Floor grid -->
+<g stroke="#444" stroke-width="2">
+<line x1="25" x2="100" y1="285" y2="250"></line><line x1="65" x2="120" y1="285" y2="250"></line><line x1="85" x2="140" y1="285" y2="250"></line>
+<line x1="105" x2="160" y1="285" y2="250"></line><line x1="125" x2="180" y1="285" y2="250"></line><line x1="145" x2="200" y1="285" y2="250"></line>
+<line x1="165" x2="220" y1="285" y2="250"></line><line x1="185" x2="240" y1="285" y2="250"></line><line x1="205" x2="260" y1="285" y2="250"></line>
+<line x1="225" x2="280" y1="285" y2="250"></line><line x1="245" x2="300" y1="285" y2="250"></line><line x1="265" x2="320" y1="285" y2="250"></line>
+<line x1="285" x2="340" y1="285" y2="250"></line><line x1="305" x2="360" y1="285" y2="250"></line><line x1="325" x2="380" y1="285" y2="250"></line>
+</g>
+<!-- Indicator light -->
+<circle cx="74" cy="100" fill="#f6b33a" r="16" stroke="#444" stroke-width="2"></circle>
+<ellipse cx="69" cy="94" fill="#ffe3a8" rx="4" ry="6"></ellipse>
+<text class="label" x="38" y="140">Indicator</text>
+<text class="label" x="48" y="160">Light</text>
+<!-- Food dispenser, lowered slightly -->
+<g>
+<rect fill="#9b9b9b" height="72" stroke="#444" stroke-width="1.5" width="54" x="352" y="110"></rect>
+<polygon fill="#b6b6b6" points="352,110 366,98 420,98 406,110" stroke="#444" stroke-width="1"></polygon>
+<polygon fill="#8a8a8a" points="406,110 420,98 420,170 406,182" stroke="#444" stroke-width="1"></polygon>
+<!-- front window -->
+<rect fill="#dcdcdc" height="40" stroke="#444" stroke-width="1" width="26" x="367" y="126"></rect>
+<!-- pellet visible inside -->
+<ellipse cx="380" cy="144" fill="#f1d493" rx="9" ry="7" stroke="#444" stroke-width="1"></ellipse>
+<rect fill="none" height="12" stroke="#444" stroke-width="1" width="18" x="371" y="138"></rect>
+<!-- tray/opening -->
+<rect fill="#666" height="6" stroke="#444" stroke-width="0.8" width="18" x="371" y="158"></rect>
+<!-- pellet coming out -->
+<circle cx="380" cy="170" fill="#f1d493" r="4.2" stroke="#444" stroke-width="0.8"></circle>
+<text class="label" text-anchor="middle" x="378" y="54">Food</text>
+<text class="label" text-anchor="middle" x="378" y="76">dispenser</text>
+</g>
+<!-- Lever, aligned a bit more neatly -->
+<g>
+<line stroke="#666" stroke-linecap="round" stroke-width="8" x1="358" x2="332" y1="183" y2="215"></line>
+<line stroke="#a8a8a8" stroke-width="3" x1="329" x2="361" y1="202" y2="184"></line>
+<text class="label" x="305" y="165">Lever</text>
+</g>
+<!-- Rat -->
+<ellipse cx="218" cy="210" fill="#f3f0e8" rx="72" ry="48" stroke="#555" stroke-width="1.5"></ellipse>
+<ellipse cx="292" cy="194" fill="#f3f0e8" rx="34" ry="24" stroke="#555" stroke-width="1.5"></ellipse>
+<ellipse cx="266" cy="165" fill="#f3f0e8" rx="13" ry="18" stroke="#555" stroke-width="1.5"></ellipse>
+<ellipse cx="274" cy="169" fill="#f2b7b0" rx="8" ry="12" stroke="#555" stroke-width="1"></ellipse>
+<circle cx="311" cy="188" fill="#111" r="3"></circle>
+<circle cx="329" cy="201" fill="#b79288" r="2.5"></circle>
+<line stroke="#555" stroke-width="1" x1="329" x2="346" y1="201" y2="198"></line>
+<line stroke="#555" stroke-width="1" x1="327" x2="345" y1="205" y2="208"></line>
+<line stroke="#555" stroke-width="1" x1="327" x2="345" y1="197" y2="192"></line>
+<line stroke="#555" stroke-linecap="round" stroke-width="5" x1="183" x2="174" y1="248" y2="268"></line>
+<line stroke="#555" stroke-linecap="round" stroke-width="5" x1="256" x2="253" y1="242" y2="260"></line>
+<line stroke="#555" stroke-linecap="round" stroke-width="5" x1="282" x2="289" y1="233" y2="245"></line>
+<path d="M146,222 C92,233 80,271 119,282 C162,295 164,274 166,280" fill="none" stroke="#d79d97" stroke-linecap="round" stroke-width="7"></path>
+<text class="label" text-anchor="middle" x="230" y="316">Electrified floor</text>
+</g>
+<rect class="panel" height="348" rx="18" ry="18" width="570" x="514" y="212"></rect>
+<text class="h3" x="531" y="256">How It Works:</text>
+<text class="bullet" x="531" y="298">•</text><text class="text" x="545" y="298">When the animal presses the lever (behavior),</text>
+<text class="bullet" x="545" y="338">•</text><text class="text" x="560" y="338">it receives a food pellet reward (positive reinforcement), or</text><text class="text" x="560" y="376"></text>
+<text class="bullet" x="545" y="378">•</text><text class="text" x="560" y="378">the electrified floor is removed (negative reinforcement)</text>
+<text class="text" x="545" y="408"></text>
+<text class="bullet" x="531" y="418">•</text><text class="text" x="545" y="418">The behavior is more likely to be repeated (strengthened).</text>
+<text class="bullet" x="531" y="458">•</text><text class="text" x="545" y="458">Intermittent reinforcement schedules were applied.</text>
+<text class="bullet" x="531" y="498">•</text><text class="text" x="545" y="498">Intermittent rewards help sustain the desired behavior more</text>
+<text class="text" x="545" y="528">effectively than continuous reinforcement.</text>
+<rect class="cream" height="300" rx="18" ry="18" width="1060" x="24" y="580"></rect>
+<text class="h3" x="42" y="615">Key Takeaways from Skinner’s Research:</text>
+<text class="bullet" x="42" y="655">•</text><text class="text" x="62" y="655">Behavior is learned and maintained through reinforcement. </text>
+<text class="bullet" x="42" y="695">•</text><text class="text" x="62" y="695">Schedules of reinforcement affect how often behavior occurs and how resistant it is to extinction.</text>
+<text class="bullet" x="42" y="735">•</text><text class="text" x="62" y="735">Consequences, rewards or punishments, shape future behavior.</text>
+<text class="bullet" x="42" y="775">•</text><text class="text" x="62" y="775">The Skinner Box laid the groundwork for Reinforcement Theory: the idea that desired workplace behaviors can be</text>
+<text class="text" x="62" y="805">encouraged through well-designed feedback, rewards, and consequences. Understanding what produces a desired</text>
+<text class="text" x="62" y="835">behavior, and how to use reinforcement, both correctly and consistently, can help managers  shape behavior</text>
+<text class="text" x="62" y="865">increase motivation in real-world settings, from sales performance to learning and development initiatives.</text>
+</svg>
+</figure>
+</div>
+</section>
+<section class="subsection level-2" id="skinners-box">
+<div class="chart-wide">
+<figure>
+<svg aria-labelledby="titleSkinnerSocial descSkinnerSocial" role="img" style="width:100%; height:auto; display:block;" viewbox="0 0 1100 1155" xmlns="http://www.w3.org/2000/svg">
+<title id="titleSkinnerSocial">Skinner’s Box to Social Media: Reinforcement in Everyday Life</title>
+<desc id="descSkinnerSocial">Infographic connecting Skinner’s reinforcement theory to social media scrolling. The diagram shows a user swiping through Instagram or TikTok-style posts. Some swipes lead to enjoyable or interesting content, which acts as positive reinforcement. Some swipes lead to content that is not interesting, but the behavior continues because rewards are unpredictable. The right panel explains that behavior followed by rewards is more likely to be repeated, behavior can persist without reward due to variable reinforcement, algorithms reinforce attention and engagement through reward patterns, and unpredictable rewards create strong and persistent behavior.</desc>
+<defs>
+<style>
+      .teal { fill:#0d8b8b; }
+      .teal-dark { fill:#0b6a6a; }
+      .bg { fill:#eef3f3; stroke:#0b6a6a; stroke-width:3; }
+      .panel { fill:#e3e7e8; stroke:#c6cecf; stroke-width:1.5; }
+            .panel2 { fill:#f5f9fa; stroke:#c6cecf; stroke-width:1.5; }
+      .soft { fill:#f5f7f7; stroke:#c8d1d1; stroke-width:1.5; }
+      .pink { fill:#f6e6e6; stroke:#d97a7a; stroke-width:1.5; }
+      .green { fill:#e6f2e0; stroke:#8ab06e; stroke-width:1.5; }
+      .gold { fill:#faf1db; stroke:#d4b15a; stroke-width:1.5; }
+      .cream { fill:#f6efdd; stroke:#d9c48a; stroke-width:1.5; }
+      .phone { fill:#1d1d1d; stroke:#444; stroke-width:1.5; }
+      .phone-screen { fill:#ffffff; stroke:#d0d0d0; stroke-width:1; }
+      .boxtitle { font:700 31px "Segoe UI", Arial, sans-serif; fill:#fff; }
+      .sectionTitle { font:700 24px "Segoe UI", Arial, sans-serif; fill:#fff; }
+      .h3 { font:700 24px "Segoe UI", Arial, sans-serif; fill:#0b6a6a; }
+      .text { font:400 20px "Segoe UI", Arial, sans-serif; fill:#222; }
+      .textSmall { font:400 18px "Segoe UI", Arial, sans-serif; fill:#222; }
+      .textBold { font:700 20px "Segoe UI", Arial, sans-serif; fill:#111; }
+      .textCenter { font:400 19px "Segoe UI", Arial, sans-serif; fill:#222; text-anchor:middle; }
+      .textCenterBold { font:700 20px "Segoe UI", Arial, sans-serif; fill:#111; text-anchor:middle; }
+      .bullet { font:400 17px "Segoe UI", Arial, sans-serif; fill:#111; }
+      .label { font:400 19px "Segoe UI", Arial, sans-serif; fill:#333; }
+      .divider { stroke:#c7d0d1; stroke-width:2; }
+      .arrow { stroke:#0b6a6a; stroke-width:4; fill:none; marker-end:url(#arrowhead); }
+      .dot { fill:#0b6a6a; }
+    </style>
+<marker id="arrowhead" markerheight="10" markerwidth="10" orient="auto" refx="8" refy="5">
+<path d="M0,0 L10,5 L0,10 Z" fill="#0b6a6a"></path>
+</marker>
+</defs>
+<rect class="bg" height="1150" rx="22" ry="22" width="1096" x="2" y="2"></rect>
+<rect class="teal" height="72" rx="18" ry="18" width="1100" x="0" y="0"></rect>
+<text class="boxtitle" text-anchor="middle" x="550" y="50">Skinner’s Box to Social Media: Reinforcement in Everyday Life</text>
+<rect class="panel" height="87" rx="16" ry="16" width="1060" x="20" y="78"></rect>
+<text class="textCenter" x="550" y="116">Behavior is shaped by its consequences. Social media platforms like Instagram and TikTok use reinforcement; presenting</text>
+<text class="textCenter" x="550" y="145">content that users enjoy increases the likelihood that users will keep swiping, scrolling, or returning to the app.</text>
+<g transform="translate(200,190)">
+<rect class="phone" height="196" rx="16" ry="16" width="112" x="0" y="0"></rect>
+<rect class="phone-screen" height="172" rx="10" ry="10" width="88" x="12" y="12"></rect>
+<rect fill="#777" height="4" rx="2" width="22" x="45" y="5"></rect>
+<!-- Instagram-style header -->
+<circle cx="25" cy="24" fill="#4aa3df" r="4"></circle>
+<rect fill="#d7d7d7" height="6" rx="3" width="44" x="33" y="21"></rect>
+<circle cx="86" cy="21" fill="#777" r="1.3"></circle>
+<circle cx="86" cy="25" fill="#777" r="1.3"></circle>
+<circle cx="86" cy="29" fill="#777" r="1.3"></circle>
+<!-- Cat image area -->
+<rect fill="#f1dc98" height="82" width="76" x="18" y="36"></rect>
+<!-- cat body peeking in -->
+<path d="M18,102 C28,92 38,91 46,100 C53,108 53,118 52,118 L18,118 Z" fill="#dca85e"></path>
+<!-- cat head -->
+<circle cx="56" cy="76" fill="#dca85e" r="27"></circle>
+<!-- ears -->
+<polygon fill="#dca85e" points="35,56 43,34 52,58"></polygon>
+<polygon fill="#dca85e" points="77,56 87,39 82,65"></polygon>
+<polygon fill="#b98243" points="41,54 44,43 49,57"></polygon>
+<polygon fill="#b98243" points="78,57 84,47 82,62"></polygon>
+<!-- face patch -->
+<path d="M30,80 C41,96 67,102 84,86 C80,104 62,113 44,105 C33,100 27,91 30,80 Z" fill="#efd19a"></path>
+<!-- silly eyes -->
+<circle cx="47" cy="69" fill="#fff" r="10"></circle>
+<circle cx="67" cy="72" fill="#fff" r="10"></circle>
+<circle cx="50" cy="71" fill="#2b160b" r="3"></circle>
+<circle cx="64" cy="74" fill="#2b160b" r="3"></circle>
+<!-- nose and mouth -->
+<path d="M56,79 L61,82 L56,85 L51,82 Z" fill="#6b3b20"></path>
+<path d="M56,85 C53,90 48,90 46,85" fill="none" stroke="#5a2e18" stroke-linecap="round" stroke-width="2"></path>
+<path d="M57,85 C60,91 66,91 68,85" fill="none" stroke="#5a2e18" stroke-linecap="round" stroke-width="2"></path>
+<!-- tongue -->
+<path d="M51,89 C50,100 56,104 62,95 C60,90 56,88 51,89 Z" fill="#e98786"></path>
+<path d="M57,91 C55,96 55,99 57,101" fill="none" stroke="#c96969" stroke-linecap="round" stroke-width="1.2"></path>
+<!-- stripes -->
+<path d="M48,51 C50,58 50,61 48,65" fill="none" stroke="#b98243" stroke-linecap="round" stroke-width="4"></path>
+<path d="M59,49 C59,57 58,61 55,65" fill="none" stroke="#b98243" stroke-linecap="round" stroke-width="4"></path>
+<path d="M70,53 C68,60 66,64 62,67" fill="none" stroke="#b98243" stroke-linecap="round" stroke-width="4"></path>
+<!-- whiskers -->
+<path d="M35,76 C26,72 22,72 18,71" fill="none" stroke="#4b260f" stroke-linecap="round" stroke-width="2"></path>
+<path d="M35,82 C26,81 23,82 18,84" fill="none" stroke="#4b260f" stroke-linecap="round" stroke-width="2"></path>
+<path d="M77,78 C86,77 91,79 94,82" fill="none" stroke="#4b260f" stroke-linecap="round" stroke-width="2"></path>
+<path d="M76,84 C85,87 90,91 93,96" fill="none" stroke="#4b260f" stroke-linecap="round" stroke-width="2"></path>
+<!-- caption area -->
+<rect fill="#f7f7f7" height="42" width="76" x="18" y="122"></rect>
+<rect fill="#ccc" height="5" rx="2.5" width="42" x="23" y="129"></rect>
+<rect fill="#ddd" height="5" rx="2.5" width="62" x="23" y="138"></rect>
+<rect fill="#e2e2e2" height="5" rx="2.5" width="34" x="23" y="147"></rect>
+<!-- app icons -->
+<path d="M23,170 C18,165 15,159 20,156 C23,154 25,156 26,158 C27,156 30,154 33,156 C38,159 34,165 28,170 Z" fill="#e74c3c"></path>
+<circle cx="48" cy="163" fill="none" r="5" stroke="#666" stroke-width="2"></circle>
+<path d="M52,167 L56,170" stroke="#666" stroke-linecap="round" stroke-width="2"></path>
+<path d="M68,158 L84,163 L73,169 L71,178 Z" fill="none" stroke="#666" stroke-linejoin="round" stroke-width="2"></path>
+</g>
+<g transform="translate(200,395)">
+<rect class="phone" height="196" rx="16" ry="16" width="112" x="0" y="0"></rect>
+<rect class="phone-screen" height="172" rx="10" ry="10" width="88" x="12" y="12"></rect>
+<rect fill="#777" height="4" rx="2" width="22" x="45" y="5"></rect>
+<!-- header -->
+<circle cx="25" cy="24" fill="#8b6bd6" r="4"></circle>
+<rect fill="#d7d7d7" height="6" rx="3" width="44" x="33" y="21"></rect>
+<circle cx="86" cy="21" fill="#777" r="1.3"></circle>
+<circle cx="86" cy="25" fill="#777" r="1.3"></circle>
+<circle cx="86" cy="29" fill="#777" r="1.3"></circle>
+<!-- post image area -->
+<rect fill="#d8edf7" height="82" width="76" x="18" y="36"></rect>
+<!-- dance floor -->
+<path d="M18,104 C35,98 50,101 64,106 C75,110 84,109 94,104 L94,118 L18,118 Z" fill="#f6d58d"></path>
+<!-- music notes -->
+<path d="M78,46 L78,58 C76,57 73,58 72,61 C72,64 75,66 78,64 C80,63 81,61 81,58 L81,48 L87,50 L87,47 Z" fill="#6aa6d9"></path>
+<path d="M30,48 L30,60 C28,59 25,60 24,63 C24,66 27,68 30,66 C32,65 33,63 33,60 L33,50 L39,52 L39,49 Z" fill="#e9858a"></path>
+<!-- person 1 -->
+<circle cx="43" cy="62" fill="#ffd0ad" r="7"></circle>
+<path d="M36,62 C37,53 44,50 50,56 C48,61 42,64 36,62 Z" fill="#3c2a1e"></path>
+<path d="M42,77 C34,75 31,70 28,65" fill="none" stroke="#ffd0ad" stroke-linecap="round" stroke-width="4"></path>
+<path d="M45,76 C52,70 56,65 60,59" fill="none" stroke="#ffd0ad" stroke-linecap="round" stroke-width="4"></path>
+<path d="M43,70 L42,91" stroke="#2f7fbf" stroke-linecap="round" stroke-width="6"></path>
+<path d="M42,91 L34,108" stroke="#333" stroke-linecap="round" stroke-width="4"></path>
+<path d="M43,91 L51,108" stroke="#333" stroke-linecap="round" stroke-width="4"></path>
+<circle cx="60" cy="59" fill="#8a5a38" r="2.5"></circle>
+<!-- person 2 -->
+<circle cx="67" cy="63" fill="#b6784c" r="7"></circle>
+<path d="M61,62 C62,54 70,52 75,58 C72,62 66,65 61,62 Z" fill="#4a2d20"></path>
+<path d="M67,71 L69,91" stroke="#e9858a" stroke-linecap="round" stroke-width="6"></path>
+<path d="M68,77 C75,75 80,70 83,64" fill="none" stroke="#b6784c" stroke-linecap="round" stroke-width="4"></path>
+<path d="M66,77 C60,72 58,66 60,59" fill="none" stroke="#b6784c" stroke-linecap="round" stroke-width="4"></path>
+<path d="M69,91 L62,108" stroke="#333" stroke-linecap="round" stroke-width="4"></path>
+<path d="M70,91 L80,106" stroke="#333" stroke-linecap="round" stroke-width="4"></path>
+<circle cx="60" cy="59" fill="#b6784c" r="2.5"></circle>
+<!-- motion lines -->
+<path d="M28,89 C24,84 24,78 28,73" fill="none" opacity=".85" stroke="#ffffff" stroke-linecap="round" stroke-width="2"></path>
+<path d="M84,88 C89,83 89,77 85,72" fill="none" opacity=".85" stroke="#ffffff" stroke-linecap="round" stroke-width="2"></path>
+<!-- caption area -->
+<rect fill="#f7f7f7" height="42" width="76" x="18" y="122"></rect>
+<rect fill="#ccc" height="5" rx="2.5" width="54" x="23" y="129"></rect>
+<rect fill="#ddd" height="5" rx="2.5" width="62" x="23" y="138"></rect>
+<rect fill="#e2e2e2" height="5" rx="2.5" width="38" x="23" y="147"></rect>
+<!-- app icons, no like/heart -->
+<circle cx="31" cy="163" fill="none" r="5" stroke="#666" stroke-width="2"></circle>
+<path d="M35,167 L39,170" stroke="#666" stroke-linecap="round" stroke-width="2"></path>
+<path d="M50,158 L66,163 L55,169 L53,178 Z" fill="none" stroke="#666" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M77,158 L89,158 L89,177 L83,171 L77,177 Z" fill="none" stroke="#666" stroke-linejoin="round" stroke-width="2"></path>
+</g>
+<g transform="translate(200,805)">
+<rect class="phone" height="196" rx="16" ry="16" width="112" x="0" y="0"></rect>
+<rect class="phone-screen" height="172" rx="10" ry="10" width="88" x="12" y="12"></rect>
+<rect fill="#777" height="4" rx="2" width="22" x="45" y="5"></rect>
+<!-- header -->
+<circle cx="25" cy="24" fill="#4aa3df" r="4"></circle>
+<rect fill="#d7d7d7" height="6" rx="3" width="44" x="33" y="21"></rect>
+<circle cx="86" cy="21" fill="#777" r="1.3"></circle>
+<circle cx="86" cy="25" fill="#777" r="1.3"></circle>
+<circle cx="86" cy="29" fill="#777" r="1.3"></circle>
+<!-- image area -->
+<rect fill="#bfe8ff" height="82" width="76" x="18" y="36"></rect>
+<!-- field -->
+<rect fill="#78c66a" height="34" width="76" x="18" y="84"></rect>
+<path d="M18,101 C34,94 48,97 63,103 C75,108 85,106 94,101" fill="none" opacity=".75" stroke="#ffffff" stroke-width="1.5"></path>
+<path d="M56,84 L56,118" opacity=".55" stroke="#ffffff" stroke-width="1.2"></path>
+<circle cx="56" cy="101" fill="none" opacity=".55" r="9" stroke="#ffffff" stroke-width="1.2"></circle>
+<!-- soccer player -->
+<circle cx="55" cy="55" fill="#b6784c" r="8"></circle>
+<!-- hair/beard suggestion -->
+<path d="M48,54 C49,45 61,44 64,53 C59,50 54,50 48,54 Z" fill="#4a2d20"></path>
+<path d="M50,60 C54,66 61,64 63,58 C60,62 55,63 50,60 Z" fill="#4a2d20"></path>
+<!-- shirt -->
+<path d="M44,67 L66,67 L70,86 L40,86 Z" fill="#8fd0ff"></path>
+<rect fill="#ffffff" height="18" opacity=".9" width="3" x="51" y="68"></rect>
+<rect fill="#ffffff" height="18" opacity=".9" width="3" x="58" y="68"></rect>
+<text fill="#1d4f8f" font-family="Arial, sans-serif" font-size="8" font-weight="700" text-anchor="middle" x="55" y="80">10</text>
+<!-- arms -->
+<path d="M45,70 C37,72 34,77 31,82" fill="none" stroke="#b6784c" stroke-linecap="round" stroke-width="4"></path>
+<path d="M66,70 C74,67 79,62 83,56" fill="none" stroke="#b6784c" stroke-linecap="round" stroke-width="4"></path>
+<!-- shorts -->
+<path d="M43,86 L55,86 L53,96 L42,96 Z" fill="#1d4f8f"></path>
+<path d="M56,86 L68,86 L70,96 L59,96 Z" fill="#1d4f8f"></path>
+<!-- legs -->
+<path d="M48,96 L40,111" stroke="#b6784c" stroke-linecap="round" stroke-width="4"></path>
+<path d="M63,96 L76,107" stroke="#b6784c" stroke-linecap="round" stroke-width="4"></path>
+<!-- shoes -->
+<path d="M36,111 L43,109" stroke="#222" stroke-linecap="round" stroke-width="3"></path>
+<path d="M75,107 L83,110" stroke="#222" stroke-linecap="round" stroke-width="3"></path>
+<!-- soccer ball -->
+<circle cx="84" cy="108" fill="#ffffff" r="6" stroke="#222" stroke-width="1"></circle>
+<polygon fill="#222" points="84,104 87,106 86,110 82,110 81,106"></polygon>
+<path d="M84,104 L84,102 M87,106 L90,105 M86,110 L88,113 M82,110 L80,113 M81,106 L78,105" stroke="#222" stroke-width=".8"></path>
+<!-- motion lines -->
+<path d="M69,103 C74,99 80,99 86,102" fill="none" opacity=".8" stroke="#ffffff" stroke-linecap="round" stroke-width="2"></path>
+<path d="M73,114 C78,116 84,116 89,113" fill="none" opacity=".8" stroke="#ffffff" stroke-linecap="round" stroke-width="2"></path>
+<!-- caption area -->
+<rect fill="#f7f7f7" height="42" width="76" x="18" y="122"></rect>
+<rect fill="#ccc" height="5" rx="2.5" width="50" x="23" y="129"></rect>
+<rect fill="#ddd" height="5" rx="2.5" width="62" x="23" y="138"></rect>
+<rect fill="#e2e2e2" height="5" rx="2.5" width="34" x="23" y="147"></rect>
+<!-- app icons, no like/heart -->
+<circle cx="31" cy="163" fill="none" r="5" stroke="#666" stroke-width="2"></circle>
+<path d="M35,167 L39,170" stroke="#666" stroke-linecap="round" stroke-width="2"></path>
+<path d="M50,158 L66,163 L55,169 L53,178 Z" fill="none" stroke="#666" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M77,158 L89,158 L89,177 L83,171 L77,177 Z" fill="none" stroke="#666" stroke-linejoin="round" stroke-width="2"></path>
+</g>
+<g transform="translate(200,600)">
+<rect class="phone" height="196" rx="16" ry="16" width="112" x="0" y="0"></rect>
+<rect class="phone-screen" height="172" rx="10" ry="10" width="88" x="12" y="12"></rect>
+<rect fill="#777" height="4" rx="2" width="22" x="45" y="5"></rect>
+<!-- header -->
+<circle cx="25" cy="24" fill="#4aa3df" r="4"></circle>
+<rect fill="#d7d7d7" height="6" rx="3" width="44" x="33" y="21"></rect>
+<circle cx="86" cy="21" fill="#777" r="1.3"></circle>
+<circle cx="86" cy="25" fill="#777" r="1.3"></circle>
+<circle cx="86" cy="29" fill="#777" r="1.3"></circle>
+<!-- image area -->
+<rect fill="#f8d9d4" height="82" width="76" x="18" y="36"></rect>
+<!-- heart -->
+<path d="M78,50 C75,45 68,47 68,53 C68,59 78,64 78,64 C78,64 88,59 88,53 C88,47 81,45 78,50 Z" fill="#e9858a"></path>
+<!-- cat body -->
+<path d="M35,118 C38,97 45,88 56,88 C68,88 75,98 78,118 Z" fill="#f4efe5"></path>
+<path d="M26,118 C28,95 38,82 52,84 C41,96 40,108 41,118 Z" fill="#9a9188"></path>
+<path d="M72,118 C74,104 72,95 64,86 C78,88 88,101 91,118 Z" fill="#9a9188"></path>
+<!-- cat head -->
+<circle cx="56" cy="72" fill="#9a9188" r="27"></circle>
+<!-- ears -->
+<polygon fill="#9a9188" points="35,55 41,35 54,58"></polygon>
+<polygon fill="#9a9188" points="77,56 94,48 83,70"></polygon>
+<polygon fill="#f29a92" points="41,54 43,43 50,57"></polygon>
+<polygon fill="#f29a92" points="80,58 89,53 83,66"></polygon>
+<!-- white face/chest patch -->
+<path d="M46,62 C50,58 55,59 58,64 C61,58 69,58 75,64 C73,87 61,98 48,92 C39,88 36,74 46,62 Z" fill="#fff8ee"></path>
+<path d="M42,94 C50,101 64,101 72,94 C69,108 65,118 56,118 C47,118 43,108 42,94 Z" fill="#fff8ee"></path>
+<!-- stripes -->
+<path d="M53,46 C52,52 51,55 49,59" fill="none" stroke="#746b63" stroke-linecap="round" stroke-width="4"></path>
+<path d="M64,47 C62,54 59,58 56,61" fill="none" stroke="#746b63" stroke-linecap="round" stroke-width="4"></path>
+<path d="M73,52 C69,58 66,61 61,64" fill="none" stroke="#746b63" stroke-linecap="round" stroke-width="4"></path>
+<!-- eyes: one big, one wink -->
+<circle cx="48" cy="68" fill="#fff" r="10"></circle>
+<circle cx="50" cy="69" fill="#2b160b" r="5"></circle>
+<circle cx="48" cy="66" fill="#fff" r="2"></circle>
+<path d="M66,71 C70,67 75,67 79,72" fill="none" stroke="#3a2418" stroke-linecap="round" stroke-width="3"></path>
+<!-- nose, mouth, tongue -->
+<path d="M57,78 C59,76 63,77 64,80 C62,83 58,83 56,80 Z" fill="#e9858a"></path>
+<path d="M56,82 C53,88 47,88 45,83" fill="none" stroke="#3a2418" stroke-linecap="round" stroke-width="2"></path>
+<path d="M57,82 C60,89 67,88 69,83" fill="none" stroke="#3a2418" stroke-linecap="round" stroke-width="2"></path>
+<path d="M50,87 C49,98 58,99 61,90 C58,86 54,85 50,87 Z" fill="#ec8d91"></path>
+<path d="M56,89 C54,94 54,96 55,98" fill="none" stroke="#cf6f75" stroke-linecap="round" stroke-width="1.2"></path>
+<!-- paws -->
+<circle cx="34" cy="94" fill="#fff8ee" r="11"></circle>
+<circle cx="78" cy="96" fill="#fff8ee" r="11"></circle>
+<circle cx="30" cy="90" fill="#f29a92" r="2.2"></circle>
+<circle cx="35" cy="88" fill="#f29a92" r="2.2"></circle>
+<circle cx="39" cy="91" fill="#f29a92" r="2.2"></circle>
+<circle cx="35" cy="96" fill="#f29a92" r="3.5"></circle>
+<circle cx="74" cy="92" fill="#f29a92" r="2.2"></circle>
+<circle cx="79" cy="91" fill="#f29a92" r="2.2"></circle>
+<circle cx="83" cy="95" fill="#f29a92" r="2.2"></circle>
+<circle cx="78" cy="99" fill="#f29a92" r="3.5"></circle>
+<!-- whiskers -->
+<path d="M37,73 C28,70 23,70 18,72" fill="none" stroke="#4b260f" stroke-linecap="round" stroke-width="2"></path>
+<path d="M37,79 C28,79 23,81 18,84" fill="none" stroke="#4b260f" stroke-linecap="round" stroke-width="2"></path>
+<path d="M76,77 C84,78 89,81 94,85" fill="none" stroke="#4b260f" stroke-linecap="round" stroke-width="2"></path>
+<path d="M75,83 C83,87 88,91 92,97" fill="none" stroke="#4b260f" stroke-linecap="round" stroke-width="2"></path>
+<!-- caption area -->
+<rect fill="#f7f7f7" height="42" width="76" x="18" y="122"></rect>
+<rect fill="#ccc" height="5" rx="2.5" width="42" x="23" y="129"></rect>
+<rect fill="#ddd" height="5" rx="2.5" width="62" x="23" y="138"></rect>
+<rect fill="#e2e2e2" height="5" rx="2.5" width="34" x="23" y="147"></rect>
+<!-- app icons -->
+<path d="M23,170 C18,165 15,159 20,156 C23,154 25,156 26,158 C27,156 30,154 33,156 C38,159 34,165 28,170 Z" fill="#e74c3c"></path>
+<circle cx="48" cy="163" fill="none" r="5" stroke="#666" stroke-width="2"></circle>
+<path d="M52,167 L56,170" stroke="#666" stroke-linecap="round" stroke-width="2"></path>
+<path d="M68,158 L84,163 L73,169 L71,178 Z" fill="none" stroke="#666" stroke-linejoin="round" stroke-width="2"></path>
+</g>
+<text class="h3" x="30" y="200">Behavior </text>
+<text class="h3" x="390" y="200">Consequence </text>
+<text class="textBold" x="32" y="300">Swipe </text>
+<text class="textBold" x="32" y="490">Swipe </text>
+<text class="textBold" x="32" y="700">Swipe </text>
+<text class="textBold" x="32" y="900">Swipe (loop)</text>
+<g transform="translate(100,440) scale(0.2, 0.2)">
+<path d="
+      M176 653
+      L190 598
+      C174 559 170 515 177 479
+      L225 319
+      C232 297 252 286 273 290
+      C294 295 304 313 299 335
+      L284 387
+      C282 395 286 400 293 401
+      C300 402 304 399 307 390
+      L325 306
+      C331 281 351 269 373 273
+      C396 277 406 295 401 318
+      L376 410
+      C374 417 378 422 385 423
+      C392 424 396 421 398 413
+      L422 306
+      C428 280 449 267 473 272
+      C496 277 507 296 502 321
+      L465 436
+      C463 444 467 449 474 450
+      C481 451 485 447 488 438
+      L562 138
+      C569 111 594 101 618 108
+      C641 115 653 138 647 164
+      L535 514
+      C532 523 536 528 544 529
+      C552 530 556 526 559 517
+      L573 446
+      C595 471 607 496 606 526
+      C605 556 590 580 565 599
+      L448 687
+      L442 713
+      L326 713
+      Z
+    " fill="#ffd0ad" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"></path>
+<path d="M 320 125 C 320 120 420 110 545 140" fill="none" stroke="#000" stroke-linecap="round" stroke-width="12"></path>
+<path d="M 660 170 C 720 190 820 260 820 290" fill="none" stroke="#000" stroke-linecap="round" stroke-width="12"></path>
+<!-- Arrowhead -->
+<path d="M 390 60 L 320 125 L 380 180" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></path>
+</g>
+<g transform="translate(100,230) scale(0.2, 0.2)">
+<path d="
+      M176 653
+      L190 598
+      C174 559 170 515 177 479
+      L225 319
+      C232 297 252 286 273 290
+      C294 295 304 313 299 335
+      L284 387
+      C282 395 286 400 293 401
+      C300 402 304 399 307 390
+      L325 306
+      C331 281 351 269 373 273
+      C396 277 406 295 401 318
+      L376 410
+      C374 417 378 422 385 423
+      C392 424 396 421 398 413
+      L422 306
+      C428 280 449 267 473 272
+      C496 277 507 296 502 321
+      L465 436
+      C463 444 467 449 474 450
+      C481 451 485 447 488 438
+      L562 138
+      C569 111 594 101 618 108
+      C641 115 653 138 647 164
+      L535 514
+      C532 523 536 528 544 529
+      C552 530 556 526 559 517
+      L573 446
+      C595 471 607 496 606 526
+      C605 556 590 580 565 599
+      L448 687
+      L442 713
+      L326 713
+      Z
+    " fill="#ffd0ad" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"></path>
+<path d="M 320 125 C 320 120 420 110 545 140" fill="none" stroke="#000" stroke-linecap="round" stroke-width="12"></path>
+<path d="M 660 170 C 720 190 820 260 820 290" fill="none" stroke="#000" stroke-linecap="round" stroke-width="12"></path>
+<!-- Arrowhead -->
+<path d="M 390 60 L 320 125 L 380 180" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></path>
+</g>
+<g transform="translate(100,650) scale(0.2, 0.2)">
+<path d="
+      M176 653
+      L190 598
+      C174 559 170 515 177 479
+      L225 319
+      C232 297 252 286 273 290
+      C294 295 304 313 299 335
+      L284 387
+      C282 395 286 400 293 401
+      C300 402 304 399 307 390
+      L325 306
+      C331 281 351 269 373 273
+      C396 277 406 295 401 318
+      L376 410
+      C374 417 378 422 385 423
+      C392 424 396 421 398 413
+      L422 306
+      C428 280 449 267 473 272
+      C496 277 507 296 502 321
+      L465 436
+      C463 444 467 449 474 450
+      C481 451 485 447 488 438
+      L562 138
+      C569 111 594 101 618 108
+      C641 115 653 138 647 164
+      L535 514
+      C532 523 536 528 544 529
+      C552 530 556 526 559 517
+      L573 446
+      C595 471 607 496 606 526
+      C605 556 590 580 565 599
+      L448 687
+      L442 713
+      L326 713
+      Z
+    " fill="#ffd0ad" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"></path>
+<path d="M 320 125 C 320 120 420 110 545 140" fill="none" stroke="#000" stroke-linecap="round" stroke-width="12"></path>
+<path d="M 660 170 C 720 190 820 260 820 290" fill="none" stroke="#000" stroke-linecap="round" stroke-width="12"></path>
+<!-- Arrowhead -->
+<path d="M 390 60 L 320 125 L 380 180" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></path>
+</g>
+<g transform="translate(100,850) scale(0.2, 0.2)">
+<path d="
+      M176 653
+      L190 598
+      C174 559 170 515 177 479
+      L225 319
+      C232 297 252 286 273 290
+      C294 295 304 313 299 335
+      L284 387
+      C282 395 286 400 293 401
+      C300 402 304 399 307 390
+      L325 306
+      C331 281 351 269 373 273
+      C396 277 406 295 401 318
+      L376 410
+      C374 417 378 422 385 423
+      C392 424 396 421 398 413
+      L422 306
+      C428 280 449 267 473 272
+      C496 277 507 296 502 321
+      L465 436
+      C463 444 467 449 474 450
+      C481 451 485 447 488 438
+      L562 138
+      C569 111 594 101 618 108
+      C641 115 653 138 647 164
+      L535 514
+      C532 523 536 528 544 529
+      C552 530 556 526 559 517
+      L573 446
+      C595 471 607 496 606 526
+      C605 556 590 580 565 599
+      L448 687
+      L442 713
+      L326 713
+      Z
+    " fill="#ffd0ad" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"></path>
+<path d="M 320 125 C 320 120 420 110 545 140" fill="none" stroke="#000" stroke-linecap="round" stroke-width="12"></path>
+<path d="M 660 170 C 720 190 820 260 820 290" fill="none" stroke="#000" stroke-linecap="round" stroke-width="12"></path>
+<!-- Arrowhead -->
+<path d="M 390 60 L 320 125 L 380 180" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></path>
+</g>
+<g transform="translate(105,-360)">
+<line class="arrow" x1="290" x2="220" y1="639" y2="639"></line><rect class="green" height="142" rx="16" ry="16" width="185" x="288" y="586"></rect><text class="textCenterBold" x="380" y="621">Reward</text><text class="textCenter" x="380" y="650">Enjoyable or</text><text class="textCenter" x="380" y="677">interesting content</text><circle cx="380" cy="705" fill="#7cab63" r="20"></circle><path d="M370,705 L378,713 L391,697" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"></path><text class="textCenter" x="380" y="747">Positive reinforcement</text></g>
+<g transform="translate(100,60)">
+<line class="arrow" x1="290" x2="220" y1="427" y2="427"></line><rect class="pink" height="142" rx="16" ry="16" width="185" x="288" y="365"></rect><text class="textCenterBold" x="380" y="401">No reward</text><text class="textCenter" x="380" y="431">Content not</text><text class="textCenter" x="380" y="458">of interest</text><circle cx="380" cy="486" fill="#e46a62" r="20"></circle><line stroke="#fff" stroke-linecap="round" stroke-width="4" x1="372" x2="390" y1="477" y2="495"></line><line stroke="#fff" stroke-linecap="round" stroke-width="4" x1="390" x2="372" y1="477" y2="495"></line><text class="textCenter" x="380" y="529">(behavior continues)</text></g>
+<g transform="translate(105,50)">
+<line class="arrow" x1="290" x2="220" y1="639" y2="639"></line><rect class="green" height="142" rx="16" ry="16" width="185" x="288" y="586"></rect><text class="textCenterBold" x="380" y="621">Reward</text><text class="textCenter" x="380" y="650">Enjoyable or</text><text class="textCenter" x="380" y="677">interesting content</text><circle cx="380" cy="705" fill="#7cab63" r="20"></circle><path d="M370,705 L378,713 L391,697" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"></path><text class="textCenter" x="380" y="747">Positive reinforcement</text></g>
+<g transform="translate(105,50)">
+<line class="arrow" x1="290" x2="220" y1="851" y2="851"></line>
+<rect class="gold" height="146" rx="16" ry="16" width="185" x="288" y="806"></rect><text class="textCenterBold" x="380" y="833">Intermittent</text><text class="textCenterBold" x="380" y="860">Reinforcement</text><text class="textCenter" x="380" y="900">Unpredictability of </text><text class="textCenter" x="380" y="920">rewards makes</text>
+<text class="textCenter" x="380" y="940">behavior persistent</text></g>
+<g transform="translate(0,60)">
+<rect class="panel" height="410" rx="18" ry="18" width="485" x="600" y="175"></rect>
+<text class="h3" x="620" y="210">Why We Keep Swiping:</text>
+<text class="bullet" x="610" y="260">•</text><text class="text" x="630" y="260">Behavior followed by something pleasant (rewards)</text><text class="text" x="630" y="290">is more likely to be repeated.</text>
+<text class="bullet" x="610" y="350">•</text><text class="text" x="630" y="350">The anticipation of reward motivates the user </text>
+<text class="text" x="630" y="380">to keep swiping (sustained behavior)</text>
+<text class="bullet" x="610" y="440">•</text><text class="text" x="630" y="440">Behavior persists even without reward </text>
+<text class="text" x="630" y="470">and engagement by presenting rewards.</text>
+<text class="bullet" x="610" y="530">•</text><text class="text" x="630" y="530">Variable reward schedule: we never know when</text>
+<text class="text" x="630" y="560">the next good video will appear.</text>
+</g>
+<rect class="panel2" height="310" rx="18" ry="18" width="490" x="600" y="658"></rect>
+<text class="h3" x="620" y="700">Key Insight</text>
+<text class="textBold" x="620" y="752">Variable reinforcement</text> <text class="text" x="845" y="752">helps explain why people</text>
+<text class="text" x="620" y="782">continue a behavior even when every attempt</text>
+<text class="text" x="620" y="812">is not rewarded.</text>
+<text class="text" x="620" y="850">    
+    When rewards appear unpredictably, the behavior</text>
+<text class="text" x="620" y="880">may become especially persistent.</text>
+<!-- bottom think & share -->
+<g transform="translate(-21,170)"><rect class="cream" height="135" rx="20" ry="20" width="1092" x="26" y="846"></rect> <circle class="teal-dark" cx="78" cy="908" r="42"></circle> <path d="M58,892 h34 a6,6 0 0 1 6,6 v20 a6,6 0 0 1 -6,6 h-12 l-10,10 v-10 h-12 a6,6 0 0 1 -6,-6 v-20 a6,6 0 0 1 6,-6 z" fill="none" stroke="#fff" stroke-width="3"></path> <circle cx="67" cy="908" fill="#fff" r="2.8"></circle> <circle cx="79" cy="908" fill="#fff" r="2.8"></circle> <circle cx="91" cy="908" fill="#fff" r="2.8"></circle>
+<text class="h3" x="170" y="875">Think &amp; Share</text>
+<text class="h3" x="382" y="875">💡</text>
+<text class="text" x="170" y="910">The principles behind Skinner’s Box still influence how we learn, work, shop, play, and connect.</text>
+<text class="textBold" x="170" y="944">Can you think of other real-world examples where reinforcement shapes behavior?</text>
+<text class="text" x="170" y="974"><tspan font-style="italic">Share your examples and explain what the behavior is, what the reinforcement is, and why it is effective.</tspan></text>
+</g>
+</svg>
+</figure>
+</div>
+</section>
+<section class="subsection level-2" id="key-takeaways">
+<h2>Key Takeaways</h2><p>Motivation should be understood as a multilevel issue. At the individual level, motivation affects <strong>task performance</strong>, <strong>workplace attitudes</strong>, <strong>well-being</strong>, <strong>turnover</strong>, and <strong>creativity</strong>. At the group level, it affects coordination, effort, and <strong>group performance</strong>. At the organizational level, these patterns can influence <strong>financial performance</strong>, <strong>customer satisfaction</strong>, <strong>innovation</strong>, and <strong>reputation</strong>. Employees who experience unfairness, weak leadership, poor job design, or demotivating work conditions often share those experiences with others, which can affect the organization’s image as an employer and service provider.</p>
+<ul>
+<li>Motivation is a key driver of performance but must be considered alongside ability and environmental factors.</li>
+<li>Need-based theories explain what motivates individuals but are limited in their ability to predict behavior.</li>
+<li>Process theories emphasize that motivation depends on expectations, fairness, and perceived outcomes.</li>
+<li>Expectancy theory highlights the importance of aligning effort, performance, and rewards.</li>
+<li>Perceptions of fairness strongly influence motivation, behavior, and organizational outcomes.</li>
+<li>Intrinsic motivation is driven by autonomy, competence, and meaningful work.</li>
+<li>Job design, goal setting, and performance management are critical tools for enhancing motivation.</li>
+<li>Managers play a central role in shaping motivation by influencing both the work environment and employee perceptions.</li>
+</ul>
+</section>
+<section class="insights box-2" id="managerial-insight">
+<h2>Managerial Insight</h2>
+<p>
+Motivation is one of the most powerful levers managers have for influencing performance and organizational outcomes. While managers cannot change all aspects of employees’ abilities or personal characteristics, they have significant control over the work environment, reward systems, and leadership practices that shape motivation.
+</p>
+<p>
+Effective managers recognize that motivation is not a one-size-fits-all process. Employees differ in what they value, how they interpret fairness, and how they respond to incentives. As a result, motivation strategies must be tailored to align with individual needs, perceptions, and goals.
+</p>
+<p>
+Perhaps most importantly, managers must ensure alignment between effort, performance, and rewards. When employees believe that their effort will lead to performance, that performance will be recognized, and that rewards are meaningful, they are more likely to invest discretionary effort. When this alignment breaks down, motivation declines, regardless of how capable employees may be.
+</p>
+<p>
+Ultimately, motivation is not about forcing employees to work harder. It is about creating conditions where employees choose to perform at their best. This requires thoughtful job design, fair and transparent systems, and a work environment that supports both performance and well-being.
+</p>
+</section>
+<section class="subsection level-2" id="sources">
+<h3>Sources</h3>
+<div class="source-entry"><sup>1</sup> Alderfer, C. P. (1969). An empirical test of a new theory of human needs. <em>Organizational Behavior and Human Performance, 4</em>(2), 142–175.; Baumeister, R. F. (2016). Toward a general theory of motivation: Problems, challenges, opportunities, and the big picture. <em>Motivation and Emotion, 40</em>, 1–10.; Cook, D. A., &amp; Artino, A. R., Jr. (2016). Motivation to learn: An overview of contemporary theories. <em>Medical Education, 50</em>(10), 997–1014.</div>
+<div class="source-entry"><sup>2</sup> Ryan, R. M., Bradshaw, E., Deci, E. L., Sternberg, R., &amp; Pickren, W. (2019). A history of human motivation theories. In <em>The Cambridge handbook of the intellectual history of psychology</em> (pp. 391–411).</div>
+<div class="source-entry"><sup>3</sup> Gawel, J. E. (2019). Herzberg’s theory of motivation and Maslow’s hierarchy of needs. <em>Practical Assessment, Research, and Evaluation, 5</em>(1), 11.; Herzberg, F. (2003). One more time: How do you motivate employees? <em>Harvard Business Review, 81</em>(1), 86–96.</div>
+<div class="source-entry"><sup>4</sup> Maslow, A. H. (1943). A theory of human motivation. <em>Psychological Review, 50</em>, 370–396.; Maslow, A. H. (1954). <em>Motivation and personality</em>. Harper.</div>
+<div class="source-entry"><sup>5</sup> Baumeister, R. F., &amp; Leary, M. R. (1995). The need to belong: Desire for interpersonal attachments as a fundamental human motivation. <em>Psychological Bulletin, 117</em>, 497–529.; Neher, A. (1991). Maslow’s theory of motivation: A critique. <em>Journal of Humanistic Psychology, 31</em>, 89–112.; Rauschenberger, J., Schmitt, N., &amp; Hunter, J. E. (1980). A test of the need hierarchy concept by a Markov model of change in need strength. <em>Administrative Science Quarterly, 25</em>, 654–670.</div>
+<div class="source-entry"><sup>6</sup> Alderfer, C. P. (1969). An empirical test of a new theory of human needs. <em>Organizational Behavior and Human Performance, 4</em>(2), 142–175.</div>
+<div class="source-entry"><sup>7</sup> Alderfer, C. P. (1969). An empirical test of a new theory of human needs. <em>Organizational Behavior and Human Performance, 4</em>(2), 142–175.</div>
+<div class="source-entry"><sup>8</sup> Herzberg, F. (1965). The motivation to work among Finnish supervisors. <em>Personnel Psychology, 18</em>, 393–402.; Herzberg, F., Mausner, B., &amp; Snyderman, B. (1959). <em>The motivation to work</em>. Wiley.</div>
+<div class="source-entry"><sup>9</sup> Cummings, L. L., &amp; Elsalmi, A. M. (1968). Empirical research on the bases and correlates of managerial motivation. <em>Psychological Bulletin, 70</em>, 127–144.; House, R. J., &amp; Wigdor, L. A. (1967). Herzberg’s dual-factor theory of job satisfaction and motivation: A review of the evidence and a criticism. <em>Personnel Psychology, 20</em>, 369–389.</div>
+<div class="source-entry"><sup>10</sup> McClelland, D. C. (1961). <em>The achieving society</em>. Van Nostrand.; McClelland, D. C. (1985). How motives, skills, and values determine what people do. <em>American Psychologist, 40</em>(7), 812–825.</div>
+<div class="source-entry"><sup>11</sup> McClelland, D. C., &amp; Boyatzis, R. E. (1982). Leadership motive pattern and long-term success in management. <em>Journal of Applied Psychology, 67</em>, 737–743.; McClelland, D. C., &amp; Burnham, D. H. (1976). Power is the great motivator. <em>Harvard Business Review, 25</em>, 159–166.; Wong, M. M., &amp; Csikszentmihalyi, M. (1991). Affiliation motivation and daily experience: Some issues on gender differences. <em>Journal of Personality and Social Psychology, 60</em>, 154–164.</div>
+<div class="source-entry"><sup>12</sup> Maslow, A. H. (1943). A theory of human motivation. <em>Psychological Review, 50</em>, 370–396.; Alderfer, C. P. (1969). An empirical test of a new theory of human needs. <em>Organizational Behavior and Human Performance, 4</em>(2), 142–175.</div>
+<div class="source-entry"><sup>13</sup> Baumeister, R. F., &amp; Leary, M. R. (1995). The need to belong: Desire for interpersonal attachments as a fundamental human motivation. <em>Psychological Bulletin, 117</em>, 497–529.; Wong, M. M., &amp; Csikszentmihalyi, M. (1991). Affiliation motivation and daily experience: Some issues on gender differences. <em>Journal of Personality and Social Psychology, 60</em>, 154–164.</div>
+<div class="source-entry"><sup>14</sup> Herzberg, F. (2003). One more time: How do you motivate employees? <em>Harvard Business Review, 81</em>(1), 86–96.; Herzberg, F. (1966). <em>Work and the nature of man</em>. World Publishing.</div>
+<div class="source-entry"><sup>15</sup> McClelland, D. C. (1985). How motives, skills, and values determine what people do. <em>American Psychologist, 40</em>(7), 812–825.; Harrell, A. M., &amp; Stahl, M. J. (1981). A behavioral decision theory approach for measuring McClelland’s trichotomy of needs. <em>Journal of Applied Psychology, 66</em>, 242–247.</div>
+<div class="source-entry"><sup>16</sup> Adams, J. S. (1965). Inequity in social exchange. In L. Berkowitz (Ed.), <em>Advances in Experimental Social Psychology</em> (Vol. 2, pp. 267–299). Academic Press.; Vroom, V. H., Porter, L. W., &amp; Lawler, E. E. (2015). Expectancy theories. In <em>Organizational Behavior 1</em> (pp. 94–113). Routledge.; Skinner, B. F. (1953). <em>Science and human behavior</em>. Free Press.</div>
+<div class="source-entry"><sup>17</sup> Cropanzano, R., Bowen, D. E., &amp; Gilliland, S. W. (2007). The management of organizational justice. <em>Academy of Management Perspectives, 21</em>, 34–48.; Cook, C. W. (1980). Guidelines for managing motivation. <em>Business Horizons, 23</em>, 61–69.</div>
+<div class="source-entry"><sup>18</sup> Carrell, M. R., &amp; Dittrich, J. E. (1978). Equity theory: The recent literature, methodological considerations, and new directions. <em>Academy of Management Review, 3</em>, 202–210.; Colquitt, J. A., Conlon, D. E., Wesson, M. J., Porter, C. O. L. H., &amp; Ng, K. Y. (2001). Justice at the millennium: A meta-analytic review of 25 years of organizational justice research. <em>Journal of Applied Psychology, 86</em>, 425–445.</div>
+<div class="source-entry"><sup>19</sup> Adams, J. S. (1965). Inequity in social exchange. In L. Berkowitz (Ed.), <em>Advances in Experimental Social Psychology</em> (Vol. 2, pp. 267–299). Academic Press.</div>
+<div class="source-entry"><sup>20</sup> Goodman, P. S., &amp; Friedman, A. (1971). An examination of Adams’ theory of inequity. <em>Administrative Science Quarterly, 16</em>, 271–288.; Greenberg, J. (1993). Stealing in the name of justice: Informational and interpersonal moderators of theft reactions to underpayment inequity. <em>Organizational Behavior and Human Decision Processes, 54</em>, 81–103.; Schmidt, D. R., &amp; Marwell, G. (1972). Withdrawal and reward reallocation as responses to inequity. <em>Journal of Experimental Social Psychology, 8</em>, 207–211.</div>
+<div class="source-entry"><sup>21</sup> Colquitt, J. A., Conlon, D. E., Wesson, M. J., Porter, C. O. L. H., &amp; Ng, K. Y. (2001). Justice at the millennium: A meta-analytic review of 25 years of organizational justice research. <em>Journal of Applied Psychology, 86</em>, 425–445.; Cropanzano, R., Bowen, D. E., &amp; Gilliland, S. W. (2007). The management of organizational justice. <em>Academy of Management Perspectives, 21</em>, 34–48.</div>
+<div class="source-entry"><sup>22</sup> Brockner, J., &amp; Wiesenfeld, B. M. (1996). An integrative framework for explaining reactions to decisions: Interactive effects of outcomes and procedures. <em>Psychological Bulletin, 120</em>, 189–208.; Greenberg, J. (1993). Stealing in the name of justice: Informational and interpersonal moderators of theft reactions to underpayment inequity. <em>Organizational Behavior and Human Decision Processes, 54</em>, 81–103.; Cohen-Charash, Y., &amp; Spector, P. E. (2001). The role of justice in organizations: A meta-analysis. <em>Organizational Behavior and Human Decision Processes, 86</em>, 278–321.</div>
+<div class="source-entry"><sup>23</sup> Vroom, V. H. (1964). <em>Work and motivation</em>. Wiley.; Porter, L. W., &amp; Lawler, E. E. (1968). <em>Managerial attitudes and performance</em>. Irwin.</div>
+<div class="source-entry"><sup>24</sup> Cook, C. W. (1980). Guidelines for managing motivation. <em>Business Horizons, 23</em>, 61–69.; Vroom, V. H., Porter, L. W., &amp; Lawler, E. E. (2015). Expectancy theories. In <em>Organizational Behavior 1</em> (pp. 94–113). Routledge.</div>
+<div class="source-entry"><sup>25</sup> Thorndike, E. (1927). The law of effect. <em>The American Journal of Psychology, 39</em>(1/4), 212–222.; Skinner, B. F. (1953). <em>Science and human behavior</em>. Free Press.; Skinner, B. F. (1958). Reinforcement today. <em>American Psychologist, 13</em>(3), 94–99.</div>
+<div class="source-entry"><sup>26</sup> Stajkovic, A. D., &amp; Luthans, F. (1997). A meta-analysis of the effects of organizational behavior modification on task performance, 1975–1995. <em>Academy of Management Journal, 40</em>(5), 1122–1149.</div>
+<div class="source-entry"><sup>27</sup> Adams, J. S. (1965). Inequity in social exchange. In L. Berkowitz (Ed.), <em>Advances in Experimental Social Psychology</em> (Vol. 2, pp. 267–299). Academic Press.; Carrell, M. R., &amp; Dittrich, J. E. (1978). Equity theory: The recent literature, methodological considerations, and new directions. <em>Academy of Management Review, 3</em>, 202–210.</div>
+<div class="source-entry"><sup>28</sup> Brockner, J., Fishman, A. Y., Reb, J., Goldman, B., Spiegel, S., &amp; Garden, C. (2007). Procedural fairness, outcome favorability, and judgments of an authority’s responsibility. <em>Journal of Applied Psychology, 92</em>, 1657–1671.; Cropanzano, R., Bowen, D. E., &amp; Gilliland, S. W. (2007). The management of organizational justice. <em>Academy of Management Perspectives, 21</em>, 34–48.</div>
+<div class="source-entry"><sup>29</sup> Cook, C. W. (1980). Guidelines for managing motivation. <em>Business Horizons, 23</em>, 61–69.; Vroom, V. H., Porter, L. W., &amp; Lawler, E. E. (2015). Expectancy theories. In <em>Organizational Behavior 1</em> (pp. 94–113). Routledge.</div>
+<div class="source-entry"><sup>30</sup> Skinner, B. F. (1953). <em>Science and human behavior</em>. Free Press.; Stajkovic, A. D., &amp; Luthans, F. (1997). A meta-analysis of the effects of organizational behavior modification on task performance, 1975–1995. <em>Academy of Management Journal, 40</em>(5), 1122–1149.</div>
+<div class="source-entry"><sup>31</sup> Deci, E. L., &amp; Ryan, R. M. (2012). Self-determination theory. In <em>Handbook of theories of social psychology</em> (Vol. 1, pp. 416–433).; Gagné, M., &amp; Deci, E. L. (2005). Self-determination theory and work motivation. <em>Journal of Organizational Behavior, 26</em>(4), 331–362.</div>
+<div class="source-entry"><sup>32</sup> Ahearne, M., Mathieu, J., &amp; Rapp, A. (2005). To empower or not to empower your sales force? An empirical examination of the influence of leadership empowerment behavior on customer satisfaction and performance. <em>Journal of Applied Psychology, 90</em>, 945–955.; Chen, G., Kirkman, B. L., Kanfer, R., Allen, D., &amp; Rosen, B. (2007). A multilevel study of leadership, empowerment, and performance in teams. <em>Journal of Applied Psychology, 92</em>, 331–346.</div>
+<div class="source-entry"><sup>33</sup> Gagné, M., &amp; Deci, E. L. (2005). Self-determination theory and work motivation. <em>Journal of Organizational Behavior, 26</em>(4), 331–362.; Thomas, K. W., &amp; Velthouse, B. A. (1990). Cognitive elements of empowerment: An interpretive model of intrinsic task motivation. <em>Academy of Management Review, 15</em>(4), 666–681.; Locke, E. A., &amp; Latham, G. P. (1990). <em>A theory of goal setting and task performance</em>. Prentice Hall.</div>
+<div class="source-entry"><sup>34</sup> Deci, E. L., &amp; Ryan, R. M. (2012). Self-determination theory. In <em>Handbook of theories of social psychology</em> (Vol. 1, pp. 416–433).; Gagné, M., &amp; Deci, E. L. (2005). Self-determination theory and work motivation. <em>Journal of Organizational Behavior, 26</em>(4), 331–362.</div>
+<div class="source-entry"><sup>35</sup> Deci, E. L., Koestner, R., &amp; Ryan, R. M. (1999). A meta-analytic review of experiments examining the effects of extrinsic rewards on intrinsic motivation. <em>Psychological Bulletin, 125</em>(6), 627–668.; Gagné, M., &amp; Deci, E. L. (2005). Self-determination theory and work motivation. <em>Journal of Organizational Behavior, 26</em>(4), 331–362.</div>
+<div class="source-entry"><sup>36</sup> Thomas, K. W., &amp; Velthouse, B. A. (1990). Cognitive elements of empowerment: An interpretive model of intrinsic task motivation. <em>Academy of Management Review, 15</em>(4), 666–681.; Spreitzer, G. M. (1995). Psychological empowerment in the workplace: Dimensions, measurement, and validation. <em>Academy of Management Journal, 38</em>, 1442–1465.</div>
+<div class="source-entry"><sup>37</sup> Liden, R. C., Wayne, S. J., &amp; Sparrowe, R. T. (2000). An examination of the mediating role of psychological empowerment on the relations between the job, interpersonal relationships, and work outcomes. <em>Journal of Applied Psychology, 85</em>, 407–416.; Chen, G., Kirkman, B. L., Kanfer, R., Allen, D., &amp; Rosen, B. (2007). A multilevel study of leadership, empowerment, and performance in teams. <em>Journal of Applied Psychology, 92</em>, 331–346.; Ahearne, M., Mathieu, J., &amp; Rapp, A. (2005). To empower or not to empower your sales force? <em>Journal of Applied Psychology, 90</em>, 945–955.</div>
+<div class="source-entry"><sup>38</sup> Locke, E. A., &amp; Latham, G. P. (1990). <em>A theory of goal setting and task performance</em>. Prentice Hall.; Locke, E. A., &amp; Latham, G. P. (2002). Building a practically useful theory of goal setting and task motivation: A 35-year odyssey. <em>American Psychologist, 57</em>(9), 705–717.</div>
+<div class="source-entry"><sup>39</sup> Locke, E. A., &amp; Latham, G. P. (2002). Building a practically useful theory of goal setting and task motivation: A 35-year odyssey. <em>American Psychologist, 57</em>(9), 705–717.; Drucker, P. F. (1954). <em>The practice of management</em>. Harper &amp; Row.</div>
+<div class="source-entry"><sup>40</sup> Gagné, M., &amp; Deci, E. L. (2005). Self-determination theory and work motivation. <em>Journal of Organizational Behavior, 26</em>(4), 331–362.; Deci, E. L., &amp; Ryan, R. M. (2012). Self-determination theory. In <em>Handbook of theories of social psychology</em> (Vol. 1, pp. 416–433).</div>
+<div class="source-entry"><sup>41</sup> Thomas, K. W., &amp; Velthouse, B. A. (1990). Cognitive elements of empowerment: An interpretive model of intrinsic task motivation. <em>Academy of Management Review, 15</em>(4), 666–681.; Spreitzer, G. M. (1995). Psychological empowerment in the workplace: Dimensions, measurement, and validation. <em>Academy of Management Journal, 38</em>, 1442–1465.</div>
+<div class="source-entry"><sup>42</sup> Liden, R. C., Wayne, S. J., &amp; Sparrowe, R. T. (2000). An examination of the mediating role of psychological empowerment on the relations between the job, interpersonal relationships, and work outcomes. <em>Journal of Applied Psychology, 85</em>, 407–416.; Ahearne, M., Mathieu, J., &amp; Rapp, A. (2005). To empower or not to empower your sales force? <em>Journal of Applied Psychology, 90</em>, 945–955.; Chen, G., Kirkman, B. L., Kanfer, R., Allen, D., &amp; Rosen, B. (2007). A multilevel study of leadership, empowerment, and performance in teams. <em>Journal of Applied Psychology, 92</em>, 331–346.</div>
+<div class="source-entry"><sup>43</sup> Locke, E. A., &amp; Latham, G. P. (1990). <em>A theory of goal setting and task performance</em>. Prentice Hall.; Locke, E. A., &amp; Latham, G. P. (2002). Building a practically useful theory of goal setting and task motivation: A 35-year odyssey. <em>American Psychologist, 57</em>(9), 705–717.</div>
+<div class="source-entry"><sup>44</sup> Locke, E. A., &amp; Latham, G. P. (2002). Building a practically useful theory of goal setting and task motivation: A 35-year odyssey. <em>American Psychologist, 57</em>(9), 705–717.; Drucker, P. F. (1954). <em>The practice of management</em>. Harper &amp; Row.</div>
+<div class="source-entry"><sup>45</sup> Deterding, S., Dixon, D., Khaled, R., &amp; Nacke, L. (2011). From game design elements to gamefulness: Defining gamification. In <em>Proceedings of the 15th International Academic MindTrek Conference</em> (pp. 9–15). ACM.; Hamari, J., Koivisto, J., &amp; Sarsa, H. (2014). Does gamification work? A literature review of empirical studies. In <em>2014 47th Hawaii International Conference on System Sciences</em> (pp. 3025–3034). IEEE.</div>
+<div class="source-entry"><sup>46</sup> Locke, E. A., &amp; Latham, G. P. (2002). Building a practically useful theory of goal setting and task motivation: A 35-year odyssey. <em>American Psychologist, 57</em>(9), 705–717.; Chen, G., Kirkman, B. L., Kanfer, R., Allen, D., &amp; Rosen, B. (2007). A multilevel study of leadership, empowerment, and performance in teams. <em>Journal of Applied Psychology, 92</em>, 331–346.</div>
+<div class="source-entry"><sup>47</sup> Gagné, M., &amp; Deci, E. L. (2005). Self-determination theory and work motivation. <em>Journal of Organizational Behavior, 26</em>(4), 331–362.; Spreitzer, G. M. (1995). Psychological empowerment in the workplace: Dimensions, measurement, and validation. <em>Academy of Management Journal, 38</em>, 1442–1465.</div>
+<div class="source-entry"><sup>48</sup> Locke, E. A., &amp; Latham, G. P. (2002). Building a practically useful theory of goal setting and task motivation: A 35-year odyssey. <em>American Psychologist, 57</em>(9), 705–717.; Ahearne, M., Mathieu, J., &amp; Rapp, A. (2005). To empower or not to empower your sales force? <em>Journal of Applied Psychology, 90</em>, 945–955.; Hamari, J., Koivisto, J., &amp; Sarsa, H. (2014). Does gamification work? A literature review of empirical studies. In <em>2014 47th Hawaii International Conference on System Sciences</em> (pp. 3025–3034). IEEE.</div>
+</section>
+</section>
+</main>
+</div>
+</body>
+</html>
